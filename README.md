@@ -23,21 +23,21 @@
 
 * Hoofdstukken schrijven inplannen in tijd.
 
-#### [include opening.md](opening.md)
+#### [opening](opening.md){.include}
 
-#### [include introduction.md](introduction.md)
+#### [introduction](introduction.md){.include}
 
-#### [include writing-umgap.md](writing-umgap.md)
+#### [writing-umgap](writing-umgap.md){.include}
 
-#### [include frag-gene-scan.md](frag-gene-scan.md)
+#### [frag-gene-scan](frag-gene-scan.md){.include}
 
-#### [include make-database.md](make-database.md)
+#### [make-database](make-database.md){.include}
 
-#### [include applications.md](applications.md)
+#### [applications](applications.md){.include}
 
-#### [include related-work.md](related-work.md)
+#### [related-work](related-work.md){.include}
 
-#### [include conclusion.md](conclusion.md)
+#### [conclusion](conclusion.md){.include}
 
-#### [include closing.md](closing.md)
+#### [closing](closing.md){.include}
 
