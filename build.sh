@@ -1,5 +1,12 @@
 #!/bin/sh
-pandoc --citeproc \
+if tectonic --help > /dev/null; then
+	pdfengine="tectonic"
+else
+	pdfengine="pdflatex"
+fi
+
+pandoc --pdf-engine="$pdfengine" \
+       --citeproc \
        -o dissertation.pdf \
        --metadata-file=frontmatter.yml \
        --from markdown+citations+footnotes+smart \
