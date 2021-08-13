@@ -29,7 +29,7 @@
 
 #### [writing-umgap](writing-umgap.md){.include}
 
-#### [frag-gene-scan](frag-gene-scan.md){.include}
+#### [frag-gene-scan](frag-gene-scan/chapter.md){.include}
 
 #### [make-database](make-database.md){.include}
 
