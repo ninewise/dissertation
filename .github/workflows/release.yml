@@ -5,10 +5,16 @@ jobs:
     name: Build PDF Artifact
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: docker://pandoc/latex:2.14
+      - name: install latex
+        run: sudo apt-get install texlive-full
+      - name: install inkscape
+        run: sudo add-apt-repository ppa:inkscape.dev/stable-1.1 && sudo apt-get update && sudo apt install inkscape
+      - uses: r-lib/actions/setup-pandoc@v1
         with:
-          args: "-o dissertation.pdf --metadata-file=frontmatter.yml --lua-filter=filters/include.lua --from markdown+citations+footnotes+smart --citeproc README.md"
+          pandoc-version: '2.14.0.3'
+      - uses: actions/checkout@v1
+      - name: run pandoc
+        run: pandoc -o dissertation.pdf --metadata-file=frontmatter.yml --lua-filter=filters/include.lua --lua-filter=filters/svg-to-pdf.lua --from markdown+citations+footnotes+smart --citeproc README.md
       - uses: actions/upload-artifact@main
         with:
           name: dissertation
