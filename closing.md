@@ -1,8 +1,6 @@
-## Appendix
+# Appendix
 
-* Oplijsting van de commando's?
-
-## References
+# References
 
 ::: {#refs}
 :::

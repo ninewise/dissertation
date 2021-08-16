@@ -101,4 +101,6 @@ GGACACGCTCTCAGGACGATGGCGCGATTGCAGGACTTGCTGGATCTCCTCCGTCGCCAAGGGGACGCGCTCGGAGTGGC
 
 _Verder kopiëren en aanvullen van de documentatie op de website..._
 
+https://unipept.ugent.be/umgap/translate
+
 #### [paper](paper.md){.include}

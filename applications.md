@@ -1,4 +1,4 @@
-## Toepassingen
+# Toepassingen
 
 * Case studies
 * Peat substrate amended with chitin modulates the N-cycle, siderophore and chitinase responses in the lettuce rhizobiome
