@@ -1,0 +1,15 @@
+name: Build PDF artifact
+on: [push]
+jobs:
+  build-pdf-artifact:
+    name: Build PDF Artifact
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: docker://pandoc/latex:2.14
+        with:
+          args: "-o dissertation.pdf --metadata-file=frontmatter.yml --lua-filter=filters/include.lua --from markdown+citations+footnotes+smart --citeproc README.md"
+      - uses: actions/upload-artifact@main
+        with:
+          name: dissertation
+          path: dissertation.pdf
