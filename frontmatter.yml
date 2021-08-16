@@ -3,7 +3,7 @@ geometry:
 - margin=1in
 classoption:
 - oneside
-documentclass: article
+documentclass: book
 colorlinks: true
 lang: en-US
 link-citations: true

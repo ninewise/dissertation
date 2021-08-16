@@ -1,37 +1,4 @@
----
-papersize: A4
-geometry:
-- margin=1in
-classoption:
-- oneside
-documentclass: article
-colorlinks: true
-lang: en-US
-link-citations: true
-references:
-- { type: article-journal, id: breitwieser, author: [ "Breitwieser, F.P.", "Lu, J.", "Salzberg, S.L." ], title: "A review of methods and databases for metagenomic classification and assembly", container-title: "Briefings in Bioinformatics", issued: 2017, volume: 5, page: 1125-1136, doi: "10.1093/bib/bbx120" }
-- { type: article-journal, id: ghurye, author: [ "Ghurye, J.", "Cepeda-Espinoza, V.", "Pop, M." ], title: "Metagenomic Assembly: Overview, Challenges and Applications", container-title: "The Yale Journal of Biology and Medicine", issued: 2016, volume: 20, page: 353-362 }
-- { type: article-journal, id: hoferthemi, author: [ "Hofer, U." ], title: "The majority is uncultured", container-title: "Nature Reviews Microbiology", issued: 2018, volume: 16, page: 716-717 }
-- { type: article-journal, id: hoff, author: [ "Hoff, K.J.", "Lingner, T.", "Meinicke, P.", "Tech, M." ], title: "Orphelia: predicting genes in metagenomic sequencing reads", container-title: "Nucleic Acids Research", issued: 2009, volume: 28, page: W101-W105, doi: "10.1093/nar/gkp327" }
-- { type: article-journal, id: hugenholtz, author: [ { family: Hugenholtz, given: P. }, { family: Tyson, given: G. W. } ], issued: 2008, title: Metagenomics, container-title: Nature, volume: 455, page: 481-483 }
-- { type: article-journal, id: hyatt, author: [ "Hyatt, D.", "LoCascio, P.F.", "Hauser, L.J.", "Uberbacher, E.C." ], title: "Gene and translation initiation site prediction in metagenomic sequences", container-title: "Bioinformatics", issued: 2012, volume: 12, page: 2223-2230, doi: "10.1093/bioinformatics/bts429" }
-- { type: article-journal, id: locey, author: [ "Locey, K.J.", "Lennon, J.T." ], title: "Scaling laws predict global microbial diversity", container-title: "Proceedings of the National Academy of Sciences", issued: 2016, volume: 113, page: 5970-5975, doi: "10.1073/pnas.1521291113" }
-- { type: article-journal, id: noguchi, author: [ "Noguchi, H.", "Taniguchi, T.", "Itoh, T." ], title: "MetaGeneAnnotator: Detecting Species-Specific Patterns of Ribosomal Binding Site for Precise Gene Prediction in Anonymous Prokaryotic and Phage Genomes", container-title: "DNA Research", issued: 2008, issue: 6, volume: 38, page: 387-396, doi: "10.1093/dnares/dsn027" }
-- { type: article-journal, id: pedros, author: [ "Pedrós-Alió, C.", "Manrubia, S." ], title: "The vast unknown microbial biosphere", container-title: "Proceedings of the National Academy of Sciences", issued: 2016, volume: 113, page: 6585-6587, doi: "10.1073/pnas.1606105113" }
-- { type: article-journal, id: quince, author: [ "Quince, C.", "Walker, A.W.", "Simpson, J.T.", "Loman, N.J.", "Nicola, S." ], title: "Shotgun metagenomics, from sampling to analysis", container-title: "Nature Biotechnology", issued: 2017, volume: 35, page: "833-844", doi: "10.1038/nbt.3935" }
-- { type: article-journal, id: rappe, author: [ "Rappé, M.S.", "Giovannoni, S.J." ], title: "The Uncultured Microbial Majority", container-title: "Annual Review of Microbiology", issued: 2003, volume: 57, page: 369394, doi: "10.1146/annurev.micro.57.030502.090759" }
-- { type: article-journal, id: rho, author: [ "Rho, M.", "Tang, H.", "Ye, Y." ], title: "FragGeneScan: predicting genes in short and error-prone reads", container-title: Nucleic Acids Res., issued: 2010, volume: 38, issue: 20, page: e191 }
-- { type: article-journal, id: sharpton, author: [ "Sharpton, T.J." ], title: "An introduction to the analysis of shotgun metagenomic data", container-title: "Frontiers in Plant Science", issued: 2014, page: 209, doi: "10.3389/fpls.2014.00209" }
-- { type: article-journal, id: thomas, author: [ "Thomas, T.", "Gilbert, J.", "Meyer, F." ], title: "Metagenomics - A Guide From Sampling to Data Analysis", container-title: "Microbial Informatics and experimentation", issued: 2012, volume: 2, doi: "10.1186/2042-5783-2-3" }
-- { type: article-journal, id: trimble, author: [ "Trimble, W.L.", "Keegan, K.P.", "D'Souza, M.", "Wilke, A.", "Wilkening, J.", "Gilbert, J.", "Meyer, F." ], title: "Short Read Reading-Frame Predictors are not Created Equal: Sequence Error Causes Loss of Signal", container-title: "BMC Bioinformatics", issued: 2012, issue: 1, volume: 15, doi: "10.1186/1471-2105-13-183" }
-- { type: article-journal, id: vollmers, author: [ "Vollmers, J.", "Wiegand, S.", "Kaster, A." ], title: "Comparing and Evaluating Metagenome Assembly Tools from a Microbiologist’s Perspective - Not Only Size Matters!", container-title: "PLOS ONE", issued: 2017, volume: 89, page: 131, doi: "10.1371/journal.pone.0169662", publisher: "Public Library of Science" }
-- { type: article-journal, id: zhu, author: [ "Zhu, W.", "Lomsadze, A.", "Borodovsky, M." ], title: "Ab initio gene identification in metagenomic sequences", container-title: "Nucleic Acids Research", issued: 2010, volume: 37, page: e132-e132, doi: "10.1093/nar/gkq275", issue: 12 }
-- { type: book, id: hahn, author: [ "Hahn, M.W.", "Koll, U.", "Schmidt, J." ], title: "The Structure and Function of Aquatic Microbial Communities", publisher: "Springer International Publishing", publisher-place: "Cham", issued: 2019, isbn: "978-3-030-16775-2", doi: "10.1007/978-3-030-16775-2_10", page: 313-351 }
-- { type: paper-conference, id: kim, author: [ { family: Kim, given: D.J. }, "Hahn, A.S.", "Wu, S.J.", "Hanson, N.W.", "Konwar, K.M.", "Hallam, S.J." ], title: FragGeneScan-plus for scalable high-throughput short-read open reading frame prediction, event: "IEEE Conference on Computational Intelligence in Bioinformatics and Computational Biology", event-place: Canada, event-date: 2015 }
-- { type: paper-conference, id: nethercote, author: [ "Nethercote, N.", "Seward, J." ], title: "Valgrind: A Framework for Heavyweight Dynamic Binary Instrumentation", event: "ACM SIGPLAN Conference on Programming Language Design and Implementation", event-place: "San Diego, California, USA", issued: 2007, event-date: 2007, doi: "10.1145/1250734.1250746" }
-...
-
-# FragGeneScanRs: better and faster gene prediction for short reads
+## FragGeneScanRs: better and faster gene prediction for short reads
 
 * **Authors:**
 Felix Van der Jeugt[^1] ([ORCID](https://orcid.org/0000-0003-3168-927X)),
@@ -54,7 +21,7 @@ execution.
 is freely available from [GitHub][] under the GPL-3.0 license, with
 instructions for installation, usage and other documentation.
 
-## Introduction
+### Introduction
 
 Studying environmental communities of archaea, bacteria,
 eukaryotes, and viruses is hampered by problems with isolating
@@ -135,7 +102,7 @@ reliable, high-performance, and accurate Rust implementation of the FGS
 gene prediction model. We ran a benchmark to show that FGSrs produces
 the same results as FGS and is faster than both FGS and FGS+.
 
-## Implementation
+### Implementation
 
 FGSrs is implemented in Rust, a programming language known for its
 focus on speed and memory-efficiency. In addition, segmentation faults
@@ -201,7 +168,7 @@ also note that a bug was introduced in FGS (release 1.30) when the
 backtracking step was converted from Perl to C, which generates DNA and
 protein sequences for complete genomes that are incorrect.
 
-## Results
+### Results
 
 The FGSrs command line interface is backward compatible with FGS, so
 it can be used as a faster and memory-friendly drop-in replacement
@@ -268,10 +235,5 @@ This work was supported by the Research Foundation--Flanders (FWO)
 (12I5220N to B.M.) We thank the students of the Computational Biology
 class of 2019-2020 for scrutinizing issues with the code of FGS and
 FGS+.
-
-## References
-
-::: {#refs}
-:::
 
 [GitHub]: https://github.com/unipept/FragGeneScanRs

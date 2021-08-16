@@ -27,7 +27,7 @@
 
 #### [introduction](introduction.md){.include}
 
-#### [writing-umgap](writing-umgap.md){.include}
+#### [umgap](umgap/chapter.md){.include}
 
 #### [frag-gene-scan](frag-gene-scan/chapter.md){.include}
 
