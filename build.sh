@@ -1,8 +1,8 @@
 #!/bin/sh
-if pdflatex -version > /dev/null; then
-	pdfengine="pdflatex"
-else
+if tectonic --version > /dev/null; then
 	pdfengine="tectonic"
+else
+	pdfengine="pdflatex"
 fi
 
 pandoc --pdf-engine="$pdfengine" \

@@ -5,16 +5,25 @@ jobs:
     name: Build PDF Artifact
     runs-on: ubuntu-latest
     steps:
-      - name: install latex
-        run: sudo apt-get install texlive-full
+      - uses: actions/checkout@v1
       - name: install inkscape
         run: sudo add-apt-repository ppa:inkscape.dev/stable-1.1 && sudo apt-get update && sudo apt install inkscape
+      - uses: actions/cache@v2
+        name: tectonic cache
+        with:
+          path: ~/.cache/Tectonic
+          key: ${{ runner.os }}-tectonic-${{ hashFiles('**/*.tex') }}
+          restore-keys: |
+            ${{ runner.os }}-tectonic-
+      - uses: wtfjoke/setup-tectonic@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          biber-version: "latest"
       - uses: r-lib/actions/setup-pandoc@v1
         with:
           pandoc-version: '2.14.0.3'
-      - uses: actions/checkout@v1
-      - name: run pandoc
-        run: pandoc -o dissertation.pdf --metadata-file=frontmatter.yml --lua-filter=filters/include.lua --lua-filter=filters/svg-to-pdf.lua --from markdown+citations+footnotes+smart --citeproc README.md
+      - name: build pdf
+        run: ./build.sh
       - uses: actions/upload-artifact@main
         with:
           name: dissertation
