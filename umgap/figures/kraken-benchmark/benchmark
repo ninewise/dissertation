@@ -1,0 +1,122 @@
+#!/bin/bash
+
+input_reads="data/MiSeq_input.fa"
+taxons="/data/tempfs/2018-06-taxons.tsv"
+tryptic_index="/data/tempfs/2018-06-tryptic.fst"
+ninemer_index="/data/tempfs/2018-06-9mer.fst"
+
+# ====================================================================
+# Prediction
+
+fgs_before() {
+    local model="illumina_10" # PARAM
+    local input="$(mktemp)"
+    local output="$(mktemp --suffix='.faa')"
+
+    cat - > "$input"
+
+    (
+        trap "rm '$input' '$output' '${output%.faa}.ffn' '${output%.faa}.out'" EXIT INT TERM HUP
+        cd FGS
+        ./FragGeneScan -s "$input" -o "${output%.faa}" -w 0 -t "$model" -p 16 > /dev/null
+        cat "$output"
+    )
+}
+
+fgspp_before() {
+    local model="illumina_10" # PARAM
+    ./FGSpp -s stdin -o stdout -w 0 -r "FragGeneScanPlusPlus/train" -t "$model" -p 16 -m 3000
+}
+
+ft6_before() {
+    local table="11" # PARAM
+    umgap translate -a -t"$table"
+}
+
+# ====================================================================
+# Splitting in peptides and looking them up
+
+tryptic() {
+    umgap prot2pept \
+        | umgap filter $@ \
+        | umgap pept2lca "$tryptic_index"
+}
+
+kmer9() {
+    umgap prot2kmer2lca -k9 "$ninemer_index"
+}
+
+seedextend() {
+    umgap prot2kmer2lca -k9 -o "$ninemer_index" \
+        | umgap seedextend $@
+}
+
+# ====================================================================
+# Joining
+
+taxa2agg() {
+    umgap uniq | umgap taxa2agg $@ "$taxons"
+}
+
+# ====================================================================
+# Comparing
+
+compare() {
+    sed -e '/^>/!s/,.*//' -e 's/^$/1/' -e '/^>/s/>\(.*\)\..*/\1/' \
+        | umgap snaprank -r genus "$taxons" \
+        | sed 'N;s/\n/=/;p;d' \
+        | sed -e 'itotal' -e 's/^1=1$/TN/' -e 's/^\(.*\)=\1$/TP/' -e 's/^1=.*$/FP/' -e 's/^.*=1$/FN/' -e 's/^.*=.*$/FP/' \
+        | sort \
+        | uniq -c
+}
+
+# ====================================================================
+# Benchmark
+
+for prediction in "fgs" "fgspp" "ft6"; do
+for aggregator in "-m rmq -a mrtl" "-a hybrid -f 0.25" "-a hybrid -f 0.5" "-a hybrid -f 0.75" "-m rmq -a lca*"; do
+for minfreq in $(seq 5); do
+    # tryptic peptides
+    for minlength in $(seq 5 10); do
+    for maxlength in $(seq 45 50); do
+
+        echo "date: $(date)"
+        echo "$prediction $aggregator $minfreq tryptic $minlength $maxlength"
+        time < "$input_reads" "$prediction"_before \
+                                 | tryptic -m $minlength -M $maxlength \
+                                 | taxa2agg $aggregator -l $minfreq \
+                                 | compare
+    done
+    done
+
+    # kmers
+    echo "date: $(date)"
+    echo "$prediction $aggregator $minfreq kmer"
+    time < "$input_reads" "$prediction"_before \
+                        | kmer9 \
+                        | taxa2agg $aggregator -l $minfreq \
+                        | compare
+
+    for maxgap in $(seq 0 4); do
+    for minseed in $(seq 2 4); do
+        echo "date: $(date)"
+        # seedextend
+        echo "$prediction $aggregator $minfreq seedextend $maxgap $minseed"
+        time < "$input_reads" "$prediction"_before \
+                             | seedextend -g $maxgap -s $minseed \
+                             | taxa2agg $aggregator -l $minfreq \
+                             | compare
+
+        echo "date: $(date)"
+        # scored seedextend
+        echo "$prediction $aggregator $minfreq scored seedextend $maxgap $minseed"
+        time < "$input_reads" "$prediction"_before \
+                             | seedextend -r "$taxons" -g $maxgap -s $minseed \
+                             | taxa2agg $aggregator -l $minfreq \
+                             | compare
+    done
+    done
+done
+done
+done
+
