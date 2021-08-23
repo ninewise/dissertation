@@ -635,18 +635,18 @@ shuffled reads assigned to a taxon. True negatives (TN) are shuffled
 reads not assigned to any taxon. False negatives (FN) are non-shuffled
 reads not assigned to any taxon.
 
- Tool                  Precision  Sensitivity  Specificity      NPV      MCC   Run time  Index size
- -------------------- ---------- ------------ ------------ -------- -------- ---------- -----------
- UMGAP tryptic prec.      99.70%        3.50%       99.96%   21.83%    8.62%     6.96 m     19.3 GB
- Kraken                   99.38%       81.34%       98.15%   59.21%   68.24%   210.86 m    198.7 GB
- UMGAP max prec.          98.94%       45.87%       98.22%   33.35%   37.73%    16.47 m    132.9 GB
- Kraken 2                 98.15%       82.27%       94.64%   60.68%   67.27%     2.10 m     43.3 GB
- UMGAP high prec.         98.11%       55.68%       96.21%   38.07%   43.33%    30.42 m    132.9 GB
- Kaiju                    98.02%       68.31%       95.21%   46.44%   53.15%   304.10 m     74.4 GB
- UMGAP tryptic sens.      96.07%       18.03%       97.36%   24.88%   17.95%     6.10 m     19.3 GB
- UMGAP high sens.         92.55%       66.70%       84.12%   46.04%   44.28%    30.32 m    132.9 GB
- UMGAP max sens.          80.78%       77.73%       63.34%   58.94%   40.39%    31.12 m    132.9 GB
- CLARK                    71.41%      100.00%       27.87%   100.0%   44.61%    20.54 m    342.3 GB
+ Tool                  Precision  Sensitivity  Specificity     NPV     MCC  Run time  Index size
+ -------------------- ---------- ------------ ------------ ------- ------- --------- -----------
+ UMGAP tryptic prec.       99.7%         3.5%        99.9%   21.8%    8.6%      7.0m      19.3GB
+ Kraken                    99.4%        81.3%        98.2%   59.2%   68.2%    210.9m     198.7GB
+ UMGAP max prec.           98.9%        45.9%        98.2%   33.4%   37.7%     16.5m     132.9GB
+ Kraken 2                  98.2%        82.3%        94.6%   60.7%   67.3%      2.1m      43.3GB
+ UMGAP high prec.          98.1%        55.7%        96.2%   38.0%   43.3%     30.4m     132.9GB
+ Kaiju                     98.0%        68.3%        95.2%   46.4%   53.2%    304.1m      74.4GB
+ UMGAP tryptic sens.       96.1%        18.0%        97.4%   24.9%   18.0%      6.1m      19.3GB
+ UMGAP high sens.          92.6%        66.7%        84.1%   46.0%   44.3%     30.3m     132.9GB
+ UMGAP max sens.           80.8%        77.7%        63.3%   58.9%   40.4%     31.1m     132.9GB
+ CLARK                     71.4%       100.0%        27.9%  100.0%   44.6%     20.5m     342.3GB
 
  Table: MetaBenchmark performance metrics for ten metagenomics
  analysis tools sorted by precision. Average numbers for the six

@@ -4,6 +4,8 @@ geometry:
 classoption:
 - oneside
 documentclass: book
+header-includes:
+- \usepackage{booktabs}
 colorlinks: true
 lang: en-US
 link-citations: true

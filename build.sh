@@ -5,11 +5,15 @@ else
 	pdfengine="pdflatex"
 fi
 
+output="${1:-dissertation.pdf}"
+
 pandoc --pdf-engine="$pdfengine" \
-       -o dissertation.pdf \
+       -o "$output" \
        --metadata-file=frontmatter.yml \
        --lua-filter=filters/include.lua \
        --lua-filter=filters/svg-to-pdf.lua \
+       --lua-filter=filters/floating-tables.lua \
        --from markdown+citations+footnotes+smart \
        --citeproc \
        README.md
+
