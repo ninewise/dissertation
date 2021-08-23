@@ -10,18 +10,19 @@
 * Unipept web services for metaproteomics analysis
 * The unique peptidome : taxon-specific tryptic peptides as biomarkers for targeted metaproteomics
 
-### Dingen
+### TODO
 
 * Dingen stelen bij https//github.ugent.be/bmesuere/thesis
 
-* 3 laatste hoofdstukken samen zetten als 'Putting it all in action'.
-  Dat het niet gewoon het programmeren van software is, maar ook
-  inwerken in projecten (combio), opzetten van de omgeving (index) en
-  toepassen.
+### Planning
 
-* Vormvereisten: samenvatting in laymans terms && een nederlandse
+* week 23 tot 29 augustus: stukken 'UMGAP' en 'FragGeneScan' inkleden in bookvorm, stuk 'Bouwen van index' uitwerken
 
-* Hoofdstukken schrijven inplannen in tijd.
+* week 30 augustus tot 5 september: stukken 'Toepassingen' en 'Gerelateerd werk'
+
+* week 6 tot 12 september: stukken 'Inleiding' en 'Conclusie'
+
+* week 13 tot 19 augustus: extras (samenvatting in *laymans terms*, nederlandstalige samenvatting e.d.) en speling.
 
 #### [opening](opening.md){.include}
 
@@ -31,11 +32,7 @@
 
 #### [frag-gene-scan](frag-gene-scan/chapter.md){.include}
 
-#### [make-database](make-database.md){.include}
-
-#### [applications](applications.md){.include}
-
-#### [related-work](related-work.md){.include}
+#### [on-the-side](on-the-side/chapter.md){.include}
 
 #### [conclusion](conclusion.md){.include}
 
