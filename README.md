@@ -14,6 +14,8 @@
 
 * Dingen stelen bij https//github.ugent.be/bmesuere/thesis
 
+* Detailplanning opstellen (indienen, interne, publieke)
+
 ### Planning
 
 * week 23 tot 29 augustus: stukken 'UMGAP' en 'FragGeneScan' inkleden in bookvorm, stuk 'Bouwen van index' uitwerken
@@ -22,7 +24,9 @@
 
 * week 6 tot 12 september: stukken 'Inleiding' en 'Conclusie'
 
-* week 13 tot 19 augustus: extras (samenvatting in *laymans terms*, nederlandstalige samenvatting e.d.) en speling.
+* week 13 tot 19 september: extras (samenvatting in *laymans terms*, nederlandstalige samenvatting e.d.) en speling.
+
+* 22 september: faculteitsraad (24u op voorhand indienen) (maar eerst jury laten goedkeuren op OCI)
 
 #### [opening](opening.md){.include}
 
