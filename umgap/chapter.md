@@ -52,4 +52,10 @@ niet meer overlopen, die komt in de paper erna._
 
 ### [filter](components/filter.md){.include}
 
+### [filter](components/pept2lca.md){.include}
+
+### [bestof](components/bestof.md){.include}
+
+### [seedextend](components/seedextend.md){.include}
+
 ## [paper](paper.md){.include}
