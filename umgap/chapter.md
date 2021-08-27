@@ -58,4 +58,8 @@ niet meer overlopen, die komt in de paper erna._
 
 ### [seedextend](components/seedextend.md){.include}
 
+### [uniq](components/uniq.md){.include}
+
+### [taxa2agg](components/taxa2agg.md){.include}
+
 ## [paper](paper.md){.include}
