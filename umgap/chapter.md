@@ -62,4 +62,10 @@ niet meer overlopen, die komt in de paper erna._
 
 ### [taxa2agg](components/taxa2agg.md){.include}
 
+### [snaptaxon](components/snaptaxon.md){.include}
+
+### [reporting](components/reporting.md){.include}
+
+### [taxonomy](components/taxonomy.md){.include}
+
 ## [paper](paper.md){.include}
