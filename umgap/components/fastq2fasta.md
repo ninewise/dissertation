@@ -1,15 +1,17 @@
-### Omzetting van FASTQ- naar FASTA-bestanden
+### Transition from FASTQ to FASTA format
 
 The `umgap fastq2fasta` command takes one or more FASTQ files and
 interleaves them into a single FASTA file.
 
-Zo worden ze omgezet naar het formaat dat de *pipeline* intern gebruikt.
-Als je meerdere bestanden aan het commando meegeegt, zorgt er het ook
-voor dat deze *interleaved* in 1 *stream* terecht komen. Zo komen de
-reads uit *paired-end reads*, waarbij de twee eindes in aparte bestanden
-opgeslagen worden, naast elkaar in de stream. Dit is cruciaal voor
-latere stappen in de pipeline, waar we de conclusies over beide eindes
-willen samenvoegen om een conclusie over de gehele *read* te trekken.
+This puts them in the format used internally in the pipeline. When
+passing multiple files to the command, it will interleave the reads
+into a single stream, starting with the first read from each file (in
+the same order they were passed as arguments), followed by the second,
+continuing in this manner until any of the files runs out of reads (thus
+truncating the others). This places the read ends from paired-end reads,
+when saved in separate files, next to each other in the output stream,
+allowing steps later in the pipeline to join them together to draw a
+conclusion about the whole read.
 
 #### Usage
 
@@ -21,7 +23,7 @@ the quality scores, until any of the files runs out or records.
 This command is generally used to combine two paired-end FASTQ files
 into a single FASTA file.
 
-```sh
+```shell
 $ cat input_1.fq
 @record1/1
 GATAGCCGTCGAGCGTCCCGACATCCATATACAGCTCGCCGCAGTGCGTCGCCCGCACGGCATCGCGCGCCGCGATGTACGCATTCAACCAGCGTCCGAG
