@@ -1,4 +1,5 @@
 ## UMGAP: the Unipept MetaGenomics Analysis Pipeline
+\label{section:umgap}
 
 ### Introduction
 

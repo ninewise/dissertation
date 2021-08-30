@@ -4,6 +4,9 @@ geometry:
 classoption:
 - oneside
 documentclass: book
+numbersections: true
+toc: true
+toc-depth: 2
 header-includes:
 - \usepackage{booktabs}
 colorlinks: true

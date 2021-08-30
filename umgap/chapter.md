@@ -1,11 +1,13 @@
 # The Unipept Metagenomics Analysis Pipeline
 
 _This chapter starts with describing the intent and structure of the
-pipeline. After, it includes a report on the context and results.
-Finally, it provides an extensive list of the various tools in the
-pipeline, explaining their usage and some of the algorithms they use._
+pipeline (\ref{section:intent}). After, it includes a report on the
+context and results (\ref{section:umgap}). Finally, it provides an
+extensive list of the various tools in the pipeline, explaining their
+usage and some of the algorithms they use (\ref{section:tools})._
 
 ## Intent and structure
+\label{section:intent}
 
 The analysis of shotgun metagenomics data can be subdivided in two
 dimensions. First, as a sequence of individual reads to be analysed, and
@@ -44,6 +46,7 @@ via standard output and standard input in FASTA-like formats.
 ## [paper](paper.md){.include}
 
 ## Analysis tools
+\label{section:tools}
 
 *A pipeline is compromised of a series of tools. This section contains
 an exhaustive list of the available tools. For each tool, it describes
