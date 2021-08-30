@@ -1,13 +1,16 @@
-### Vertaling van DNA-sequenties naar eiwitfragmenten
+### Translating DNA sequences to protein fragments
 
 The umgap translate command takes one or more DNA sequences and
-translates them into amino acid sequences.
+translates them into amino acid sequences. It allows the selection of
+the reading frame and a translation table to use. Most notably, it is
+also capable of translating all frames, so the rest of the pipeline can
+execute on each frame and decide which to keep.
 
 #### Usage
 
 The DNA sequences are expected in a FASTA format on standard input.
 
-```sh
+```shell
 $ cat input.fa
 >header1
 GATTACAAA
@@ -20,7 +23,7 @@ The `-f` flag allows you to add reading frames to the translation. If
 you want to translate multiple frames and care to keep them apart, the
 `-n` flag adds the name of the frame to the end of the FASTA header.
 
-```sh
+```shell
 $ umgap translate -f1 -f1R < input.fa
 >header1|1
 DYK
