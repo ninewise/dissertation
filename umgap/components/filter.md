@@ -1,10 +1,11 @@
 ### Filtering peptides
 
-Tijdens de verwerking van peptiden kan het gewenst zijn om bepaalde
-peptiden te schrappen. Zo zullen zeer korte peptiden heel algemeen
-voorkomen, en dus geen informatie bijdragen aan de read (Figure
-\ref{peptide-length}). Met `umgap filter` kunnen peptiden geschrapt
-worden op basis van lengte of inbegrepen en uitgesloten aminozuren.
+Some protein fragments or peptides may be useless or detrimental to the
+analysis. For instance, short tryptic peptides are very common and won't
+add any information to a read (Figure \ref{peptide-length}). Removing
+them from consideration speeds up the pipeline. With `umgap filter`,
+reads can be filtered on minimum length, maximum length, included amino
+acids and excluded amino acids.
 
 #### Usage
 
@@ -23,7 +24,7 @@ output they pass them. The criteria are specified as options:
 * `-l LIK` removes the peptides containing the amino acids Leucine,
   Isoleucine or Lysine.
 
-```sh
+```shell
 $ cat input.fa
 >header1
 AYKKAGVSGHVWQSDGITNCLLRGLTRVKEAVANRDSGNGYINKVYYWTVDKRATTRDALDAGVDGIMTNYPDVITDVLN
