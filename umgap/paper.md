@@ -86,7 +86,7 @@ website.
 [Documentation]: https://unipept.ugent.be/umgap
 [case studies]: https://unipept.ugent.be/umgap/casestudies
  
-## Methods
+### Methods
 
 UMGAP performs taxonomic profiling of individual reads or read pairs
 in a shotgun metagenomics data set. Results can be summarized for the
@@ -97,7 +97,7 @@ of alternative strategies for every step of the analysis. In this
 section, we chronologically discuss the successive steps of the generic
 pipeline, together with their alternative strategies.
 
-### Protein translation
+#### Protein translation
 
 UMGAP does not profile a read directly at the DNA level. Instead,
 protein fragments translated from the coding regions in the read are
@@ -154,7 +154,7 @@ While this approach might lead to increased sensitivity compared to gene
 prediction, it yields at least a sixfold increase in the data volume
 that needs to be processed in downstream analysis.
 
-### Protein fragmentation
+#### Protein fragmentation
 
 All (partial) proteins that are putatively translated from the read are
 matched against the complete UniProt knowledgebase [@kim;@magrane].
@@ -206,7 +206,7 @@ a read error or a natural variation).
 
 ![Impact of a single nucleotide polymorphism (SNP) on the peptide coverage of a protein fragment. Because tryptic peptides are non-overlapping, each read position is covered by exactly one tryptic peptide. A SNP modifies a single tryptic peptide, but all positions around the SNP covered by the modified peptide are no longer covered (correctly) after matching (53 read positions on average). Because $k$-mers are overlapping, each read position is covered by k peptides, except at the ends of the protein fragments. A SNP modifies k peptides, but apart from reduced peptide coverage around the SNP, only a single codon is no longer covered (correctly) after matching. The redundancy of the overlapping $k$-mers therefore makes up for a reduced impact of SNPs compared to non-overlapping tryptic peptides, at the cost of larger data volumes that need to be processed.\label{snp-impact}](figures/kmer-vs-tryptic/figure.svg){ width=75% }
 
-### Peptide profiling
+#### Peptide profiling
 
 Fragmentation of all partial proteins found in a read yields a list
 of peptides (tryptic peptides or $k$-mers). Each peptide may have an
@@ -256,7 +256,7 @@ profiling.
 
 ![All tryptic peptides found in the UniprotKB (release 2020-04-22), classified by length and associated LCA\* rank. Fractions of peptides (y-axis) across all peptide lengths (left) or per peptide length (right). Short tryptic peptides are more frequently associated with less specific ranks in the NCBI Taxonomy and therefore have a lower information content. Relative taxonomic information content (depth of LCA\* rank in tree of life) is low for short peptides (length 8 and below). Because tryptic peptides of length $k$ are a random sample of all $k$-mers, similar ratios and conclusions are expected should this analysis be repeated for all $k$-mers in UniprotKB across all lengths $k$.\label{peptide-length}](figures/rank-accuracy/figure.svg){ width=90% }
 
-### Peptide filtering
+#### Peptide filtering
 
 Protein fragmentation may yield false positives: peptides that do
 not occur in proteins encoded in the read. Most false positives
@@ -315,7 +315,7 @@ from extended seeds (Figure \ref{seed-extend}).
 
 ![Seed-and-extend strategy for filtering false positive identifications after peptide profiling, with minimum seed size $s=3$ and maximum gap size $g=1$. Successive peptides fragmented from (partial) protein are shown as a sequence of dots. Green dots indicate correct identifications (true positives). Red dots indicate wrong identifications (false positives). Brightness of colored dots indicates depth in the taxonomic tree: dark colors indicate highly specific LCA\* (species level) and light colors indicate nonspecific LCA\*. Grey dots indicate peptides without an associated LCA\*.\label{seed-extend}](figures/seed-extend/figure.svg){ width=75% }
 
-### Read profiling
+#### Read profiling
 
 Previous steps of the pipeline result in a list of taxonomic
 identifications, derived from a (filtered) list of peptides extracted
@@ -375,7 +375,7 @@ ties broken arbitrarily) if the fraction of the number of descendants
 in the child node over the number of descendants in the current node is
 larger than or equal to $f$.
 
-### Summary and visualization
+#### Summary and visualization
 
 Previous steps assign a consensus taxon to each read (pair). The final
 step of the pipeline computes a frequency table of all identifications
@@ -395,7 +395,7 @@ service hosting the visualizations also support shareable links (e.g.
 
 ![Taxonomic profiling by UMGAP as visualized by the Unipept Web API.\label{visualisation}](figures/visualisation.png){ width=90% }
 
-## Results
+### Results
 
 UMGAP implements multiple strategies for each step in the pipeline
 (Figure \ref{outline}), with some strategies also driven by
@@ -415,7 +415,7 @@ Both the parameter sweep and the benchmark were executed on a 2.60GHz 16
 core Intel® Xeon® CPU E5-2650 v2 CPU with 195GB RAM running Debian 9.8
 (stretch).
 
-### Parameter tuning
+#### Parameter tuning
 
 For protein translation we either used gene prediction or six-frame
 translation. Both FGS and FGS++ were used for gene prediction, as
@@ -464,7 +464,7 @@ separately in what follows.
 
 ![Precision and sensitivity of 3900 UMGAP configurations, with tryptic peptide configurations marked in blue and 9-mer configurations marked in orange.\label{parameter-tuning}](figures/kraken-benchmark/digestor-wrapped.svg){ width=75% }
 
-### Tryptic configurations
+#### Tryptic configurations
 
 If we look at the impact of protein translation on the accuracy
 of all 2700 tryptic configurations (Supplementary Figure
@@ -510,7 +510,7 @@ precision or higher sensitivity:
 * **tryptic sensitivity** FGS++, minimum peptide length 9, maximum
   peptide length 45, no rare taxon filtering, MRTL
 
-### 9-mer configurations
+#### 9-mer configurations
 
 When evaluating all 1200 UMGAP configurations that use 9-mer peptide
 fragmentation, the first observation is that seed-and-extend filtering
@@ -565,7 +565,7 @@ configurations:
   low-frequency identifications, seed-and-extend with $s=2$ and $g=0$,
   MRTL
 
-### Benchmark
+#### Benchmark
 
 The six preconfigured UMGAP pipelines selected from the parameter sweep
 analysis were compared with the two best-performing shotgun metagenomics
@@ -647,7 +647,7 @@ Kaiju.
 
 ![Precision and sensitivity evaluated at the species level for ten metagenomics analysis tools and the two simulated metagenomes of the MetaBenchmark. Dots indicating the accuracy metrics for the three replicates of each simulated metagenome are on top of each other, since each replicate was generated for identical proportions of phyla.\label{species-figure}](figures/metabenchmark/species.svg){ width=90% }
 
-## Discussion
+### Discussion
 
 The protein space detour for taxonomic profiling of shotgun metagenomic
 data sets shows to be very promising. Despite our design choices
@@ -670,7 +670,7 @@ be derived from its metatranscriptome, which could be analysed using
 pipelines similar to UMGAP but with an adjusted protein translation
 step.
 
-## Supplementary Tables and Figures
+### Supplementary Tables and Figures
 
  Tool                        Precision   Sensitivity   Specificity      NPV     MCC     Run time
  -------------------------- ----------  ------------  ------------  -------  ------  -----------
