@@ -1,36 +1,5 @@
 ## UMGAP: the Unipept MetaGenomics Analysis Pipeline
 
-* **Authors:**
-Felix Van der Jeugt[^1] ([ID](https://orcid.org/0000-0003-3168-927X)),
-Rien Maertens$^1$ ([ID](https://orcid.org/0000-0002-2927-3032)),
-Aranka Steyaert[^2] ([ID](https://orcid.org/0000-0002-0364-9863)),
-Pieter Verschaffelt$^{1,}$ [^3] ([ID](https://orcid.org/0000-0002-6675-1048)),
-Caroline De Tender$^{1,}$ [^4] ([ID](https://orcid.org/0000-0003-4804-1381)),
-Peter Dawyndt$^1$ ([ID](https://orcid.org/0000-0002-1623-9070)),
-and Bart Mesuere$^{1,3}$ ([ID](https://orcid.org/0000-0003-0610-3441)).
-
-[^1]: Ghent University, Department of Applied Mathematics, Computer Science and Statistics; unipept@ugent.be
-[^2]: Ghent University - imec, Department of Information Technology, IDLab
-[^3]: VIB-UGent Center for Medical Biotechnology
-[^4]: Flanders Research Institute for Agriculture, Fisheries and Food, Plant Sciences Unit
-
-* **Contact:** unipept@ugent.be
-
-* **Abstract:** Shotgun metagenomics is now commonplace to gain
-insights into communities from diverse environments, but fast,
-memory-friendly, and accurate tools are needed for deep taxonomic
-analysis of the metagenome data. To meet this need we developed UMGAP,
-a highly versatile open source command line tool implemented in Rust
-for taxonomic profiling of shotgun metagenomes. It differs from
-state-of-the-art tools in its use of protein code regions identified
-in short reads for robust taxonomic identifications, a broad-spectrum
-index that can identify both archaea, bacteria, eukaryotes and viruses,
-a non-monolithic design, and support for interactive visualizations of
-complex biodiversities.
-
-* **Keywords:** shotgun metagenomics, biodiversity analysis, taxonomic
-profiling
-
 ### Introduction
 
 Biodiversity, in many environments, is formed by complex communities of

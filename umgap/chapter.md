@@ -1,48 +1,54 @@
 # The Unipept Metagenomics Analysis Pipeline
 
-_Dit hoofdstuk omschrijft eerst de structuur en samenstelling van
-de *pipeline*. De verschillende commando's en hun interface worden
-overlopen. Daarna volgt een bespreking van het resultaat, zoals
-gepubliceerd._
+_This chapter starts with describing the intent and structure of the
+pipeline. After, it includes a report on the context and results.
+Finally, it provides an extensive list of the various tools in the
+pipeline, explaining their usage and some of the algorithms they use._
 
-## Opzet en structuur
+## Intent and structure
 
-De analyse van *Shotgun Metagenomics data* kan op twee wijzen
-opgesplitst worden. Enerzijds is de data traditioneel opgeslagen in
-FASTA- of FASTQ-bestanden. Beide vormen lange sequenties van *reads*.
-Elk van deze reads kan individueel verwerkt worden. Slechts na de
-verwerking van de individuele reads komen ze met elkaar in aanraking,
-tijdens de aggregatie van de hele dataset, bijvoorbeeld om een
-frequentietabel op te stellen. Dit suggereert een opsplitsing per
-*read*. Anderzijds gebeurt ook de verwerking in een aantal logische
-stappen, dewelke elke *read* zal doormaken.
+The analysis of shotgun metagenomics data can be subdivided in two
+dimensions. First, as a sequence of individual reads to be analysed, and
+second, as a sequence of steps each read is analysed by.
 
-De eerste manier van opsplitsing heeft als groot voordeel de
-mogelijkheid tot parallellisatie. Op triviale wijze kan elke *read* in
-een aparte *thread* verwerkt worden. Op die manier kan de volledige
-kracht van de uitvoerende machine gebruikt worden.
+Shotgun metagenomics data is traditionally saved in FASTA and FASTQ
+files. These formats are long sequences of reads, each with a header and
+data. In biodiversity analysis, each of these reads can be processed
+individually. After fully processing individual reads, for final
+aggregation, the reads must be brought together again, for instance to
+create a frequency table. This suggests subdividing the data per read.
 
-De tweede manier van opsplitsing kan echter de verschillende stappen
-apart beter optimaliseren. Elke stap kan specialiseren in zijn taak
-en krijgt de mogelijkheid om een gemeenschappelijke initialisatie te
-delen over alle *reads* die hij zal verwerken. Daarbij kunnen alle
-stappen gelijktijdig in eigen process uitgevoerd worden, waarbij *reads*
-doorgegeven worden aan het volgende process in de verwerking zodra dit
-process zijn taak volbracht heeft. Tenslotte biedt zo'n opsplitsing de
-mogelijkheid om de verschillende stappen in te wisselen om delen van de
-verwerking te wijzigen.
+This dimension of subdivision gives the opportunity for easy
+parallellisation, following a map-reduce [TODO ref] strategy. Each
+read can be processed in a separate thread, with little to no
+parallellisation overhead. This allows realisation of the full power of
+the executing machine.
 
-De UMGAP koos voor de tweede manier van opsplitsen. Elke logische stap
-werd geprogrammeerd als een apart subcommando van de `umgap` executable,
-op basis van een gedeelde broncode. De processen worden samengebracht
-in één ketting van commando's met behulp van UNIX pipes, die met elkaar
-communiceren via standaard invoer en standaar uitvoer in FASTA-achtige
-formaten.
+The other dimension of subdivision, as a sequence of analysis steps,
+allows for better optimalisation of each step. After all, a program
+given a single task can specialize and can share the cost of a possibly
+slow initilization step over all reads it will process. Parallellization
+is still possible with this subdivision, though less efficient, by
+running each step in a separate process, passing along reads after a
+process has finished its task. However, this manner of subdivision has
+the added benifit of modularity: with analysis steps as a top-level
+concept, steps can easily be added, skipped and exchanged to modify the
+type of analysis.
 
-## Componenten
+The UMGAP has chosen the second dimension of subdivision as primary
+subdivision. Each analysis step was programmed as a separate subcommand
+of the `umgap` executable, sharing a single source code tree. Each step
+runs in a process, chained together using UNIX pipes, passing the reads
+via standard output and standard input in FASTA-like formats.
 
-_Overlopen van de componenten en hun interface. Samenhang moet ik hier
-niet meer overlopen, die komt in de paper erna._
+## [paper](paper.md){.include}
+
+## Analysis tools
+
+*A pipeline is compromised of a series of tools. This section contains
+an exhaustive list of the available tools. For each tool, it describes
+the intended use, shows some examples, and finally lists the available
+options to change its behaviour.*
 
 ### [fastq2fasta](components/fastq2fasta.md){.include}
 
@@ -67,5 +73,3 @@ niet meer overlopen, die komt in de paper erna._
 ### [reporting](components/reporting.md){.include}
 
 ### [taxonomy](components/taxonomy.md){.include}
-
-## [paper](paper.md){.include}
