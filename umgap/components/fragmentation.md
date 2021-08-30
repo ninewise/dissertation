@@ -1,12 +1,15 @@
 ### Fragmentation of proteins
 
-De UMGAP maakt gebruik van *exact matching* op korte eiwitfragmenten
-om delen van *reads* te kunnen identificeren en zodoende een conclusie
-te trekken over de volledige *read*. Hiervoor worden de tools `umgap
-prot2tryp` en `umgap prot2kmer` voorzien. De eerste voorziet een *in
-silico tryptic digest* om de eiwitten op te splitsen in fragmenten van
-variabele lengte, op basis van een vast patroon. De tweede zal alle
-(overlappende) fragmenten van een vaste lengte opbrengen.
+The UMGAP uses exact string matching on short protein fragments to
+identify parts of reads and aggregate those into a conclusion for the
+whole read. The `umgap prot2tryp` and `umgap prot2kmer` provide such
+fragmentation.
+
+The first splits protein sequence into variable length peptides, based
+on a pattern in the sequence. The default pattern is an *in silico*
+tryptic digest, as the UMGAP originates in a metaproteomics context,
+where trypsine is *de facto* standard. The latter yields all overlapping
+peptides of a fixed length, called *k*-mers.
 
 #### Usage
 
@@ -16,7 +19,7 @@ peptides resulting from the fragmentation are written in FASTA format to
 standard output, with multiple peptides per FASTA header, separated by
 newlines.
 
-```sh
+```shell
 $ cat long.fa
 >header1
 AYKKAGVSGHVWQSDGITNCLLRGLTRVKEAVANRDSGNGYINKVYYWTVDKRATTRDALDAGVDGIMTNYPDVITDVLN
@@ -78,4 +81,3 @@ default.
 
 `-k / --length k`
   ~ The *k*-mer length [default: 9]
-

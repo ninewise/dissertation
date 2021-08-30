@@ -57,7 +57,7 @@ options to change its behaviour.*
 
 ### [translate](components/translate.md){.include}
 
-### [digestion](components/digestion.md){.include}
+### [fragmentation](components/fragmentation.md){.include}
 
 ### [filter](components/filter.md){.include}
 
