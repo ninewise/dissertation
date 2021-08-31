@@ -1,11 +1,15 @@
 ### Reading frame selection
 
-In het geval we de UMGAP toepassen op transcriptonomics data, is vooraf
-niet gekend hoe we deze reads moeten vertalen naar eiwitten. We weten
-echter wel dat slechts 1 van de 6 mogelijke vertalingen de correcte zal
-zijn. Daarom werd de `umgap bestof` tool ontwikkeld. Dit commando zal,
-gegeven de geidentificeerde taxa voor aantal vertalingen voor eenzelfde
-read, de beste identificaties (en dus de correcte vertaling) selecteren.
+The UMGAP, intended for metagenomics analysis, has also been
+experimentally applied to transcriptomics data. While very similar
+to metagenomics data, we have additional knowledge: every read will
+consist completely of coding RNA. This implies we don't have to do
+gene prediction, we should just translate the whole read to a protein
+fragment. As the correct reading frame is unknown, the UMGAP choses to
+translate all six frames, process each, and finally pick the correct
+among the six frames. This last step is performed by `umgap bestof`.
+This command will, given the taxonomic identifications for any number of
+translations of a read, pick the best identifications.
 
 #### Usage
 
@@ -16,7 +20,7 @@ and written to standard output. If the input is a series of identified
 taxon IDs for each of the 6 translations of a read, the output will most
 likely come from the actual coding frame.
 
-```sh
+```shell
 $ cat dna.fa
 >header1
 CGCAGAGACGGGTAGAACCTCAGTAATCCGAAAAGCCGGGATCGACCGCCCCTTGCTTGCAGCCGGGCACTACAGGACCC
