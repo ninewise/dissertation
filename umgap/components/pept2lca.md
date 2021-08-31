@@ -1,20 +1,24 @@
 ### Identifying peptides
 
-De kerntaak van de UMGAP is het identificeren van peptiden. Desondanks
-is dit een ogenschijnlijk eenvoudige stap. Het `umgap pept2lca` commando
-zal, gegeven een indexbestand, peptiden opzoeken in dit bestand en het
-overeenkomstige taxon-ID (standaard de lowerst common ancestor van
-alle eiwitte in de brondatabank waar we dit peptide in terugvinden)
-teruggeven.
+At the core of the UMGAP is the taxonomic identification of peptides.
+The interface of the command is surprisingly easy: given an index file,
+`umgap pept2lca` will search for each peptide on its input in the index
+and write out the corresponding taxon ID. In our indices, a peptide maps
+on the taxon ID which is the lowest common ancestor of all taxa whose
+protein contains this peptide.
 
-Het opzoeken van peptiden in de index is echter de traagste stap van
-de hele *pipeline*. Dit commando voorziet dan ook vlaggen om de index
-in het geheugen te laden (om er sneller toegang toe te hebben) en
-is intern geparallelliseerd. Daarnaast zijn er ook 2 gecombineerde
-commando's, `umgap prot2tryp2lca` en `umgap prot2kmer2lca` die dit
-commando samenvoegen met de `umgap prot2pept` en `umgap prot2kmer`
-commando's om de *overhead* komende bij het uitschrijven van de peptiden
-te vermijden.
+However, despite the simple principle, searching for peptides in the
+index is the computationally hardest step in the pipeline. Optimizing
+the `pept2lca` command was one of the major hurdles during the
+development of the UMGAP. It is now parallellized internally and
+provides several options, such as the option to preload the index in
+memory, to fully use the available computing power.
+
+The UMGAP also provides two combined commands, `umgap prot2tryp2lca` and
+`umgap prot2kmer2lca`, appending this command after `umgap prot2pept`
+and `umgap prot2kmer`, respectively. These commands avoid the overhead
+of printing and parsing the peptides between fragmentation and
+identification steps.
 
 #### Usage
 
@@ -24,7 +28,7 @@ For all three commands, the input is given in a FASTA format on
 we match tryptic peptides on their lowest common ancestor in the NCBI
 taxonomy.
 
-```sh
+```shell
 $ cat input.fa
 >header1
 AAALTER
@@ -39,7 +43,7 @@ This selfsame result could come from the combined `prot2tryp2lca`
 command, which accepts only a single sequence per FASTA header. This
 sequence in split in tryptic peptides before index lookup.
 
-```sh
+```shell
 $ cat input.fa
 >header1
 AAALTERENFVYLAK
@@ -52,7 +56,7 @@ $ umgap prot2tryp2lca tryptic-peptides.index < input.fa
 By default, sequences not found in the index are ignored. Using the -o
 (--on-on-one) flag, they are mapped to 0, instead.
 
-```sh
+```shell
 $ cat input.fa
 >header1
 NOTATRYPTICPEPTIDE
@@ -67,7 +71,7 @@ The `prot2kmer2lca` command follows a similar interface to the
 `prot2tryp2lca` command, but uses the overlapping *k*-mers from the
 `prot2kmer` command.
 
-```
+```shell
 $ cat input.fa
 >header1
 DAIGDVAKAYKKAG*S
