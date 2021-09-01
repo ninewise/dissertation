@@ -1,4 +1,4 @@
-# Unipept Metagenomics Analysis Pipeline
+# Unipept Metagenomics Analysis Pipeline {.unnumbered}
 
 ## Notities
 
@@ -15,8 +15,6 @@
 * Dingen stelen bij https//github.ugent.be/bmesuere/thesis
 
 * Detailplanning opstellen (indienen, interne, publieke)
-
-* Nummering toevoegen aan hoofdstukken
 
 ### Planning
 
