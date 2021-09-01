@@ -10,6 +10,7 @@ toc: true
 toc-depth: 2
 header-includes:
 - \usepackage{booktabs}
+- \usepackage[ruled,vlined,linesnumbered]{algorithm2e}
 colorlinks: true
 lang: en-US
 link-citations: true

@@ -1,4 +1,4 @@
-### Filtering van taxanomische identificaties op basis van hun omgeving
+### Filtering taxonomic identifications based on location
 
 Bij het opzoeken van peptiden kunnen, door mutaties of
 read-errors, toevalstreffers op foute taxa vallen. Deze zouden de
@@ -26,7 +26,65 @@ overloping van de lijst van hits, tijdens dewelke een verzameling
 van kandidaat extended seeds wordt bijgehouden. Het algoritme wordt
 hieronder in pseudocode omschreven.
 
-TODO pseudocode
+\begin{algorithm}[h]
+  \SetAlgoLined
+  \DontPrintSemicolon
+  \KwData{The minimum seed size $s$, the maximum gap size $g$, and a list of taxa $r$.}
+  \KwResult{A list of ranges marking the selected taxa $l$.}
+  \SetKwData{LastTid}{last tid}
+  \SetKwData{SameTid}{same tid}
+  \SetKwData{SameMax}{same max}
+  \SetKwData{Start}{start}
+  \SetKw{And}{and}
+  \BlankLine
+  $l \longleftarrow \emptyset$\;
+  $b \longleftarrow 0$ \tcp{begin of current extended seed}
+  $e \longleftarrow 1$ \tcp{end of current extended seed}
+  \LastTid $\longleftarrow r[b]$\;
+  \SameTid $\longleftarrow 1$\;
+  \SameMax $\longleftarrow 1$\;
+  \While{$e < \mathtt{length}(t)$}{
+    \uIf{\LastTid $= r[e]$}{
+      \tcp{same taxon ID as last, add to seed}
+      \SameTid $\longleftarrow$ \SameTid + 1\;
+      $e \longleftarrow e + 1$\;
+    }
+    \uElseIf{\LastTid $= 0$ \And \SameTid $> g$}{
+      \tcp{gap larger than maximum gap size}
+      \If{\SameMax $\ge s$}{
+        \tcp{extended seed contains seed}
+        append $[b, e - \text{\SameTid}[$ to $l$\;
+      }
+      $b \longleftarrow e$\;
+      $e \longleftarrow e + 1$\;
+      \LastTid $\longleftarrow r[b]$\;
+      \SameTid $\longleftarrow 1$\;
+      \SameMax $\longleftarrow 1$\;
+    }
+    \uElseIf{\LastTid $= 0$ \And $e - b =$ \SameTid}{
+      \tcp{unidentified taxon at start, do not include it}
+      $e \longleftarrow e + 1$\;
+      $b \longleftarrow e$\;
+    }
+    \Else{
+      \tcp{change of taxon at current extended seed end}
+      \If{\LastTid $\not= 0$}{
+        \SameMax $\longleftarrow \mathtt{max}(\text\SameMax, \text\SameTid)$\;
+      }
+      \LastTid $\longleftarrow r[e]$\;
+      \SameTid $\longleftarrow 1$\;
+      $e \longleftarrow e + 1$\;
+    }
+  }
+  \If{\SameMax $\ge s$}{
+    \tcp{final extended seed contains seed}
+    \If{\LastTid $= 0$}{
+      $e \longleftarrow e - \text\SameTid$\;
+    }
+    append $[b, e[$ to $l$\;
+  }
+\caption{The seed-extend algorithm to find regions of consecutive identifications.}
+\end{algorithm}
 
 #### Usage
 
