@@ -1,10 +1,10 @@
 # The Unipept Metagenomics Analysis Pipeline
 
-_This chapter starts with describing the intent and structure of the
+This chapter starts with describing the intent and structure of the
 pipeline (\ref{section:intent}). After, it includes a report on the
 context and results (\ref{section:umgap}). Finally, it provides an
 extensive list of the various tools in the pipeline, explaining their
-usage and some of the algorithms they use (\ref{section:tools})._
+usage and some of the algorithms they use (\ref{section:tools}).
 
 ## Intent and structure
 \label{section:intent}
@@ -48,10 +48,10 @@ via standard output and standard input in FASTA-like formats.
 ## Analysis tools
 \label{section:tools}
 
-*A pipeline is compromised of a series of tools. This section contains
+A pipeline is compromised of a series of tools. This section contains
 an exhaustive list of the available tools. For each tool, it describes
 the intended use, shows some examples, and finally lists the available
-options to change its behaviour.*
+options to change its behaviour.
 
 ### [fastq2fasta](components/fastq2fasta.md){.include}
 
