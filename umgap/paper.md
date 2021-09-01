@@ -1,4 +1,4 @@
-## UMGAP: the Unipept MetaGenomics Analysis Pipeline
+## Context and results
 \label{section:umgap}
 
 ### Introduction
@@ -243,7 +243,9 @@ their amino acid sequence. The sum of the integers along this path
 corresponds the identifier of the LCA\*. Where tries are ordered tree
 data structures that take advantage of common prefixes to reduce the
 memory footprint, FSTs are even more compressed by taking both common
-prefixes and suffixes into account (Supplementary Figure \ref{fst}).
+prefixes and suffixes into account (Figure \ref{fst}).
+
+![Finite state transducer mapping all weekdays to their index number (monday $=1$, tuesday $=2$, ...). Integer labels are not shown on edges with zero weight. Adding weights along the path spelled by the letters of the word Thursday, from the initial state on the left (indicated by a triangle) to the final state on the right (indicated by a double circle), yields $2+1+1 = 4$. So, Thursday is the fourth day in the week.\label{fst}](figures/day-index/figure.svg){ width=75% }
 
 For UniProt release 2020-04, a 19.3 GiB FST-index maps all 1.2 billion
 tryptic peptides to their LCA\* and a 132.9 GiB FST-index maps all 17
@@ -466,35 +468,41 @@ separately in what follows.
 
 #### Tryptic configurations
 
-If we look at the impact of protein translation on the accuracy
-of all 2700 tryptic configurations (Supplementary Figure
-\ref{tryptic_translator}), the sensitivity obtained with FGS is slightly
-better than with FGS++. This may hint on implementation issues with
-FGS+ (a parallel implementation of FGS) or downstream improvements on
-FGS after forking FGS+. FGS+ and FGS++ are however faster than FGS.
-Six-frame translation marginally improves the sensitivity of the tryptic
-configurations, at the cost of a steep drop in precision if spurious
-identifications resulting from incorrect translations are not properly
-filtered after peptide profiling. As it also yields much more work
-during the peptide profiling step, combining six-frame translation with
-tryptic peptides proves less favorable.
+If we look at the impact of protein translation on the accuracy of all
+2700 tryptic configurations (Figure \ref{tryptic_translator}), the
+sensitivity obtained with FGS is slightly better than with FGS++. This
+may hint on implementation issues with FGS+ (a parallel implementation
+of FGS) or downstream improvements on FGS after forking FGS+. FGS+ and
+FGS++ are however faster than FGS. Six-frame translation marginally
+improves the sensitivity of the tryptic configurations, at the cost
+of a steep drop in precision if spurious identifications resulting
+from incorrect translations are not properly filtered after peptide
+profiling. As it also yields much more work during the peptide profiling
+step, combining six-frame translation with tryptic peptides proves less
+favorable.
+
+![Precision and sensitivity of 2700 tryptic UMGAP configurations, classified per protein translation method: configurations using FGS gene predictions marked in cyan, configurations using FGS++ gene predictions marked in orange and configurations using six-frame translations (6FT) marked in blue.\label{tryptic_translator}](figures/kraken-benchmark/tryptic_translator-wrapped.svg){ width=75% }
 
 Shorter peptides have a higher probability of random hits in a protein
-database. With tryptic peptides, it is therefore recommended to discard
-very short peptides. In general, we advise to only retain tryptic
-peptides with a length of at least 9 amino acids (Supplementary Figure
+database. With tryptic peptides, it is therefore recommended to
+discard very short peptides. In general, we advise to only retain
+tryptic peptides with a length of at least 9 amino acids (Figure
 \ref{tryptic_length}). We have also investigated the impact of a maximum
 peptide length cutoff on the accuracy of the predictions, but the effect
 is negligible except for a marginal gain in the speed of the pipeline.
 
+![Precision and sensitivity of 2700 tryptic UMGAP configurations, classified per minimal peptide length.\label{tryptic_length}](figures/kraken-benchmark/tryptic_length-wrapped.svg){ width=75% }
+
 Tryptic configurations effectively profile only a limited number of
 peptides per read, such that filtering taxa after peptide profiling
 must be done carefully to avoid losing valuable information. Discarding
-taxa that have only been assigned to a single peptide guarantees high
-precision at the cost of a steep drop in sensitivity (Supplementary
-Figure \ref{tryptic_freq}). This shows that tryptic configurations often
+taxa that have only been assigned to a single peptide guarantees
+high precision at the cost of a steep drop in sensitivity (Figure
+\ref{tryptic_freq}). This shows that tryptic configurations often
 profile reads based on a single peptide, increasing the risk of spurious
 predictions.
+
+![Precision and sensitivity of 2700 tryptic UMGAP configurations, classified according to filtering of low-frequency identifications.\label{tryptic_freq}](figures/kraken-benchmark/tryptic_freq-wrapped.svg){ width=75% }
 
 The choice of read profiling method has no significant impact on the
 performance of the pipelines, again because of the limited number of
@@ -514,37 +522,50 @@ precision or higher sensitivity:
 
 When evaluating all 1200 UMGAP configurations that use 9-mer peptide
 fragmentation, the first observation is that seed-and-extend filtering
-has a positive effect on both precision and sensitivity (Supplementary
-Figure \ref{kmer_seedornot}). This filtering technique is not useful
-when working with tryptic peptides, but proves to be highly effective
+has a positive effect on both precision and sensitivity (Figure
+\ref{kmer_seedornot}). This filtering technique is not useful when
+working with tryptic peptides, but proves to be highly effective
 for discarding unreliable identifications after peptide profiling
 when working with 9-mers. As a result, we recommend to always apply
 seed-and-extend filtering in 9-mer configurations, and we will only
 focus on these configurations in any further analysis.
 
+![Precision and sensitivity of 1200 UMGAP configurations using 9-mer peptide fragmentation, with configurations that don’t use seed-and-extend filtering marked in blue and configurations that do use seed-and-extend filtering marked in orange.\label{kmer_seedornot}](figures/kraken-benchmark/kmer_seedornot-wrapped.svg){ width=75% }
+
 With respect to protein translation method, the same observations
-concerning accuracy hold as with the tryptic configurations
-(Supplementary Figure \ref{seedextend_translator}). Sensitivity obtained
-with FGS is slightly better than with FGS++. The sensitivity gain that
-can be obtained with six-frame translation is more pronounced than with
-the tryptic configurations, which may make up for the extra work during
-the peptide profiling step. However, effective filtering of spurious
+concerning accuracy hold as with the tryptic configurations (Figure
+\ref{seedextend_translator}). Sensitivity obtained with FGS is slightly
+better than with FGS++. The sensitivity gain that can be obtained
+with six-frame translation is more pronounced than with the tryptic
+configurations, which may make up for the extra work during the
+peptide profiling step. However, effective filtering of spurious
 identifications after peptide profiling is still needed in order to
 avoid poor precision.
 
+![Precision and sensitivity of 1125 UMGAP configurations using 9-mer peptide fragmentation in combination with seed-and-extend filtering, classified per protein translation method: configurations using FGS gene predictions marked in cyan, configurations using FGS++ gene predictions marked in orange and configurations using six-frame translations (6FT) marked in blue.\label{seedextend_translator}](figures/kraken-benchmark/seedextend_translator-wrapped.svg){ width=75% }
+
 Gene prediction is best combined with minimum seed size $s = 2$
-for optimal sensitivity and with minimum seed size $s = 3$ for the
-best trade-off between precision and sensitivity (Supplementary
-Figure \ref{seedextend_translator_seedsize}). In combination
-with six-frame translation, better trade-offs between precision
-and sensitivity are achieved with higher minimum seed size $s$.
-With gene prediction the low-frequency identifications filter has
-a higher impact than the chosen read profiling method, whereas
-the opposite is true for six-frame translation (Supplementary
-Figures \ref{seedextend_fgs_profiler}, \ref{seedextend_fgs_freq},
-\ref{seedextend_6ft_profiler}, \ref{seedextend_6ft_freq}). In both
-cases, the maximum gap size $g$ has no significant impact on the
-accuracy (data not shown).
+for optimal sensitivity and with minimum seed size $s = 3$ for
+the best trade-off between precision and sensitivity (Figure
+\ref{seedextend_translator_seedsize}). In combination with six-frame
+translation, better trade-offs between precision and sensitivity are
+achieved with higher minimum seed size $s$. With gene prediction
+the low-frequency identifications filter has a higher impact than
+the chosen read profiling method, whereas the opposite is true
+for six-frame translation (Figures \ref{seedextend_fgs_profiler},
+\ref{seedextend_fgs_freq}, \ref{seedextend_6ft_profiler},
+\ref{seedextend_6ft_freq}). In both cases, the maximum gap size $g$ has
+no significant impact on the accuracy (data not shown).
+
+![Precision and sensitivity of 750 UMGAP configurations using 9-mer peptide fragmentation in combination with seed-and-extend filtering, classified per minimal seed size and protein translation method. Gene prediction with FGS++ has been excluded.\label{seedextend_translator_seedsize}](figures/kraken-benchmark/seedextend_translator_seedsize-wrapped.svg){ width=75% }
+
+![Precision and sensitivity of 375 UMGAP configurations using 9-mer peptide fragmentation, seed-and-extend filtering and gene prediction, classified per read profiling method.\label{seedextend_fgs_profiler}](figures/kraken-benchmark/seedextend_fgs_profiler-wrapped.svg){ width=75% }
+
+![Precision and sensitivity of 375 UMGAP configurations using 9-mer peptide fragmentation, seed-and-extend filtering and gene prediction, classified per filtering of low-frequency identifications.\label{seedextend_fgs_freq}](figures/kraken-benchmark/seedextend_fgs_freq-wrapped.svg){ width=75% }
+
+![Precision and sensitivity of 375 UMGAP configurations using 9-mer peptide fragmentation, seed-and-extend filtering and six-frame translation, classified per read profiling method.\label{seedextend_6ft_profiler}](figures/kraken-benchmark/seedextend_6ft_profiler-wrapped.svg){ width=75% }
+
+![Precision and sensitivity of 375 UMGAP configurations using 9-mer peptide fragmentation, seed-and-extend filtering and six-frame translation, classified per filtering of low-frequency identifications.\label{seedextend_6ft_freq}](figures/kraken-benchmark/seedextend_6ft_freq-wrapped.svg){ width=75% }
 
 Based on the above observations we have selected four 9-mer
 configurations that represent different accuracy trade-offs. Ranging in
@@ -618,16 +639,48 @@ reads not assigned to any taxon.
  UMGAP max sens.           80.8%        77.7%        63.3%   58.9%   40.4%     31.1m     132.9GB
  CLARK                     71.4%       100.0%        27.9%  100.0%   44.6%     20.5m     342.3GB
 
- Table: MetaBenchmark performance metrics for ten metagenomics
- analysis tools sorted by precision. Average numbers for the six
- simulated data sets are given. Accuracy evaluated at the species
- level and reported as sensitivity, specificity, precision (positive
- predictive value), negative predictive value (NPV) and Matthew’s
- Correlation Coefficient (MCC). Index size reported for CLARK is the
- sum of the phylum (46.6GiB), genus (149.5GiB) and species (146.3GiB)
- indexes. Performance metrics at genus and phylum ranks can be found
- in Supplementary Table \ref{genus-table} and Supplementary Table
- \ref{phylum-table}.\label{species-table}
+ Table: MetaBenchmark performance metrics for ten metagenomics analysis
+ tools sorted by precision. Average numbers for the six simulated
+ data sets are given. Accuracy evaluated at the species level and
+ reported as sensitivity, specificity, precision (positive predictive
+ value), negative predictive value (NPV) and Matthew’s Correlation
+ Coefficient (MCC). Index size reported for CLARK is the sum of the
+ phylum (46.6GiB), genus (149.5GiB) and species (146.3GiB) indexes.
+ Performance metrics at genus and phylum ranks can be found in Table
+ \ref{genus-table} and Table \ref{phylum-table}.\label{species-table}
+
+ Tool                        Precision   Sensitivity   Specificity      NPV     MCC     Run time
+ -------------------------- ----------  ------------  ------------  -------  ------  -----------
+ UMGAP tryptic precision        99.87%         5.19%        99.97%   20.97%  10.37%     7.29 min
+ Kraken                         99.59%        87.78%        98.60%   67.39%  76.07%   227.99 min
+ UMGAP max precision            99.56%        63.49%        98.89%   40.86%  50.22%    17.28 min
+ Kraken 2                       98.64%        89.10%        95.40%   70.02%  76.17%     2.15 min
+ UMGAP high precision           99.08%        73.24%        97.40%   48.63%  58.05%    31.59 min
+ Kaiju                          99.04%        80.49%        97.02%   56.51%  65.62%   314.55 min
+ UMGAP tryptic sensitivity      98.14%        25.62%        98.12%   25.36%  23.62%     6.37 min
+ UMGAP high sensitivity         93.78%        85.81%        82.38%   65.20%  63.42%    31.83 min
+ UMGAP max sensitivity          81.58%       100.00%        54.58%  100.00%  66.72%    32.41 min
+ CLARK                          70.76%       100.00%         8.97%  100.00%  25.19%    22.27 min
+ -----------------------------------------------------------------------------------------------
+
+ Table: The MetaBenchmark performance metrics for ten metagenomics analysis tools at genus level.\label{genus-table}
+
+
+ Tool                        Precision   Sensitivity   Specificity      NPV     MCC     Run time
+ -------------------------- ----------  ------------  ------------  -------  ------  -----------
+ UMGAP tryptic precision       100.00%         6.10%       100.00%   21.03%  11.32%     7.27 min
+ Kraken                         99.98%        88.95%        99.92%   69.35%  78.49%   223.16 min
+ UMGAP max precision            99.99%        73.50%        99.96%   48.55%  59.71%    17.08 min
+ Kraken 2                       99.99%        91.08%        99.97%   73.70%  81.91%     2.14 min
+ UMGAP high precision           99.96%        83.02%        99.88%   59.56%  70.25%    31.74 min
+ Kaiju                          99.96%        84.32%        99.88%   61.47%  71.92%   317.04 min
+ UMGAP tryptic sensitivity      99.69%        30.77%        99.62%   26.55%  28.24%     6.40 min
+ UMGAP high sensitivity         94.72%        93.35%        83.48%   79.83%  75.68%    31.85 min
+ UMGAP max sensitivity          81.50%       100.00%        37.88%  100.00%  55.56%    32.52 min
+ CLARK                          74.28%       100.00%         7.87%  100.00%  24.17%    22.39 min
+ -----------------------------------------------------------------------------------------------
+
+ Table: The MetaBenchmark performance metrics for ten metagenomics analysis tools at phylum level.\label{phylum-table}
 
 In terms of precision the UMGAP tryptic precision configuration
 marginally surpasses Kraken, with the UMGAP max/high precision
@@ -669,60 +722,3 @@ both the biodiversity and the functional capacity of a sample could also
 be derived from its metatranscriptome, which could be analysed using
 pipelines similar to UMGAP but with an adjusted protein translation
 step.
-
-### Supplementary Tables and Figures
-
- Tool                        Precision   Sensitivity   Specificity      NPV     MCC     Run time
- -------------------------- ----------  ------------  ------------  -------  ------  -----------
- UMGAP tryptic precision        99.87%         5.19%        99.97%   20.97%  10.37%     7.29 min
- Kraken                         99.59%        87.78%        98.60%   67.39%  76.07%   227.99 min
- UMGAP max precision            99.56%        63.49%        98.89%   40.86%  50.22%    17.28 min
- Kraken 2                       98.64%        89.10%        95.40%   70.02%  76.17%     2.15 min
- UMGAP high precision           99.08%        73.24%        97.40%   48.63%  58.05%    31.59 min
- Kaiju                          99.04%        80.49%        97.02%   56.51%  65.62%   314.55 min
- UMGAP tryptic sensitivity      98.14%        25.62%        98.12%   25.36%  23.62%     6.37 min
- UMGAP high sensitivity         93.78%        85.81%        82.38%   65.20%  63.42%    31.83 min
- UMGAP max sensitivity          81.58%       100.00%        54.58%  100.00%  66.72%    32.41 min
- CLARK                          70.76%       100.00%         8.97%  100.00%  25.19%    22.27 min
- -----------------------------------------------------------------------------------------------
-
- Table: The MetaBenchmark performance metrics for ten metagenomics analysis tools at genus level.\label{genus-table}
-
-
- Tool                        Precision   Sensitivity   Specificity      NPV     MCC     Run time
- -------------------------- ----------  ------------  ------------  -------  ------  -----------
- UMGAP tryptic precision       100.00%         6.10%       100.00%   21.03%  11.32%     7.27 min
- Kraken                         99.98%        88.95%        99.92%   69.35%  78.49%   223.16 min
- UMGAP max precision            99.99%        73.50%        99.96%   48.55%  59.71%    17.08 min
- Kraken 2                       99.99%        91.08%        99.97%   73.70%  81.91%     2.14 min
- UMGAP high precision           99.96%        83.02%        99.88%   59.56%  70.25%    31.74 min
- Kaiju                          99.96%        84.32%        99.88%   61.47%  71.92%   317.04 min
- UMGAP tryptic sensitivity      99.69%        30.77%        99.62%   26.55%  28.24%     6.40 min
- UMGAP high sensitivity         94.72%        93.35%        83.48%   79.83%  75.68%    31.85 min
- UMGAP max sensitivity          81.50%       100.00%        37.88%  100.00%  55.56%    32.52 min
- CLARK                          74.28%       100.00%         7.87%  100.00%  24.17%    22.39 min
- -----------------------------------------------------------------------------------------------
-
- Table: The MetaBenchmark performance metrics for ten metagenomics analysis tools at phylum level.\label{phylum-table}
-
-![Finite state transducer mapping all weekdays to their index number (monday $=1$, tuesday $=2$, ...). Integer labels are not shown on edges with zero weight. Adding weights along the path spelled by the letters of the word Thursday, from the initial state on the left (indicated by a triangle) to the final state on the right (indicated by a double circle), yields $2+1+1 = 4$. So, Thursday is the fourth day in the week.\label{fst}](figures/day-index/figure.svg){ width=75% }
-
-![Precision and sensitivity of 2700 tryptic UMGAP configurations, classified per protein translation method: configurations using FGS gene predictions marked in cyan, configurations using FGS++ gene predictions marked in orange and configurations using six-frame translations (6FT) marked in blue.\label{tryptic_translator}](figures/kraken-benchmark/tryptic_translator-wrapped.svg){ width=75% }
-
-![Precision and sensitivity of 2700 tryptic UMGAP configurations, classified per minimal peptide length.\label{tryptic_length}](figures/kraken-benchmark/tryptic_length-wrapped.svg){ width=75% }
-
-![Precision and sensitivity of 2700 tryptic UMGAP configurations, classified according to filtering of low-frequency identifications.\label{tryptic_freq}](figures/kraken-benchmark/tryptic_freq-wrapped.svg){ width=75% }
-
-![Precision and sensitivity of 1200 UMGAP configurations using 9-mer peptide fragmentation, with configurations that don’t use seed-and-extend filtering marked in blue and configurations that do use seed-and-extend filtering marked in orange.\label{kmer_seedornot}](figures/kraken-benchmark/kmer_seedornot-wrapped.svg){ width=75% }
-
-![Precision and sensitivity of 1125 UMGAP configurations using 9-mer peptide fragmentation in combination with seed-and-extend filtering, classified per protein translation method: configurations using FGS gene predictions marked in cyan, configurations using FGS++ gene predictions marked in orange and configurations using six-frame translations (6FT) marked in blue.\label{seedextend_translator}](figures/kraken-benchmark/seedextend_translator-wrapped.svg){ width=75% }
-
-![Precision and sensitivity of 750 UMGAP configurations using 9-mer peptide fragmentation in combination with seed-and-extend filtering, classified per minimal seed size and protein translation method. Gene prediction with FGS++ has been excluded.\label{seedextend_translator_seedsize}](figures/kraken-benchmark/seedextend_translator_seedsize-wrapped.svg){ width=75% }
-
-![Precision and sensitivity of 375 UMGAP configurations using 9-mer peptide fragmentation, seed-and-extend filtering and gene prediction, classified per read profiling method.\label{seedextend_fgs_profiler}](figures/kraken-benchmark/seedextend_fgs_profiler-wrapped.svg){ width=75% }
-
-![Precision and sensitivity of 375 UMGAP configurations using 9-mer peptide fragmentation, seed-and-extend filtering and gene prediction, classified per filtering of low-frequency identifications.\label{seedextend_fgs_freq}](figures/kraken-benchmark/seedextend_fgs_freq-wrapped.svg){ width=75% }
-
-![Precision and sensitivity of 375 UMGAP configurations using 9-mer peptide fragmentation, seed-and-extend filtering and six-frame translation, classified per read profiling method.\label{seedextend_6ft_profiler}](figures/kraken-benchmark/seedextend_6ft_profiler-wrapped.svg){ width=75% }
-
-![Precision and sensitivity of 375 UMGAP configurations using 9-mer peptide fragmentation, seed-and-extend filtering and six-frame translation, classified per filtering of low-frequency identifications.\label{seedextend_6ft_freq}](figures/kraken-benchmark/seedextend_6ft_freq-wrapped.svg){ width=75% }
