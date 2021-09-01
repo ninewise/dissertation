@@ -16,6 +16,8 @@
 
 * Detailplanning opstellen (indienen, interne, publieke)
 
+* Rebuttal umgap paper en supplementary tables toevoegen
+
 ### Planning
 
 * week 23 tot 29 augustus: stukken 'UMGAP' en 'FragGeneScan' inkleden in bookvorm, stuk 'Bouwen van index' uitwerken
