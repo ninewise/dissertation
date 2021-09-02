@@ -25,7 +25,7 @@ argument to this command. This is a preprocessed version of the NCBI
 taxonomy. The `taxa2tree` command uses a taxonomy stored on the Unipept
 API server.
 
-```
+```shell
 $ cat input1.txt
 9606
 9606

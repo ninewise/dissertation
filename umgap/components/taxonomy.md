@@ -16,7 +16,7 @@ written out separated by tabs.
 
 A taxonomy file must be passed as argument.
 
-```sh
+```shell
 $ cat input.fa
 2026807
 888268
@@ -35,7 +35,7 @@ taxon_id	taxon_name	taxon_rank
 The `-H` flag can be used to suppress the TSV header, for instance when
 dealing with FASTA input.
 
-```sh
+```shell
 $ cat input2.fa
 >header1
 2026807
@@ -54,7 +54,7 @@ $ umgap taxonomy -H taxons.tsv < input2.fa
 
 The `-a` flag can be used to request a complete ranked lineage.
 
-```sh
+```shell
 $ cat input3.fa
 888268
 $ umgap taxonomy -a taxons.tsv < input3.fa
