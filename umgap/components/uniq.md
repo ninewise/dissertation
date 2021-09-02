@@ -17,7 +17,7 @@ a single header, separated by newlines (or another separated set with
 A delimiter can be passed with the `-d` option to drop this delimiter
 and everything after it from the FASTA header before comparing it.
 
-```sh
+```shell
 $ cat input.fa
 >header1/1
 147206

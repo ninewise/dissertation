@@ -1,30 +1,30 @@
 ### Filtering taxonomic identifications based on location
 
-Bij het opzoeken van peptiden kunnen, door mutaties of
-read-errors, toevalstreffers op foute taxa vallen. Deze zouden de
-aggregatie in latere fasen van de UMGAP kunnen storen. Zeker het
-lowerst-common-ancestoralgoritme is hier erg kwetsbaar voor (een
-enkele toevalstreffer in een verder goede read kan resulteren in een
-ongeïdentificeerde read). Zulke toevalstreffers komen bijna altijd apart
-voor: de omliggende peptiden zullen niet teruggevonden worden in de
-index, of zullen wel op de correcte identificatie mappen. Om die reden
-werd de `umgap seedextend` tool toegevoegd. Deze tool zal alleenliggende
-hits uit de lijst van hits schrappen.
+When mapping peptides on taxa, mutations and read-errors can cause
+accidental identificatinos of completely unrelated taxa. These wrong
+identifications could disrupt the aggregation of the taxa further
+on in the pipeline. Especially the lowest common ancestor algorithm
+is vulnerable to such mistakes (a single arbitrary hit can cause an
+otherwise correctly identified read to be reported as unidentifiable).
 
-Het gaat te werk door eerst enkele seeds te zoeken in de lijst van hits.
-Dit zijn *s*, de minimum seed size, opeenvolgende hits op eenzelfde
-taxon. Vervolgens wordt elk van deze seeds uitgebreid naar links en
-rechts tot een extended seed. Zo'n uitbereiding kan er komen als er
-op afstand *g*, de maximum gap size, of minder nog een hit ligt,
-onafhankelijk of deze op hetzelfde taxon valt of niet. Merk op dat een
-extended seed dus ook meerdere nabijgelegen seeds kan bevatten. Finaal
-zal `seedextend` enkel de hits uitschrijven die binnen één van de
-extended seeds vallen.
+Fortunately, such accidental hits are usually surrounded by
+unidentified peptides, especially when using the overlapping *k*-mer
+fragmentation. The `umgap seedextend` tool can be used to filter
+isolated identifications from the list of taxa for each read.
 
-Zo'n seed-extendalgoritme kan geïmplementeerd worden als een eenmalige
-overloping van de lijst van hits, tijdens dewelke een verzameling
-van kandidaat extended seeds wordt bijgehouden. Het algoritme wordt
-hieronder in pseudocode omschreven.
+It starts by identifying seeds in the list of taxonomic identifications.
+These seeds are ranges of *s*, the minimum seed size, or more identical
+taxa. Next, each of these seeds is extended to the left and the right,
+forming an extended seed. An identified taxon is included in an extended
+seed if it lies withing *g* taxa of an extended seed, with *g* the
+maximum gap size. Note that an extended seed may contain multiple
+seeds. Finally, the `seedextend` command will write out only those taxa
+contained in any of the extended seeds.
+
+Such a seed extend algorithm can be implemented as a lineair aggregation
+of a set of extended seeds and a single candidate extended seed
+over a list of taxonomic identifications, as shown in Algorithm
+\ref{alg:seedextend}.
 
 \begin{algorithm}[h]
   \SetAlgoLined
@@ -84,6 +84,7 @@ hieronder in pseudocode omschreven.
     append $[b, e[$ to $l$\;
   }
 \caption{The seed-extend algorithm to find regions of consecutive identifications.}
+\label{alg:seedextend}
 \end{algorithm}
 
 #### Usage
@@ -96,7 +97,7 @@ prot2kmer2lca -o` command. As such, 3 consecutive equal IDs representing
 still be extended with other taxa, forming an extended seed. The command
 writes all taxa in any of these extended seeds to standard output.
 
-```sh
+```shell
 $ cat dna.fa
 >header1
 CGCAGAGACGGGTAGAACCTCAGTAATCCGAAAAGCCGGGATCGACCGCCCCTTGCTTGCAGCCGGGCACTACAGGACCC
@@ -127,8 +128,8 @@ separated by spaces in this example.
 
 The number of consecutive equal IDs to start a seed is 2 by default, and
 can be changed using the `-s` option. The maximum length of gaps between
-seeds to join in an extension can be set with `-g`, no gaps are allowed by
-default.
+seeds to join in an extension can be set with `-g`, no gaps are allowed
+by default.
 
 The command can be altered to print only the extended seed with the
 highest score among all extended seeds. Pass a taxonomy using the `-r
