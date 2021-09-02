@@ -1,0 +1,96 @@
+digraph make_database {
+calculate_equalized_consensus_taxa [color="#4e79a7",shape=box,label="calculate equalized\nconsensus taxa"]
+calculate_equalized_functional_json [color="#4e79a7",shape=box,label="calculate equalized\nfunctional json"]
+calculate_original_consensus_taxa [color="#4e79a7",shape=box,label="calculate original\nconsensus taxa"]
+calculate_original_functional_json [color="#4e79a7",shape=box,label="calculate original\nfunctional json"]
+create_sequence_table [color="#4e79a7",shape=box,label="create sequence table"]
+create_taxon_tables [color="#4e79a7",shape=box,label="create taxon tables"]
+enumerate_sequences [color="#4e79a7",shape=box,label="enumerate sequences"]
+fetch_ec_numbers [color="#4e79a7",shape=box,label="fetch ec numbers"]
+fetch_go_terms [color="#4e79a7",shape=box,label="fetch go terms"]
+fetch_interpro_entries [color="#4e79a7",shape=box,label="fetch interpro entries"]
+fetch_proteomes [color="#4e79a7",shape=box,label="fetch proteomes"]
+fetch_type_strains [color="#4e79a7",shape=box,label="fetch type strains"]
+join_equalized_peptides_and_uniprot_entries [color="#4e79a7",shape=box,label="join equalized peptides\nand uniprot entries"]
+join_original_peptides_and_uniprot_entries [color="#4e79a7",shape=box,label="join original peptides\nand uniprot entries"]
+join_type_strains_to_proteomes [color="#4e79a7",shape=box,label="join type strains\nto proteomes"]
+parse_uniprotkb [color="#4e79a7",shape=box,label="parse uniprotkb"]
+sort_peptides [color="#4e79a7",shape=box,label="sort peptides"]
+substitute_equalized_sequences [color="#4e79a7",shape=box,label="substitute equalized\nsequences"]
+substitute_original_sequences [color="#4e79a7",shape=box,label="substitute original\nsequences"]
+
+i1 [label="i"]
+i2 [label="i"]
+i3 [label="i"]
+i4 [label="i"]
+i5 [label="i"]
+i6 [label="i"]
+i7 [label="i"]
+
+ec_crossreferences [color="#f28e2b",label="ec\nx-refs"]
+ec_numbers [color="#f28e2b",label="ec numbers"]
+embl_crossreferences [color="#f28e2b",label="embl\nx-refs"]
+go_crossreferences [color="#f28e2b",label="go\nx-refs"]
+go_terms [color="#f28e2b",label="go terms"]
+interpro_crossreferences [color="#f28e2b",label="interpro\nx-refs"]
+interpro_entries [color="#f28e2b",label="interpro entries"]
+lineages [color="#f28e2b",label="lineages"]
+peptides [color="#f28e2b",label="peptides"]
+proteome_crossreferences [color="#f28e2b",label="proteome\nx-refs"]
+proteomes [color="#f28e2b",label="proteomes"]
+refseq_crossreferences [color="#f28e2b",label="refseq\nx-refs"]
+sequences [color="#f28e2b",label="sequences"]
+taxons [color="#f28e2b",label="taxons"]
+uniprot_entries [color="#f28e2b",label="uniprot entries"]
+
+i1 -> create_taxon_tables
+create_taxon_tables -> lineages
+create_taxon_tables -> taxons
+lineages -> calculate_equalized_consensus_taxa
+lineages -> calculate_original_consensus_taxa
+taxons -> parse_uniprotkb
+calculate_equalized_consensus_taxa -> create_sequence_table
+calculate_original_consensus_taxa -> create_sequence_table
+parse_uniprotkb -> ec_crossreferences
+parse_uniprotkb -> embl_crossreferences
+parse_uniprotkb -> go_crossreferences
+parse_uniprotkb -> interpro_crossreferences
+parse_uniprotkb -> proteome_crossreferences
+parse_uniprotkb -> refseq_crossreferences
+parse_uniprotkb -> substitute_equalized_sequences
+parse_uniprotkb -> uniprot_entries
+parse_uniprotkb -> fetch_proteomes
+parse_uniprotkb -> join_equalized_peptides_and_uniprot_entries
+parse_uniprotkb -> join_original_peptides_and_uniprot_entries
+create_sequence_table -> sequences
+substitute_equalized_sequences -> calculate_equalized_functional_json
+substitute_equalized_sequences -> substitute_original_sequences
+uniprot_entries -> join_equalized_peptides_and_uniprot_entries
+uniprot_entries -> join_original_peptides_and_uniprot_entries
+fetch_proteomes -> join_type_strains_to_proteomes
+join_equalized_peptides_and_uniprot_entries -> calculate_equalized_consensus_taxa
+join_equalized_peptides_and_uniprot_entries -> enumerate_sequences
+join_original_peptides_and_uniprot_entries -> calculate_original_consensus_taxa
+join_original_peptides_and_uniprot_entries -> enumerate_sequences
+calculate_equalized_functional_json -> create_sequence_table
+substitute_original_sequences -> calculate_original_functional_json
+substitute_original_sequences -> sort_peptides
+join_type_strains_to_proteomes -> proteomes
+enumerate_sequences -> create_sequence_table
+enumerate_sequences -> substitute_equalized_sequences
+enumerate_sequences -> substitute_original_sequences
+enumerate_sequences -> calculate_equalized_consensus_taxa
+enumerate_sequences -> calculate_original_consensus_taxa
+calculate_original_functional_json -> create_sequence_table
+sort_peptides -> peptides
+i2 -> fetch_proteomes
+i3 -> fetch_type_strains
+fetch_type_strains -> join_type_strains_to_proteomes
+i4 -> fetch_ec_numbers
+fetch_ec_numbers -> ec_numbers
+i5 -> fetch_go_terms
+fetch_go_terms -> go_terms
+i6 -> fetch_interpro_entries
+fetch_interpro_entries -> interpro_entries
+i7 -> parse_uniprotkb
+}

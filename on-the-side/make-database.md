@@ -48,14 +48,15 @@ compressed index file which is then used by the `umgap pept2lca` tool.
 The `umgap printindex` tool decompresses such an index file back to the
 input of `buildindex` for debugging purposes.
 
-TODO describe the index mechanism
+##### The `splitkmers` command
 
-#### Usage `splitkmers` TODO
+The input is given on standard input and should be a TSV formatted
+stream of taxon IDs and a protein sequence from this taxon. The output
+will be written to standard output and consists of a TSV formatted
+stream of *k*-mers mapped to the taxa in which they occur. The *k*-mer
+length is configurable with the `-k` option, and is 9 by default.
 
-The input is given on standard input and should be a TSV formatted stream of taxon IDs and a protein sequence from this taxon. The output will be written to standard output and consists of a TSV formatted stream of k-mers mapped to the taxa in which they occur. The k-mer length is configurable with the -k option, and is 9 by default.
-
-This output stream is ready to be grouped by K-mer by sorting and then aggregated into a searchable index, with the sort, umgap joinkmers and umgap buildindex commands.
-
+```shell
 $ cat input.tsv
 654924	MNAKYDTDQGVGRMLFLGTIGLAVVVGGLMAYGYYYDGKTPSSGTSFHTASPSFSSRYRY
 176652	MIKLFCVLAAFISINSACQSSHQQREEFTVATYHSSSICTTYCYSNCVVASQHKGLNVESYTCDKPDPYGRETVCKCTLIKCHDI
@@ -72,11 +73,117 @@ MIKLFCVLA	176652
 IKLFCVLAA	176652
 KLFCVLAAF	176652
 ...
--h / --help
-Prints help information
--V / --version
-Prints version information
--k / --length k
-The k-mer length [default: 9]
--p / --prefix p
-Print only the (k-1)-mer suffixes of the k-mers starting with this character
+```
+
+##### Options & flags
+
+`-h / --help`
+  ~ Prints help information
+
+`-V / --version`
+  ~ Prints version information
+
+`-k / --length k`
+  ~ The k-mer length [default: 9]
+
+`-p / --prefix p`
+  ~ Print only the $(k-1)$-mer suffixes of the *k*-mers starting with
+    this character
+
+#### The `joinkmers` command
+
+The umgap joinkmers command takes tab-separated peptides and taxon
+IDs, aggregates the taxon IDs where consecutive peptides are equal and
+outputs a tab-separated triple of peptide, consensus taxon ID and taxon
+rank.
+
+The input is given on standard input. If it is sorted on the first
+column, a complete mapping from strings to aggregated taxa and its rank
+will be written to standard output.
+
+The aggregation strategy used in this command to find a consensus taxon
+is the hybrid approach of the `umgap taxa2agg` command, with a 95%
+factor. This keeps the result close to the lowest common ancestor, but
+filters out some outlying taxa.
+
+The taxonomy to be used is passed as an argument to this command. This
+is a preprocessed version of the NCBI taxonomy.
+
+```shell
+$ cat input.tsv
+AAAAA	34924
+AAAAA	30423
+AAAAA	5678
+BBBBBB	48890
+BBBBBB	156563
+$ umgap joinkmers taxons.tsv < input.tsv
+AAAAA	2759	superkingdom
+BBBBBB	9153	family
+```
+
+##### Options & flags
+
+`-h / --help`
+  ~ Prints help information
+
+`-V / --version`
+  ~ Prints version information
+
+#### The `buildindex` command
+
+The `umgap buildindex` command takes tab-separated strings and taxon
+IDs, and creates a finite state transducer (FST) of this mapping.
+
+The input is given on standard input. It should be in a TSV format with
+two columns, ordered by the first. The unique strings in the first
+column should be mapped to the integers (taxon IDs) in the second
+column. A binary file with a compressed mapping is written to standard
+output.
+
+TODO describe the index mechanism
+
+```shell
+$ cat input.tsv
+AAAAA	2759
+BBBBBB	9153
+$ umgap buildindex < input.tsv > tiny.index
+$ umgap printindex tiny.index
+AAAAA	2759
+BBBBBB	9153
+```
+
+##### Options & flags
+
+`-h / --help`
+  ~ Prints help information
+
+`-V / --version`
+  ~ Prints version information
+
+#### The `printindex` command
+
+Outputs in the string keys and taxon ID values in TSV format, mostly for
+debugging purposes.
+
+```shell
+$ umgap printindex tryptic.index
+...
+AAAAADRPANEIGGR	293089
+AAAAADRPAPAGHDHQAVAR	156981
+AAAAADRPASQIVR	536018
+AAAAADRPE	1707
+AAAAADRPEVHALALR	1883427
+AAAAADRPFVAEPAR	41275
+AAAAADRPIAAHAEDESLVR	33010
+AAAAADRPIR	1988
+AAAAADRPLAEHGGPVPR	1827
+...
+```
+
+##### Options & flags
+
+`-h / --help`
+  ~ Prints help information
+
+`-V / --version`
+  ~ Prints version information
