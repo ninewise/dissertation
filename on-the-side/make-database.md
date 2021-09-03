@@ -15,15 +15,66 @@ database. This database is then queried by the Unipept web application
 [@mesuere2012] and, more recently, the Unipept Desktop Client
 [@verschaffelt2021].
 
-TODO Tekstuele omschrijving van de verschillende stappen in de makefile, tesamen met een figuur die de structuur omschrijft.
+![The data flow from the downloaded sources to the Unipept database tables. Blue rectagles indicate processing steps, orange rounded rectangles indicate database tables. Processing steps using online sources are marked with a web icon.\label{fig:makeflow}](make-database.svg)
+
+Figure \ref{fig:makeflow} describes the flow of data from our online
+sources to the final database tables. On the left, independent from
+the rest of the flow, the EC numbers, GO terms and Interpro entries
+are downloaded from respectively the EBI enzyme database [TODO ref]
+using the **fetch EC numbers** function, the Gene Ontology [TODO ref]
+using the **fetch GO terms** function and EBI Interpro database [TODO
+ref] using the **fetch Interpro entries** function.
+
+On the right, the flow starts with downloading the NCBI taxonomy
+and process it in the **create taxon tables** function to create
+the *taxons* table and the *lineages* table. The first contains the
+NCBI taxon ID, its name, its rank, the taxon ID of its parent and
+whether it's valid. The validity of a taxon is used to eliminate some
+unwanted taxa from calculations while keeping them in the database for
+completeness. The latter contains for each taxon its precalculated
+lineage, by travelling to the root taxon via parentage, on fixed ranks.
+This table speeds up the lineage queries on the webserver and the lowest
+common ancestor calculations.
+
+In **parse UniprotKB**, the XML formatted UniprotKB is downloaded and
+parsed. The *uniprot entries* are saved in a table with the taxon ID of
+the organism the protein was gained from and the protein sequence. It
+outputs the EC, GO, Refseq [TODO ref], EMBL [TODO ref], Interpro and
+proteome [TODO ref] annotations to their respective crossreferences
+tables and it save all encountered tryptic peptides in the *peptides*
+table and proteomes for further processing. A *proteomes* table is
+created with additional downloaded data, but it is not used in the
+UMGAP.
+
+In **join equalized peptides and uniprot entries** and **join original
+peptides and uniprot entries**, the encountered tryptic peptide
+sequences (whether or not the Leusine amino acids have been replaced
+with Isoleusine, since they are indistinguishable to spectrometers)
+are recombined with the taxon ID annotated on their entry. All unique
+peptides, whether equalized or original, are given numeric IDs in
+**enumerate sequences**. These numeric IDs replace the actual sequences
+in the peptides table in **substitute equalized sequences** and
+**substitute original sequences** to form the final peptides table.
+Functional annotations, not used in the UMGAP, are also extracted
+from the peptides in the **calculate equalized functional JSON**
+and **calculate original functional JSON** steps to be added to the
+*sequences* table.
+
+The amino acid sequences are also replaced with their numeric IDs in
+the equalized peptide/taxon and original peptide/taxon pairs as first
+steps in **calculate equalized consensus taxa** and **calculate original
+consensus taxa**. All taxa paired with the same sequence are then
+aggregated using a lineage based lowest common ancestor method. The
+results are brought together in **create sequence table** resulting in
+the *sequences* table.
 
 ### Creating a UMGAP index
 
 From this complete database, only a three tables are of interest to the
 UMGAP tool. First, as the UMGAP is a taxonomic identification tool,
-is the processed NCBI taxonomy `taxons`. Second is the `sequence`
-table, which contains the mapping of tryptic peptides unto their lowest
-common ancestor. Third is the `uniprot_entries` table, which contains
+is the processed NCBI taxonomy *taxons*. Second is the *sequences*
+table, which contains the mapping of tryptic peptides onto their lowest
+common ancestor. Third is the *uniprot entries* table, which contains
 amongst other columns the protein sequence and the assigned taxon of the
 original Uniprot entry. The latter is used for the construction of the
 *k*-mer-to-taxon mapping.
