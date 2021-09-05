@@ -21,19 +21,19 @@ aggregation, the reads must be brought together again, for instance to
 create a frequency table. This suggests subdividing the data per read.
 
 This dimension of subdivision gives the opportunity for easy
-parallellisation, following a map-reduce [TODO ref] strategy. Each
+parallelisation, following a map-reduce [TODO ref] strategy. Each
 read can be processed in a separate thread, with little to no
-parallellisation overhead. This allows realisation of the full power of
+parallelisation overhead. This allows realisation of the full power of
 the executing machine.
 
 The other dimension of subdivision, as a sequence of analysis steps,
-allows for better optimalisation of each step. After all, a program
+allows for better optimisation of each step. After all, a program
 given a single task can specialize and can share the cost of a possibly
-slow initilization step over all reads it will process. Parallellization
+slow initialisation step over all reads it will process. Parallelisation
 is still possible with this subdivision, though less efficient, by
 running each step in a separate process, passing along reads after a
 process has finished its task. However, this manner of subdivision has
-the added benifit of modularity: with analysis steps as a top-level
+the added benefit of modularity: with analysis steps as a top-level
 concept, steps can easily be added, skipped and exchanged to modify the
 type of analysis.
 

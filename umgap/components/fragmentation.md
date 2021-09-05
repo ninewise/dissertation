@@ -8,13 +8,13 @@ fragmentation.
 The first splits protein sequence into variable length peptides, based
 on a pattern in the sequence. The default pattern is an *in silico*
 tryptic digest, as the UMGAP originates in a metaproteomics context,
-where trypsine is *de facto* standard. The latter yields all overlapping
+where trypsin is *de facto* standard. The latter yields all overlapping
 peptides of a fixed length, called *k*-mers.
 
 #### Usage
 
 The input is given in a FASTA format on standard input with a single
-peptide per FASTA header, which may be hardwrapped with newlines. The
+peptide per FASTA header, which may be hard wrapped with newlines. The
 peptides resulting from the fragmentation are written in FASTA format to
 standard output, with multiple peptides per FASTA header, separated by
 newlines.

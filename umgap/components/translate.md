@@ -1,6 +1,6 @@
 ### Translating DNA sequences to protein fragments
 
-The umgap translate command takes one or more DNA sequences and
+The `umgap translate` command takes one or more DNA sequences and
 translates them into amino acid sequences. It allows the selection of
 the reading frame and a translation table to use. Most notably, it is
 also capable of translating all frames, so the rest of the pipeline can
@@ -43,7 +43,7 @@ instance `-t11` for the bacterial, archaeal and plant plastid code.
   ~ Read and output all six frames
 
 `-n / --append-name`
-  ~ Append a bar (|) and the name of the frame to the fasta header
+  ~ Append a bar (|) and the name of the frame to the FASTA header
 
 `-h / --help`
   ~ Prints help information

@@ -5,7 +5,7 @@ experimentally applied to transcriptomics data. While very similar
 to metagenomics data, we have additional knowledge: every read will
 consist completely of coding RNA. This implies we don't have to do
 gene prediction, we should just translate the whole read to a protein
-fragment. As the correct reading frame is unknown, the UMGAP choses to
+fragment. As the correct reading frame is unknown, the UMGAP chooses to
 translate all six frames, process each, and finally pick the correct
 among the six frames. This last step is performed by `umgap bestof`.
 This command will, given the taxonomic identifications for any number of

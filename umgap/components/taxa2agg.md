@@ -19,7 +19,7 @@ taxon only if it were unrelated. Consider a read in which some peptides
 are found in mammals, some are found in primates, and some are found
 in humans. A consensus of primates would not contradict any of these
 peptides. After all, a peptide found in mammals could be found in
-a primate and humans are a subcategorie of primates. However, the
+a primate and humans are a subcategory of primates. However, the
 modified lowest common ancestor here would be human, since this is more
 specific and does not exclude peptides found in mammals or primates. The
 algorithm to find the modified lowest common ancestor of a list of taxa
@@ -38,8 +38,8 @@ path.
 
 The third strategy of the `umgap taxa2agg` tool is a hybrid of the above
 two. Giving a factor *f*, the algorithm descends from the root of the
-tree of life towards the leaves, on each rank chosing the descendant
-which is the ancendant of most of the taxa in the list. This, it
+tree of life towards the leaves, on each rank choosing the descendant
+which is the ascendant of most of the taxa in the list. This, it
 continues, until the chosen descendant would represent less then *f*
 of the strict descendants of the current taxon. A hybrid strategy with
 a factor 1.0 would thus behave similar to the modified lowest common
@@ -59,7 +59,7 @@ from aggregation of the given list.
 The taxonomy to be used is passed as an argument to this command. This
 is a preprocessed version of the NCBI taxonomy.
 
-```sh
+```shell
 $ cat input.fa
 >header1
 571525

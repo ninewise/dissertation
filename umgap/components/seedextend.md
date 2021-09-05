@@ -1,7 +1,7 @@
 ### Filtering taxonomic identifications based on location
 
 When mapping peptides on taxa, mutations and read-errors can cause
-accidental identificatinos of completely unrelated taxa. These wrong
+accidental identifications of completely unrelated taxa. These wrong
 identifications could disrupt the aggregation of the taxa further
 on in the pipeline. Especially the lowest common ancestor algorithm
 is vulnerable to such mistakes (a single arbitrary hit can cause an
@@ -21,7 +21,7 @@ maximum gap size. Note that an extended seed may contain multiple
 seeds. Finally, the `seedextend` command will write out only those taxa
 contained in any of the extended seeds.
 
-Such a seed extend algorithm can be implemented as a lineair aggregation
+Such a seed extend algorithm can be implemented as a linear aggregation
 of a set of extended seeds and a single candidate extended seed
 over a list of taxonomic identifications, as shown in Algorithm
 \ref{alg:seedextend}.
@@ -155,4 +155,4 @@ severe (higher or lower) with the `-p` option.
   ~ The score penalty for gaps in extended seeds [default: 5]
 
 `-r / --ranked r`
-  ~ Use taxon ranks in given NCBI taxonomy tsv-file to pick extended seed with highest score
+  ~ Use taxon ranks in given NCBI taxonomy TSV-file to pick extended seed with highest score

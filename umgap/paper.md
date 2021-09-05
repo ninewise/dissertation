@@ -157,7 +157,7 @@ that needs to be processed in downstream analysis.
 #### Protein fragmentation
 
 All (partial) proteins that are putatively translated from the read are
-matched against the complete UniProt knowledgebase [@kim;@magrane].
+matched against the complete UniProt Knowledgebase [@kim;@magrane].
 Direct full-length exact matching is not feasible due to natural
 variation and read errors. Even though fast heuristics exist for
 full-length inexact matching or alignment [@altschul], it remains a
@@ -216,9 +216,9 @@ so performance is of utmost importance.
 
 Upon each UniProt release, the Unipept team builds and publishes new
 indexes from tryptic peptides and 9-mers extracted from all UniProt
-proteins in the knowledgebase (available online). Each of these peptides
+proteins in the Knowledgebase (available online). Each of these peptides
 is associated with the LCA\* consensus taxon computed from the set of
-taxonomic annotations on all Uniprot proteins that exactly match the
+taxonomic annotations on all UniProt proteins that exactly match the
 peptide [@mesuere2012]. LCA\* is the most specific taxon that does
 not contradict any taxon in the set, i.e., all taxa in the set must
 either be descendants or ancestors of the LCA\* in the NCBI Taxonomy
@@ -245,18 +245,18 @@ data structures that take advantage of common prefixes to reduce the
 memory footprint, FSTs are even more compressed by taking both common
 prefixes and suffixes into account (Figure \ref{fst}).
 
-![Finite state transducer mapping all weekdays to their index number (monday $=1$, tuesday $=2$, ...). Integer labels are not shown on edges with zero weight. Adding weights along the path spelled by the letters of the word Thursday, from the initial state on the left (indicated by a triangle) to the final state on the right (indicated by a double circle), yields $2+1+1 = 4$. So, Thursday is the fourth day in the week.\label{fst}](figures/day-index/figure.svg){ width=75% }
+![Finite state transducer mapping all weekdays to their index number (Monday $=1$, Tuesday $=2$, ...). Integer labels are not shown on edges with zero weight. Adding weights along the path spelled by the letters of the word Thursday, from the initial state on the left (indicated by a triangle) to the final state on the right (indicated by a double circle), yields $2+1+1 = 4$. So, Thursday is the fourth day in the week.\label{fst}](figures/day-index/figure.svg){ width=75% }
 
 For UniProt release 2020-04, a 19.3 GiB FST-index maps all 1.2 billion
-tryptic peptides to their LCA\* and a 132.9 GiB FST-index maps all 17
-billion 9-mers to their LCA\*. We also experimented with other k-mer
-lengths, but precision dropped significantly for $k \le 7$ (Figure
-\ref{peptide-length}) and the index size became too large for $k
-\geq 10$. The only viable options were $k = 8$ and $k = 9$, with the
+tryptic peptides to their LCA\* and a 132.9 GiB FST-index maps all
+17 billion 9-mers to their LCA\*. We also experimented with other
+$k$-mer lengths, but precision dropped significantly for $k \le 7$
+(Figure \ref{peptide-length}) and the index size became too large for
+$k \geq 10$. The only viable options were $k = 8$ and $k = 9$, with the
 latter giving the best balance between index size and accuracy of read
 profiling.
 
-![All tryptic peptides found in the UniprotKB (release 2020-04-22), classified by length and associated LCA\* rank. Fractions of peptides (y-axis) across all peptide lengths (left) or per peptide length (right). Short tryptic peptides are more frequently associated with less specific ranks in the NCBI Taxonomy and therefore have a lower information content. Relative taxonomic information content (depth of LCA\* rank in tree of life) is low for short peptides (length 8 and below). Because tryptic peptides of length $k$ are a random sample of all $k$-mers, similar ratios and conclusions are expected should this analysis be repeated for all $k$-mers in UniprotKB across all lengths $k$.\label{peptide-length}](figures/rank-accuracy/figure.svg){ width=90% }
+![All tryptic peptides found in the UniProtKB (release 2020-04-22), classified by length and associated LCA\* rank. Fractions of peptides (y-axis) across all peptide lengths (left) or per peptide length (right). Short tryptic peptides are more frequently associated with less specific ranks in the NCBI Taxonomy and therefore have a lower information content. Relative taxonomic information content (depth of LCA\* rank in tree of life) is low for short peptides (length 8 and below). Because tryptic peptides of length $k$ are a random sample of all $k$-mers, similar ratios and conclusions are expected should this analysis be repeated for all $k$-mers in UniProtKB across all lengths $k$.\label{peptide-length}](figures/rank-accuracy/figure.svg){ width=90% }
 
 #### Peptide filtering
 
@@ -693,7 +693,7 @@ benchmark again underscores the difference in sensitivity between the
 tryptic and 9-mer configurations of UMGAP. Also take into account that
 precision is a more important accuracy metric than sensitivity for most
 biological applications, especially with deeply sequenced samples.
-In terms of speed Kraken 2 is the best-performing tool, with UMGAP’s
+In terms of speed Kraken 2 is the best-performing tool, with UMGAP's
 tryptic configurations following in close range. Clark and the UMGAP
 9-mer configurations are still considerably faster than Kraken and
 Kaiju.
@@ -716,7 +716,7 @@ complex communities.
 As a next step, we want to further explore how the protein translation
 detour can be used to infer the functional capacity of an environmental
 sample from its metagenome, which is more challenging than inferring
-biodiversity. Again, Unipept’s function analysis pipeline for
+biodiversity. Again, Unipept's function analysis pipeline for
 metaproteomes could be used as a potential starting point. In addition,
 both the biodiversity and the functional capacity of a sample could also
 be derived from its metatranscriptome, which could be analysed using
