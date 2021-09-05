@@ -26,17 +26,16 @@ instructions for installation, usage and other documentation.
 Studying environmental communities of archaea, bacteria,
 eukaryotes, and viruses is hampered by problems with isolating
 and culturing most of these organisms in lab conditions
-asdf [@locey;@rappe;@pedros;@hoferthemi;@hahn].
-Metagenomics has therefore become a routine technique to bypass the
-cultivation step with a combination of high-throughput DNA sequencing
-and computational methods [@hugenholtz;@thomas]. Non-targeted
-sequencing of genomes in environmental samples, called shotgun
-metagenomics, in particular allows profiling of both the taxonomic
-composition and the functional potential of the samples [@quince].
-Identification of protein coding sequences from shotgun metagenomic
-reads has therefore become an important precursor to gain insight in
-the taxonomic and functional diversity of an environmental community
-[@sharpton].
+[@locey;@rappe;@pedros;@hoferthemi;@hahn]. Metagenomics has therefore
+become a routine technique to bypass the cultivation step with a
+combination of high-throughput DNA sequencing and computational
+methods [@hugenholtz;@thomas]. Non-targeted sequencing of genomes in
+environmental samples, called shotgun metagenomics, in particular allows
+profiling of both the taxonomic composition and the functional potential
+of the samples [@quince]. Identification of protein coding sequences
+from shotgun metagenomic reads has therefore become an important
+precursor to gain insight in the taxonomic and functional diversity of
+an environmental community [@sharpton].
 
 One approach for shotgun metagenomics gene prediction is assembling
 reads into longer contiguous sequences, called contigs, prior to running
@@ -142,7 +141,7 @@ upfront, have threads that store results per chunk in a separate file,
 and merge these files afterwards. This eliminates disk overhead and
 speeds up I/O.
 
-HMM gene regions have six inhomogeneous sets of states that represent
+HMM gene regions have six heterogeneous sets of states that represent
 matches, insertions and deletions for two successive codons in a read.
 FGS processes the six states in a loop, combined with conditional
 execution to handle topological differences between state transitions.
