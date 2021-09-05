@@ -9,21 +9,21 @@ used for this purpose.
 
 ### Extracting the Unipept Database
 
-To build a performant application, the data from the UniprotKB
+To build a performant application, the data from the UniProtKB
 is parsed, extracted, preprocessed and stored in a relational
 database. This database is then queried by the Unipept web application
 [@mesuere2012] and, more recently, the Unipept Desktop Client
 [@verschaffelt2021].
 
-![The data flow from the downloaded sources to the Unipept database tables. Blue rectagles indicate processing steps, orange rounded rectangles indicate database tables. Processing steps using online sources are marked with a web icon.\label{fig:makeflow}](make-database.svg)
+![The data flow from the downloaded sources to the Unipept database tables. Blue rectangles indicate processing steps, orange rounded rectangles indicate database tables. Processing steps using online sources are marked with a web icon.\label{fig:makeflow}](make-database.svg)
 
 Figure \ref{fig:makeflow} describes the flow of data from our online
 sources to the final database tables. On the left, independent from
-the rest of the flow, the EC numbers, GO terms and Interpro entries
+the rest of the flow, the EC numbers, GO terms and InterPro entries
 are downloaded from respectively the EBI enzyme database [TODO ref]
 using the **fetch EC numbers** function, the Gene Ontology [TODO ref]
-using the **fetch GO terms** function and EBI Interpro database [TODO
-ref] using the **fetch Interpro entries** function.
+using the **fetch GO terms** function and EBI InterPro database [TODO
+ref] using the **fetch InterPro entries** function.
 
 On the right, the flow starts with downloading the NCBI taxonomy
 and process it in the **create taxon tables** function to create
@@ -36,11 +36,11 @@ lineage, by travelling to the root taxon via parentage, on fixed ranks.
 This table speeds up the lineage queries on the webserver and the lowest
 common ancestor calculations.
 
-In **parse UniprotKB**, the XML formatted UniprotKB is downloaded and
+In **parse UniProtKB**, the XML formatted UniProtKB is downloaded and
 parsed. The *uniprot entries* are saved in a table with the taxon ID of
 the organism the protein was gained from and the protein sequence. It
-outputs the EC, GO, Refseq [TODO ref], EMBL [TODO ref], Interpro and
-proteome [TODO ref] annotations to their respective crossreferences
+outputs the EC, GO, RefSeq [TODO ref], EMBL [TODO ref], InterPro and
+proteome [TODO ref] annotations to their respective cross references
 tables and it save all encountered tryptic peptides in the *peptides*
 table and proteomes for further processing. A *proteomes* table is
 created with additional downloaded data, but it is not used in the
@@ -48,8 +48,8 @@ UMGAP.
 
 In **join equalized peptides and uniprot entries** and **join original
 peptides and uniprot entries**, the encountered tryptic peptide
-sequences (whether or not the Leusine amino acids have been replaced
-with Isoleusine, since they are indistinguishable to spectrometers)
+sequences (whether or not the Leucine amino acids have been replaced
+with Isoleucine, since they are indistinguishable to spectrometers)
 are recombined with the taxon ID annotated on their entry. All unique
 peptides, whether equalized or original, are given numeric IDs in
 **enumerate sequences**. These numeric IDs replace the actual sequences
@@ -76,7 +76,7 @@ is the processed NCBI taxonomy *taxons*. Second is the *sequences*
 table, which contains the mapping of tryptic peptides onto their lowest
 common ancestor. Third is the *uniprot entries* table, which contains
 amongst other columns the protein sequence and the assigned taxon of the
-original Uniprot entry. The latter is used for the construction of the
+original UniProt entry. The latter is used for the construction of the
 *k*-mer-to-taxon mapping.
 
 While a relational database is fast enough for a metaproteomics tool,
@@ -143,7 +143,7 @@ KLFCVLAAF	176652
 
 #### The `joinkmers` command
 
-The umgap joinkmers command takes tab-separated peptides and taxon
+The `umgap joinkmers` command takes tab-separated peptides and taxon
 IDs, aggregates the taxon IDs where consecutive peptides are equal and
 outputs a tab-separated triple of peptide, consensus taxon ID and taxon
 rank.
