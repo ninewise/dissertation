@@ -1,27 +1,4 @@
-## FragGeneScanRs: better and faster gene prediction for short reads
-
-* **Authors:**
-Felix Van der Jeugt[^1] ([ORCID](https://orcid.org/0000-0003-3168-927X)),
-Peter Dawyndt$^1$ ([ORCID](https://orcid.org/0000-0002-1623-9070)),
-and Bart Mesuere$^1$ ([ORCID](https://orcid.org/0000-0003-0610-3441)).
-
-[^1]: Department of Applied Mathematics, Computer Science and Statistics, Ghent University, Ghent, Krijgslaan 281 S9, 9000, Belgium.
-
-* **Contact:** unipept@ugent.be
-
-* **Abstract:** FragGeneScanRs is a better and faster Rust
-implementation of the FragGeneScan gene prediction model for short and
-error-prone reads. Its command line interface is backward compatible and
-adds extra features for more flexible usage. Compared to the original C
-implementation, shotgun metagenomic reads are processed up to 22 times
-faster using a single thread, with better scaling for multithreaded
-execution.
-
-* **Availability and implementation:** The Rust code of FragGeneScanRs
-is freely available from [GitHub][] under the GPL-3.0 license, with
-instructions for installation, usage and other documentation.
-
-### Introduction
+## Introduction
 
 Studying environmental communities of archaea, bacteria,
 eukaryotes, and viruses is hampered by problems with isolating
@@ -71,7 +48,7 @@ Both FGS and FGS+ now have pure C implementations that support parallel
 execution, but their latest releases suffer from their own issues. FGS
 implements multithreading in a very inefficient way, making it much
 slower than FGS+. The implementation doesn't preserve input order,
-breaking for example the synchronisation between pair-end read files
+breaking for example the synchronization between pair-end read files
 without an extra sorting step in postprocessing. Bugs have also been
 introduced when replacing Perl code with C functions. In addition,
 out-of-bound memory access may corrupt its results and cause the
@@ -101,7 +78,7 @@ reliable, high-performance, and accurate Rust implementation of the FGS
 gene prediction model. We ran a benchmark to show that FGSrs produces
 the same results as FGS and is faster than both FGS and FGS+.
 
-### Implementation
+## Implementation
 
 FGSrs is implemented in Rust, a programming language known for its
 focus on speed and memory-efficiency. In addition, segmentation faults
@@ -167,7 +144,7 @@ also note that a bug was introduced in FGS (release 1.30) when the
 backtracking step was converted from Perl to C, which generates DNA and
 protein sequences for complete genomes that are incorrect.
 
-### Results
+## Results
 
 The FGSrs command line interface is backward compatible with FGS, so
 it can be used as a faster and memory-friendly drop-in replacement
@@ -227,12 +204,5 @@ the original implementation. Its command line interface is backward
 compatible with extensions for more flexible usage. The source code of
 FGSrs is freely available from [GitHub][] under the GPL-3.0 license,
 with instructions for installation, usage and other documentation.
-
-## Acknowledgements
-
-This work was supported by the Research Foundation--Flanders (FWO)
-(12I5220N to B.M.) We thank the students of the Computational Biology
-class of 2019-2020 for scrutinizing issues with the code of FGS and
-FGS+.
 
 [GitHub]: https://github.com/unipept/FragGeneScanRs

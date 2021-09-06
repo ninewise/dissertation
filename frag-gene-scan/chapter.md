@@ -8,7 +8,7 @@ As a masters thesis, @degraef forked FragGeneScan+ to FragGeneScan++
 to solve a number of bugs found in FragGeneScan+. Due to the complex
 thread model and codebase, not all bugs were fixable. Finally, we
 decided to create a brand new implementation of FragGeneScan, called
-FragGeneScanRs. The application note publishing this implemtentation can
+FragGeneScanRs. The application note publishing this implementation can
 be found in this chapter.
 
 #### [frag-gene-scan](main.md){.include}

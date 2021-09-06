@@ -12,6 +12,11 @@ benchmarks from this manuscript. P.V., A.S., C.T., and B.M. would like
 to acknowledge Research Foundation - Flanders (FWO) [grants 1164420N,
 1174621N, 1512619N, and 12I5220N].}
 
+**Acknowledgements:** This work was supported by the Research
+Foundation--Flanders (FWO) (12I5220N to B.M.) We thank the students of
+the Computational Biology class of 2019-2020 for scrutinizing issues
+with the code of FGS and FGS+.
+
 # References
 
 ::: {#refs}
