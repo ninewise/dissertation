@@ -68,7 +68,7 @@ suite of 20 versatile filters (commands that read from standard input
 and write to standard output) that each implement a single operation and
 that can be seamlessly combined into a single data processing pipeline.
 All filters are implemented in [Rust](https://www.rust-lang.org)
-and support parallelisation to achieve optimal performance. As some
+and support parallelization to achieve optimal performance. As some
 filters implement alternative strategies of the same operation, we
 have performed a parameter sweep to collect performance metrics
 of all relevant combinations of alternative strategies. Based on
@@ -112,7 +112,7 @@ database [@watson]. Two approaches are supported: one based on gene
 prediction in short reads and one based on a full six-frame translation
 (Figure \ref{protein-translation}).
 
-![Sample DNA fragment extracted from the *Acinetobacter baumannii* 118362 genome (NCBI Assembly ASM58051v1, positions 37.700-39.530) containing three RefSeq annotated coding regions of a major Facilitator Superfamily protein (EXA88265), a tetR family protein (EXA88191) and a translocator family protein (EXA88255), marked with yellow lines (top). Blue lines indicate coding regions predicted by FGS. Green dots indicate starting positions of 9-mers with an LCA\* on the *A. baumannii* lineage (true positive identifications). Red dots indicate starting positions of 9-mers with an LCA\* outside the *A. baumannii* lineage (false positive identifications). Opacity of colored dots indicates depth in the taxonomic tree: opaque colors indicate highly specific LCA\* (species level) and translucent colors indicate nonspecific LCA\*. This example illustrates the following general observations: (1) the frameshift-correcting topology of the FGS hidden Markov model often incorrectly interprets coding regions of genes that are very close or overlapping as frameshifts and glues them together; (2) missing dots at the end of coding regions is merely an artefact of the visualization: the last 8 codons (24 bases) are never starting positions of $k$-mers; (3) FGS may identify false coding regions or (4) frame shifts, but the extracted peptides from those and (5) translations from non-coding regions in a six-frame translation are mostly filtered automatically as they have no exact match with any UniProt protein or can be filtered with additional heuristics.\label{protein-translation}](figures/6ft-figure/final.svg){ width=90% }
+![Sample DNA fragment extracted from the *Acinetobacter baumannii* 118362 genome (NCBI Assembly ASM58051v1, positions 37.700-39.530) containing three RefSeq annotated coding regions of a major Facilitator Superfamily protein (EXA88265), a tetR family protein (EXA88191) and a translocator family protein (EXA88255), marked with yellow lines (top). Blue lines indicate coding regions predicted by FGS. Green dots indicate starting positions of 9-mers with an LCA\* on the *A. baumannii* lineage (true positive identifications). Red dots indicate starting positions of 9-mers with an LCA\* outside the *A. baumannii* lineage (false positive identifications). Opacity of colored dots indicates depth in the taxonomic tree: opaque colors indicate highly specific LCA\* (species level) and translucent colors indicate nonspecific LCA\*. This example illustrates the following general observations: (1) the frameshift-correcting topology of the FGS hidden Markov model often incorrectly interprets coding regions of genes that are very close or overlapping as frameshifts and glues them together; (2) missing dots at the end of coding regions is merely an artifact of the visualization: the last 8 codons (24 bases) are never starting positions of $k$-mers; (3) FGS may identify false coding regions or (4) frame shifts, but the extracted peptides from those and (5) translations from non-coding regions in a six-frame translation are mostly filtered automatically as they have no exact match with any UniProt protein or can be filtered with additional heuristics.\label{protein-translation}](figures/6ft-figure/final.svg){ width=90% }
 
 ##### Gene prediction
 
@@ -388,14 +388,14 @@ CSV-format, enabling easy postprocessing.
 
 To gain insight into environmental samples with a complex biodiversity,
 UMGAP also supports rendering taxonomic frequency tables as
-interactive visualizations (Figure \ref{visualisation}) that are
+interactive visualizations (Figure \ref{visualization}) that are
 automatically made available on a dedicated website. The online
 service hosting the visualizations also support shareable links (e.g.
 [https://bl.ocks.org/5960ffd859fb17439d7975896f513bc3][blocks]).
 
 [blocks]: https://bl.ocks.org/5960ffd859fb17439d7975896f513bc3
 
-![Taxonomic profiling by UMGAP as visualized by the Unipept Web API.\label{visualisation}](figures/visualisation.png){ width=90% }
+![Taxonomic profiling by UMGAP as visualized by the Unipept Web API.\label{visualization}](figures/visualisation.png){ width=90% }
 
 ### Results
 
@@ -403,7 +403,7 @@ UMGAP implements multiple strategies for each step in the pipeline
 (Figure \ref{outline}), with some strategies also driven by
 user-specified parameters. Runtime, memory footprint and accuracy
 of UMGAP were benchmarked as a two-step process. Using some smaller
-data sets, we first measured and analysed performance metrics for a
+data sets, we first measured and analyzed performance metrics for a
 large number of relevant combinations of strategies and parameter
 settings. This broad exploration allowed us to investigate how different
 strategies/parameter settings led to different performance trade-offs.
@@ -639,15 +639,18 @@ reads not assigned to any taxon.
  UMGAP max sens.           80.8%        77.7%        63.3%   58.9%   40.4%     31.1m     132.9GB
  CLARK                     71.4%       100.0%        27.9%  100.0%   44.6%     20.5m     342.3GB
 
- Table: MetaBenchmark performance metrics for ten metagenomics analysis
- tools sorted by precision. Average numbers for the six simulated
- data sets are given. Accuracy evaluated at the species level and
- reported as sensitivity, specificity, precision (positive predictive
- value), negative predictive value (NPV) and Matthew’s Correlation
- Coefficient (MCC). Index size reported for CLARK is the sum of the
- phylum (46.6GiB), genus (149.5GiB) and species (146.3GiB) indexes.
- Performance metrics at genus and phylum ranks can be found in Table
- \ref{genus-table} and Table \ref{phylum-table}.\label{species-table}
+ Table: MetaBenchmark performance metrics for ten metagenomics
+ analysis tools sorted by precision. Average numbers for the six
+ simulated data sets are given. Accuracy evaluated at the species
+ level and reported as sensitivity, specificity, precision (positive
+ predictive value), negative predictive value (NPV) and Matthew’s
+ Correlation Coefficient (MCC). Index size reported for CLARK is the
+ sum of the phylum (46.6GiB), genus (149.5GiB) and species (146.3GiB)
+ indexes. The most optimal value for each performance metric has
+ been marked in bold, indicating that no single tool/configuration
+ is a clear winner across all performance metrics. Metrics at genus
+ and phylum ranks can be found in Table \ref{genus-table} and Table
+ \ref{phylum-table}.\label{species-table}
 
  Tool                        Precision   Sensitivity   Specificity      NPV     MCC     Run time
  -------------------------- ----------  ------------  ------------  -------  ------  -----------
@@ -700,6 +703,139 @@ Kaiju.
 
 ![Precision and sensitivity evaluated at the species level for ten metagenomics analysis tools and the two simulated metagenomes of the MetaBenchmark. Dots indicating the accuracy metrics for the three replicates of each simulated metagenome are on top of each other, since each replicate was generated for identical proportions of phyla.\label{species-figure}](figures/metabenchmark/species.svg){ width=90% }
 
+In selecting a software tool for metagenomics analysis, one has the
+option to either select a tool that performs extremely well in one
+performance metric or a tool that makes a well-balanced trade-off
+between all of the performance metrics, with different tools providing
+different options. Only in the ideal case where one software tool beats
+all other tools in all performance criteria, there is a clear cut
+choice. As the bold values in Table~\ref{species-table} indicate, the
+latter scenario is definitely not (yet) reached for shotgun metagenomics
+tools. Among the six preconfigured UMGAP pipelines selected from the
+parameter sweep analysis we find both configurations that either
+yield optimal performance for one criterium (precision/specificity
+for the UMGAP tryptic precision pipeline and index size for the UMGAP
+tryptic pipelines that all use the same index) or yield a well-balanced
+trade-off between all performance criteria that adds value compared to
+the trade-offs made by other tools/configurations.
+
+#### In-depth analysis
+
+We would like to stress that UMGAP does not require setting a specific
+target taxonomic rank prior to processing a dataset. Instead, UMGAP
+automatically decides for each read at which taxonomic rank a reliable
+identification can be made, taking into account that deeper ranks
+are more informative. As a result, UMGAP automatically balances
+between optimal information content (specificity) and reliability
+(sensitivity), with different settings of the pipeline resulting in
+different trade-offs. Mapping UMGAP identifications to a specific rank
+is only a post-processing step we have done (using UMGAP's snaprank
+tool) to comply with the experimental setup of the MetaBenchmark.
+
+Taking advantage of the dynamic taxonomic rank assignment and the fact
+that UMGAP reports taxonomic profiles for each individual read, we
+performed a more in-depth analysis to investigate two questions not
+elucidated by the MetaBenchmark: *i*) how specific are read profilings
+that are correctly identified but above the species level and *ii*) can
+we observe any trends that explain wrong identifications? The analysis
+still uses species as the target rank, but in a less stringent way
+compared to the MetaBenchmark.
+
+We performed the analysis using the UMGAP high precision pipeline.
+Accuracy metrics are reported per operational taxonomic unit (OTU),
+i.e. all (paired-end) reads are grouped per OTU from which they were
+extracted/generated. Results are reported in separate tables for one of
+the small datasets we used for parameter tuning (10 OTUs) and one of
+the large MetaBenchmark datasets (1105 OTUs), split into real (963),
+simulated (32) and shuffled (110) OTUs (Table S5 TODO). In what follows,
+we discuss some general observations from the in-depth analysis and
+illustrate them with specific use cases.
+
+In addition to correct identifications at the species level (the
+typical rank of the expected identification derived from the benchmark
+data), UMGAP also identifies (paired-end) reads correctly but at
+less specific taxonomic ranks (genus level and above) as can be seen
+from the second column in the reported tables. For some OTUs, UMGAP
+yields highly specific identifications, i.e. most of the OTU reads are
+correctly identified at the species level (species entry marked in
+bold in the second column). For other OTUs, UMGAP yields less specific
+identifications, i.e. most of the OTU reads are correctly identified at
+the genus level or above (species entry not marked in bold in the second
+column). One particular reason for the latter are misidentifications in
+the reference databases, especially because UMGAP uses broad spectrum
+indexes built from the entire UniProt Knowledgebase. Using the LCA\*
+algorithm to compute the taxonomic profiling of a single peptide might
+correct for some misidentifications in UniProt, but definitely not all.
+For example, misidentifying UniProt proteins from one strain to another
+species of the same genus might cause that the taxonomic profiles of
+most peptides of the two species (the correct and wrong identification)
+resolve at the genus level and no longer at the species level. For some
+species groups it is also well known that they are extremely hard to
+differentiate or that there's even debate whether it is natural to keep
+them taxonomically separate (as the *Bacillus cereus* versus *Bacillus
+anthracis* case, with multiple OTUs included in the MetaBenchmark).
+Again, problematic identification in these species groups also increases
+the possibility of misidentifications in UniProt.
+
+Wrong identifications exceeding 2% of the total number of (paired-end)
+reads (marked in bold in the third column) are rare and might indicate
+issues with the expected identification in the benchmark dataset. For
+example, in the smaller dataset used for parameter tuning of UMGAP,
+none of the reads for the OTU identified as *Aeromonas hydrophila* SSU
+are identified by UMGAP as the species *A. hydrophila*, whereas 10%
+of the reads are identified as the species *A. dhakensis*. If we look
+into the history of the classification of these species, *Aeromonas
+hydrophila* subsp. *dhakensis* was established as a new subspecies of
+*A. hydrophila* [@huys], whereas it was reclassified as a separate
+species *A. dhakensis* by @beaz. @grim reclassified the
+virulent *A. hydrophila* SSU strain isolated from a patient with
+diarrhea in the Philippines as *A. dhakensis* SSU, showing that in this
+case UMGAP actually comes up with a correct identification and instead
+the identification in the benchmark should have been updated. Where
+@polin mention that *A. dhakensis* is often misidentified as *A.
+hydrophila*, *A. veronii*, or *A. caviae* by commercial phenotypic
+tests in the clinical laboratory, our analysis shows that UMGAP is
+indeed able to correctly identify reads in a metagenomics dataset to A.
+dhakensis. Apart from the power of the identification pipeline used by
+UMGAP, this case study also reminds us that taxonomy is not a constant
+and underscores the importance of using broad spectrum indexes that are
+constantly updated.
+
+Some OTUs are only identified to the genus rank (or above) in the
+MetaBenchmark, whereas UMGAP consistently identifies many of the
+corresponding (paired-end) reads to one particular species of the same
+genus. An example is *Methylovorus* sp. MP688 in the large dataset,
+where UMGAP assigns 3087 of the 5556 reads (55%) to the species
+*Methylovorus glucosotrophus*. The correctness of this observation is
+confirmed by @doronina based on phylogenetic analysis using 16S rRNA
+gene sequences and mxaF amino acid sequences, five years after the
+complete genome sequence of the strain MP688 has been deposited [@xiong]
+as *Methylovorus* sp., a name that has never been updated in the public
+sequence databases. An important factor in this case, is the fact that
+the complete genome sequence *Methylovorus glucosetrophus* strain SIP3-4
+has been deposited in the public sequence database [@lapidus], whose
+proteome is also available in UniProt.
+
+Almost all shuffled reads in the large dataset are mapped to the root of
+the NCBI Taxonomy, which corresponds to no identification at all. This
+reflects the robustness of UMGAP against spurious identifications.
+
+The large dataset contains reads simulated from genomes that were
+artificially diverged from a *Leptospira interrogans* reference genome
+(AE016823). In total, reads for 32 OTUs were generated from 8 simulated
+genomes with either little, medium, mixed or high divergence. Since
+these genomes are not random but simulated using an evolutionary
+model, it is expected that the derived reads could be assigned to the
+correct clade. Of the OTUs generated from simulated genomes with little
+divergence, we consistently observe that 35% of the reads are correctly
+identified to the species level and 40% to the genus level. Of the OTUs
+generated from simulated genomes with medium divergence, only 1-2% of
+the reads are correctly identified at the species level and 5% at the
+genus level. Of the OTUs generated from simulated genomes with high
+divergence, almost no reads could be identified. OTUs generated from
+simulated genomes with mixed divergence either follow the pattern of
+genomes with little divergence or the genomes with medium divergence.
+
 ### Discussion
 
 The protein space detour for taxonomic profiling of shotgun metagenomic
@@ -712,6 +848,11 @@ it highly competitive with state-of-the-art shotgun metagenomics
 tools. Integrating the command line tool with the interactive Unipept
 visualizations [@verschaffelt] also allows exploration and comparison of
 complex communities.
+
+The runtime of UMGAP scales linear with the number of reads processed
+and the average read length. In terms of parallelization, its Rust
+implementation also achieved near-optimal scalability. The UMGAP 9-mer
+index consumes about 8GB per 10 million UniProt protein records.
 
 As a next step, we want to further explore how the protein translation
 detour can be used to infer the functional capacity of an environmental
