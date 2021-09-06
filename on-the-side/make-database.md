@@ -1,4 +1,4 @@
-## Constructing the database
+## Constructing the database {#section:makedatabase}
 
 The core components of Unipept and the UMGAP both depend on a mapping of
 peptides to taxonomic identifiers. To construct such a mapping, and to
@@ -32,7 +32,7 @@ NCBI taxon ID, its name, its rank, the taxon ID of its parent and
 whether it's valid. The validity of a taxon is used to eliminate some
 unwanted taxa from calculations while keeping them in the database for
 completeness. The latter contains for each taxon its precalculated
-lineage, by travelling to the root taxon via parentage, on fixed ranks.
+lineage, by traveling to the root taxon via parentage, on fixed ranks.
 This table speeds up the lineage queries on the webserver and the lowest
 common ancestor calculations.
 
@@ -99,7 +99,7 @@ compressed index file which is then used by the `umgap pept2lca` tool.
 The `umgap printindex` tool decompresses such an index file back to the
 input of `buildindex` for debugging purposes.
 
-##### The `splitkmers` command
+#### The `splitkmers` command
 
 The input is given on standard input and should be a TSV formatted
 stream of taxon IDs and a protein sequence from this taxon. The output
