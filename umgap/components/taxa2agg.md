@@ -26,7 +26,115 @@ algorithm to find the modified lowest common ancestor of a list of taxa
 is described in TODO pseudocode. Note that the consensus taxon need not
 be in the aggregated list.
 
-*TODO pseudocode*
+TODO src/tree/lca
+TODO src/rmq/rtl
+TODO src/tree/mix
+
+\begin{algorithm}[h]
+  \SetAlgoLined
+  \DontPrintSemicolon
+  \SetKwData{Taxa}{taxa}
+  \SetKwProg{Struct}{struct}{ with}{end}
+  \SetKwProg{Def}{define}{ as}{end}
+  \KwData{A taxonomy $p$ with root $r$, mapping each taxon to its parent and a set to taxa to aggregate \Taxa.}
+  \KwResult{The modified lowest common ancestor of \Taxa in $p$.}
+  \SetKwData{Tree}{Tree}
+  \SetKwData{Root}{root}
+  \SetKwData{Value}{value}
+  \SetKwData{Children}{children}
+  \SetKwData{Construct}{construct}
+  \SetKwData{Keys}{keys}
+  \SetKwData{Recurse}{recurse}
+  \SetKwData{Length}{length}
+  \BlankLine
+  \Struct{\Tree}{
+    \Root: the root of the (sub)tree, a taxon\;
+    \Value: the label of this node\;
+    \Children: a list containing the children, also Tree\;
+  }
+  \BlankLine
+  \tcp{Induce a subtree of a mapping of nodes to labels $l$ from a}
+  \tcp{mapping of children to parents $p$ and a root node $r$.}
+  \Def{$\text\Construct(l, p, r)$}{
+    $c \longleftarrow $ a hashmap of nodes to a set of children\;
+    $q \longleftarrow $ a queue, initially filled with the node in $l$\;
+    \While{$i$ pops from $q$}{
+      $p' \longleftarrow p[i]$\;
+      \If{$i \not= p$}{
+        \If{$p' \not\in \text\Keys(c)$}{
+          append $p$ to $q$\;
+        }
+        insert $i$ into $c[p']$\;
+      }
+    }
+    \Def{$\text\Recurse(r, c, l)$}{
+      \Children $\longleftarrow$ an empty list\;
+      \ForEach{$c'$ in $c[r]$}{
+        append $\text\Recurse(c', c, l)$ to \Children\;
+      }
+      $\text\Tree(r, l[r], \text\Children)$\;
+    }
+    $\text\Recurse(r, c, l)$\;
+  }
+  \BlankLine
+  $c \longleftarrow $ a hashmap of each value in \Taxa to 1\;
+  $t \longleftarrow \text\Construct(c, p, r)$\;
+  \While{$\text\Length(t[r]) = 1$}{
+    $r \longleftarrow t[r]$\;
+  }
+  $r$
+\caption{Finding the modified lowest common ancestor of a set of taxa.}
+\label{alg:lca}
+\end{algorithm}
+
+\begin{algorithm}[h]
+  \SetAlgoLined
+  \DontPrintSemicolon
+  \SetKwProg{Struct}{struct}{ with}{end}
+  \SetKwProg{Def}{define}{ as}{end}
+  \SetKwData{Taxa}{taxa}
+  \KwData{A taxonomy $p$ with root $r$, mapping each taxon to its parent and a set to taxa to aggregate \Taxa.}
+  \KwResult{The modified lowest common ancestor of \Taxa in $p$.}
+  \BlankLine
+  \Struct{\Tree}{
+    \Root: the root of the (sub)tree, a taxon\;
+    \Value: the label of this node\;
+    \Children: a list containing the children, also Tree\;
+  }
+  \BlankLine
+  \tcp{Induce a subtree of a mapping of nodes to labels $l$ from a}
+  \tcp{mapping of children to parents $p$ and a root node $r$.}
+  \Def{$\text\Construct(l, p, r)$}{
+    $c \longleftarrow $ a hashmap of nodes to a set of children\;
+    $q \longleftarrow $ a queue, initially filled with the node in $l$\;
+    \While{$i$ pops from $q$}{
+      $p' \longleftarrow p[i]$\;
+      \If{$i \not= p$}{
+        \If{$p' \not\in \text\Keys(c)$}{
+          append $p$ to $q$\;
+        }
+        insert $i$ into $c[p']$\;
+      }
+    }
+    \Def{$\text\Recurse(r, c, l)$}{
+      \Children $\longleftarrow$ an empty list\;
+      \ForEach{$c'$ in $c[r]$}{
+        append $\text\Recurse(c', c, l)$ to \Children\;
+      }
+      $\text\Tree(r, l[r], \text\Children)$\;
+    }
+    $\text\Recurse(r, c, l)$\;
+  }
+  \BlankLine
+  $c \longleftarrow $ a hashmap of each value in \Taxa to 1\;
+  $t \longleftarrow \text\Construct(c, p, r)$\;
+  \While{$\text\Length(t[r]) = 1$}{
+    $r \longleftarrow t[r]$\;
+  }
+  $r$
+\caption{Finding the modified lowest common ancestor of a set of taxa.}
+\label{alg:rmqlca}
+\end{algorithm}
 
 The least conservative strategy is the maximum root-to-leaf path (MRTL).
 This is the taxon in the list with the most ancestors in the aggregated
@@ -34,7 +142,66 @@ list. It is calculated by traveling by direct ancestry to the root of
 the tree and summing the number of hits for each of the taxa on the
 path.
 
-*TODO pseudocode*
+\begin{algorithm}[h]
+  \SetAlgoLined
+  \DontPrintSemicolon
+  \KwData{The minimum seed size $s$, the maximum gap size $g$, and a list of taxa $r$.}
+  \KwResult{A list of ranges marking the selected taxa $l$.}
+  \SetKwData{LastTid}{last tid}
+  \SetKwData{SameTid}{same tid}
+  \SetKwData{SameMax}{same max}
+  \SetKwData{Start}{start}
+  \SetKw{And}{and}
+  \BlankLine
+  $l \longleftarrow \emptyset$\;
+  $b \longleftarrow 0$ \tcp{begin of current extended seed}
+  $e \longleftarrow 1$ \tcp{end of current extended seed}
+  \LastTid $\longleftarrow r[b]$\;
+  \SameTid $\longleftarrow 1$\;
+  \SameMax $\longleftarrow 1$\;
+  \While{$e < \mathtt{length}(t)$}{
+    \uIf{\LastTid $= r[e]$}{
+      \tcp{same taxon ID as last, add to seed}
+      \SameTid $\longleftarrow$ \SameTid + 1\;
+      $e \longleftarrow e + 1$\;
+    }
+    \uElseIf{\LastTid $= 0$ \And \SameTid $> g$}{
+      \tcp{gap larger than maximum gap size}
+      \If{\SameMax $\ge s$}{
+        \tcp{extended seed contains seed}
+        append $[b, e - \text{\SameTid}[$ to $l$\;
+      }
+      $b \longleftarrow e$\;
+      $e \longleftarrow e + 1$\;
+      \LastTid $\longleftarrow r[b]$\;
+      \SameTid $\longleftarrow 1$\;
+      \SameMax $\longleftarrow 1$\;
+    }
+    \uElseIf{\LastTid $= 0$ \And $e - b =$ \SameTid}{
+      \tcp{unidentified taxon at start, do not include it}
+      $e \longleftarrow e + 1$\;
+      $b \longleftarrow e$\;
+    }
+    \Else{
+      \tcp{change of taxon at current extended seed end}
+      \If{\LastTid $\not= 0$}{
+        \SameMax $\longleftarrow \mathtt{max}(\text\SameMax, \text\SameTid)$\;
+      }
+      \LastTid $\longleftarrow r[e]$\;
+      \SameTid $\longleftarrow 1$\;
+      $e \longleftarrow e + 1$\;
+    }
+  }
+  \If{\SameMax $\ge s$}{
+    \tcp{final extended seed contains seed}
+    \If{\LastTid $= 0$}{
+      $e \longleftarrow e - \text\SameTid$\;
+    }
+    append $[b, e[$ to $l$\;
+  }
+\caption{Finding the taxon with the maximum root-to-leaf path in a set of taxa.}
+\label{alg:mrtl}
+\end{algorithm}
 
 The third strategy of the `umgap taxa2agg` tool is a hybrid of the above
 two. Giving a factor *f*, the algorithm descends from the root of the
@@ -46,7 +213,68 @@ a factor 1.0 would thus behave similar to the modified lowest common
 ancestor algorithm, while a factor 0.0 follows the maximum root-to-leaf
 path.
 
-*TODO pseudocode*
+\begin{algorithm}[h]
+  \SetAlgoLined
+  \DontPrintSemicolon
+  \KwData{The minimum seed size $s$, the maximum gap size $g$, and a list of taxa $r$.}
+  \KwResult{A list of ranges marking the selected taxa $l$.}
+  \SetKwData{LastTid}{last tid}
+  \SetKwData{SameTid}{same tid}
+  \SetKwData{SameMax}{same max}
+  \SetKwData{Start}{start}
+  \SetKw{And}{and}
+  \BlankLine
+  $l \longleftarrow \emptyset$\;
+  $b \longleftarrow 0$ \tcp{begin of current extended seed}
+  $e \longleftarrow 1$ \tcp{end of current extended seed}
+  \LastTid $\longleftarrow r[b]$\;
+  \SameTid $\longleftarrow 1$\;
+  \SameMax $\longleftarrow 1$\;
+  \While{$e < \mathtt{length}(t)$}{
+    \uIf{\LastTid $= r[e]$}{
+      \tcp{same taxon ID as last, add to seed}
+      \SameTid $\longleftarrow$ \SameTid + 1\;
+      $e \longleftarrow e + 1$\;
+    }
+    \uElseIf{\LastTid $= 0$ \And \SameTid $> g$}{
+      \tcp{gap larger than maximum gap size}
+      \If{\SameMax $\ge s$}{
+        \tcp{extended seed contains seed}
+        append $[b, e - \text{\SameTid}[$ to $l$\;
+      }
+      $b \longleftarrow e$\;
+      $e \longleftarrow e + 1$\;
+      \LastTid $\longleftarrow r[b]$\;
+      \SameTid $\longleftarrow 1$\;
+      \SameMax $\longleftarrow 1$\;
+    }
+    \uElseIf{\LastTid $= 0$ \And $e - b =$ \SameTid}{
+      \tcp{unidentified taxon at start, do not include it}
+      $e \longleftarrow e + 1$\;
+      $b \longleftarrow e$\;
+    }
+    \Else{
+      \tcp{change of taxon at current extended seed end}
+      \If{\LastTid $\not= 0$}{
+        \SameMax $\longleftarrow \mathtt{max}(\text\SameMax, \text\SameTid)$\;
+      }
+      \LastTid $\longleftarrow r[e]$\;
+      \SameTid $\longleftarrow 1$\;
+      $e \longleftarrow e + 1$\;
+    }
+  }
+  \If{\SameMax $\ge s$}{
+    \tcp{final extended seed contains seed}
+    \If{\LastTid $= 0$}{
+      $e \longleftarrow e - \text\SameTid$\;
+    }
+    append $[b, e[$ to $l$\;
+  }
+\caption{A hybrid algorithm of the LCA\* and MRTL algorithms.}
+\label{alg:hybrid}
+\end{algorithm}
+
+*TODO describe range minimum query*
 
 #### Usage
 
