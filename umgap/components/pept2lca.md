@@ -10,7 +10,7 @@ protein contains this peptide.
 However, despite the simple principle, searching for peptides in the
 index is the computationally hardest step in the pipeline. Optimizing
 the `pept2lca` command was one of the major hurdles during the
-development of the UMGAP. It is now parallelised internally and
+development of the UMGAP. It is now parallelized internally and
 provides several options, such as the option to preload the index in
 memory, to fully use the available computing power.
 

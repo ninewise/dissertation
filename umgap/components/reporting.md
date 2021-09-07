@@ -4,9 +4,9 @@ At the end of running the analysis, the results need to be gotten
 into a format ready for interpreting. The `umgap taxa2freq` tool
 creates a frequency table on a given target rank (species by default).
 This frequency table is in a CSV-format, so it can be loaded into a
-spreadsheet program to start working on visualisations. Alternatively,
+spreadsheet program to start working on visualizations. Alternatively,
 the `umgap taxa2tree` command will directly create interactive
-visualisations to view in the browser. Note that it does contact the
+visualizations to view in the browser. Note that it does contact the
 Unipept API server to create these.
 
 #### Usage

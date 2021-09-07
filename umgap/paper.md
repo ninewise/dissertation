@@ -860,6 +860,6 @@ sample from its metagenome, which is more challenging than inferring
 biodiversity. Again, Unipept's function analysis pipeline for
 metaproteomes could be used as a potential starting point. In addition,
 both the biodiversity and the functional capacity of a sample could also
-be derived from its metatranscriptome, which could be analysed using
+be derived from its metatranscriptome, which could be analyzed using
 pipelines similar to UMGAP but with an adjusted protein translation
 step.

@@ -10,8 +10,8 @@ usage and some of the algorithms they use (\ref{section:tools}).
 \label{section:intent}
 
 The analysis of shotgun metagenomics data can be subdivided in two
-dimensions. First, as a sequence of individual reads to be analysed, and
-second, as a sequence of steps each read is analysed by.
+dimensions. First, as a sequence of individual reads to be analyzed, and
+second, as a sequence of steps each read is analyzed by.
 
 Shotgun metagenomics data is traditionally saved in FASTA and FASTQ
 files. These formats are long sequences of reads, each with a header and
@@ -21,15 +21,15 @@ aggregation, the reads must be brought together again, for instance to
 create a frequency table. This suggests subdividing the data per read.
 
 This dimension of subdivision gives the opportunity for easy
-parallelisation, following a map-reduce [TODO ref] strategy. Each
+parallelization, following a map-reduce [TODO ref] strategy. Each
 read can be processed in a separate thread, with little to no
-parallelisation overhead. This allows realisation of the full power of
+parallelization overhead. This allows realization of the full power of
 the executing machine.
 
 The other dimension of subdivision, as a sequence of analysis steps,
-allows for better optimisation of each step. After all, a program
+allows for better optimization of each step. After all, a program
 given a single task can specialize and can share the cost of a possibly
-slow initialisation step over all reads it will process. Parallelisation
+slow initialization step over all reads it will process. Parallelization
 is still possible with this subdivision, though less efficient, by
 running each step in a separate process, passing along reads after a
 process has finished its task. However, this manner of subdivision has
@@ -51,7 +51,7 @@ via standard output and standard input in FASTA-like formats.
 A pipeline is compromised of a series of tools. This section contains
 an exhaustive list of the available tools. For each tool, it describes
 the intended use, shows some examples, and finally lists the available
-options to change its behaviour.
+options to change its behavior.
 
 ### [fastq2fasta](components/fastq2fasta.md){.include}
 

@@ -3,7 +3,7 @@
 During an analysis, a researcher may be interested in identifications
 only at a given rank, e.g. species, or the presence or absence of
 certain specific taxa. For this, the `umgap snaptaxon` can be used. It
-takes one or more taxon IDs. For each taxon, it searches amongst its
+takes one or more taxon IDs. For each taxon, it searches among its
 ancestors if any are of the specified rank (e.g., `-r species`), or are
 one of the listed taxa (e.g., `-t 1598 -t 1883`). If so, the taxon is
 replaced by the most specific of these matching taxa. Otherwise, it is

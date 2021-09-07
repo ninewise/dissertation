@@ -75,7 +75,7 @@ UMGAP tool. First, as the UMGAP is a taxonomic identification tool,
 is the processed NCBI taxonomy *taxons*. Second is the *sequences*
 table, which contains the mapping of tryptic peptides onto their lowest
 common ancestor. Third is the *uniprot entries* table, which contains
-amongst other columns the protein sequence and the assigned taxon of the
+among other columns the protein sequence and the assigned taxon of the
 original UniProt entry. The latter is used for the construction of the
 *k*-mer-to-taxon mapping.
 
