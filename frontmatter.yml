@@ -1504,6 +1504,18 @@ references:
   issued: 2007
   event-date: 2007
   doi: 10.1145/1250734.1250746
+- type: paper-conference
+  id: tarjan
+  author:
+  - family: Tarjan
+    given: Robert E.
+  - family: Vishkin
+    given: Uzi
+  title: Finding biconnected componemts and computing tree functions in logarithmic parallel time
+  event: "25th Annual Symposium on Foundations of Computer Science, FOCS 19"
+  event-place: Singer Island, United States
+  event-date: 1984
+  issued: 1984
 - type: post-weblog
   id: gallant
   author:

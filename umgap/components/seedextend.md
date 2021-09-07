@@ -29,7 +29,6 @@ over a list of taxonomic identifications, as shown in Algorithm
 <!-- TODO decrease vertical size -->
 
 \begin{algorithm}[h]
-  \SetAlgoLined
   \DontPrintSemicolon
   \KwData{The minimum seed size $s$, the maximum gap size $g$, and a list of taxa $r$.}
   \KwResult{A list of ranges marking the selected taxa $l$.}
@@ -42,14 +41,11 @@ over a list of taxonomic identifications, as shown in Algorithm
   $l \longleftarrow \emptyset$\;
   $b \longleftarrow 0$ \tcp{begin of current extended seed}
   $e \longleftarrow 1$ \tcp{end of current extended seed}
-  \LastTid $\longleftarrow r[b]$\;
-  \SameTid $\longleftarrow 1$\;
-  \SameMax $\longleftarrow 1$\;
+  (\LastTid, \SameTid, \SameMax) $\longleftarrow (r[b], 1, 1)$\;
   \While{$e < \mathtt{length}(t)$}{
     \uIf{\LastTid $= r[e]$}{
       \tcp{same taxon ID as last, add to seed}
       \SameTid $\longleftarrow$ \SameTid + 1\;
-      $e \longleftarrow e + 1$\;
     }
     \uElseIf{\LastTid $= 0$ \And \SameTid $> g$}{
       \tcp{gap larger than maximum gap size}
@@ -58,25 +54,21 @@ over a list of taxonomic identifications, as shown in Algorithm
         append $[b, e - \text{\SameTid}[$ to $l$\;
       }
       $b \longleftarrow e$\;
-      $e \longleftarrow e + 1$\;
-      \LastTid $\longleftarrow r[b]$\;
-      \SameTid $\longleftarrow 1$\;
-      \SameMax $\longleftarrow 1$\;
+      (\LastTid, \SameTid, \SameMax) $\longleftarrow (r[b], 1, 1)$\;
     }
     \uElseIf{\LastTid $= 0$ \And $e - b =$ \SameTid}{
       \tcp{unidentified taxon at start, do not include it}
-      $e \longleftarrow e + 1$\;
-      $b \longleftarrow e$\;
+      $b \longleftarrow e + 1$\;
     }
     \Else{
-      \tcp{change of taxon at current extended seed end}
       \If{\LastTid $\not= 0$}{
+        \tcp{change of taxon at current extended end}
         \SameMax $\longleftarrow \mathtt{max}(\text\SameMax, \text\SameTid)$\;
       }
       \LastTid $\longleftarrow r[e]$\;
       \SameTid $\longleftarrow 1$\;
-      $e \longleftarrow e + 1$\;
     }
+    $e \longleftarrow e + 1$\;
   }
   \If{\SameMax $\ge s$}{
     \tcp{final extended seed contains seed}
