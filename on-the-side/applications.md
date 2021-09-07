@@ -14,13 +14,13 @@ The \ref{section:preconf} stuff.
 
 ### The preconfigured pipelines {#section:preconf}
 
-### A homebrew taxonomic analysis pipeline {#section:homebrew}
+### A home brew taxonomic analysis pipeline {#section:homebrew}
 
 ### A comparative analysis {#section:comparative}
 
 Peat substrate amended with chitin modulates the N-cycle, siderophore and chitinase responses in the lettuce rhizobiome
 
-### A transcriptonomics analysis pipeline {#section:transcript}
+### A transcriptomics analysis pipeline {#section:transcript}
 
 Steve Baeyen https://biblio.ugent.be/publication?q=author%3D%22Baeyen%2C+Steve%22
 

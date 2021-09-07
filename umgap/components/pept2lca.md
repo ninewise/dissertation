@@ -152,7 +152,7 @@ pipeline(s) to communicate with the socket using OpenBSD's netcat: `...
   ~ The length of the k-mers in the index [default: 9]
 
 `-s / --socket socket`
-  ~ Instead of reading from stdin and writing to stdout, create a Unix
+  ~ Instead of reading from standard input and writing to standard output, create a Unix
     socket to communicate with using OpenBSD's netcat (`nc -NU socket`).
     This is especially useful in combination with the `--in-memory`
     flag: you only have to load the index in memory once, after which

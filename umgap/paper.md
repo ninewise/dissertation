@@ -713,7 +713,7 @@ choice. As the bold values in Table~\ref{species-table} indicate, the
 latter scenario is definitely not (yet) reached for shotgun metagenomics
 tools. Among the six preconfigured UMGAP pipelines selected from the
 parameter sweep analysis we find both configurations that either
-yield optimal performance for one criterium (precision/specificity
+yield optimal performance for one criterion (precision/specificity
 for the UMGAP tryptic precision pipeline and index size for the UMGAP
 tryptic pipelines that all use the same index) or yield a well-balanced
 trade-off between all performance criteria that adds value compared to
@@ -729,7 +729,7 @@ are more informative. As a result, UMGAP automatically balances
 between optimal information content (specificity) and reliability
 (sensitivity), with different settings of the pipeline resulting in
 different trade-offs. Mapping UMGAP identifications to a specific rank
-is only a post-processing step we have done (using UMGAP's snaprank
+is only a post-processing step we have done (using UMGAP's `snaprank`
 tool) to comply with the experimental setup of the MetaBenchmark.
 
 Taking advantage of the dynamic taxonomic rank assignment and the fact
