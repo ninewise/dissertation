@@ -8,9 +8,7 @@ as it would be done using the released version of the UMGAP, not as it
 was executed originally. As such, this section may be used as a guide to
 compose a new pipeline for a similar analysis.
 
-The \ref{section:preconf} stuff.
-
-* Annelies Haegeman https://biblio.ugent.be/person/F7927142-F0ED-11E1-A9DE-61C894A0A6B4
+* TODO Annelies Haegeman https://biblio.ugent.be/person/F7927142-F0ED-11E1-A9DE-61C894A0A6B4
 
 ### The preconfigured pipelines {#section:preconf}
 
@@ -177,6 +175,158 @@ All records will be at the same specified taxon rank or at root
   ~ Set the rank for the CSV frequency table (default: species).
 
 ### A home brew taxonomic analysis pipeline {#section:homebrew}
+
+While the preconfigured pipelines make running the UMGAP relatively
+easy, there are only six of them. Part of the reason for using a
+pipeline is to allow composing many diverse metagenomic pipelines
+with the same set of tools. This section builds up a custom pipeline,
+demonstrating how all tools work together.
+
+The 3 reads of the same dataset as in \ref{section:preconfigured} will
+be used. This is a paired-end dataset, stored in two FASTQ files.
+Since the pipeline operates on FASTA files, the first step is a format
+conversion.
+
+```shell
+$ umgap fastq2fasta A1.fq A2.fq | tee preprocessed.fa
+>read1/1
+ATCGCGCACGCGGCCGATGCCCCAGAAGAGATTGACAGCGGTGGGGCGGGCGGCGGCGAGGTGGTCGCAGATCTCGGCGACCTCTGCGTTGAGGGTCGGG
+>read1/2
+AAGATGGCGACTGGATGATGATCGCGCGGCAGGCCACCATCTACGATCCCGCAGTGAAGCATTACTAACCATGATGCGCAACGACTCGCTGTCAGAGCTA
+>read2/1
+AGATTGCTGGTGCGGGTGCTCTGCCGGGCTTCTTCATCTCGGACCGCGCATCCGATGCGCACACGGCACAGTAGGTATGCGGTGAGAGCACCTCGCTTTT
+>read2/2
+CGCAATCTTGCGGCGCACCGCGATCAAATCGGGATAGTCCGGTGTGTAACGCGTGCTCAGGTCATCTGCCCGTACCCGCAATACATTCAACTGTGTTTTA
+>read3/1
+CCCTCAAGCCCGATCGAACTTTCCTACTGCCCGACCTCAGCGCGGAGCATTACCGAATCGTCGTCAACAATCTCCCCGATGGCTTCTATGTGAACTCCAT
+>read3/2
+CAAAATGGAGTGGGCGCTACTGCTCCGTGAGCAGGGTCAGTTGGAGGGATTGGGGCGTGCGCTCGGGGATGCTAATGGCGGTGCCCCTGGATTCCTGAGA
+```
+
+This command interleaves the given FASTQ files to output a single
+FASTA stream, in which the paired ends alternate. This FASTA stream is
+a stream of DNA reads. Each read needs to be translated to an amino
+acid sequence. While any gene prediction tool could be used here, the
+UMGAP was tested with FragGeneScan and its variants.
+
+```shell
+$ FGS -s preprocessed.fa -o predicted-genes -w0 -t illumina_10 -p 16 > /dev/null
+$ rm predicted-genes.fnn predicted-genes.out # we don't use these files
+```
+
+Alternatively, the built-in translation tool can be used to translate
+all six frames of each read. Whichever method used, it results in a file
+containing protein fragments.
+
+```shell
+$ umgap translate -a < preprocessed.fa | tee predicted-genes.faa
+>read1/1|1
+IAHAADAPEEIDSGGAGGGEVVADLGDLCVEGR
+>read1/1|2
+SRTRPMPQKRLTAVGRAAARWSQISATSALRVG
+>read1/1|3
+RARGRCPRRD*QRWGGRRRGGRRSRRPLR*GS
+>read1/1|1R
+PDPQRRGRRDLRPPRRRPPHRCQSLLGHRPRAR
+>read1/1|2R
+PTLNAEVAEICDHLAAARPTAVNLFWGIGRVRD
+...
+```
+
+The UMGAP uses exact substring matching to identify reads. The next
+step of the pipeline maps each 9-mer encountered in each of the protein
+fragments via a provided index file. The available index files pair
+each peptide from the UniProtKB onto the lowest common ancestor of all
+proteins it occurs in.
+
+```shell
+$ umgap prot2kmer2lca -o -k9 9-mer.index < predicted-genes.faa | tee found-kmers.fa
+>read1/1|1
+0 0 0 0 0 0 0 0 0 0 35725 2759 1 1 1 2 515393 201174 0 1 0 0 0 379 0
+>read1/1|2
+0 0 0 0 0 0 0 0 0 1185650 1185650 140110 0 0 0 0 0 0 0 0 0 36842 0 1 162425
+>read1/1|3
+0 0 0 0 0 0 0 0 0 0 0 1773 47855 4530 1 1 1 1 1 0 35708 0 0 0
+>read1/1|1R
+0 0 0 0 2235 0 0 0 0 40674 1 1 2759 0 0 0 0 0 0 0 0 0 0 0 88724
+>read1/1|2R
+1 940557 1 940615 940615 940615 940615 940615 0 0 0 0 56 2 1 1 1 1 2 2 940615 940615 940615 940615 940615
+...
+```
+
+The `-o` flag requests unrecognized peptides to be included as taxon ID
+0. This sets the stage for the optional filtering of the taxa based on
+their location: the seed extend tool.
+
+```shell
+$ umgap seedextend < found-kmers.fa | tee selected-seeds.fa
+>read1/1|1
+35725 2759 1 1 1 2 515393 201174
+>read1/1|2
+1185650 1185650 140110
+>read1/1|3
+1773 47855 4530 1 1 1 1 1
+>read1/1|1R
+40674 1 1 2759
+>read1/1|2R
+1 940557 1 940615 940615 940615 940615 940615 56 2 1 1 1 1 2 2 940615 940615 940615 940615 940615
+...
+```
+
+These lists of taxa need to be aggregated into a single consensus
+taxon per read. The `uniq` tool will gather all consecutive reads with
+the same header after dropping a possible suffix, which is why the
+`fastq2fasta` and `translate` steps must keep together the ends and
+translations of a read. Next, the `taxa2agg` command aggregates the
+complete set using a given taxonomy.
+
+```shell
+$ umgap uniq -d / < selected-seeds.fa | umgap taxa2agg taxons.tsv | tee classification.fa
+>read1
+940615
+>read2
+392734
+>read3
+332163
+```
+
+This output is in essence the result of the pipeline (and the same
+result type of the preconfigured `umgap-analyse.sh` script). The
+`umgap-visualize.sh` script internally uses two more commands: the
+`taxa2freq` command to generate frequency tables and the `taxa2tree`
+command to generate interactive visualizations.
+
+```shell
+$ umgap taxa2freq -r species taxons.tsv < classification.fa | tee report.csv
+taxon id,taxon name,stdin
+332163,Candidatus Solibacter usitatus,1
+392734,Terriglobus roseus,1
+940615,Granulicella tundricola,1
+$ umgap taxa2tree --url < classification.fa # uses more reads for the image
+https://bl.ocks.org/5960ffd859fb17439d7975896f513bc3
+```
+
+TODO image
+
+Running these commands in discrete steps, as above, is of course an
+option, but the UMGAP wouldn't be a pipeline if it were the only option.
+By putting all steps in a single command, they can run in parallel.
+
+```shell
+$ umgap fastq2fasta A1.fq A2.fq |          # joining paired-end files
+  umgap translate -a |                     # translating all six frames
+  umgap prot2kmer2lca -o -k9 9-mer.index | # mapping each 9-mer onto a taxon or 0
+  umgap seedextend |                       # filtering extended seeds
+  sed '/^>/s_/.*__' |                      # dropping the paired-end and frame annotations
+  umgap uniq |                             # joining equal headers (all taxa of the same read)
+  umgap taxa2agg taxons.tsv |              # aggregating all taxa
+  grep -v '^>' |                           # dropping headers
+  umgap taxa2freq taxons.tsv               # make frequency table
+taxon id,taxon name,stdin
+332163,Candidatus Solibacter usitatus,1
+392734,Terriglobus roseus,1
+940615,Granulicella tundricola,1
+```
 
 ### A comparative analysis {#section:comparative}
 
