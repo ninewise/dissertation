@@ -182,7 +182,7 @@ pipeline is to allow composing many diverse metagenomic pipelines
 with the same set of tools. This section builds up a custom pipeline,
 demonstrating how all tools work together.
 
-The 3 reads of the same dataset as in \ref{section:preconfigured} will
+The 3 reads of the same dataset as in \ref{section:preconf} will
 be used. This is a paired-end dataset, stored in two FASTQ files.
 Since the pipeline operates on FASTA files, the first step is a format
 conversion.
@@ -306,7 +306,7 @@ $ umgap taxa2tree --url < classification.fa # uses more reads for the image
 https://bl.ocks.org/5960ffd859fb17439d7975896f513bc3
 ```
 
-TODO image
+![A screenshot of the visualization created by the `taxa2tree` command.](treeview-advanced.png)
 
 Running these commands in discrete steps, as above, is of course an
 option, but the UMGAP wouldn't be a pipeline if it were the only option.
