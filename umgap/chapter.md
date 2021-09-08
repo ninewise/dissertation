@@ -1,4 +1,4 @@
-# The Unipept Metagenomics Analysis Pipeline
+# The Unipept Metagenomics Analysis Pipeline {pageheading="The UMGAP"}
 
 This chapter starts with describing the intent and structure of the
 pipeline (\ref{section:intent}). After, it includes a report on the

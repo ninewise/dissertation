@@ -1,6 +1,6 @@
-papersize: A4
+papersize: A5
 geometry:
-- margin=1in
+- margin=0.8in
 classoption:
 - oneside
 documentclass: book

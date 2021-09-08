@@ -317,8 +317,7 @@ $ umgap fastq2fasta A1.fq A2.fq |          # joining paired-end files
   umgap translate -a |                     # translating all six frames
   umgap prot2kmer2lca -o -k9 9-mer.index | # mapping each 9-mer onto a taxon or 0
   umgap seedextend |                       # filtering extended seeds
-  sed '/^>/s_/.*__' |                      # dropping the paired-end and frame annotations
-  umgap uniq |                             # joining equal headers (all taxa of the same read)
+  umgap uniq -d / |                        # joining equal headers (all taxa of the same read)
   umgap taxa2agg taxons.tsv |              # aggregating all taxa
   grep -v '^>' |                           # dropping headers
   umgap taxa2freq taxons.tsv               # make frequency table
