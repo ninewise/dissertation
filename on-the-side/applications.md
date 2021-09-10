@@ -329,7 +329,70 @@ taxon id,taxon name,stdin
 
 ### A comparative analysis {#section:comparative}
 
-Peat substrate amended with chitin modulates the N-cycle, siderophore and chitinase responses in the lettuce rhizobiome
+For a comparative study of 8 shotgun metagenomics samples and the
+comparison of the taxonomic diversity therein [@detender], a comparative
+frequency table was added to the UMGAP. Assuming the samples are stored
+in pairs of files, following command will analyze all 8 paired-end
+samples. By putting them together in a single analysis, the UMGAP can
+reuse a memory-loaded index file.
+
+```shell
+$ umgap-analyse.sh \
+  -1 ERR1654119_1.fastq.gz -2 ERR1654119_2.fastq.gz -t high-sensitivity -z -o ERR1654119.tid.fa.gz \
+  -1 ERR1654120_1.fastq.gz -2 ERR1654120_2.fastq.gz -t high-sensitivity -z -o ERR1654120.tid.fa.gz \
+  -1 ERR1654121_1.fastq.gz -2 ERR1654121_2.fastq.gz -t high-sensitivity -z -o ERR1654121.tid.fa.gz \
+  -1 ERR1654122_1.fastq.gz -2 ERR1654122_2.fastq.gz -t high-sensitivity -z -o ERR1654122.tid.fa.gz \
+  -1 ERR1654123_1.fastq.gz -2 ERR1654123_2.fastq.gz -t high-sensitivity -z -o ERR1654123.tid.fa.gz \
+  -1 ERR1654124_1.fastq.gz -2 ERR1654124_2.fastq.gz -t high-sensitivity -z -o ERR1654124.tid.fa.gz \
+  -1 ERR1654125_1.fastq.gz -2 ERR1654125_2.fastq.gz -t high-sensitivity -z -o ERR1654125.tid.fa.gz \
+  -1 ERR1654126_1.fastq.gz -2 ERR1654126_2.fastq.gz -t high-sensitivity -z -o ERR1654126.tid.fa.gz
+```
+
+The usual individual visualizations are of course available and allow
+studying each sample in detail. All 8 can be created using again a
+single command, resulting in a URL for each sample.
+
+```shell
+$ umgap-visualize.sh -u *.tid.fa.gz
+ERR1654119.tid.fa.gz: https://bl.ocks.org/5055456c85e9e103da221fbba6e6c269
+ERR1654120.tid.fa.gz: https://bl.ocks.org/31e0fc6e2d8705e5ef64e856318dc17c
+ERR1654121.tid.fa.gz: https://bl.ocks.org/019b89c96446a2949423d34f4281ee1c
+ERR1654122.tid.fa.gz: https://bl.ocks.org/3542a2a24fcf5ed3a791e937d2d6e618
+ERR1654123.tid.fa.gz: https://bl.ocks.org/ccc88f795dbd797b08cfe7c8d1187a13
+ERR1654124.tid.fa.gz: https://bl.ocks.org/794f9907fbb2488d94f94ccb7d06d835
+ERR1654125.tid.fa.gz: https://bl.ocks.org/7568952f1338768a6b62d32928c0ee74
+ERR1654126.tid.fa.gz: https://bl.ocks.org/f25941840ce1e706623750d561d7c47d
+```
+
+Of more interest here is a comparative visualization. While the UMGAP
+does not support such visualizations directly, it does support exporting
+a comparative CSV frequency table.
+
+```shell
+$ umgap-visualize.sh -r phylum -t *.tid.fa.gz > frequencies.csv
+$ head -10 frequencies.csv
+taxon id,taxon name,ERR1654119.tid.fasta.gz,ERR1654120.tid.fasta.gz,ERR1654121.tid.fasta.gz,ERR1654122.tid.fasta.gz,ERR1654123.tid.fasta.gz,ERR1654124.tid.fasta.gz,ERR1654125.tid.fasta.gz,ERR1654126.tid.fasta.gz
+1239,Firmicutes,83406,150700,80856,174901,80888,78400,95509,132121
+2497438,Perkinsozoa,161,284,122,285,148,135,171,267
+1752735,Candidatus Wolfebacteria,113,209,108,231,124,82,109,162
+1817902,Candidatus Brennerbacteria,4,5,4,5,2,4,6,1
+221216,Candidatus Parcubacteria,734,1485,823,1646,914,935,1304,1788
+1817898,Candidatus Blackburnbacteria,28,66,26,57,18,41,49,68
+3041,Chlorophyta,6439,11167,5921,13904,6303,6138,6897,10420
+1913638,Zoopagomycota,1261,1730,937,2292,9727,6500,6728,7377
+2732406,Kitrinoviricota,38,76,59,102,43,37,60,86
+```
+
+This CSV file can be processed by any spreadsheet software
+or statistical analysis framework. For instance, in Figure
+\ref{fig:comparative}, the fraction each of the 20 most detected
+phyla represents in its sample is shown. For phyla uninfluenced by
+the addition of chitin to the sample, we expect to see an equivalent
+representation in each of the 8 samples (each color would take up 1/8th
+of the bar). The Mucoromycota and Ciliophora phyla, however, are clearly
+overrepresented in the 4 chitin-rich samples.
+
+![The relative representation of the 20 most frequent phyla (over all samples) per sample. Phyla with equivalent representation in all 8 samples result in an approximately uniform division of the bar over the samples. Notable are the Ciliophora and Mucoromycota phyla, which are overrepresented in the 4 latter samples, which are the chitin-rich samples](./comparative-phyla.svg){#fig:comparative}
 
 ### A transcriptomics analysis pipeline {#section:transcript}
 
