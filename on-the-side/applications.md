@@ -401,6 +401,39 @@ overrepresented in the 4 chitin-rich samples.
 
 Steve Baeyen https://biblio.ugent.be/publication?q=author%3D%22Baeyen%2C+Steve%22
 
+Voor het ITG:
+
+```
+/data/mail/ugent/Inbox/cur/1522395646.2463_1.abysm,U=10627:2,RS
+/data/mail/gmail/Inbox/cur/1494574491.1508_9.abysm,U=17583:2,S
+/data/mail/gmail/Sent/cur/1494601367.M458592P22678Q1.abysm,U=3002:2,S
+```
+
+Voor het ILVO (Steve Baeyen & Caroline):
+
+```
+/data/mail/ugent/Inbox/cur/1526652704.11715_1.abysm,U=11303:2,RS
+/data/mail/ugent/Sent/cur/1527859599.M299129P1477Q1.abysm,U=775:2,S
+/data/mail/ugent/Sent/cur/1529326023.M513732P13462Q1.abysm,U=819:2,S
+/data/mail/ugent/Inbox/cur/1533069604.1482_25.abysm,U=12046:2,RS
+/data/mail/ugent/Sent/cur/1534162605.M622864P14331Q1.abysm,U=885:2,S
+```
+
+Voor het ILVO (Annelies Haegeman):
+
+```
+/data/mail/ugent/Inbox/cur/1562229558.23101_1.abysm,U=19052:2,RS
+/data/mail/ugent/Inbox/cur/1562322121.3910_1.abysm,U=19074:2,RS
+/data/mail/ugent/Sent/cur/1564754751.M820714P3686Q1.abysm,U=1610:2,S
+/data/mail/ugent/Inbox/cur/1565085863.24367_2.abysm,U=19459:2,RS
+/data/mail/ugent/Sent/cur/1565166804.M449717P11530Q1.abysm,U=1623:2,S
+/data/mail/ugent/Inbox/cur/1565190743.13909_1.abysm,U=19575:2,S
+```
+
 ### Finding viral traces {#section:viral}
 
 Sebastiaan Theuns https://biblio.ugent.be/person/0767592A-F0EE-11E1-A9DE-61C894A0A6B4
+
+```
+/data/mail/ugent/Inbox/cur/1559131238.16965_1.abysm,U=18505:2,RS
+```
