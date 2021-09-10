@@ -167,10 +167,13 @@ All records will be at the same specified taxon rank or at root
 
 `-t`
   ~ Output a CSV frequency table on species rank.
+
 `-w`
   ~ Output an HTML web page of an interactive visualization.
+
 `-u`
   ~ Print a shareable URL to a online interactive visualization.
+
 `-r rank`
   ~ Set the rank for the CSV frequency table (default: species).
 
