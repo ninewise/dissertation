@@ -399,16 +399,6 @@ overrepresented in the 4 chitin-rich samples.
 
 ### A transcriptomics analysis pipeline {#section:transcript}
 
-Steve Baeyen https://biblio.ugent.be/publication?q=author%3D%22Baeyen%2C+Steve%22
-
-Voor het ITG:
-
-```
-/data/mail/ugent/Inbox/cur/1522395646.2463_1.abysm,U=10627:2,RS
-/data/mail/gmail/Inbox/cur/1494574491.1508_9.abysm,U=17583:2,S
-/data/mail/gmail/Sent/cur/1494601367.M458592P22678Q1.abysm,U=3002:2,S
-```
-
 Voor het ILVO (Steve Baeyen & Caroline):
 
 ```
@@ -417,6 +407,71 @@ Voor het ILVO (Steve Baeyen & Caroline):
 /data/mail/ugent/Sent/cur/1529326023.M513732P13462Q1.abysm,U=819:2,S
 /data/mail/ugent/Inbox/cur/1533069604.1482_25.abysm,U=12046:2,RS
 /data/mail/ugent/Sent/cur/1534162605.M622864P14331Q1.abysm,U=885:2,S
+```
+
+By request of Steve Baeyen, the script below was written to analyse a
+number of transcriptomics samples (stored in `samples`). This script is
+very similar to a specialized `umgap-analyse` script without the various
+parameters and configurations. However, since these are transcriptomics
+samples, instead of joining all reads after identification, the `umgap
+bestof` tool selects the single best frame out of the 6 translated and
+identified frames.
+
+```sh
+#!/bin/sh
+samples="LJ_2017_035 Rhizo_P1 ..."
+ninemers=/.../ninemer.fst
+taxons=/.../taxons.tsv
+
+d="$(mktemp -d)"
+
+umgap prot2kmer2lca -m -o -s "$d/socket" "$ninemers" &
+ninemer_pid="$!"
+trap "rm -rf '$d' && kill '$ninemer_pid'" KILL EXIT
+while [ ! -S "$d/socket" ] && sleep 1; do true; done
+
+mkdir -p results
+
+for sample in $samples; do
+›   mkfifo "$d/1" "$d/2"
+›   zcat "data/${sample}_1.fastq.gz" > "$d/1" &
+›   zcat "data/${sample}_2.fastq.gz" > "$d/2" &
+›   umgap fastq2fasta "$d/1" "$d/2"     | # intercalating ends
+›   ›   umgap translate -n -a -t11      | # translating 6 frames
+›   ›   nc -NU "$d/socket"              | # identification
+›   ›   umgap bestof                    | # pick best frame
+›   ›   umgap uniq -d ' '               | # drop end and frame indicator
+›   ›   umgap taxa2agg "$taxons"        | # aggregate
+›   ›   gzip - > results/"${sample}.gz"
+›   rm "$d/1" "$d/2"
+done
+```
+
+```
+	bacteriophage	mycrovirus	invertebrates viruses	plant_virus
+LJ_2017_033	Sulfolobales Virus YNP2 strain SYV2	(Soybean leaf-associated mitovirus 5 isolate SaMitV5-1)	Beihai levi-like virus, Hubei levi-like virus	[Beet cryptic virus 2]
+LJ_2017_033_No_Dnase	Sulfolobales Virus YNP2 strain SYV2	Soybean leaf-associated mitovirus 5 isolate SaMitV5-1	Wenling levi-like virus 1 strain	[Beet cryptic virus 2]
+LJ_2017_034	Sulfolobales Virus YNP2 strain SYV2	Phakopsora pachyrhizi mycovirus isolate,	Beihai levi-like virus 10 strain	[Beet cryptic virus 2]
+LJ_2017_034_No_Dnase	Sulfolobales Virus YNP2 strain SYV2	Niflavirus isolate NiflaV	Beihai levi-like virus 10 strain	(Raphanus sativas chrysovirus 1)
+LJ_2017_035	Sulfolobales Virus YNP2 strain SYV2	Plasmopara halstedii virus A	Beihai levi-like virus 7 strain	[Beet cryptic virus 2]
+LJ_2017_036	Sulfolobales Virus YNP2 strain SYV2	Macrophomina phaseolina single-stranded RNA virus 1 isolate Tn408	Beihai levi-like virus 11	[Beet cryptic virus 2]
+LJ_2017_039	Sulfolobales Virus YNP2 strain SYV2	Plasmopara halstedii virus A isolate Ph8-99	Hubei noda-like virus	[Beet cryptic virus 2]
+LJ_2017_040	Sulfolobales Virus YNP2 strain SYV2	Plasmopara halstedii virus A isolate Ph8-99	Beihai levi-like virus	[Beet cryptic virus 2]
+PS1_P1	Pyrobaculum filamentous virus 1	Niflavirus isolate NiflaV	Wenzhou levi-like virus 2	Lettuce mottle virus isolate
+PS1_P2	Sulfolobales Virus YNP2 strain SYV2	Plasmopara halstedii virus A isolate Ph8-99	Sanxia noda-like virus 1	Lettuce mottle virus isolate
+Rhizo_P1	Sulfolobales Virus YNP2 strain SYV2	Niflavirus isolate NiflaV	Changjiang picorna-like virus	Soybean-associated bicistronic virus
+Rhizo_P2	Pyrobaculum filamentous virus 1	Niflavirus isolate NiflaV, Diaporthe ambigua RNA virus 1	Beihai levi-like virus 3	(Soybean-associated bicistronic virus)
+
+strain	lage similariteiten
+strain	(betrouwbaar)
+strain	[goede detectie]
+```
+
+Voor het ITG:
+
+```
+/data/mail/gmail/Inbox/cur/1494574491.1508_9.abysm,U=17583:2,S
+/data/mail/gmail/Sent/cur/1494601367.M458592P22678Q1.abysm,U=3002:2,S
 ```
 
 Voor het ILVO (Annelies Haegeman):
