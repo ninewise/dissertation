@@ -8,8 +8,6 @@ as it would be done using the released version of the UMGAP, not as it
 was executed originally. As such, this section may be used as a guide to
 compose a new pipeline for a similar analysis.
 
-* TODO Annelies Haegeman https://biblio.ugent.be/person/F7927142-F0ED-11E1-A9DE-61C894A0A6B4
-
 ### The preconfigured pipelines {#section:preconf}
 
 The primary and easiest procedure to run the UMGAP on your data, and the
@@ -113,7 +111,8 @@ command.
   ~ Second pair-ended FASTQ input file, optionally compressed.
 
 `-t`
-  ~ Type of the analysis. This flag allows you to select one of the preconfigured pipelines.
+  ~ Type of the analysis. This flag allows you to select one of the
+    preconfigured pipelines.
 
     - `high-precision` is the default pipeline and is optimized for high
       precision identifications on your metagenomics reads.
@@ -399,16 +398,6 @@ overrepresented in the 4 chitin-rich samples.
 
 ### A transcriptomics analysis pipeline {#section:transcript}
 
-Voor het ILVO (Steve Baeyen & Caroline):
-
-```
-/data/mail/ugent/Inbox/cur/1526652704.11715_1.abysm,U=11303:2,RS
-/data/mail/ugent/Sent/cur/1527859599.M299129P1477Q1.abysm,U=775:2,S
-/data/mail/ugent/Sent/cur/1529326023.M513732P13462Q1.abysm,U=819:2,S
-/data/mail/ugent/Inbox/cur/1533069604.1482_25.abysm,U=12046:2,RS
-/data/mail/ugent/Sent/cur/1534162605.M622864P14331Q1.abysm,U=885:2,S
-```
-
 By request of Steve Baeyen, the script below was written to analyse a
 number of transcriptomics samples (stored in `samples`). This script is
 very similar to a specialized `umgap-analyse` script without the various
@@ -433,20 +422,40 @@ while [ ! -S "$d/socket" ] && sleep 1; do true; done
 mkdir -p results
 
 for sample in $samples; do
-›   mkfifo "$d/1" "$d/2"
-›   zcat "data/${sample}_1.fastq.gz" > "$d/1" &
-›   zcat "data/${sample}_2.fastq.gz" > "$d/2" &
-›   umgap fastq2fasta "$d/1" "$d/2"     | # intercalating ends
-›   ›   umgap translate -n -a -t11      | # translating 6 frames
-›   ›   nc -NU "$d/socket"              | # identification
-›   ›   umgap bestof                    | # pick best frame
-›   ›   umgap uniq -d ' '               | # drop end and frame indicator
-›   ›   umgap taxa2agg "$taxons"        | # aggregate
-›   ›   gzip - > results/"${sample}.gz"
-›   rm "$d/1" "$d/2"
+  mkfifo "$d/1" "$d/2"
+  zcat "data/${sample}_1.fastq.gz" > "$d/1" &
+  zcat "data/${sample}_2.fastq.gz" > "$d/2" &
+  umgap fastq2fasta "$d/1" "$d/2"   | # intercalating ends
+    umgap translate -n -a -t11      | # translating 6 frames
+    nc -NU "$d/socket"              | # identification
+    umgap bestof                    | # pick best frame
+    umgap uniq -d ' '               | # drop end and frame indicator
+    umgap taxa2agg "$taxons"        | # aggregate
+    gzip - > results/"${sample}.gz"
+  rm "$d/1" "$d/2"
 done
 ```
 
+This scripts outputs a single file per sample. These files can then be
+processed with the visualize script.
+
+```shell
+$ umgap-visualize -t results/*
+taxon id,taxon name,LJ_2017_033.gz,LJ_2017_035.gz,LJ_2017_036.gz,LJ_2017_039.gz,LJ_2017_040.gz,PS1_P1.gz,PS1_P2.gz,Rhizo_P1.gz,Rhizo_P2.gz
+1,root,18317594,16378552,16425896,17262443,17494244,17475641,13965489,23492453,16903317
+562,Escherichia coli,641334,557683,92129,373881,168358,279683,226576,237624,171574
+195883,Laodelphax striatellus,15227,11485,1832336,14107,18741,12177,8955,14312,14004
+1913989,Gammaproteobacteria bacterium,159917,142469,97749,162877,165087,400512,140581,265984,289616
+1978231,Acidobacteria bacterium,350326,252945,106724,397893,301891,58982,47283,89638,51127
+7070,Tribolium castaneum,2759,2437,1481795,4262,3392,5893,5150,9191,5110
+2026735,Deltaproteobacteria bacterium,140640,123579,56559,160855,149663,165955,132033,201829,138533
+2026724,Chloroflexi bacterium,144053,136295,111208,172663,144990,103864,67742,150339,74256
+1883427,Actinobacteria bacterium,135642,126913,54918,164617,152087,108761,126096,133689,101171
+3870,Lupinus albus,244425,195462,75007,146726,148291,42949,63598,85444,95046
+...
+```
+
+<!--
 ```
 	bacteriophage	mycrovirus	invertebrates viruses	plant_virus
 LJ_2017_033	Sulfolobales Virus YNP2 strain SYV2	(Soybean leaf-associated mitovirus 5 isolate SaMitV5-1)	Beihai levi-like virus, Hubei levi-like virus	[Beet cryptic virus 2]
@@ -466,6 +475,18 @@ strain	lage similariteiten
 strain	(betrouwbaar)
 strain	[goede detectie]
 ```
+-->
+
+<!--
+Voor het ILVO (Steve Baeyen & Caroline):
+
+```
+/data/mail/ugent/Inbox/cur/1526652704.11715_1.abysm,U=11303:2,RS
+/data/mail/ugent/Sent/cur/1527859599.M299129P1477Q1.abysm,U=775:2,S
+/data/mail/ugent/Sent/cur/1529326023.M513732P13462Q1.abysm,U=819:2,S
+/data/mail/ugent/Inbox/cur/1533069604.1482_25.abysm,U=12046:2,RS
+/data/mail/ugent/Sent/cur/1534162605.M622864P14331Q1.abysm,U=885:2,S
+```
 
 Voor het ITG:
 
@@ -484,11 +505,16 @@ Voor het ILVO (Annelies Haegeman):
 /data/mail/ugent/Sent/cur/1565166804.M449717P11530Q1.abysm,U=1623:2,S
 /data/mail/ugent/Inbox/cur/1565190743.13909_1.abysm,U=19575:2,S
 ```
+-->
 
 ### Finding viral traces {#section:viral}
 
+TODO drop?
+
+<!--
 Sebastiaan Theuns https://biblio.ugent.be/person/0767592A-F0EE-11E1-A9DE-61C894A0A6B4
 
 ```
 /data/mail/ugent/Inbox/cur/1559131238.16965_1.abysm,U=18505:2,RS
 ```
+-->

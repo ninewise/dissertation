@@ -20,6 +20,8 @@
 
 * Indiening al aanmaken op plato (kan ruim op voorhand)
 
+* List of publications toevoegen?
+
 ### Planning
 
 * 23 tot 30 augustus:
@@ -41,7 +43,7 @@
   - nederlandstalige samenvatting
   - jury voorleggen aan OCI (huidig voorstel: Kris Coolsaet
     (voorzitter), Veerle Fack, Jan Fostier, Aurelien Carlier (extern),
-    Tom Ruttinck (extern), Carolien De Tender (extern))
+    Tom Ruttinck (extern), Caroline De Tender (extern))
   - data interne en publieke afspreken met jury
 
 * 18 oktober: indiening op Plato finaliseren
