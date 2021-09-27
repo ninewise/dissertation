@@ -436,8 +436,11 @@ for sample in $samples; do
 done
 ```
 
-This scripts outputs a single file per sample. These files can then be
-processed with the visualize script.
+This scripts outputs a single file per sample. These files can then
+be processed with the visualize script into a frequency table. This
+CSV table contains a row per predicted taxon, and columns with the
+taxon identifier, name and for each of the files, the number of reads
+attributed to this taxon in the corresponding sample.
 
 ```shell
 $ umgap-visualize -t results/*
