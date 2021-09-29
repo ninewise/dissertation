@@ -201,8 +201,4 @@ RAM.
 In conclusion we can state that FGSrs is a reliable implementation of
 the FGS gene prediction model that is an order of magnitude faster than
 the original implementation. Its command line interface is backward
-compatible with extensions for more flexible usage. The source code of
-FGSrs is freely available from [GitHub][] under the GPL-3.0 license,
-with instructions for installation, usage and other documentation.
-
-[GitHub]: https://github.com/unipept/FragGeneScanRs
+compatible with extensions for more flexible usage.

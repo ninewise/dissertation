@@ -12,3 +12,66 @@ FragGeneScanRs. The application note publishing this implementation can
 be found in this chapter.
 
 #### [frag-gene-scan](main.md){.include}
+
+## Performance on complete genomes
+
+Originally meant for detecting fragmented genes in short metagenomics
+reads, FragGeneScan had a feature added in 1.16 to allow predicting
+genes from contigs. This feature consists of an additional training set
+(called "complete") and a flag which triggers alternative behaviour
+while calculating the probabilities in the Hidden Markov Model and
+during the postprocessing of the detected genes. First, the flag
+disallows all deletion states in the Markov Chain, effectively banning
+deletions in detected genes. Second, the flag increases the minimum size
+of detected genes to 120 base pairs instead of 60. Finally, it causes a
+scan in the area surrounding the beginning and end of the detected gene
+to search for start and stop codons, refining the detected gene.
+
+As the same behaviour is implemented in FragGeneScanRs, a benchmark
+comparing the prediction results from FragGeneScan, FragGeneScan+ and
+FragGeneScanRs on a complete and annotated genome is possible. Also
+included in the benchmark is a tool specifically built for detecting
+genes in complete prokaryotic genomes and assemblies, Prodigal.
+
+Each tool was executed on the genome of *Geobacter anodireducens* strain
+SD-1. To compare the results, each single base pair is considered
+either as part of a predicted gene on the forward strand, part of a
+predicted gene on the reverse strand, or not in a predicted gene at
+all. Table \ref{table:fgs-classification} shows the classification
+of the base pairs when compared to the annotated genes. Table
+\ref{table:fgs-metrics} shows the resulting quality metrics.
+
+ Annotation \\ Prediction  Forward strand  Reverse strand  None
+ ------------------------- --------------- --------------- ---------------
+ Forward strand            TP              FP              FN
+ Reverse strand            FP              TP              FN
+ None                      FP              FP              TN
+
+ Table: Classification of base pairs based on their inclusion in
+ annotations and predictions on the forward and reverse strands for gene
+ predictors.\label{table:fgs-classification}
+
+ Metric                           FGS      FGS+     FGSrs  Prodigal
+ -------------------------- --------- --------- --------- ---------
+ True Positives                68.05%    72.61%    68.05%    68.33%
+ False Positives                6.31%    14.56%     6.31%     2.78%
+ True Negatives                17.92%     9.86%    17.92%    20.72%
+ False Negatives                7.72%     2.98%     7.72%     8.17%
+ Precision                     91.51%    83.30%    91.51%    96.09%
+ Sensitivity                   89.81%    96.06%    89.81%    89.32%
+ Specificity                   73.96%    40.38%    73.96%    88.18%
+ Negative Predictive Value     69.89%    76.79%    69.89%    71.72%
+ Matthews Correlation C.       62.58%    46.79%    62.58%    72.49%
+ Speed (bp/s)                 936,398     9,610 2,087,790   416,677
+
+ Table: Performance metrics on the gene predictions of FragGeneScan
+ (FGS), FragGeneScan+ (FGS+), FragGeneScanRs (FGSrs) and Prodigal on the
+ complete *Geobacter anodireducens* strain SD-1 genome. The processing
+ speed is calculated as the length of the genome in base pairs over the
+ average execution time of 5 runs.\label{table:fgs-metrics}
+
+Prodigal is by far the best included gene predictor for complete
+genomes. FragGeneScan, and FragGeneScanRs which has the same results,
+scores especially more false positives, which impacts its specificity.
+Still, it is more than twice as fast (and 5 times faster for FGSrs).
+FragGeneScan+ is far worse in both quality of results and speed.
