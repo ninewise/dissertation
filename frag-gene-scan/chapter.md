@@ -28,10 +28,11 @@ scan in the area surrounding the beginning and end of the detected gene
 to search for start and stop codons, refining the detected gene.
 
 As the same behaviour is implemented in FragGeneScanRs, a benchmark
-comparing the prediction results from FragGeneScan, FragGeneScan+ and
-FragGeneScanRs on a complete and annotated genome is possible. Also
-included in the benchmark is a tool specifically built for detecting
-genes in complete prokaryotic genomes and assemblies, Prodigal.
+comparing the prediction results from FragGeneScan, FragGeneScan+
+and FragGeneScanRs on a complete and annotated genome is possible.
+Also included in the benchmark is a tool specifically built for
+detecting genes in complete prokaryotic genomes and assemblies, Prodigal
+[@hyatt2010].
 
 Each tool was executed on the genome of *Geobacter anodireducens* strain
 SD-1. To compare the results, each single base pair is considered
