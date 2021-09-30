@@ -15,72 +15,1497 @@ colorlinks: true
 lang: en-US
 link-citations: true
 references:
-- { type: article-journal, id: alcantara, author: [ "Alcántara, R.", "Onwubiko, J.", "Cao, H.", "Matos, P.d.", "Cham, J.A.", "Jacobsen, J.", "Holliday, G.L.", "Fischer, J.D.", "Rahman, S.A.", "Jassal, B.", "Goujon, M.", "Rowland, F.", "Velankar, S.", "López, R.", "Overington, J.P.", "Kleywegt, G.J.", "Hermjakob, H.", "O'Donovan, C.", "Martín, M.J.", "Thornton, J.M.", "Steinbeck, C." ], issued: 2012, title: The EBI enzyme portal, container-title: Nucleic Acids Research, volume: 41, issue: Database issue, page: D773-80, doi: 10.1093/nar/gks1112 }
-- { type: article-journal, id: altschul, author: [ { family: Altschul, given: S.F. }, "Gish, W.", "Miller, W.", "Myers, E.W.", "Lipman, D.J." ], issued: 1990, title: Basic local alignment search tool, container-title: Journal of Molecular Biology, volume: 215, issue: 3, page: 403-410 }
-- { source: "PubMed", accessed: { date-parts: [ [ 2021, 9, 30 ] ] }, id: ashburner, title: "Gene ontology: tool for the unification of biology. The Gene Ontology Consortium", author: [ { family: "Ashburner", given: "M." }, { family: "Ball", given: "C.A." }, { family: "Blake", given: "J.A." }, { family: "Botstein", given: "D." }, { family: "Butler", given: "H." }, { family: "Cherry", given: "J.M." }, { family: "Davis", given: "A.P." }, { family: "Dolinski", given: "K." }, { family: "Dwight", given: "S.S." }, { family: "Eppig", given: "J.T." }, { family: "Harris", given: "M.A." }, { family: "Hill", given: "D.P." }, { family: "Issel-Tarver", given: "L." }, { family: "Kasarskis", given: "A." }, { family: "Lewis", given: "S." }, { family: "Matese", given: "J.C." }, { family: "Richardson", given: "J.E." }, { family: "Ringwald", given: "M." }, { family: "Rubin", given: "G.M." }, { family: "Sherlock", given: "G." } ], container-title-short: "Nat Genet", container-title: "Nature genetics", ISSN: "1061-4036", issued: { date-parts: [ [ 2000, 5 ] ] }, page: "25-9", volume: "25", issue: "1", PMID: "10802651", PMCID: "PMC3037419", DOI: "10.1038/75556", type: article-journal }
-- { type: article-journal, id: beaz, author: [ "Beaz-Hidalgo, R.", "Martínez-Murcia, A.", "Figueras, M." ], issued: 2013, title: "Corrigendum to \"Reclassification of Aeromonas hydrophila subsp. dhakensis Huys et al. 2002 and Aeromonas aquariorum Martínez-Murcia et al. 2008 as Aeromonas dhakensis sp. nov. comb nov. and emendation of the species Aeromonas hydrophila\" [Syst. Appl. Microbiol. 36 (2013) 171-176]", container-title: Systematic and Applied Microbiology, volume: 37, issue: 7, doi: "10.1016/j.syapm.2012.12.007" }
-- { type: article-journal, id: blum, author: [ { family: "Blum", given: "M." }, { family: "Chang", given: "H." }, { family: "Chuguransky", given: "S." }, { family: "Grego", given: "T." }, { family: "Kandasaamy", given: "S." }, { family: "Mitchell", given: "A." }, { family: "Nuka", given: "G." }, { family: "Paysan-Lafosse", given: "T." }, { family: "Qureshi", given: "M." }, { family: "Raj", given: "S." }, { family: "RichardsonL", given: "L." }, { family: "Salazar", given: "G.A." }, { family: "Williams", given: "L." }, { family: "Bork", given: "P." }, { family: "Bridge", given: "A." }, { family: "Gough", given: "J." }, { family: "Haft", given: "D.H." }, { family: "Letunic", given: "I." }, { family: "Marchler-Bauer", given: "A." }, { family: "Mi", given: "H." }, { family: "Natale", given: "D.A." }, { family: "Necci", given: "M." }, { family: "Orengo", given: "C.A." }, { family: "Pandurangan", given: "A.P." }, { family: "Rivoire", given: "C." }, { family: "Sigrist", given: "C.J.A." }, { family: "Sillitoe", given: "I." }, { family: "Thanki", given: "N." }, { family: "Thomas", given: "P.D." }, { family: "Tosatto", given: "S.C.E." }, { family: "Wu", given: "C.H." }, { family: "Bateman", given: "A." }, { family: "Finn", given: "R.D." } ], issued: 2020, title: "The InterPro protein families and domains database: 20 years on.", container-title: "Nucleic Acids Research", volume: 49, issue: D1, page: D344-D354, doi: 10.1093/nar/gkaa977 }
-- { type: article-journal, id: boeckmann, author: [ { family: Boeckmann, given: B. }, { family: Bairoch, given: A. }, { family: Apweiler, given: R. }, { family: Blatter, given: M.C. }, { family: Estreicher, given: A. }, { family: Gasteiger, given: E. }, { family: Martin, given: M.J. }, { family: Michoud, given: K. }, { family: O'Donovan, given: C. }, { family: Phan, given: I. }, { family: Pilbout , given: S. }, { family: Schneider, given: M. } ], issued: 2003, title: The SWISS-PROT protein knowledgebase and its supplement TrEMBL in 2003., container-title: Nucleic Acids Res., volume: 203, issue: 31, page: 365-370 }
-- { type: article-journal, id: boisvert, author: [ "Boisvert, S.", "Raymond, F.", "Godzaridis, E.", "Laviolette, F.", "Corbeil, J." ], title: "Ray Meta: scalable de novo metagenome assembly and profiling", container-title: Genome Biol., issued: 2012, volume: 13, page: 1-13 }
-- { type: article-journal, id: brady, author: [ "Brady, A.", "Salzberg, S.L." ], title: "Phymm and PhymmBL: metagenomic phylogenetic classification with interpolated Markov models", container-title: Nature Methods, issued: 2009, volume: 6, page: 673-676 }
-- { type: article-journal, id: breitwieser, author: [ "Breitwieser, F.P.", "Lu, J.", "Salzberg, S.L." ], title: "A review of methods and databases for metagenomic classification and assembly", container-title: "Briefings in Bioinformatics", issued: 2017, volume: 5, page: 1125-1136, doi: "10.1093/bib/bbx120" }
-- { type: article-journal, id: detender, author: [ "De Tender, C.", "Mesuere, B.", "Van der Jeugt, F.", "Haegeman, A.", "Ruttink, T.", "Vandecasteele, B.", "Dawyndt, P.", "Debode, J.", "Kuramae, E.E." ], issued: 2019, container-title: Scientific Reports, volume: 8, page: 9890, doi: "10.1038/s41598-019-46106-x" }
-- { type: article-journal, id: doronina, author: [ "Doronina, N.V.", "Kaparulina, E.N.", "Trotsenko, Y.A." ], issued: 2016, title: "Emended Description of Methylovorus glucosotrophus Govorukhina and Trotsenko 1991", container-title: Mikrobiologiia, volume: 85, issue: 5, page: 506-511 }
-- { type: article-journal, id: dumolin, author: [ "Dumolin, C.", "Aerts, M.", "Verheyde, B.", "Schellaert, S.", "Vandamme, T.", "Van der Jeugt, F.", "De Canck, E.", "Cnockaert, M.", "Wieme, A.", "Cleenwerck, I.", "Peiren, J.", "Dawyndt, P.", "Vandamme, P.", "Carlier, A." ], issued: 2019, title: "Introducing SPeDE : high-throughput dereplication and accurate determination of microbial diversity from matrix-assisted laser desorption-ionization time of flight mass spectrometry data", container-title: mSystems, volume: 4, issue: 5, page: e00437-19, doi: "10.1128/mSystems.00437-19" }
-- { type: article-journal, id: federhen, author: [ { family: Federhen, given: S. } ], title: The NCBI Taxonomy database, container-title: Nucleic Acids Research, issued: 2012, volume: 40, issue: database issue, page: 136-143 }
-- { type: article-journal, id: fischer, author: [ "Fischer, J.", "Heun, V." ], title: Space-Efficient Preprocessing Schemes for Range Minimum Queries on Static Arrays, container-title: SIAM Journal on Computing, issued: 2011, volume: 40, page: 465-492 }
-- { type: article-journal, id: ghurye, author: [ "Ghurye, J.", "Cepeda-Espinoza, V.", "Pop, M." ], title: "Metagenomic Assembly: Overview, Challenges and Applications", container-title: "The Yale Journal of Biology and Medicine", issued: 2016, volume: 20, page: 353-362 }
-- { type: article-journal, id: grim, author: [ "Grim, C.J.", "Kozlova, E.V.", "Ponnusamy, D.", "Fitts, E.C.", "Sha, J.", "Kirtley, M.L.", "van Lier, C.J.", "Tiner, B.L.", "Erova, T.E.", "Joseph, S.J.", "Read, T.D.", "Shak, J.R.", "Joseph, S.W.", "Singletary, E.", "Felland, T.", "Baze, W.B.", "Horneman, A.J.", "Chopra, A.K." ], issued: 2014, title: Functional genomic characterization of virulence factors from necrotizing fasciitis-causing strains of Aeromonas hydrophila, container-title: Appl Environ Microbiol, volume: 80, page: 4162-4183 }
-- { type: article-journal, id: gurdeep, author: [ "Gurdeep Singh, R.", "Tanca, A.", "Palomba, A.", "Van der Jeugt, F.", "Verschaffelt, P.", "Uzzau, S.", "Martens, L.", "Dawyndt, P.", "Mesuere, B." ], title: "Unipept 4.0: functional analysis of metaproteome data", container-title: Journal of Proteome Research, issued: 2019, volume: 18, issue: 2, page: 606-615 }
-- { type: article-journal, id: hoferthemi, author: [ "Hofer, U." ], title: "The majority is uncultured", container-title: "Nature Reviews Microbiology", issued: 2018, volume: 16, page: 716-717 }
-- { type: article-journal, id: hoff, author: [ "Hoff, K.J.", "Lingner, T.", "Meinicke, P.", "Tech, M." ], title: "Orphelia: predicting genes in metagenomic sequencing reads", container-title: "Nucleic Acids Research", issued: 2009, volume: 28, page: W101-W105, doi: "10.1093/nar/gkp327" }
-- { type: article-journal, id: hugenholtz, author: [ { family: Hugenholtz, given: P. }, { family: Tyson, given: G. W. } ], issued: 2008, title: Metagenomics, container-title: Nature, volume: 455, page: 481-483 }
-- { type: article-journal, id: hugenholtz, author: [ { family: Hugenholtz, given: P. }, { family: Tyson, given: G. W. } ], issued: 2008, title: Metagenomics, container-title: Nature, volume: 455, page: 481-483 }
-- {type: articale-journal, id: huys, author: [ "Huys, G.", "Kämpfer, P.", "Albert, M.J.", "Kühn, I.", "Denys, R.", "Swings, J." ], issued: 2002, title: "Aeromonas hydrophila subsp. dhakensis subsp. nov., isolated from children with diarrhoea in Bangladesh, and extended description of Aeromonas hydrophila subsp. hydrophila (Chester 1901) Stanier 1943 (approved lists 1980)", container-title: Int J Syst Evol Microbiol, volume: "52(Pt 3)", page: 705-712, doi: "10.1099/00207713-52-3-705" }
-- { type: article-journal, id: huson, author: [ "Huson, D.H.", "Mitra, S.", "Ruscheweyh, H.J.", "Weber, N.", "Schuster, S.C." ], title: Integrative analysis of environmental sequences using MEGAN4, container-title: Genome Research, issued: 2011, volume: 21, issue: 9, page: 1552-1560 }
-- { type: article-journal, id: hyatt, author: [ "Hyatt, D.", "LoCascio, P.F.", "Hauser, L.J.", "Uberbacher, E.C." ], title: "Gene and translation initiation site prediction in metagenomic sequences", container-title: "Bioinformatics", issued: 2012, volume: 12, page: 2223-2230, doi: "10.1093/bioinformatics/bts429" }
-- { type: article-journal, id: hyatt2010, author: [ "Hyatt, D.", "Chen, G.L.", "LoCascio, P.F.", "Land, M.L.", "Larimer, F.W.", "Hauser, L.J." ], title: "Prodigal: prokaryotic gene recognition and translation initiation site identification", container-title: "BMC Bioinformatics", issued: 2010, volume: 11, page: 119, doi: "10.1186/1471-2105-11-119" }
-- { type: article-journal, id: lapidus, author: [ "Lapidus, A.", "Clum, A.", "LaButti, K.", "Kaluzhnaya, M.G.", "Lim, S.", "Beck, D.A.C.", "del Rio, T.G.", "Nolan, M.", "Mavromatis, K.", "Huntemann, M.", "Lucas, S.", "Lidstrom, M.E.", "Ivanova, N.", "Chistoserdova, L." ], issued: 2011, title: Genomes of Three Methylotrophs from a Single Niche Reveal the Genetic and Metabolic Divergence of the Methylophilaceae, container-title: Journal of Bacteriology, volume: 193, page: 3757-3764 }
-- { type: article-journal, id: lindgreen, author: [ "Lindgreen, S.", "Adair, K.L.", "Gardner, P.P." ], title: An evaluation of the accuracy and speed of metagenome analysis tools, container-title: Sci Rep., issued: 2016, volume: 6, page: 19233 }
-- { type: article-journal, id: locey, author: [ "Locey, K.J.", "Lennon, J.T." ], title: "Scaling laws predict global microbial diversity", container-title: "Proceedings of the National Academy of Sciences", issued: 2016, volume: 113, page: 5970-5975, doi: "10.1073/pnas.1521291113" }
-- { type: article-journal, id: lopez, author: [ { family: "Lopez", given: "R." }, { family: "Cowley", given: "A." }, { family: "Li", given: "W." }, { family: "McWilliam", given: "H." } ], issued: 2014, title: "Using EMBL-EBI Services via Web Interface and Programmatically via Web Services", volume: 48, issue: 1, page: 3.13.1-3.12.50, doi: 10.1002/0471250953.bi0312s48 }
-- { type: article-journal, id: magrane, author: [ "Magrane, M.", "UniProt Consortium" ], title: "UniProt Knowledgebase: a hub of integrated protein data", container-title: "Database (Oxford)", issued: 2011, volume: 2011, page: bar009 }
-- { type: article-journal, id: menzel, author: [ "Menzel, P.", "Ng, K.L.", "Krogh, A." ], title: Fast and sensitive taxonomic classification for metagenomics with Kaiju, container-title: Nature Communications, issued: 2016, volume: 7, page: 11257 }
-- { type: article-journal, id: mesuere2012, author: [ "Mesuere, B.", "Devreese, B.", "Debyser, G.", "Aerts, M.", "Vandamme, P.", "Dawyndt, P." ], title: "Unipept: tryptic peptide-based biodiversity analysis of metaproteome samples", container-title: J. Proteome Res., issued: 2012, volume: 11, issue: 12, page: 5773-5780 }
-- { type: article-journal, id: mesuere2015, author: [ "Mesuere, B.", "Debyser, G.", "Aerts, M.", "Devreese, B.", "Vandamme, P.", "Dawyndt, P." ], title: The Unipept metaproteomics analysis pipeline, container-title: Proteomics, issued: 2015, volume: 15, issue: 8, page: 1437-1442 }
-- { type: article-journal, id: namiki, author: [ "Namiki, T.", "Hachiya, T.", "Tanaka, H.", "Sakakibara, Y." ], title: "MetaVelvet: an extension of Velvet assembler to de novo metagenome assembly from short sequence reads", container-title: Nucleic Acids Res., issued: 2012, volume: 40, issue: 20, page: e155 }
-- { type: article-journal, id: nightingale, author: [ { given: "A.", family: "Nightingale" }, { given: "R.", family: "Antunes" }, { given: "E.", family: "Alpi" }, { given: "B.", family: "Bursteinas" }, { given: "L.", family: "Gonzales" }, { given: "W.", family: "Liu" }, { given: "J.", family: "Luo" }, { given: "G.", family: "Qi" }, { given: "E.", family: "Turner" }, { given: "M.", family: "Martin" } ], issued: 2017, title: "The Proteins API: accessing key integrated protein and genome information", container-title: "Nucleic Acids Research", volume: 45, issue: W1, page: W539-W544, doi: 10.1093/nar/gkx237 }
-- { type: article-journal, id: noguchi, author: [ "Noguchi, H.", "Taniguchi, T.", "Itoh, T." ], title: "MetaGeneAnnotator: Detecting Species-Specific Patterns of Ribosomal Binding Site for Precise Gene Prediction in Anonymous Prokaryotic and Phage Genomes", container-title: "DNA Research", issued: 2008, issue: 6, volume: 38, page: 387-396, doi: "10.1093/dnares/dsn027" }
-- { type: article-journal, id: oleary, author: [ { family: "O'Leary", given: "N.A." }, { family: "Wright", given: "M.W." }, { family: "Brister", given: "J.R." }, { family: "Ciufo", given: "S." }, { family: "Haddad", given: "D." }, { family: "McVeigh", given: "R." }, { family: "Rajput", given: "B." }, { family: "Robbertse", given: "B." }, { family: "Smith-White", given: "B." }, { family: "Ako-Adjei", given: "D." }, { family: "Astashyn", given: "A." }, { family: "Badretdin", given: "A." }, { family: "Bao", given: "Y." }, { family: "Blinkova", given: "O." }, { family: "Brover", given: "V." }, { family: "Chetvernin", given: "V." }, { family: "Choi", given: "J." }, { family: "Cox", given: "E." }, { family: "Ermolaeva", given: "O." }, { family: "Farrell", given: "C.M." }, { family: "Goldfarb", given: "T." }, { family: "Gupta", given: "T." }, { family: "Haft", given: "D." }, { family: "Hatcher", given: "E." }, { family: "Hlavina", given: "W." }, { family: "Joardar", given: "V.S." }, { family: "Kodali", given: "V.K." }, { family: "Li", given: "W." }, { family: "Maglott", given: "D." }, { family: "Masterson", given: "P." }, { family: "McGarvey", given: "K.M." }, { family: "Murphy", given: "M.R." }, { family: "O'Neill", given: "K." }, { family: "Pujar", given: "S." }, { family: "Rangwala", given: "S.H." }, { family: "Rausch", given: "D." }, { family: "Riddick", given: "L.D." }, { family: "Schoch", given: "C." }, { family: "Shkeda", given: "A." }, { family: "Storz", given: "S.S." }, { family: "Sun", given: "H." }, { family: "Thibaud-Nissen", given: "F." }, { family: "Tolstoy", given: "I." }, { family: "Tully", given: "R.E." }, { family: "Vatsan", given: "A.R." }, { family: "Wallin", given: "C." }, { family: "Webb", given: "D." }, { family: "Wu", given: "W." }, { family: "Landrum", given: "M.J." }, { family: "Kimchi", given: "A." }, { family: "Tatusova", given: "T." }, { family: "DiCuccio", given: "M." }, { family: "Kitts", given: "P." }, { family: "Murphy", given: "T.D." }, { family: "Pruitt", given: "K.D." } ], issued: 2016, title: "Reference sequence (RefSeq) database at NCBI: current status, taxonomic expansion, and functional annotation", container-title: "Nucleic Acids Research", volume: 44, issue: D1, page: D733-D745, doi: 10.1093/nar/gkv1189 }
-
-- { type: article-journal, id: ounit, author: [ "Ounit, R.", "Wanamaker, S.", "Close, T.J.", "Lonardi, S." ], title: "CLARK: fast and accurate classification of metagenomic and genomic sequences using discriminative k-mers", container-title: BMC Genomics, issued: 2015, volume: 16 }
-- { type: article-journal, id: pedros, author: [ "Pedrós-Alió, C.", "Manrubia, S." ], title: "The vast unknown microbial biosphere", container-title: "Proceedings of the National Academy of Sciences", issued: 2016, volume: 113, page: 6585-6587, doi: "10.1073/pnas.1606105113" }
-- { type: article-journal, id: pell, author: [ "Pell, J.", "Hintze, A.", "Canino-Koning, R.", "Howe, A.", "Tiedje, J.M.", "Brown, C.T." ], title: Scaling metagenome sequence assembly with probabilistic de Bruijn graphs, container-title: Proc. Natl. Acad. Sci. U. S. A., issued: 2012, volume: 109, issue: 33, page: 13272-13277 }
-- { type: article-journal, id: peng2011, author: [ "Peng, Y.", "Leung, H.C.M.", "Yiu, S.M.", "Chin, F.Y.L." ], title: "Meta-IDBA: a de Novo assembler for metagenomic data", container-title: Bioinformatics, issued: 2011, volume: 27, issue: 13, page: i94-i101 }
-- { type: article-journal, id: peng2012, author: [ "Peng, Y.", "Leung, H.C.M.", "Yiu, S.M.", "Chin, F.Y.L." ], title: "IDBA-UD: a de novo assembler for single-cell and metagenomic sequencing data with highly uneven depth", container-title: Bioinformatics, issued: 2012, volume: 28, issue: 11, page: 1420-1428 }
-- { type: article-journal, id: polin, author: [ "Chen, P.L.", "Lamy, B.", "Ko, W.C." ], issued: 2016, title: "Aeromonas dhakensis, an Increasingly Recognized Human Pathogen", container-title: Frontiers in microbiology, volume: 7, page: 783 }
-- { type: article-journal, id: quince, author: [ "Quince, C.", "Walker, A.W.", "Simpson, J.T.", "Loman, N.J.", "Nicola, S." ], title: "Shotgun metagenomics, from sampling to analysis", container-title: "Nature Biotechnology", issued: 2017, volume: 35, page: "833-844", doi: "10.1038/nbt.3935" }
-- { type: article-journal, id: quince, author: [ "Quince, C.", "Walker, A.W.", "Simpson, J.T.", "Loman, N.J.", "Segata, N." ], title: "Shotgun metagenomics, from sampling to analysis", container-title: Nature Biotechnology, issued: 2017, volume: 35, page: 833-844 }
-- { type: article-journal, id: rappe, author: [ "Rappé, M.S.", "Giovannoni, S.J." ], title: "The Uncultured Microbial Majority", container-title: "Annual Review of Microbiology", issued: 2003, volume: 57, page: 369394, doi: "10.1146/annurev.micro.57.030502.090759" }
-- { type: article-journal, id: rho, author: [ "Rho, M.", "Tang, H.", "Ye, Y." ], title: "FragGeneScan: predicting genes in short and error-prone reads", container-title: Nucleic Acids Res., issued: 2010, volume: 38, issue: 20, page: e191 }
-- { type: article-journal, id: rho, author: [ "Rho, M.", "Tang, H.", "Ye, Y." ], title: "FragGeneScan: predicting genes in short and error-prone reads", container-title: Nucleic Acids Res., issued: 2010, volume: 38, issue: 20, page: e191 }
-- { type: article-journal, id: sharpton, author: [ "Sharpton, T.J." ], title: "An introduction to the analysis of shotgun metagenomic data", container-title: "Frontiers in Plant Science", issued: 2014, page: 209, doi: "10.3389/fpls.2014.00209" }
-- { type: article-journal, id: simpson, author: [ "Simpson, J.T.", "Wong, K.", "Jackman, S.D." ], title: "ABySS: A parallel assembler for short read sequence data", container-title: Genome Research, issued: 2009, volume: 19, page: 1117-1123 }
-- { type: article-journal, id: thomas, author: [ "Thomas, T.", "Gilbert, J.", "Meyer, F." ], title: "Metagenomics - A Guide From Sampling to Data Analysis", container-title: "Microbial Informatics and experimentation", issued: 2012, volume: 2, doi: "10.1186/2042-5783-2-3" }
-- { type: article-journal, id: trimble, author: [ "Trimble, W.L.", "Keegan, K.P.", "D'Souza, M.", "Wilke, A.", "Wilkening, J.", "Gilbert, J.", "Meyer, F." ], title: "Short Read Reading-Frame Predictors are not Created Equal: Sequence Error Causes Loss of Signal", container-title: "BMC Bioinformatics", issued: 2012, issue: 1, volume: 15, doi: "10.1186/1471-2105-13-183" }
-- { type: article-journal, id: vandermarliere, author: [ "Vandermarliere, E.", "Mueller, M.", "Martens, L." ], title: "Getting intimate with trypsin, the leading protease in proteomics", container-title: Mass Spectrom. Rev., issued: 2013, volume: 32, issue: 6, page: 453-465 }
-- { type: article-journal, id: verschaffelt, author: [ "Verschaffelt, P.", "Van Thienen, P.", "Van Den Bossche, T.", "Van der Jeugt, F.", "De Tender, C.", "Martens, L.", "Dawyndt, P.", "Mesuere, B." ], title: "Unipept CLI 2.0: adding support for visualizations and functional annotations", container-title: Bioinformatics, issued: 2020, volume: 36, issue: 14, page: 4220-4221 }
-- { type: article-journal, id: verschaffelt2021, author: [ "Verschaffelt, P.", "Van Den Bossche, T.", "Martens, L.", "Dawyndt, P.", "Mesuere, B." ], title: "Unipept Desktop: A Faster, More Powerful Metaproteomics Results Analysis Tool", container-title: "Journal of Proteome Research", issued: 2021, volume: 20, issue: 4, page: 2005-2009, doi: "10.1021/acs.jproteome.0c00855", publisher: "American Chemical Society" }
-- { type: article-journal, id: vollmers, author: [ "Vollmers, J.", "Wiegand, S.", "Kaster, A." ], title: "Comparing and Evaluating Metagenome Assembly Tools from a Microbiologist’s Perspective - Not Only Size Matters!", container-title: "PLOS ONE", issued: 2017, volume: 89, page: 131, doi: "10.1371/journal.pone.0169662", publisher: "Public Library of Science" }
-- { type: article-journal, id: wood2014, author: [ "Wood, D.E.", "Salzberg, S.L." ], title: "Kraken: ultrafast metagenomic sequence classification using exact alignments", container-title: Genome Biol., issued: 2014, volume: 15, issue: 3, page: R46 }
-- { type: article-journal, id: wood2019, author: [ "Wood, D.E.", "Lu, J.", "Langmead, B." ], title: Improved metagenomic analysis with Kraken 2, container-title: Genome Biol., issued: 2019, volume: 20, issue: 1, page: 257 }
-- { type: article-journal, id: xiong, author: [ "Xiong, X.H.", "Zhi, J.J.", "Yang, L.", "Wang, J.H.", "Zhao, Y.", "Wang, X.", "Cui, Y.J.", "Dong, F.", "Li, M.X.", "Yang, Y.X.", "Wei, N.", "An, J.J.", "Du, B.H.", "Liang, L.", "Zhang, J.S.", "Zhou, W.", "Cheng, S.F.", "He, T.", "Wang, L.", "Chen, H.P.", "Liu, D.S.", "Zhang, W.C." ], issued: 2011, title: "Complete Genome Sequence of the Bacterium Methylovorus sp. Strain MP688, a High-Level Producer of Pyrroloquinolone Quinone", container-title: Journal of Bacteriology, volume: 193, page: 2080 }
-- { type: article-journal, id: zhu, author: [ "Zhu, W.", "Lomsadze, A.", "Borodovsky, M." ], title: "Ab initio gene identification in metagenomic sequences", container-title: "Nucleic Acids Research", issued: 2010, volume: 37, page: e132-e132, doi: "10.1093/nar/gkq275", issue: 12 }
-- { type: book, id: hahn, author: [ "Hahn, M.W.", "Koll, U.", "Schmidt, J." ], title: "The Structure and Function of Aquatic Microbial Communities", publisher: "Springer International Publishing", publisher-place: "Cham", issued: 2019, isbn: "978-3-030-16775-2", doi: "10.1007/978-3-030-16775-2_10", page: 313-351 }
-- { type: book, id: raymond, author: [ { family: Raymond, given: E. S. } ], title: The Art of UNIX Programming, publisher: Addison-Wesley Professional, publisher-place: USA, issued: 2003 }
-- { type: book, id: watson, author: [ "Watson, J.D.", "Baker, T.A.", "Bell, S.P.", "Gann, A.", "Levine, M.", "Losick, R." ], title: Molecular Biology of the Gene, publisher: Pearson/Benjamin Cummings, publisher-place: USA, issued: 2008 }
-- { type: paper-conference, id: kim, author: [ { family: Kim, given: D.J. }, "Hahn, A.S.", "Wu, S.J.", "Hanson, N.W.", "Konwar, K.M.", "Hallam, S.J." ], title: FragGeneScan-plus for scalable high-throughput short-read open reading frame prediction, event: "IEEE Conference on Computational Intelligence in Bioinformatics and Computational Biology", event-place: Canada, event-date: 2015 }
-- { type: paper-conference, id: kim, author: [ { family: Kim, given: D.J. }, "Hahn, A.S.", "Wu, S.J.", "Hanson, N.W.", "Konwar, K.M.", "Hallam, S.J." ], title: FragGeneScan-plus for scalable high-throughput short-read open reading frame prediction, event: "IEEE Conference on Computational Intelligence in Bioinformatics and Computational Biology", event-place: Canada, event-date: 2015 }
-- { type: paper-conference, id: nethercote, author: [ "Nethercote, N.", "Seward, J." ], title: "Valgrind: A Framework for Heavyweight Dynamic Binary Instrumentation", event: "ACM SIGPLAN Conference on Programming Language Design and Implementation", event-place: "San Diego, California, USA", issued: 2007, event-date: 2007, doi: "10.1145/1250734.1250746" }
-- { type: post-weblog, id: gallant, author: [ { family: Gallant } ], title: "Index 1,600,000,000 Keys with Automata and Rust", URL: https://blog.burntsushi.net/transducers/, accessed: 2016-11-25 }
-- { type: unpublished, id: degraef, author: "De Graef, N.", issued: 2018, title: Consolidating and Benchmarking the Unipept Metagenomics Analysis Pipeline }
+- type: article-journal
+  id: alcantara
+  author:
+  - family: Alcántara
+    given: R.
+  - family: Onwubiko
+    given: J.
+  - family: Cao
+    given: H.
+  - family: Matos
+    given: P.d.
+  - family: Cham
+    given: J.A.
+  - family: Jacobsen
+    given: J.
+  - family: Holliday
+    given: G.L.
+  - family: Fischer
+    given: J.D.
+  - family: Rahman
+    given: S.A.
+  - family: Jassal
+    given: B.
+  - family: Goujon
+    given: M.
+  - family: Rowland
+    given: F.
+  - family: Velankar
+    given: S.
+  - family: López
+    given: R.
+  - family: Overington
+    given: J.P.
+  - family: Kleywegt
+    given: G.J.
+  - family: Hermjakob
+    given: H.
+  - family: O'Donovan
+    given: C.
+  - family: Martín
+    given: M.J.
+  - family: Thornton
+    given: J.M.
+  - family: Steinbeck
+    given: C.
+  issued: 2012
+  title: The EBI enzyme portal
+  container-title: Nucleic Acids Research
+  volume: 41
+  issue: Database issue
+  page: D773-80
+  doi: 10.1093/nar/gks1112
+- type: article-journal
+  id: altschul
+  author:
+  - family: Altschul
+    given: S.F.
+  - family: Gish
+    given: W.
+  - family: Miller
+    given: W.
+  - family: Myers
+    given: E.W.
+  - family: Lipman
+    given: D.J.
+  issued: 1990
+  title: Basic local alignment search tool
+  container-title: Journal of Molecular Biology
+  volume: 215
+  issue: 3
+  page: 403-410
+- source: PubMed
+  accessed:
+    date-parts:
+    - - 2021
+      - 9
+      - 30
+  id: ashburner
+  title: 'Gene ontology: tool for the unification of biology. The Gene Ontology Consortium'
+  author:
+  - family: Ashburner
+    given: M.
+  - family: Ball
+    given: C.A.
+  - family: Blake
+    given: J.A.
+  - family: Botstein
+    given: D.
+  - family: Butler
+    given: H.
+  - family: Cherry
+    given: J.M.
+  - family: Davis
+    given: A.P.
+  - family: Dolinski
+    given: K.
+  - family: Dwight
+    given: S.S.
+  - family: Eppig
+    given: J.T.
+  - family: Harris
+    given: M.A.
+  - family: Hill
+    given: D.P.
+  - family: Issel-Tarver
+    given: L.
+  - family: Kasarskis
+    given: A.
+  - family: Lewis
+    given: S.
+  - family: Matese
+    given: J.C.
+  - family: Richardson
+    given: J.E.
+  - family: Ringwald
+    given: M.
+  - family: Rubin
+    given: G.M.
+  - family: Sherlock
+    given: G.
+  container-title-short: Nat Genet
+  container-title: Nature genetics
+  ISSN: 1061-4036
+  issued:
+    date-parts:
+    - - 2000
+      - 5
+  page: 25-9
+  volume: '25'
+  issue: '1'
+  PMID: '10802651'
+  PMCID: PMC3037419
+  DOI: 10.1038/75556
+  type: article-journal
+- type: article-journal
+  id: beaz
+  author:
+  - family: Beaz-Hidalgo
+    given: R.
+  - family: Martínez-Murcia
+    given: A.
+  - family: Figueras
+    given: M.
+  issued: 2013
+  title: Corrigendum to "Reclassification of Aeromonas hydrophila subsp. dhakensis
+    Huys et al. 2002 and Aeromonas aquariorum Martínez-Murcia et al. 2008 as Aeromonas
+    dhakensis sp. nov. comb nov. and emendation of the species Aeromonas hydrophila"
+    [Syst. Appl. Microbiol. 36 (2013) 171-176]
+  container-title: Systematic and Applied Microbiology
+  volume: 37
+  issue: 7
+  doi: 10.1016/j.syapm.2012.12.007
+- type: article-journal
+  id: blum
+  author:
+  - family: Blum
+    given: M.
+  - family: Chang
+    given: H.
+  - family: Chuguransky
+    given: S.
+  - family: Grego
+    given: T.
+  - family: Kandasaamy
+    given: S.
+  - family: Mitchell
+    given: A.
+  - family: Nuka
+    given: G.
+  - family: Paysan-Lafosse
+    given: T.
+  - family: Qureshi
+    given: M.
+  - family: Raj
+    given: S.
+  - family: RichardsonL
+    given: L.
+  - family: Salazar
+    given: G.A.
+  - family: Williams
+    given: L.
+  - family: Bork
+    given: P.
+  - family: Bridge
+    given: A.
+  - family: Gough
+    given: J.
+  - family: Haft
+    given: D.H.
+  - family: Letunic
+    given: I.
+  - family: Marchler-Bauer
+    given: A.
+  - family: Mi
+    given: H.
+  - family: Natale
+    given: D.A.
+  - family: Necci
+    given: M.
+  - family: Orengo
+    given: C.A.
+  - family: Pandurangan
+    given: A.P.
+  - family: Rivoire
+    given: C.
+  - family: Sigrist
+    given: C.J.A.
+  - family: Sillitoe
+    given: I.
+  - family: Thanki
+    given: N.
+  - family: Thomas
+    given: P.D.
+  - family: Tosatto
+    given: S.C.E.
+  - family: Wu
+    given: C.H.
+  - family: Bateman
+    given: A.
+  - family: Finn
+    given: R.D.
+  issued: 2020
+  title: 'The InterPro protein families and domains database: 20 years on.'
+  container-title: Nucleic Acids Research
+  volume: 49
+  issue: D1
+  page: D344-D354
+  doi: 10.1093/nar/gkaa977
+- type: article-journal
+  id: boeckmann
+  author:
+  - family: Boeckmann
+    given: B.
+  - family: Bairoch
+    given: A.
+  - family: Apweiler
+    given: R.
+  - family: Blatter
+    given: M.C.
+  - family: Estreicher
+    given: A.
+  - family: Gasteiger
+    given: E.
+  - family: Martin
+    given: M.J.
+  - family: Michoud
+    given: K.
+  - family: O'Donovan
+    given: C.
+  - family: Phan
+    given: I.
+  - family: Pilbout
+    given: S.
+  - family: Schneider
+    given: M.
+  issued: 2003
+  title: The SWISS-PROT protein knowledgebase and its supplement TrEMBL in 2003.
+  container-title: Nucleic Acids Res.
+  volume: 203
+  issue: 31
+  page: 365-370
+- type: article-journal
+  id: boisvert
+  author:
+  - family: Boisvert
+    given: S.
+  - family: Raymond
+    given: F.
+  - family: Godzaridis
+    given: E.
+  - family: Laviolette
+    given: F.
+  - family: Corbeil
+    given: J.
+  title: 'Ray Meta: scalable de novo metagenome assembly and profiling'
+  container-title: Genome Biol.
+  issued: 2012
+  volume: 13
+  page: 1-13
+- type: article-journal
+  id: brady
+  author:
+  - family: Brady
+    given: A.
+  - family: Salzberg
+    given: S.L.
+  title: 'Phymm and PhymmBL: metagenomic phylogenetic classification with interpolated
+    Markov models'
+  container-title: Nature Methods
+  issued: 2009
+  volume: 6
+  page: 673-676
+- type: article-journal
+  id: breitwieser
+  author:
+  - family: Breitwieser
+    given: F.P.
+  - family: Lu
+    given: J.
+  - family: Salzberg
+    given: S.L.
+  title: A review of methods and databases for metagenomic classification and assembly
+  container-title: Briefings in Bioinformatics
+  issued: 2017
+  volume: 5
+  page: 1125-1136
+  doi: 10.1093/bib/bbx120
+- type: article-journal
+  id: detender
+  author:
+  - family: De Tender
+    given: C.
+  - family: Mesuere
+    given: B.
+  - family: Van der Jeugt
+    given: F.
+  - family: Haegeman
+    given: A.
+  - family: Ruttink
+    given: T.
+  - family: Vandecasteele
+    given: B.
+  - family: Dawyndt
+    given: P.
+  - family: Debode
+    given: J.
+  - family: Kuramae
+    given: E.E.
+  issued: 2019
+  container-title: Scientific Reports
+  volume: 8
+  page: 9890
+  doi: 10.1038/s41598-019-46106-x
+- type: article-journal
+  id: doronina
+  author:
+  - family: Doronina
+    given: N.V.
+  - family: Kaparulina
+    given: E.N.
+  - family: Trotsenko
+    given: Y.A.
+  issued: 2016
+  title: Emended Description of Methylovorus glucosotrophus Govorukhina and Trotsenko
+    1991
+  container-title: Mikrobiologiia
+  volume: 85
+  issue: 5
+  page: 506-511
+- type: article-journal
+  id: dumolin
+  author:
+  - family: Dumolin
+    given: C.
+  - family: Aerts
+    given: M.
+  - family: Verheyde
+    given: B.
+  - family: Schellaert
+    given: S.
+  - family: Vandamme
+    given: T.
+  - family: Van der Jeugt
+    given: F.
+  - family: De Canck
+    given: E.
+  - family: Cnockaert
+    given: M.
+  - family: Wieme
+    given: A.
+  - family: Cleenwerck
+    given: I.
+  - family: Peiren
+    given: J.
+  - family: Dawyndt
+    given: P.
+  - family: Vandamme
+    given: P.
+  - family: Carlier
+    given: A.
+  issued: 2019
+  title: 'Introducing SPeDE : high-throughput dereplication and accurate determination
+    of microbial diversity from matrix-assisted laser desorption-ionization time of
+    flight mass spectrometry data'
+  container-title: mSystems
+  volume: 4
+  issue: 5
+  page: e00437-19
+  doi: 10.1128/mSystems.00437-19
+- type: article-journal
+  id: federhen
+  author:
+  - family: Federhen
+    given: S.
+  title: The NCBI Taxonomy database
+  container-title: Nucleic Acids Research
+  issued: 2012
+  volume: 40
+  issue: database issue
+  page: 136-143
+- type: article-journal
+  id: fischer
+  author:
+  - family: Fischer
+    given: J.
+  - family: Heun
+    given: V.
+  title: Space-Efficient Preprocessing Schemes for Range Minimum Queries on Static
+    Arrays
+  container-title: SIAM Journal on Computing
+  issued: 2011
+  volume: 40
+  page: 465-492
+- type: article-journal
+  id: ghurye
+  author:
+  - family: Ghurye
+    given: J.
+  - family: Cepeda-Espinoza
+    given: V.
+  - family: Pop
+    given: M.
+  title: 'Metagenomic Assembly: Overview, Challenges and Applications'
+  container-title: The Yale Journal of Biology and Medicine
+  issued: 2016
+  volume: 20
+  page: 353-362
+- type: article-journal
+  id: grim
+  author:
+  - family: Grim
+    given: C.J.
+  - family: Kozlova
+    given: E.V.
+  - family: Ponnusamy
+    given: D.
+  - family: Fitts
+    given: E.C.
+  - family: Sha
+    given: J.
+  - family: Kirtley
+    given: M.L.
+  - family: van Lier
+    given: C.J.
+  - family: Tiner
+    given: B.L.
+  - family: Erova
+    given: T.E.
+  - family: Joseph
+    given: S.J.
+  - family: Read
+    given: T.D.
+  - family: Shak
+    given: J.R.
+  - family: Joseph
+    given: S.W.
+  - family: Singletary
+    given: E.
+  - family: Felland
+    given: T.
+  - family: Baze
+    given: W.B.
+  - family: Horneman
+    given: A.J.
+  - family: Chopra
+    given: A.K.
+  issued: 2014
+  title: Functional genomic characterization of virulence factors from necrotizing
+    fasciitis-causing strains of Aeromonas hydrophila
+  container-title: Appl Environ Microbiol
+  volume: 80
+  page: 4162-4183
+- type: article-journal
+  id: gurdeep
+  author:
+  - family: Gurdeep Singh
+    given: R.
+  - family: Tanca
+    given: A.
+  - family: Palomba
+    given: A.
+  - family: Van der Jeugt
+    given: F.
+  - family: Verschaffelt
+    given: P.
+  - family: Uzzau
+    given: S.
+  - family: Martens
+    given: L.
+  - family: Dawyndt
+    given: P.
+  - family: Mesuere
+    given: B.
+  title: 'Unipept 4.0: functional analysis of metaproteome data'
+  container-title: Journal of Proteome Research
+  issued: 2019
+  volume: 18
+  issue: 2
+  page: 606-615
+- type: article-journal
+  id: hoferthemi
+  author:
+  - family: Hofer
+    given: U.
+  title: The majority is uncultured
+  container-title: Nature Reviews Microbiology
+  issued: 2018
+  volume: 16
+  page: 716-717
+- type: article-journal
+  id: hoff
+  author:
+  - family: Hoff
+    given: K.J.
+  - family: Lingner
+    given: T.
+  - family: Meinicke
+    given: P.
+  - family: Tech
+    given: M.
+  title: 'Orphelia: predicting genes in metagenomic sequencing reads'
+  container-title: Nucleic Acids Research
+  issued: 2009
+  volume: 28
+  page: W101-W105
+  doi: 10.1093/nar/gkp327
+- type: article-journal
+  id: hugenholtz
+  author:
+  - family: Hugenholtz
+    given: P.
+  - family: Tyson
+    given: G. W.
+  issued: 2008
+  title: Metagenomics
+  container-title: Nature
+  volume: 455
+  page: 481-483
+- type: article-journal
+  id: hugenholtz
+  author:
+  - family: Hugenholtz
+    given: P.
+  - family: Tyson
+    given: G. W.
+  issued: 2008
+  title: Metagenomics
+  container-title: Nature
+  volume: 455
+  page: 481-483
+- type: articale-journal
+  id: huys
+  author:
+  - family: Huys
+    given: G.
+  - family: Kämpfer
+    given: P.
+  - family: Albert
+    given: M.J.
+  - family: Kühn
+    given: I.
+  - family: Denys
+    given: R.
+  - family: Swings
+    given: J.
+  issued: 2002
+  title: Aeromonas hydrophila subsp. dhakensis subsp. nov., isolated from children
+    with diarrhoea in Bangladesh, and extended description of Aeromonas hydrophila
+    subsp. hydrophila (Chester 1901) Stanier 1943 (approved lists 1980)
+  container-title: Int J Syst Evol Microbiol
+  volume: 52(Pt 3)
+  page: 705-712
+  doi: 10.1099/00207713-52-3-705
+- type: article-journal
+  id: huson
+  author:
+  - family: Huson
+    given: D.H.
+  - family: Mitra
+    given: S.
+  - family: Ruscheweyh
+    given: H.J.
+  - family: Weber
+    given: N.
+  - family: Schuster
+    given: S.C.
+  title: Integrative analysis of environmental sequences using MEGAN4
+  container-title: Genome Research
+  issued: 2011
+  volume: 21
+  issue: 9
+  page: 1552-1560
+- type: article-journal
+  id: hyatt
+  author:
+  - family: Hyatt
+    given: D.
+  - family: LoCascio
+    given: P.F.
+  - family: Hauser
+    given: L.J.
+  - family: Uberbacher
+    given: E.C.
+  title: Gene and translation initiation site prediction in metagenomic sequences
+  container-title: Bioinformatics
+  issued: 2012
+  volume: 12
+  page: 2223-2230
+  doi: 10.1093/bioinformatics/bts429
+- type: article-journal
+  id: hyatt2010
+  author:
+  - family: Hyatt
+    given: D.
+  - family: Chen
+    given: G.L.
+  - family: LoCascio
+    given: P.F.
+  - family: Land
+    given: M.L.
+  - family: Larimer
+    given: F.W.
+  - family: Hauser
+    given: L.J.
+  title: 'Prodigal: prokaryotic gene recognition and translation initiation site identification'
+  container-title: BMC Bioinformatics
+  issued: 2010
+  volume: 11
+  page: 119
+  doi: 10.1186/1471-2105-11-119
+- type: article-journal
+  id: lapidus
+  author:
+  - family: Lapidus
+    given: A.
+  - family: Clum
+    given: A.
+  - family: LaButti
+    given: K.
+  - family: Kaluzhnaya
+    given: M.G.
+  - family: Lim
+    given: S.
+  - family: Beck
+    given: D.A.C.
+  - family: del Rio
+    given: T.G.
+  - family: Nolan
+    given: M.
+  - family: Mavromatis
+    given: K.
+  - family: Huntemann
+    given: M.
+  - family: Lucas
+    given: S.
+  - family: Lidstrom
+    given: M.E.
+  - family: Ivanova
+    given: N.
+  - family: Chistoserdova
+    given: L.
+  issued: 2011
+  title: Genomes of Three Methylotrophs from a Single Niche Reveal the Genetic and
+    Metabolic Divergence of the Methylophilaceae
+  container-title: Journal of Bacteriology
+  volume: 193
+  page: 3757-3764
+- type: article-journal
+  id: lindgreen
+  author:
+  - family: Lindgreen
+    given: S.
+  - family: Adair
+    given: K.L.
+  - family: Gardner
+    given: P.P.
+  title: An evaluation of the accuracy and speed of metagenome analysis tools
+  container-title: Sci Rep.
+  issued: 2016
+  volume: 6
+  page: 19233
+- type: article-journal
+  id: locey
+  author:
+  - family: Locey
+    given: K.J.
+  - family: Lennon
+    given: J.T.
+  title: Scaling laws predict global microbial diversity
+  container-title: Proceedings of the National Academy of Sciences
+  issued: 2016
+  volume: 113
+  page: 5970-5975
+  doi: 10.1073/pnas.1521291113
+- type: article-journal
+  id: lopez
+  author:
+  - family: Lopez
+    given: R.
+  - family: Cowley
+    given: A.
+  - family: Li
+    given: W.
+  - family: McWilliam
+    given: H.
+  issued: 2014
+  title: Using EMBL-EBI Services via Web Interface and Programmatically via Web Services
+  volume: 48
+  issue: 1
+  page: 3.13.1-3.12.50
+  doi: 10.1002/0471250953.bi0312s48
+- type: article-journal
+  id: magrane
+  author:
+  - family: Magrane
+    given: M.
+  - UniProt Consortium
+  title: 'UniProt Knowledgebase: a hub of integrated protein data'
+  container-title: Database (Oxford)
+  issued: 2011
+  volume: 2011
+  page: bar009
+- type: article-journal
+  id: menzel
+  author:
+  - family: Menzel
+    given: P.
+  - family: Ng
+    given: K.L.
+  - family: Krogh
+    given: A.
+  title: Fast and sensitive taxonomic classification for metagenomics with Kaiju
+  container-title: Nature Communications
+  issued: 2016
+  volume: 7
+  page: 11257
+- type: article-journal
+  id: mesuere2012
+  author:
+  - family: Mesuere
+    given: B.
+  - family: Devreese
+    given: B.
+  - family: Debyser
+    given: G.
+  - family: Aerts
+    given: M.
+  - family: Vandamme
+    given: P.
+  - family: Dawyndt
+    given: P.
+  title: 'Unipept: tryptic peptide-based biodiversity analysis of metaproteome samples'
+  container-title: J. Proteome Res.
+  issued: 2012
+  volume: 11
+  issue: 12
+  page: 5773-5780
+- type: article-journal
+  id: mesuere2015
+  author:
+  - family: Mesuere
+    given: B.
+  - family: Debyser
+    given: G.
+  - family: Aerts
+    given: M.
+  - family: Devreese
+    given: B.
+  - family: Vandamme
+    given: P.
+  - family: Dawyndt
+    given: P.
+  title: The Unipept metaproteomics analysis pipeline
+  container-title: Proteomics
+  issued: 2015
+  volume: 15
+  issue: 8
+  page: 1437-1442
+- type: article-journal
+  id: namiki
+  author:
+  - family: Namiki
+    given: T.
+  - family: Hachiya
+    given: T.
+  - family: Tanaka
+    given: H.
+  - family: Sakakibara
+    given: Y.
+  title: 'MetaVelvet: an extension of Velvet assembler to de novo metagenome assembly
+    from short sequence reads'
+  container-title: Nucleic Acids Res.
+  issued: 2012
+  volume: 40
+  issue: 20
+  page: e155
+- type: article-journal
+  id: nightingale
+  author:
+  - given: A.
+    family: Nightingale
+  - given: R.
+    family: Antunes
+  - given: E.
+    family: Alpi
+  - given: B.
+    family: Bursteinas
+  - given: L.
+    family: Gonzales
+  - given: W.
+    family: Liu
+  - given: J.
+    family: Luo
+  - given: G.
+    family: Qi
+  - given: E.
+    family: Turner
+  - given: M.
+    family: Martin
+  issued: 2017
+  title: 'The Proteins API: accessing key integrated protein and genome information'
+  container-title: Nucleic Acids Research
+  volume: 45
+  issue: W1
+  page: W539-W544
+  doi: 10.1093/nar/gkx237
+- type: article-journal
+  id: noguchi
+  author:
+  - family: Noguchi
+    given: H.
+  - family: Taniguchi
+    given: T.
+  - family: Itoh
+    given: T.
+  title: 'MetaGeneAnnotator: Detecting Species-Specific Patterns of Ribosomal Binding
+    Site for Precise Gene Prediction in Anonymous Prokaryotic and Phage Genomes'
+  container-title: DNA Research
+  issued: 2008
+  issue: 6
+  volume: 38
+  page: 387-396
+  doi: 10.1093/dnares/dsn027
+- type: article-journal
+  id: oleary
+  author:
+  - family: O'Leary
+    given: N.A.
+  - family: Wright
+    given: M.W.
+  - family: Brister
+    given: J.R.
+  - family: Ciufo
+    given: S.
+  - family: Haddad
+    given: D.
+  - family: McVeigh
+    given: R.
+  - family: Rajput
+    given: B.
+  - family: Robbertse
+    given: B.
+  - family: Smith-White
+    given: B.
+  - family: Ako-Adjei
+    given: D.
+  - family: Astashyn
+    given: A.
+  - family: Badretdin
+    given: A.
+  - family: Bao
+    given: Y.
+  - family: Blinkova
+    given: O.
+  - family: Brover
+    given: V.
+  - family: Chetvernin
+    given: V.
+  - family: Choi
+    given: J.
+  - family: Cox
+    given: E.
+  - family: Ermolaeva
+    given: O.
+  - family: Farrell
+    given: C.M.
+  - family: Goldfarb
+    given: T.
+  - family: Gupta
+    given: T.
+  - family: Haft
+    given: D.
+  - family: Hatcher
+    given: E.
+  - family: Hlavina
+    given: W.
+  - family: Joardar
+    given: V.S.
+  - family: Kodali
+    given: V.K.
+  - family: Li
+    given: W.
+  - family: Maglott
+    given: D.
+  - family: Masterson
+    given: P.
+  - family: McGarvey
+    given: K.M.
+  - family: Murphy
+    given: M.R.
+  - family: O'Neill
+    given: K.
+  - family: Pujar
+    given: S.
+  - family: Rangwala
+    given: S.H.
+  - family: Rausch
+    given: D.
+  - family: Riddick
+    given: L.D.
+  - family: Schoch
+    given: C.
+  - family: Shkeda
+    given: A.
+  - family: Storz
+    given: S.S.
+  - family: Sun
+    given: H.
+  - family: Thibaud-Nissen
+    given: F.
+  - family: Tolstoy
+    given: I.
+  - family: Tully
+    given: R.E.
+  - family: Vatsan
+    given: A.R.
+  - family: Wallin
+    given: C.
+  - family: Webb
+    given: D.
+  - family: Wu
+    given: W.
+  - family: Landrum
+    given: M.J.
+  - family: Kimchi
+    given: A.
+  - family: Tatusova
+    given: T.
+  - family: DiCuccio
+    given: M.
+  - family: Kitts
+    given: P.
+  - family: Murphy
+    given: T.D.
+  - family: Pruitt
+    given: K.D.
+  issued: 2016
+  title: 'Reference sequence (RefSeq) database at NCBI: current status, taxonomic
+    expansion, and functional annotation'
+  container-title: Nucleic Acids Research
+  volume: 44
+  issue: D1
+  page: D733-D745
+  doi: 10.1093/nar/gkv1189
+- type: article-journal
+  id: ounit
+  author:
+  - family: Ounit
+    given: R.
+  - family: Wanamaker
+    given: S.
+  - family: Close
+    given: T.J.
+  - family: Lonardi
+    given: S.
+  title: 'CLARK: fast and accurate classification of metagenomic and genomic sequences
+    using discriminative k-mers'
+  container-title: BMC Genomics
+  issued: 2015
+  volume: 16
+- type: article-journal
+  id: pedros
+  author:
+  - family: Pedrós-Alió
+    given: C.
+  - family: Manrubia
+    given: S.
+  title: The vast unknown microbial biosphere
+  container-title: Proceedings of the National Academy of Sciences
+  issued: 2016
+  volume: 113
+  page: 6585-6587
+  doi: 10.1073/pnas.1606105113
+- type: article-journal
+  id: pell
+  author:
+  - family: Pell
+    given: J.
+  - family: Hintze
+    given: A.
+  - family: Canino-Koning
+    given: R.
+  - family: Howe
+    given: A.
+  - family: Tiedje
+    given: J.M.
+  - family: Brown
+    given: C.T.
+  title: Scaling metagenome sequence assembly with probabilistic de Bruijn graphs
+  container-title: Proc. Natl. Acad. Sci. U. S. A.
+  issued: 2012
+  volume: 109
+  issue: 33
+  page: 13272-13277
+- type: article-journal
+  id: peng2011
+  author:
+  - family: Peng
+    given: Y.
+  - family: Leung
+    given: H.C.M.
+  - family: Yiu
+    given: S.M.
+  - family: Chin
+    given: F.Y.L.
+  title: 'Meta-IDBA: a de Novo assembler for metagenomic data'
+  container-title: Bioinformatics
+  issued: 2011
+  volume: 27
+  issue: 13
+  page: i94-i101
+- type: article-journal
+  id: peng2012
+  author:
+  - family: Peng
+    given: Y.
+  - family: Leung
+    given: H.C.M.
+  - family: Yiu
+    given: S.M.
+  - family: Chin
+    given: F.Y.L.
+  title: 'IDBA-UD: a de novo assembler for single-cell and metagenomic sequencing
+    data with highly uneven depth'
+  container-title: Bioinformatics
+  issued: 2012
+  volume: 28
+  issue: 11
+  page: 1420-1428
+- type: article-journal
+  id: polin
+  author:
+  - family: Chen
+    given: P.L.
+  - family: Lamy
+    given: B.
+  - family: Ko
+    given: W.C.
+  issued: 2016
+  title: Aeromonas dhakensis, an Increasingly Recognized Human Pathogen
+  container-title: Frontiers in microbiology
+  volume: 7
+  page: 783
+- type: article-journal
+  id: quince
+  author:
+  - family: Quince
+    given: C.
+  - family: Walker
+    given: A.W.
+  - family: Simpson
+    given: J.T.
+  - family: Loman
+    given: N.J.
+  - family: Nicola
+    given: S.
+  title: Shotgun metagenomics, from sampling to analysis
+  container-title: Nature Biotechnology
+  issued: 2017
+  volume: 35
+  page: 833-844
+  doi: 10.1038/nbt.3935
+- type: article-journal
+  id: quince
+  author:
+  - family: Quince
+    given: C.
+  - family: Walker
+    given: A.W.
+  - family: Simpson
+    given: J.T.
+  - family: Loman
+    given: N.J.
+  - family: Segata
+    given: N.
+  title: Shotgun metagenomics, from sampling to analysis
+  container-title: Nature Biotechnology
+  issued: 2017
+  volume: 35
+  page: 833-844
+- type: article-journal
+  id: rappe
+  author:
+  - family: Rappé
+    given: M.S.
+  - family: Giovannoni
+    given: S.J.
+  title: The Uncultured Microbial Majority
+  container-title: Annual Review of Microbiology
+  issued: 2003
+  volume: 57
+  page: 369394
+  doi: 10.1146/annurev.micro.57.030502.090759
+- type: article-journal
+  id: rho
+  author:
+  - family: Rho
+    given: M.
+  - family: Tang
+    given: H.
+  - family: Ye
+    given: Y.
+  title: 'FragGeneScan: predicting genes in short and error-prone reads'
+  container-title: Nucleic Acids Res.
+  issued: 2010
+  volume: 38
+  issue: 20
+  page: e191
+- type: article-journal
+  id: rho
+  author:
+  - family: Rho
+    given: M.
+  - family: Tang
+    given: H.
+  - family: Ye
+    given: Y.
+  title: 'FragGeneScan: predicting genes in short and error-prone reads'
+  container-title: Nucleic Acids Res.
+  issued: 2010
+  volume: 38
+  issue: 20
+  page: e191
+- type: article-journal
+  id: sharpton
+  author:
+  - family: Sharpton
+    given: T.J.
+  title: An introduction to the analysis of shotgun metagenomic data
+  container-title: Frontiers in Plant Science
+  issued: 2014
+  page: 209
+  doi: 10.3389/fpls.2014.00209
+- type: article-journal
+  id: simpson
+  author:
+  - family: Simpson
+    given: J.T.
+  - family: Wong
+    given: K.
+  - family: Jackman
+    given: S.D.
+  title: 'ABySS: A parallel assembler for short read sequence data'
+  container-title: Genome Research
+  issued: 2009
+  volume: 19
+  page: 1117-1123
+- type: article-journal
+  id: thomas
+  author:
+  - family: Thomas
+    given: T.
+  - family: Gilbert
+    given: J.
+  - family: Meyer
+    given: F.
+  title: Metagenomics - A Guide From Sampling to Data Analysis
+  container-title: Microbial Informatics and experimentation
+  issued: 2012
+  volume: 2
+  doi: 10.1186/2042-5783-2-3
+- type: article-journal
+  id: trimble
+  author:
+  - family: Trimble
+    given: W.L.
+  - family: Keegan
+    given: K.P.
+  - family: D'Souza
+    given: M.
+  - family: Wilke
+    given: A.
+  - family: Wilkening
+    given: J.
+  - family: Gilbert
+    given: J.
+  - family: Meyer
+    given: F.
+  title: 'Short Read Reading-Frame Predictors are not Created Equal: Sequence Error
+    Causes Loss of Signal'
+  container-title: BMC Bioinformatics
+  issued: 2012
+  issue: 1
+  volume: 15
+  doi: 10.1186/1471-2105-13-183
+- type: article-journal
+  id: vandermarliere
+  author:
+  - family: Vandermarliere
+    given: E.
+  - family: Mueller
+    given: M.
+  - family: Martens
+    given: L.
+  title: Getting intimate with trypsin, the leading protease in proteomics
+  container-title: Mass Spectrom. Rev.
+  issued: 2013
+  volume: 32
+  issue: 6
+  page: 453-465
+- type: article-journal
+  id: verschaffelt
+  author:
+  - family: Verschaffelt
+    given: P.
+  - family: Van Thienen
+    given: P.
+  - family: Van Den Bossche
+    given: T.
+  - family: Van der Jeugt
+    given: F.
+  - family: De Tender
+    given: C.
+  - family: Martens
+    given: L.
+  - family: Dawyndt
+    given: P.
+  - family: Mesuere
+    given: B.
+  title: 'Unipept CLI 2.0: adding support for visualizations and functional annotations'
+  container-title: Bioinformatics
+  issued: 2020
+  volume: 36
+  issue: 14
+  page: 4220-4221
+- type: article-journal
+  id: verschaffelt2021
+  author:
+  - family: Verschaffelt
+    given: P.
+  - family: Van Den Bossche
+    given: T.
+  - family: Martens
+    given: L.
+  - family: Dawyndt
+    given: P.
+  - family: Mesuere
+    given: B.
+  title: 'Unipept Desktop: A Faster, More Powerful Metaproteomics Results Analysis
+    Tool'
+  container-title: Journal of Proteome Research
+  issued: 2021
+  volume: 20
+  issue: 4
+  page: 2005-2009
+  doi: 10.1021/acs.jproteome.0c00855
+  publisher: American Chemical Society
+- type: article-journal
+  id: vollmers
+  author:
+  - family: Vollmers
+    given: J.
+  - family: Wiegand
+    given: S.
+  - family: Kaster
+    given: A.
+  title: Comparing and Evaluating Metagenome Assembly Tools from a Microbiologist’s
+    Perspective - Not Only Size Matters!
+  container-title: PLOS ONE
+  issued: 2017
+  volume: 89
+  page: 131
+  doi: 10.1371/journal.pone.0169662
+  publisher: Public Library of Science
+- type: article-journal
+  id: wood2014
+  author:
+  - family: Wood
+    given: D.E.
+  - family: Salzberg
+    given: S.L.
+  title: 'Kraken: ultrafast metagenomic sequence classification using exact alignments'
+  container-title: Genome Biol.
+  issued: 2014
+  volume: 15
+  issue: 3
+  page: R46
+- type: article-journal
+  id: wood2019
+  author:
+  - family: Wood
+    given: D.E.
+  - family: Lu
+    given: J.
+  - family: Langmead
+    given: B.
+  title: Improved metagenomic analysis with Kraken 2
+  container-title: Genome Biol.
+  issued: 2019
+  volume: 20
+  issue: 1
+  page: 257
+- type: article-journal
+  id: xiong
+  author:
+  - family: Xiong
+    given: X.H.
+  - family: Zhi
+    given: J.J.
+  - family: Yang
+    given: L.
+  - family: Wang
+    given: J.H.
+  - family: Zhao
+    given: Y.
+  - family: Wang
+    given: X.
+  - family: Cui
+    given: Y.J.
+  - family: Dong
+    given: F.
+  - family: Li
+    given: M.X.
+  - family: Yang
+    given: Y.X.
+  - family: Wei
+    given: N.
+  - family: An
+    given: J.J.
+  - family: Du
+    given: B.H.
+  - family: Liang
+    given: L.
+  - family: Zhang
+    given: J.S.
+  - family: Zhou
+    given: W.
+  - family: Cheng
+    given: S.F.
+  - family: He
+    given: T.
+  - family: Wang
+    given: L.
+  - family: Chen
+    given: H.P.
+  - family: Liu
+    given: D.S.
+  - family: Zhang
+    given: W.C.
+  issued: 2011
+  title: Complete Genome Sequence of the Bacterium Methylovorus sp. Strain MP688,
+    a High-Level Producer of Pyrroloquinolone Quinone
+  container-title: Journal of Bacteriology
+  volume: 193
+  page: 2080
+- type: article-journal
+  id: zhu
+  author:
+  - family: Zhu
+    given: W.
+  - family: Lomsadze
+    given: A.
+  - family: Borodovsky
+    given: M.
+  title: Ab initio gene identification in metagenomic sequences
+  container-title: Nucleic Acids Research
+  issued: 2010
+  volume: 37
+  page: e132-e132
+  doi: 10.1093/nar/gkq275
+  issue: 12
+- type: book
+  id: hahn
+  author:
+  - family: Hahn
+    given: M.W.
+  - family: Koll
+    given: U.
+  - family: Schmidt
+    given: J.
+  title: The Structure and Function of Aquatic Microbial Communities
+  publisher: Springer International Publishing
+  publisher-place: Cham
+  issued: 2019
+  isbn: 978-3-030-16775-2
+  doi: 10.1007/978-3-030-16775-2_10
+  page: 313-351
+- type: book
+  id: raymond
+  author:
+  - family: Raymond
+    given: E. S.
+  title: The Art of UNIX Programming
+  publisher: Addison-Wesley Professional
+  publisher-place: USA
+  issued: 2003
+- type: book
+  id: watson
+  author:
+  - family: Watson
+    given: J.D.
+  - family: Baker
+    given: T.A.
+  - family: Bell
+    given: S.P.
+  - family: Gann
+    given: A.
+  - family: Levine
+    given: M.
+  - family: Losick
+    given: R.
+  title: Molecular Biology of the Gene
+  publisher: Pearson/Benjamin Cummings
+  publisher-place: USA
+  issued: 2008
+- type: paper-conference
+  id: kim
+  author:
+  - family: Kim
+    given: D.J.
+  - family: Hahn
+    given: A.S.
+  - family: Wu
+    given: S.J.
+  - family: Hanson
+    given: N.W.
+  - family: Konwar
+    given: K.M.
+  - family: Hallam
+    given: S.J.
+  title: FragGeneScan-plus for scalable high-throughput short-read open reading frame
+    prediction
+  event: IEEE Conference on Computational Intelligence in Bioinformatics and Computational
+    Biology
+  event-place: Canada
+  event-date: 2015
+- type: paper-conference
+  id: kim
+  author:
+  - family: Kim
+    given: D.J.
+  - family: Hahn
+    given: A.S.
+  - family: Wu
+    given: S.J.
+  - family: Hanson
+    given: N.W.
+  - family: Konwar
+    given: K.M.
+  - family: Hallam
+    given: S.J.
+  title: FragGeneScan-plus for scalable high-throughput short-read open reading frame
+    prediction
+  event: IEEE Conference on Computational Intelligence in Bioinformatics and Computational
+    Biology
+  event-place: Canada
+  event-date: 2015
+- type: paper-conference
+  id: nethercote
+  author:
+  - family: Nethercote
+    given: N.
+  - family: Seward
+    given: J.
+  title: 'Valgrind: A Framework for Heavyweight Dynamic Binary Instrumentation'
+  event: ACM SIGPLAN Conference on Programming Language Design and Implementation
+  event-place: San Diego, California, USA
+  issued: 2007
+  event-date: 2007
+  doi: 10.1145/1250734.1250746
+- type: post-weblog
+  id: gallant
+  author:
+  - family: Gallant
+  title: Index 1,600,000,000 Keys with Automata and Rust
+  URL: https://blog.burntsushi.net/transducers/
+  accessed: '2016-11-25'
+- type: unpublished
+  id: degraef
+  author:
+  - family: De Graef
+    given: N.
+  issued: 2018
+  title: Consolidating and Benchmarking the Unipept Metagenomics Analysis Pipeline
