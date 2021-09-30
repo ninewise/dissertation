@@ -1,4 +1,4 @@
-### Filtering taxonomic identifications based on location
+### Location-based taxon filtering
 
 When mapping peptides on taxa, mutations and read-errors can cause
 accidental identifications of completely unrelated taxa. These wrong

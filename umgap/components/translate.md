@@ -1,4 +1,4 @@
-### Translating DNA sequences to protein fragments
+### Translating DNA sequences
 
 The `umgap translate` command takes one or more DNA sequences and
 translates them into amino acid sequences. It allows the selection of
