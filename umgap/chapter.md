@@ -21,7 +21,7 @@ aggregation, the reads must be brought together again, for instance to
 create a frequency table. This suggests subdividing the data per read.
 
 This dimension of subdivision gives the opportunity for easy
-parallelization, following a map-reduce [TODO ref] strategy. Each
+parallelization, following a map-reduce strategy. Each
 read can be processed in a separate thread, with little to no
 parallelization overhead. This allows realization of the full power of
 the executing machine.
