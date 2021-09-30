@@ -18,12 +18,12 @@ database. This database is then queried by the Unipept web application
 ![The data flow from the downloaded sources to the Unipept database tables. Blue rectangles indicate processing steps, orange rounded rectangles indicate database tables. Processing steps using online sources are marked with a web icon.\label{fig:makeflow}](make-database.svg)
 
 Figure \ref{fig:makeflow} describes the flow of data from our online
-sources to the final database tables. On the left, independent from
-the rest of the flow, the EC numbers, GO terms and InterPro entries
-are downloaded from respectively the EBI enzyme database [TODO ref]
-using the **fetch EC numbers** function, the Gene Ontology [TODO ref]
-using the **fetch GO terms** function and EBI InterPro database [TODO
-ref] using the **fetch InterPro entries** function.
+sources to the final database tables. On the left, independent from the
+rest of the flow, the EC numbers, GO terms and InterPro entries are
+downloaded from respectively the EBI enzyme database [@alcantara] using
+the **fetch EC numbers** function, the Gene Ontology [@ashburner] using
+the **fetch GO terms** function and EBI InterPro database [@blum] using
+the **fetch InterPro entries** function.
 
 On the right, the flow starts with downloading the NCBI taxonomy
 and process it in the **create taxon tables** function to create
@@ -37,10 +37,10 @@ This table speeds up the lineage queries on the webserver and the lowest
 common ancestor calculations.
 
 In **parse UniProtKB**, the XML formatted UniProtKB is downloaded and
-parsed. The *uniprot entries* are saved in a table with the taxon ID of
-the organism the protein was gained from and the protein sequence. It
-outputs the EC, GO, RefSeq [TODO ref], EMBL [TODO ref], InterPro and
-proteome [TODO ref] annotations to their respective cross references
+parsed. The *uniprot entries* are saved in a table with the taxon ID
+of the organism the protein was gained from and the protein sequence.
+It outputs the EC, GO, RefSeq [@oleary], EMBL [@lopez], InterPro and
+proteome [@nightingale] annotations to their respective cross references
 tables and it save all encountered tryptic peptides in the *peptides*
 table and proteomes for further processing. A *proteomes* table is
 created with additional downloaded data, but it is not used in the
