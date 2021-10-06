@@ -2,17 +2,41 @@
 
 (10 pagina's bare minimum)
 
-minimale biologische uitleg: DNA RNA eiwitten
+## Taxomies - Classifying life
 
-proteomics
-meta- (omgevingsstalen)
-metatranscriptomics
-metagenomics
+* taxonomy
+  - kingdom (may have heard of the 'animal kingdom', there are others)
+  - species (species is also a rank)
+  - andere rangen (this making a tree of containing sets)
 
-shotgun (concept read)
+  - taxonomy oorspronkelijk op basis van uiterlijke kenmerken
+  - nu eerder op basis van evolutie, dus: DNA
 
-literatuurstudie (wat bestaat er al allemaal) (assembly: binning werkt niet goed met meer soorten; meest gangbare methoden)
+## Genetic codes
 
-waar komt de data vandaan (machine, volumes)?
+* DNA, RNA, eiwitten
+  - DNA basisbouwsteen van evolutie
+  - ketting van ACGT's
+  - coding vs. noncoding
+  - DNA -> beschrijvend, eiwit -> uitvoerend
+  - translatie via RNA
 
-Unipept
+## Studying genetic codes
+
+* Studies regarding DNA/RNA/proteins
+  - genomics & metagenomics
+  - scanproblemen -> shotgun metagenomics (concept read) (oplijsting machines, volumes)
+  - proteomics & metaproteomics
+  - scanproblemen -> I/L equation
+  - transcriptomics & metatranscriptomics
+
+## Existing Metagenomics Tools
+
+* Existing metagenomics methods/tools
+  - assembly: binning werkt niet goed met meer soorten
+  - meest gangbare methoden
+
+## Unipept
+
+* Existing metaproteomics tools
+  - Unipept
