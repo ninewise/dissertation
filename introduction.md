@@ -1,4 +1,4 @@
-# Introductie
+# Introduction
 
 (10 pagina's bare minimum)
 
@@ -14,19 +14,20 @@ traits to humans or featuring anthropomorphic animals.
 In evolutionary biology, the term "Animal Kingdom", or rather "Kingdom
 Animalia", is a classification; a grouping of organisms. It is not the
 only kingdom, but perhaps it is, for us humans, the most important
-one, since we are part of it. Fortunatly, despite calling it a
-kingdom, there's no king we all are fealthy to. The other kingdoms are
+one, since we are part of it. Fortunately, despite calling it a
+kingdom, there's no king we all are fealty to. The other kingdoms are
 usually the plants (Plantae), Fungi, Chromista, Protozoa, Archaea and
 Bacteria. Why usually? Well, life being life, the borders between these
-classifications are a rather grey area and they have been reassigned
+classifications are a rather gray area and they have been reassigned
 often. In fact, the study of naming and classifying groups of organisms
 is a whole branch of biology, called taxonomy. Other than discussing
-about the number of kingdoms, they also subdivide kingdoms in phyla,
-those in classes, those in orders, and so forth. Each group of organisms
-is called a taxon and may contain any number of other taxa. kingdom,
-phyla and class are called taxonomic ranks. In this work, we will be
-using a taxonomy with 29 named taxonomic ranks (though at the start of
-my PhD, it had only 27), but in between those are many unnamed ranks.
+about the number of kingdoms, taxonomists also subdivide kingdoms in
+phyla, those in classes, those in orders, and so forth. Each group of
+organisms is called a taxon and may contain any number of other taxa.
+kingdom, phyla and class are called taxonomic ranks. In this work, we
+will be using a taxonomy with 29 named taxonomic ranks (though at the
+start of my PhD, it had only 27), but in between those are many unnamed
+ranks.
 
 Each taxon is directly contained by only a single other taxon, called
 its parent. All taxa together are thus structured in a tree, sometimes
@@ -38,18 +39,29 @@ organism of which all these organisms descend (in reproductive sense),
 just that they are grouped together because they are showing similar
 characteristics.
 
-One of the interesting ranks of grouping organisms is the species, near
-the bottom of the taxonomic tree.
+<!-- TODO tekening tree of life? -->
 
-* taxonomy
-  - kingdom (may have heard of the 'animal kingdom', there are others)
-  - species (species is also a rank)
-  - andere rangen (this making a tree of containing sets)
+One of the interesting ranks of grouping organisms is the species,
+near the bottom of the taxonomic tree. Whereas most taxa are assigned
+subjectively by experienced taxonomists, a species is often defined as
+the largest grouping in which every two organisms (of the appropriate
+sexes or mating types) can reproduce, with fertile offspring. Still,
+this definition does not include organisms which reproduce only
+asexually, among others.
 
-  - taxonomy oorspronkelijk op basis van uiterlijke kenmerken
-  - nu eerder op basis van evolutie, dus: DNA
+The first real taxonomy, by Carl Linnaeus (TODO ref), introduced the
+ranked taxa and a naming system for animal and plant species. It was
+based on visible characteristics, such as appearance and behavior. After
+the evolutionary theory was published by Charles Darwin (TODO ref),
+classifications would come to reflect common evolutionary descend. In
+general, the closer two organisms are to their shared precursor, the
+more grouped they are in a taxonomy.
 
-## Genetic codes
+The introduction of microscopic organisms into taxonomies puts a strain
+on division by visible characteristics. These organisms are more easily
+classified by studying their genetic material formed by biopolymers.
+
+## The Central Dogma of molecular biology
 
 * DNA, RNA, eiwitten
   - DNA basisbouwsteen van evolutie
@@ -73,7 +85,19 @@ the bottom of the taxonomic tree.
   - assembly: binning werkt niet goed met meer soorten
   - meest gangbare methoden
 
+Conclusie: er zijn veel strategiën, ze werken allemaal op DNA.
+
 ## Unipept
 
-* Existing metaproteomics tools
-  - Unipept
+*  Unipept
+
+## Metagenomics via eiwitten
+
+Unipept werkt heel goed via eiwitten, we gaan de Unipept strategie proberen toepassen op reads.
+
+(outline thesis)
+
+* umgap als nog een tool + test of we kunnen de omweg nemen
+* er is een prediction step, fraggenescan was te traag
+* een paar case studies om te gebruiken in de praktijk
+* andere dingen
