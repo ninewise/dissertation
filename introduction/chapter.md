@@ -78,6 +78,17 @@ around each other forming a double helix.
 
 ![The structure of DNA, flattened to two dimensions.\label{fig:dna}](dna.svg){ width=50% }
 
+Because the deoxyribose and the phosphate group are the same for each
+monomer, the genetic information in a single strand can be represented
+by the sequence of the 4 bases. Furthermore, because the pairs are
+fixed, the second strand can be derived from a representation of the
+first. The convention is to write down a DNA strand at the end with a
+phosphate group (called the 5'-end) towards the end with a deoxyribose
+(called the 3'-end). The representing strand is called the forward
+strand, and the redundant strand is called the reverse strand. For
+example, the DNA fragment in Figure \ref{fig:dna} would be written as
+`ACATGG` (with reverse complement `CCATGT` on the reverse strand).
+
 * DNA, RNA, eiwitten
   - DNA basisbouwsteen van evolutie
   - ketting van ACGT's
