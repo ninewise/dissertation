@@ -27,7 +27,7 @@ organisms is called a taxon and may contain any number of other taxa.
 kingdom, phyla and class are called taxonomic ranks. In this work, we
 will be using a taxonomy with 29 named taxonomic ranks (though at the
 start of my PhD, it had only 27), but in between those are many unnamed
-ranks.
+ranks. The used taxonomy includes viruses as well as organisms.
 
 Each taxon is directly contained by only a single other taxon, called
 its parent. All taxa together are thus structured in a tree, sometimes
@@ -59,9 +59,22 @@ more grouped they are in a taxonomy.
 
 The introduction of microscopic organisms into taxonomies puts a strain
 on division by visible characteristics. These organisms are more easily
-classified by studying their genetic material formed by biopolymers.
+classified by studying their genetic material, carried by biopolymers.
 
 ## The Central Dogma of molecular biology
+
+The most well-known carrier of genetic material is without doubt DNA,
+or Deoxyribonucleic acid. A DNA molecule is a long polymer, formed by a
+chain of small pairs of monomers. Each DNA monomer, called a nucleotide,
+is composed of the sugar 'deoxyribose', a fixed phosphate group and one
+of four nucleobases: cytosine (represented by a C), guanine (G), adenine
+(A) and thymine (T). Each nucleobase pairs up with another (cytosine
+with guanine and adenine with thymine) to form a base pair, via a
+hydrogen bond. On the other side, the deoxyribose and phosphate group
+bond respectively with the phosphate group of another monomer, and the
+deoxyribose of yet another. As such, together, the deoxyribose-phosphate
+alternations form two long strands, which spiral around each other
+forming a double helix.
 
 * DNA, RNA, eiwitten
   - DNA basisbouwsteen van evolutie
