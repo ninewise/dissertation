@@ -117,12 +117,51 @@ $4^3$ codons onto amino acids, is not the same for every organism.
 
 ## Studying genetic codes
 
-* Studies regarding DNA/RNA/proteins
-  - genomics & metagenomics
-  - scanproblemen -> shotgun metagenomics (concept read) (oplijsting machines, volumes)
-  - proteomics & metaproteomics
-  - scanproblemen -> I/L equation
-  - transcriptomics & metatranscriptomics
+The complete set of an organism's DNA is called its genome, and studying
+genomes is called genomics. A genomics study traditionally consists of
+three parts: DNA sequencing, DNA assembly and Genome annotation. The
+first part, sequencing, is the conversion of fysical DNA molecules into
+their DNA sequence, the order of the nucleotides in the chain. Current
+machinery is incapable of accurately and rapidly sequencing complete
+molecules. The DNA molecules are first split into shorter segments,
+called reads. These reads can vary in length from 100 base pairs up to
+a few 10.000 base pairs, depending on the used sequencer, with various
+read error rates. The sequencer then outputs the DNA sequences of the
+reads.
+
+Since the DNA molecules where segmented into reads, the next step is the
+assembly of reads into complete genome sequences. When the sequenced DNA
+sequence is of an organism closely related to an organism with a known
+genome, comparative assembly can be used. The sequenced reads are mapped
+onto the reference sequence to form the new sequence. When there's no
+reference genome, *de novo* assembly is used. In *de novo* assembly, an
+attempt is made to form the complete genome by overlapping the short
+reads.
+
+Finally the assembled sequence is annotated. Coding and non-coding parts
+are identified, the genes in the coding parts are predicted, and the
+functions of the genes are analyzed. These steps are performed manually
+and automatically (called *in silico*), or a mixture of both.
+
+Similar to a genome, the set of an organism's proteins is called its
+proteome, with the corresponding study called proteomics. Large scale
+proteomic studies may follow the same pattern as genomics studies: the
+proteins are segmented, often with trypsin. The protein sequence of
+these segments, called (tryptic) peptides, is then determined by for
+example comparing the measured mass spectrum to a set of predicted mass
+spectra.
+
+Finally, the set of an organism's RNA is called its transcriptome, and
+the corresponding study is called transcriptomics.
+
+All of these studies are performed on a single organism. Studying
+the genomes, proteomes and transcriptomes of all organisms found in
+an environment sample are called metagenomics, metaproteomics and
+metatranscriptomics. Such studies can give interesting insights of,
+respectively, which organisms can be found in a sample, which functions
+they are performing, and which genes they are currently expressing.
+
+TODO: include volumes of data
 
 ## Existing Metagenomics Tools
 
