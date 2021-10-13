@@ -89,12 +89,31 @@ strand, and the redundant strand is called the reverse strand. For
 example, the DNA fragment in Figure \ref{fig:dna} would be written as
 `ACATGG` (with reverse complement `CCATGT` on the reverse strand).
 
-* DNA, RNA, eiwitten
-  - DNA basisbouwsteen van evolutie
-  - ketting van ACGT's
-  - coding vs. noncoding
-  - DNA -> beschrijvend, eiwit -> uitvoerend
-  - translatie via RNA
+DNA itself is just a carrier of information. To perform functions,
+parts of the DNA called genes are generally expressed into proteins.
+DNA is called protein-coding (or just coding), or alternatively
+non-coding, if it encodes a protein. Depending on the organism, the
+fraction of coding versus non-coding DNA wildly varies (for example,
+the pufferfish *Takifugu* has 90% non-coding DNA, while the bladderworm
+plant *Utricularia gibba* as only 3% non-coding DNA).
+
+To perform gene expression, the DNA is first transcribed into another
+polymer called Ribonucleic Acid (RNA). An enzyme called RNA polymerase
+picks onto either strand and starts processing it in the 3' to
+5' direction. For each nucleotide, it attaches the complementary
+nucleotide, thus forming a copy of the other strand in 5' to 3'
+direction. The only exception is that RNA polymerase couples a uracil
+nucleobase (U) with the adenine nucleobases in the DNA strand, instead
+of a thymine. As such, the resulting RNA polymer is copy of the opposing
+DNA strand with T replaced by U.
+
+After transcription, the resulting RNA can be translated into yet
+another polymer called a polypeptide, which then folds into a protein.
+This translation is performed by a ribosome. It scans triplets of
+nucleotides in the RNA, called a codon, starting at the 5'-end, looking
+for a start codon. Then, for each codon up to a stop codon, it attaches
+the corresponding amino acid. The translation table, the mapping of the
+$4^3$ codons onto amino acids, is not the same for every organism.
 
 ## Studying genetic codes
 
