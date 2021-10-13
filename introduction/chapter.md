@@ -120,7 +120,7 @@ $4^3$ codons onto amino acids, is not the same for every organism.
 The complete set of an organism's DNA is called its genome, and studying
 genomes is called genomics. A genomics study traditionally consists of
 three parts: DNA sequencing, DNA assembly and Genome annotation. The
-first part, sequencing, is the conversion of fysical DNA molecules into
+first part, sequencing, is the conversion of physical DNA molecules into
 their DNA sequence, the order of the nucleotides in the chain. Current
 machinery is incapable of accurately and rapidly sequencing complete
 molecules. The DNA molecules are first split into shorter segments,
@@ -145,7 +145,7 @@ and automatically (called *in silico*), or a mixture of both.
 
 Similar to a genome, the set of an organism's proteins is called its
 proteome, with the corresponding study called proteomics. Large scale
-proteomic studies may follow the same pattern as genomics studies: the
+proteomics studies may follow the same pattern as genomics studies: the
 proteins are segmented, often with trypsin. The protein sequence of
 these segments, called (tryptic) peptides, is then determined by for
 example comparing the measured mass spectrum to a set of predicted mass

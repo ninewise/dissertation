@@ -1,4 +1,4 @@
-personal_ws-1.1 en 185 
+personal_ws-1.1 en 200 
 Acinetobacter
 Aeromonas
 Animalia
@@ -8,6 +8,7 @@ CSV
 Chromista
 Ciliophora
 De
+Deoxyribonucleic
 EBI
 EMBL
 FASTA
@@ -53,6 +54,7 @@ Plantae
 RMQ
 RefSeq
 Reynard
+Ribonucleic
 SMAP
 SNP
 SNPs
@@ -86,6 +88,7 @@ benchmarked
 benchmarking
 bioinformatics
 biopolymers
+bladderworm
 bp
 caviae
 cereus
@@ -94,6 +97,7 @@ codebase
 coli
 contigs
 de
+deoxyribose
 dereplication
 desorption
 dhakensis
@@ -121,6 +125,7 @@ metaproteome
 metaproteomes
 metaproteomics
 metatranscriptome
+metatranscriptomics
 methionine
 misclassifications
 misidentifications
@@ -131,6 +136,9 @@ mutexes
 mxaF
 netcat
 novo
+nucleobase
+nucleobases
+nucleotides
 overfitting
 overrepresented
 parvorder
@@ -139,7 +147,9 @@ performant
 phenotypic
 phylogenetic
 plastid
+polymerase
 polymorphism
+polypeptide
 postprocessing
 precalculated
 precomputed
@@ -153,11 +163,14 @@ profilings
 proline
 proteome
 proteomes
+proteomics
 pseudocode
+pufferfish
 putatively
 rRNA
 reimplementation
 rhizobiome
+ribosome
 siderophore
 silico
 spectrometry
@@ -175,6 +188,8 @@ superkingdom
 superorder
 superphylum
 taxonomically
+transcriptome
+transcriptomes
 transcriptomics
 translocator
 trypsin
