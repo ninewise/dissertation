@@ -173,15 +173,32 @@ Conclusie: er zijn veel strategiën, ze werken allemaal op DNA.
 
 ## Unipept
 
-*  Unipept
+Unipept is an online tool for the biodiversity analysis of
+metaproteomics samples. It is based on a mapping of tryptic peptides,
+the most common protein fragment in metaproteomics, onto the smallest
+taxon grouping all organisms the tryptic peptide is found in, called
+the lowest common ancestor. This mapping is created by processing an
+extensive list of organisms and their proteome.
 
-## Metagenomics via eiwitten
+Using such a mapping, Unipept can quickly construct ranked frequency
+tables of taxa for all tryptic peptides uploaded. These tables are
+presented in clear visualizations, providing insight in the biodiversity
+of the sample.
 
-Unipept werkt heel goed via eiwitten, we gaan de Unipept strategie proberen toepassen op reads.
+## Metagenomics via metaproteomics
 
-(outline thesis)
+Given the success of Unipept for metaproteomics, it could prove useful
+for metagenomics as well. By using a gene predictor, a metagenomics
+sample can be transformed *in silico* to a metaproteomics sample. As
+metagenomics samples are of much larger volume than metaproteomics
+samples, the Unipept index is wrapped in a local command line tool
+to avoid the network bottlenecks of an online tool. Thus the Unipept
+Metagenomics Analysis Pipeline is born.
 
-* umgap als nog een tool + test of we kunnen de omweg nemen
-* er is een prediction step, fraggenescan was te traag
-* een paar case studies om te gebruiken in de praktijk
-* andere dingen
+In chapter \ref{chapter:umgap}, the complete pipeline is described
+and evaluated as an alternative method of metagenomics analysis. In
+chapter \ref{chapter:fgsrs}, an new implementation of FragGeneScan is
+introduced, to be used as an improved gene predictor in the pipeline.
+In chapter \ref{chapter:on-the-side}, some metawork is included, such
+as the improved construction of the Unipept (and UMGAP) index and a few
+walkthroughs describing the usage of the UMGAP in other studies.

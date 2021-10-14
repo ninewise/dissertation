@@ -1,4 +1,5 @@
 # FragGeneScan
+\label{chapter:fgsrs}
 
 One of the important steps in the UMGAP is the translation of DNA
 reads to amino acid sequences via gene prediction. When starting out,

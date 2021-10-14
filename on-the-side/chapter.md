@@ -1,4 +1,5 @@
 # Putting it all in action
+\label{chapter:on-the-side}
 
 In this chapter, I describe some of the more or less related work
 I did while developing the UMGAP. Just like my work on the Unipept
