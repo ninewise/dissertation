@@ -7,7 +7,7 @@ needs to be based on a vast amount of data. The UniProt Knowledgebase
 [@magrane], the central hub for functional annotation on proteins, is
 used for this purpose.
 
-### Extracting the Unipept Database
+### Extracting the Unipept database
 
 To build a performant application, the data from the UniProtKB
 is parsed, extracted, preprocessed and stored in a relational

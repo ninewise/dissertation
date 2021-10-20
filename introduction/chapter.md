@@ -2,7 +2,7 @@
 
 (10 pagina's bare minimum)
 
-## Taxonomies - Classifying life
+## Classifying life
 
 Upon hearing the term "Animal Kingdom", you might think of either the
 jungle or the stories of Reynard the Fox, where the lion rules over the
@@ -61,7 +61,7 @@ The introduction of microscopic organisms into taxonomies puts a strain
 on division by visible characteristics. These organisms are more easily
 classified by studying their genetic material, carried by biopolymers.
 
-## The Central Dogma of molecular biology
+## The central dogma of molecular biology
 
 The most well-known carrier of genetic material is without doubt DNA, or
 Deoxyribonucleic acid (Figure \ref{fig:dna}). A DNA molecule is a long
@@ -163,7 +163,7 @@ they are performing, and which genes they are currently expressing.
 
 TODO: include volumes of data
 
-## Existing Metagenomics Tools
+## Existing metagenomics tools
 
 * Existing metagenomics methods/tools
   - assembly: binning werkt niet goed met meer soorten
