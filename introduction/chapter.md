@@ -1,8 +1,8 @@
 # Introduction
 
-(10 pagina's bare minimum)
-
 ## Classifying life
+
+<!-- TODO key terms in bold? -->
 
 Upon hearing the term "Animal Kingdom", you might think of either the
 jungle or the stories of Reynard the Fox, where the lion rules over the
@@ -25,9 +25,11 @@ about the number of kingdoms, taxonomists also subdivide kingdoms in
 phyla, those in classes, those in orders, and so forth. Each group of
 organisms is called a taxon and may contain any number of other taxa.
 kingdom, phyla and class are called taxonomic ranks. In this work, we
-will be using a taxonomy with 29 named taxonomic ranks (though at the
-start of my PhD, it had only 27), but in between those are many unnamed
-ranks. The used taxonomy includes viruses as well as organisms.
+use a taxonomy with 29 named taxonomic ranks (though at the start of my
+PhD, it had only 27), but in between those are many unnamed ranks. The
+used taxonomy includes viruses as well as living organisms.
+
+<!-- TODO kingdom met hoofdletter in oplijsting? -->
 
 Each taxon is directly contained by only a single other taxon, called
 its parent. All taxa together are thus structured in a tree, sometimes
@@ -55,23 +57,24 @@ based on visible characteristics, such as appearance and behavior. After
 the evolutionary theory was published by Charles Darwin (TODO ref),
 classifications would come to reflect common evolutionary descend. In
 general, the closer two organisms are to their shared precursor, the
-more grouped they are in a taxonomy.
+closer they should be in a taxonomy.
 
-The introduction of microscopic organisms into taxonomies puts a strain
-on division by visible characteristics. These organisms are more easily
-classified by studying their genetic material, carried by biopolymers.
+The introduction of microscopic organisms into taxonomies has put a
+strain on division by visible characteristics. These organisms are
+more easily classified by studying their genetic material, carried by
+biopolymers.
 
 ## The central dogma of molecular biology
 
 The most well-known carrier of genetic material is without doubt DNA, or
-Deoxyribonucleic acid (Figure \ref{fig:dna}). A DNA molecule is a long
+deoxyribonucleic acid (Figure \ref{fig:dna}). A DNA molecule is a long
 polymer, formed by a chain of small pairs of monomers. Each DNA monomer,
 called a nucleotide, is composed of the sugar 'deoxyribose', a fixed
 phosphate group and one of four nucleobases: cytosine (represented by a
 C), guanine (G), adenine (A) and thymine (T). Each nucleobase pairs up
 with another (cytosine with guanine and adenine with thymine) to form a
 base pair, via a hydrogen bond. On the other side, the deoxyribose and
-phosphate group bond respectively with the phosphate group of another
+phosphate group bind respectively with the phosphate group of another
 monomer, and the deoxyribose of yet another. As such, together, the
 deoxyribose-phosphate alternations form two long strands, which spiral
 around each other forming a double helix.
@@ -82,23 +85,25 @@ Because the deoxyribose and the phosphate group are the same for each
 monomer, the genetic information in a single strand can be represented
 by the sequence of the 4 bases. Furthermore, because the pairs are
 fixed, the second strand can be derived from a representation of the
-first. The convention is to write down a DNA strand at the end with a
+first. The convention is to write down a DNA strand from the end with a
 phosphate group (called the 5'-end) towards the end with a deoxyribose
 (called the 3'-end). The representing strand is called the forward
 strand, and the redundant strand is called the reverse strand. For
 example, the DNA fragment in Figure \ref{fig:dna} would be written as
 `ACATGG` (with reverse complement `CCATGT` on the reverse strand).
 
-DNA itself is just a carrier of information. To perform functions,
-parts of the DNA called genes are generally expressed into proteins.
-DNA is called protein-coding (or just coding), or alternatively
-non-coding, if it encodes a protein. Depending on the organism, the
-fraction of coding versus non-coding DNA wildly varies (for example,
-the pufferfish *Takifugu* has 90% non-coding DNA, while the bladderworm
+DNA itself is just an information carrier. To perform functions, parts
+of the DNA called genes are generally expressed into proteins. DNA is
+called protein-coding (or just coding), or alternatively non-coding,
+if it encodes a protein. Depending on the organism, the fraction
+of coding versus non-coding DNA wildly varies (for example, the
+pufferfish *Takifugu* has 90% non-coding DNA, while the bladderworm
 plant *Utricularia gibba* as only 3% non-coding DNA).
 
+<!-- TODO image coding density, include genome size -->
+
 To perform gene expression, the DNA is first transcribed into another
-polymer called Ribonucleic Acid (RNA). An enzyme called RNA polymerase
+polymer called ribonucleic acid (RNA). An enzyme called RNA polymerase
 picks onto either strand and starts processing it in the 3' to
 5' direction. For each nucleotide, it attaches the complementary
 nucleotide, thus forming a copy of the other strand in 5' to 3'
@@ -107,61 +112,76 @@ nucleobase (U) with the adenine nucleobases in the DNA strand, instead
 of a thymine. As such, the resulting RNA polymer is copy of the opposing
 DNA strand with T replaced by U.
 
+<!-- TODO image gene expression? -->
+
 After transcription, the resulting RNA can be translated into yet
 another polymer called a polypeptide, which then folds into a protein.
 This translation is performed by a ribosome. It scans triplets of
 nucleotides in the RNA, called a codon, starting at the 5'-end, looking
 for a start codon. Then, for each codon up to a stop codon, it attaches
 the corresponding amino acid. The translation table, the mapping of the
-$4^3$ codons onto amino acids, is not the same for every organism.
+$4^3$ codons onto amino acids (or stop codons), is not the same for
+every organism.
 
-## Studying genetic codes
+<!-- TODO image translation table -->
+
+This three-form-two-step process is called the central dogma of
+molecular biology. Most organisms follow these steps, but for instance
+some bacteria blend the transciption and translation into a single step,
+and some DNA segments don't translate to proteins but perform their
+function as RNA.
+
+<!-- TODO image central dogma -->
+
+## Studying organisms and functions from biopolymers
 
 The complete set of an organism's DNA is called its genome, and studying
-genomes is called genomics. A genomics study traditionally consists of
-three parts: DNA sequencing, DNA assembly and Genome annotation. The
-first part, sequencing, is the conversion of physical DNA molecules into
-their DNA sequence, the order of the nucleotides in the chain. Current
-machinery is incapable of accurately and rapidly sequencing complete
-molecules. The DNA molecules are first split into shorter segments,
-called reads. These reads can vary in length from 100 base pairs up to
-a few 10.000 base pairs, depending on the used sequencer, with various
-read error rates. The sequencer then outputs the DNA sequences of the
+genomes is called genomics. A genomics study traditionally consists
+of three parts: sequencing, assembly and annotation. The first part,
+sequencing, is the conversion of physical DNA molecules into their DNA
+sequence, the order of the nucleotides in the chain. Current machinery
+is incapable of accurately and rapidly sequencing complete molecules.
+The DNA molecules are first split into shorter segments, called reads.
+These reads can vary in length from 100 base pairs up to a few 10.000
+base pairs, depending on the used sequencing technology, with various
+read error types and rates. The sequencer then outputs the DNA sequences of the
 reads.
 
-Since the DNA molecules where segmented into reads, the next step is the
-assembly of reads into complete genome sequences. When the sequenced DNA
-sequence is of an organism closely related to an organism with a known
-genome, comparative assembly can be used. The sequenced reads are mapped
-onto the reference sequence to form the new sequence. When there's no
-reference genome, *de novo* assembly is used. In *de novo* assembly, an
-attempt is made to form the complete genome by overlapping the short
-reads.
+Since the DNA molecules were segmented into reads, the next step is
+assembling the reads again into the complete genome sequence. When the
+sequenced DNA sequence is of an organism closely related to an organism
+with a known genome, comparative assembly (read mapping) can be used.
+The sequenced reads are mapped onto the reference sequence to form the
+new sequence. When there's no reference genome, *de novo* assembly is
+used. In *de novo* assembly, an attempt is made to form the complete
+genome by overlapping the short reads.
 
-Finally the assembled sequence is annotated. Coding and non-coding parts
-are identified, the genes in the coding parts are predicted, and the
-functions of the genes are analyzed. These steps are performed manually
-and automatically (called *in silico*), or a mixture of both.
+Finally the assembled sequence is annotated. Coding and non-coding
+parts are identified, the genes in the coding parts are predicted, the
+functions of the genes are analyzed, among other annotations. These
+steps are performed manually and automatically (called *in silico*), or
+a mixture of both.
 
-Similar to a genome, the set of an organism's proteins is called its
-proteome, with the corresponding study called proteomics. Large scale
-proteomics studies may follow the same pattern as genomics studies: the
-proteins are segmented, often with trypsin. The protein sequence of
-these segments, called (tryptic) peptides, is then determined by for
-example comparing the measured mass spectrum to a set of predicted mass
-spectra.
+Similar to a genome, the collection of an organism's proteins is
+called its proteome, with the corresponding study called proteomics.
+Large scale proteomics studies may follow the same pattern as genomics
+studies: the proteins are segmented, often with trypsin. The protein
+sequence of these segments, called (tryptic) peptides, is then
+determined by for example comparing the measured mass spectrum to a
+set of predicted mass spectra. However, since tryptic peptides do not
+overlap, assembly is not possible.
 
 Finally, the set of an organism's RNA is called its transcriptome, and
 the corresponding study is called transcriptomics.
 
-All of these studies are performed on a single organism. Studying
+All of these studies are performed on individual organisms. Studying
 the genomes, proteomes and transcriptomes of all organisms found in
 an environment sample are called metagenomics, metaproteomics and
 metatranscriptomics. Such studies can give interesting insights of,
 respectively, which organisms can be found in a sample, which functions
-they are performing, and which genes they are currently expressing.
-
-TODO: include volumes of data
+they are performing, and which genes they are currently expressing. They
+also offer insight in the many organisms which cannot be isolated in lab
+conditions.
 
 ## Existing metagenomics tools
 
@@ -173,12 +193,12 @@ Conclusie: er zijn veel strategiën, ze werken allemaal op DNA.
 
 ## Unipept
 
-Unipept is an online tool for the biodiversity analysis of
-metaproteomics samples. It is based on a mapping of tryptic peptides,
-the most common protein fragment in metaproteomics, onto the smallest
-taxon grouping all organisms the tryptic peptide is found in, called
-the lowest common ancestor. This mapping is created by processing an
-extensive list of organisms and their proteome.
+Unipept is an set of tools for the biodiversity and functional analysis
+of metaproteomics data sets. It is based on a mapping of tryptic
+peptides, the most common protein fragment used in metaproteomics,
+onto the smallest taxon grouping all organisms the tryptic peptide is
+found in, called the lowest common ancestor. This mapping is created by
+processing an extensive list of organisms and their proteome.
 
 Using such a mapping, Unipept can quickly construct ranked frequency
 tables of taxa for all tryptic peptides uploaded. These tables are
@@ -187,18 +207,19 @@ of the sample.
 
 ## Metagenomics via metaproteomics
 
-Given the success of Unipept for metaproteomics, it could prove useful
-for metagenomics as well. By using a gene predictor, a metagenomics
-sample can be transformed *in silico* to a metaproteomics sample. As
-metagenomics samples are of much larger volume than metaproteomics
-samples, the Unipept index is wrapped in a local command line tool
-to avoid the network bottlenecks of an online tool. Thus the Unipept
-Metagenomics Analysis Pipeline is born.
+Given the success of Unipept for metaproteomics, could its analysing
+strategies prove useful for metagenomics as well? By using a gene
+predictor, a metagenomics sample can be transformed *in silico* to a
+metaproteomics data set. As metagenomics data sets are of much larger
+volume than metaproteomics data sets, the Unipept index is wrapped in a
+local command line tool to avoid the network bottlenecks of an online
+tool. Thus the Unipept Metagenomics Analysis Pipeline is born.
 
-In chapter \ref{chapter:umgap}, the complete pipeline is described
-and evaluated as an alternative method of metagenomics analysis. In
-chapter \ref{chapter:fgsrs}, an new implementation of FragGeneScan is
-introduced, to be used as an improved gene predictor in the pipeline.
-In chapter \ref{chapter:on-the-side}, some metawork is included, such
-as the improved construction of the Unipept (and UMGAP) index and a few
-walkthroughs describing the usage of the UMGAP in other studies.
+In chapter \ref{chapter:umgap}, we describe the complete pipeline
+and evaluate it as an alternative method of metagenomics analysis.
+In chapter \ref{chapter:fgsrs}, we introduce a new implementation of
+FragGeneScan, to be used as an improved gene predictor in the pipeline.
+In chapter \ref{chapter:on-the-side}, we include some of the metawork
+on the pipeline, such as the improved construction of the Unipept (and
+UMGAP) index and a few walkthroughs describing the usage of the UMGAP in
+other studies.

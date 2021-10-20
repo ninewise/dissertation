@@ -14,8 +14,6 @@
 
 * Title case of Nederlands wijze?
 
-* 
-
 ### TODO
 
 * Dingen stelen bij https//github.ugent.be/bmesuere/thesis
@@ -30,8 +28,9 @@
   - voorblad
   - samenvatting in *laymans terms*
   - nederlandstalige samenvatting
-  - conclusie
+  - introductie -> 10 pagina's
   - SMAP/SPEDE
+  - conclusie
 
 * Jury voorleggen aan OCI (huidig voorstel: Kris Coolsaet
   (voorzitter), Veerle Fack, Jan Fostier, Aurelien Carlier (extern),
