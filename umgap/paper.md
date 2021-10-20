@@ -626,6 +626,7 @@ shuffled reads assigned to a taxon. True negatives (TN) are shuffled
 reads not assigned to any taxon. False negatives (FN) are non-shuffled
 reads not assigned to any taxon.
 
+<div class="landscape">
  Tool                  Precision  Sensitivity  Specificity     NPV     MCC  Run time  Index size
  -------------------- ---------- ------------ ------------ ------- ------- --------- -----------
  UMGAP tryptic prec.       99.7%         3.5%        99.9%   21.8%    8.6%      7.0m      19.3GB
@@ -651,6 +652,7 @@ reads not assigned to any taxon.
  is a clear winner across all performance metrics. Metrics at genus
  and phylum ranks can be found in Table \ref{genus-table} and Table
  \ref{phylum-table}.\label{species-table}
+
 
  Tool                        Precision   Sensitivity   Specificity      NPV     MCC     Run time
  -------------------------- ----------  ------------  ------------  -------  ------  -----------
@@ -684,6 +686,7 @@ reads not assigned to any taxon.
  -----------------------------------------------------------------------------------------------
 
  Table: The MetaBenchmark performance metrics for ten metagenomics analysis tools at phylum level.\label{phylum-table}
+</div>
 
 In terms of precision the UMGAP tryptic precision configuration
 marginally surpasses Kraken, with the UMGAP max/high precision
@@ -709,7 +712,7 @@ performance metric or a tool that makes a well-balanced trade-off
 between all of the performance metrics, with different tools providing
 different options. Only in the ideal case where one software tool beats
 all other tools in all performance criteria, there is a clear cut
-choice. As the bold values in Table~\ref{species-table} indicate, the
+choice. As the bold values in Table \ref{species-table} indicate, the
 latter scenario is definitely not (yet) reached for shotgun metagenomics
 tools. Among the six preconfigured UMGAP pipelines selected from the
 parameter sweep analysis we find both configurations that either

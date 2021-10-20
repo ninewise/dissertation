@@ -11,6 +11,7 @@ toc-depth: 2
 header-includes:
 - \usepackage{booktabs}
 - \usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+- \usepackage{lscape}
 colorlinks: true
 lang: en-US
 link-citations: true

@@ -14,6 +14,7 @@ pandoc --pdf-engine="$pdfengine" \
        --lua-filter=filters/include.lua \
        --lua-filter=filters/svg-to-pdf.lua \
        --lua-filter=filters/floating-tables.lua \
+       --lua-filter=filters/landscaper.lua \
        --lua-filter=filters/short-headers.lua \
        --from markdown+citations+footnotes+smart \
        --citeproc \

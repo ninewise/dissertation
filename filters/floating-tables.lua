@@ -66,7 +66,7 @@ function Table(elem)
 	result:insert(block('\\begin{tabular}{@{}' .. alignment(elem.colspecs) .. '@{}}\n\\toprule\n'))
 	result:insert(headers(elem.head))
 	result:extend(contents(elem.bodies))
-	result:insert(block('\\bottomrule\n\\end{tabular}'))
+	result:insert(block('\\bottomrule\n\\end{tabular}\n\\small\n'))
 	result:insert(caption(elem.caption))
 	result:insert(block('\\end{table}'))
 	return result
