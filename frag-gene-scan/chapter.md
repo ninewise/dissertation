@@ -12,6 +12,8 @@ decided to create a brand new implementation of FragGeneScan, called
 FragGeneScanRs. The application note publishing this implementation can
 be found in this chapter.
 
+<!-- TODO Peter schrapt paragraaf; again why not abstract + cite on first page -->
+
 #### [frag-gene-scan](main.md){.include}
 
 ## Performance on complete genomes
@@ -76,7 +78,8 @@ of the base pairs when compared to the annotated genes. Table
  runs.\label{table:fgs-metrics}
 
 Prodigal is by far the best included gene predictor for complete
-genomes. FragGeneScan and FragGeneScanRs obviously have the same results and
-score especially more false positives, which impacts its specificity.
-Still, it is more than twice as fast (and 5 times faster for FGSrs).
-FragGeneScan+ is far worse in both quality of results and speed.
+genomes. FragGeneScan and FragGeneScanRs obviously have the same
+results and score especially more false positives, which impacts its
+specificity. Still, it is more than twice as fast as Prodigal (and 5
+times faster for FGSrs). FragGeneScan+ is far worse in both quality of
+results and speed.

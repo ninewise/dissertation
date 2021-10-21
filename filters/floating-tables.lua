@@ -10,7 +10,7 @@ end
 
 function caption(t)
 	local result = pandoc.List()
-	result:insert(inline('\\caption{'))
+	result:insert(inline('\\caption{\\small '))
 	result:extend(pandoc.utils.blocks_to_inlines(t.long))
 	result:insert(inline('}'))
 	return pandoc.Plain(result)
@@ -66,7 +66,7 @@ function Table(elem)
 	result:insert(block('\\begin{tabular}{@{}' .. alignment(elem.colspecs) .. '@{}}\n\\toprule\n'))
 	result:insert(headers(elem.head))
 	result:extend(contents(elem.bodies))
-	result:insert(block('\\bottomrule\n\\end{tabular}\n\\small\n'))
+	result:insert(block('\\bottomrule\n\\end{tabular}\n'))
 	result:insert(caption(elem.caption))
 	result:insert(block('\\end{table}'))
 	return result

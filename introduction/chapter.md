@@ -2,6 +2,9 @@
 
 ## Classifying life
 
+<!-- TODO rename primer on metagenomics? 
+start with definition of metagenomics, close in on terms -->
+
 <!-- TODO key terms in bold? -->
 
 Upon hearing the term "Animal Kingdom", you might think of either the
@@ -24,12 +27,15 @@ is a whole branch of biology, called taxonomy. Other than discussing
 about the number of kingdoms, taxonomists also subdivide kingdoms in
 phyla, those in classes, those in orders, and so forth. Each group of
 organisms is called a taxon and may contain any number of other taxa.
-kingdom, phyla and class are called taxonomic ranks. In this work, we
+Kingdom, phyla and class are called taxonomic ranks. In this work, we
 use a taxonomy with 29 named taxonomic ranks (though at the start of my
 PhD, it had only 27), but in between those are many unnamed ranks. The
 used taxonomy includes viruses as well as living organisms.
 
-<!-- TODO kingdom met hoofdletter in oplijsting? -->
+<!-- TODO refer to NCBI taxonomy by name/cite?
+used this one for practical reasons (linked in uniprot)
+apart from that ther are many other (competing) taxonomies
+(Species 2000, Encyclopedia of Life (EOL))
 
 Each taxon is directly contained by only a single other taxon, called
 its parent. All taxa together are thus structured in a tree, sometimes
@@ -50,6 +56,8 @@ the largest grouping in which every two organisms (of the appropriate
 sexes or mating types) can reproduce, with fertile offspring. Still,
 this definition does not include organisms which reproduce only
 asexually, among others.
+
+<!-- TODO you can find many many references on the definition of a species alone: serious source of scientific debate; so at least include some references or add the fact that this is an ongoing discussion -->
 
 The first real taxonomy, by Carl Linnaeus (TODO ref), introduced the
 ranked taxa and a naming system for animal and plant species. It was
@@ -112,6 +120,8 @@ nucleobase (U) with the adenine nucleobases in the DNA strand, instead
 of a thymine. As such, the resulting RNA polymer is copy of the opposing
 DNA strand with T replaced by U.
 
+<!-- TODO mRNA? but it's not all mRNA? ask Caroline to check -->
+
 <!-- TODO image gene expression? -->
 
 After transcription, the resulting RNA can be translated into yet
@@ -144,8 +154,11 @@ is incapable of accurately and rapidly sequencing complete molecules.
 The DNA molecules are first split into shorter segments, called reads.
 These reads can vary in length from 100 base pairs up to a few 10.000
 base pairs, depending on the used sequencing technology, with various
-read error types and rates. The sequencer then outputs the DNA sequences of the
-reads.
+read error types and rates. The result of sequencing is a data set of
+the DNA sequences of reads, along with some metadata such as the quality
+of a read.
+
+<!-- TODO mention genome / read set size -->
 
 Since the DNA molecules were segmented into reads, the next step is
 assembling the reads again into the complete genome sequence. When the
@@ -183,15 +196,19 @@ they are performing, and which genes they are currently expressing. They
 also offer insight in the many organisms which cannot be isolated in lab
 conditions.
 
-<!-- meer over 
-shotgun (zeldzaam)
-targetted
+<!-- TODO
+meer over 
+shotgun (zeldzaam) vs. targeted metagenomics
 16S vermelden
 
 nieuwe metadata: vroeger ook assemblen, niet meer
 -->
 
+<!-- TODO afbeelding who what 3-pijl-cirkel meta-omics -->
+
 ## Existing metagenomics tools
+
+<!-- TODO -->
 
 * Existing metagenomics methods/tools
   - assembly: binning werkt niet goed met meer soorten
@@ -200,6 +217,9 @@ nieuwe metadata: vroeger ook assemblen, niet meer
 Conclusie: er zijn veel strategiën, ze werken allemaal op DNA.
 
 ## Unipept
+
+<!-- TODO references, you can list the references you coauthored at the
+start of this chapter -->
 
 Unipept is an set of tools for the biodiversity and functional analysis
 of metaproteomics data sets. It is based on a mapping of tryptic
@@ -231,3 +251,5 @@ In chapter \ref{chapter:on-the-side}, we include some of the metawork
 on the pipeline, such as the improved construction of the Unipept (and
 UMGAP) index and a few walkthroughs describing the usage of the UMGAP in
 other studies.
+
+<!-- TODO more active phrasing -->

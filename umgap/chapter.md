@@ -1,6 +1,19 @@
 # The Unipept Metagenomics Analysis Pipeline {pageheading="The UMGAP"}
 \label{chapter:umgap}
 
+<!-- TODO Peter: schrap al dit schrijfwerk en gebruik gewoon de abstract
+
+* zeg eerst waarover dit hoofdstuk zal gaan -> gebruik abstract van artikel
+
+* ik zie geen meerwaarde vn dit deel, ik zou gewoon
+  - abstract artikel
+  - cite artikel waarop hoofdstuk gebaseerd is
+  - artikel + suppl materiaal verwerkt tot 1 tekst
+  - extra tabellen als suppl. materiaal
+
+* vermeld publicatie als volledige referentie waarop dit hoofdstuk gebaseerd is
+-->
+
 This chapter starts with describing the intent and structure of the
 pipeline (\ref{section:intent}). After, it includes a report on the
 context and results (\ref{section:umgap}). Finally, it provides an

@@ -317,6 +317,8 @@ from extended seeds (Figure \ref{seed-extend}).
 
 ![Seed-and-extend strategy for filtering false positive identifications after peptide profiling, with minimum seed size $s=3$ and maximum gap size $g=1$. Successive peptides fragmented from (partial) protein are shown as a sequence of dots. Green dots indicate correct identifications (true positives). Red dots indicate wrong identifications (false positives). Brightness of colored dots indicates depth in the taxonomic tree: dark colors indicate highly specific LCA\* (species level) and light colors indicate nonspecific LCA\*. Grey dots indicate peptides without an associated LCA\*.\label{seed-extend}](figures/seed-extend/figure.svg){ width=75% }
 
+<!-- TODO afbeelding op volledige breedte (overal eigenlijk) -->
+
 #### Read profiling
 
 Previous steps of the pipeline result in a list of taxonomic
@@ -625,6 +627,8 @@ reads assigned to a taxon that differs from the expected taxon or
 shuffled reads assigned to a taxon. True negatives (TN) are shuffled
 reads not assigned to any taxon. False negatives (FN) are non-shuffled
 reads not assigned to any taxon.
+
+<!-- TODO hoogste waarden in bold -->
 
 <div class="landscape">
  Tool                  Precision  Sensitivity  Specificity     NPV     MCC  Run time  Index size

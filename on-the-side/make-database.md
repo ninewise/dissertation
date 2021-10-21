@@ -11,6 +11,7 @@ purpose.
 <!-- TODO
 - hoe lang het duurt om de DB/index op te bouwen; aangeven dat hier in de loop der tijd veel performane improvements geweest zijn; hoeveel onderhuodt kruipt hierin
 - hoe frequent worden de databanken/indexes geupdate; vraagt die nog manueel werk of volledig geautomatiseerd?
+- nood aan regelmatige builds omschrijven
 -->
 
 The code to construct the database is publicly available on

@@ -44,6 +44,8 @@ from release 1.19) to implement FragGeneScan-Plus (FGS+): a pure C
 implementation with speedups for single threaded execution and better
 scaling for multithreading [@kim].
 
+<!-- TODO add image of HMM with some explanation -->
+
 Both FGS and FGS+ now have pure C implementations that support parallel
 execution, but their latest releases suffer from their own issues. FGS
 implements multithreading in a very inefficient way, making it much

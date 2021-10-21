@@ -13,6 +13,7 @@ pandoc --pdf-engine="$pdfengine" \
        --metadata-file=frontmatter.yml \
        --lua-filter=filters/include.lua \
        --lua-filter=filters/smaller-codeblocks.lua \
+       --lua-filter=filters/smaller-captions.lua \
        --lua-filter=filters/svg-to-pdf.lua \
        --lua-filter=filters/floating-tables.lua \
        --lua-filter=filters/landscaper.lua \
