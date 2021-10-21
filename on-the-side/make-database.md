@@ -4,8 +4,17 @@ The core components of Unipept and the UMGAP both depend on a mapping of
 peptides to taxonomic identifiers. To construct such a mapping, and to
 have it be generic enough to recognize a wide variety of peptides, it
 needs to be based on a vast amount of data. The UniProt Knowledgebase
-[@magrane], the central hub for functional annotation on proteins, is
-used for this purpose.
+[@magrane], the central hub for functional annotation on proteins, its
+cross references, and the NCBI taxonomy [@federhen] are used for this
+purpose.
+
+<!-- TODO
+- hoe lang het duurt om de DB/index op te bouwen; aangeven dat hier in de loop der tijd veel performane improvements geweest zijn; hoeveel onderhuodt kruipt hierin
+- hoe frequent worden de databanken/indexes geupdate; vraagt die nog manueel werk of volledig geautomatiseerd?
+-->
+
+The code to construct the database is publicly available on
+[GitHub](https://github.com/unipept/make-database).
 
 ### Extracting the Unipept database
 
@@ -20,10 +29,8 @@ database. This database is then queried by the Unipept web application
 Figure \ref{fig:makeflow} describes the flow of data from our online
 sources to the final database tables. On the left, independent from the
 rest of the flow, the EC numbers, GO terms and InterPro entries are
-downloaded from respectively the EBI enzyme database [@alcantara] using
-the **fetch EC numbers** function, the Gene Ontology [@ashburner] using
-the **fetch GO terms** function and EBI InterPro database [@blum] using
-the **fetch InterPro entries** function.
+downloaded from respectively the EBI enzyme database [@alcantara], the
+Gene Ontology [@ashburner]and EBI InterPro database [@blum].
 
 On the right, the flow starts with downloading the NCBI taxonomy
 and process it in the **create taxon tables** function to create
@@ -36,20 +43,22 @@ lineage, by traveling to the root taxon via parentage, on fixed ranks.
 This table speeds up the lineage queries on the webserver and the lowest
 common ancestor calculations.
 
+<!-- TODO refer to unipept for validity -->
+
 In **parse UniProtKB**, the XML formatted UniProtKB is downloaded and
-parsed. The *uniprot entries* are saved in a table with the taxon ID
-of the organism the protein was gained from and the protein sequence.
+parsed. The *uniprot entries* are saved in a table with the taxon ID of
+the organism the protein was extracted from and the protein sequence.
 It outputs the EC, GO, RefSeq [@oleary], EMBL [@lopez], InterPro and
 proteome [@nightingale] annotations to their respective cross references
-tables and it save all encountered tryptic peptides in the *peptides*
+tables and saves all encountered tryptic peptides in the *peptides*
 table and proteomes for further processing. A *proteomes* table is
 created with additional downloaded data, but it is not used in the
 UMGAP.
 
 In **join equalized peptides and uniprot entries** and **join original
 peptides and uniprot entries**, the encountered tryptic peptide
-sequences (whether or not the Leucine amino acids have been replaced
-with Isoleucine, since they are indistinguishable to spectrometers)
+sequences (whether or not the leucine amino acids have been replaced
+with isoleucine, since they are indistinguishable to spectrometers)
 are recombined with the taxon ID annotated on their entry. All unique
 peptides, whether equalized or original, are given numeric IDs in
 **enumerate sequences**. These numeric IDs replace the actual sequences
@@ -64,7 +73,7 @@ The amino acid sequences are also replaced with their numeric IDs in
 the equalized peptide/taxon and original peptide/taxon pairs as first
 steps in **calculate equalized consensus taxa** and **calculate original
 consensus taxa**. All taxa paired with the same sequence are then
-aggregated using a lineage based lowest common ancestor method. The
+aggregated using a lineage-based lowest common ancestor method. The
 results are brought together in **create sequence table** resulting in
 the *sequences* table.
 
@@ -79,13 +88,13 @@ among other columns the protein sequence and the assigned taxon of the
 original UniProt entry. The latter is used for the construction of the
 *k*-mer-to-taxon mapping.
 
-While a relational database is fast enough for a metaproteomics tool,
-it does not suffice for a metagenomics tool, which is expected to
-handle much larger amounts of data. This is especially true for the the
+While querying a relational database is fast enough for a metaproteomics
+tool, it does not suffice for a metagenomics tool, which is expected
+to handle much larger amounts of data. This is especially true for the
 *k*-mer-to-taxon mapping, the construction of which is too slow for the
 Java code used for the tryptic peptide mapping.
 
-Three additional tools were written to construct an index file for the
+Three additional tools were developed to construct an index file for the
 `umgap pept2lca` tool, with an extra one for debugging. The first tool
 is the `umgap splitkmers` command, which takes tab-separated taxon IDs
 and protein sequences and outputs all *k*-mers in each protein sequence
@@ -101,6 +110,8 @@ input of `buildindex` for debugging purposes.
 
 #### The `splitkmers` command
 
+<!-- TODO drop 4-number section numbering? check other places -->
+
 The input is given on standard input and should be a TSV formatted
 stream of taxon IDs and a protein sequence from this taxon. The output
 will be written to standard output and consists of a TSV formatted
@@ -112,17 +123,17 @@ $ cat input.tsv
 654924  MNAKYDTDQGVGRMLFLGTIGLAVVVGGLMAYGYYYDGKTPSSGTSFHT...
 176652  MIKLFCVLAAFISINSACQSSHQQREEFTVATYHSSSICTTYCYSNCVV...
 $ umgap splitkmers < input.tsv
-MNAKYDTDQ	654924
-NAKYDTDQG	654924
-AKYDTDQGV	654924
-KYDTDQGVG	654924
-YDTDQGVGR	654924
+MNAKYDTDQ  654924
+NAKYDTDQG  654924
+AKYDTDQGV  654924
+KYDTDQGVG  654924
+YDTDQGVGR  654924
 ...
-SPSFSSRYR	654924
-PSFSSRYRY	654924
-MIKLFCVLA	176652
-IKLFCVLAA	176652
-KLFCVLAAF	176652
+SPSFSSRYR  654924
+PSFSSRYRY  654924
+MIKLFCVLA  176652
+IKLFCVLAA  176652
+KLFCVLAAF  176652
 ...
 ```
 
@@ -156,6 +167,8 @@ The aggregation strategy used in this command to find a consensus taxon
 is the hybrid approach of the `umgap taxa2agg` command, with a 95%
 factor. This keeps the result close to the lowest common ancestor, but
 filters out some outlying taxa.
+
+<!-- TODO refer to umgap paper -->
 
 The taxonomy to be used is passed as an argument to this command. This
 is a preprocessed version of the NCBI taxonomy.

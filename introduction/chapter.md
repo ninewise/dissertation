@@ -183,6 +183,14 @@ they are performing, and which genes they are currently expressing. They
 also offer insight in the many organisms which cannot be isolated in lab
 conditions.
 
+<!-- meer over 
+shotgun (zeldzaam)
+targetted
+16S vermelden
+
+nieuwe metadata: vroeger ook assemblen, niet meer
+-->
+
 ## Existing metagenomics tools
 
 * Existing metagenomics methods/tools

@@ -48,6 +48,8 @@
   
   - tot 60 dagen na de interne verdediging: publieke verdediging
 
+* lead in UMGAP in laatste paragraaf introductie
+
 
 #### [opening](opening.md){.include}
 

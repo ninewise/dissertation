@@ -15,6 +15,7 @@ header-includes:
 colorlinks: true
 lang: en-US
 link-citations: true
+links-as-notes: true
 references:
 - type: article-journal
   id: alcantara
