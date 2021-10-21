@@ -23,8 +23,11 @@ likely come from the actual coding frame.
 ```shell
 $ cat dna.fa
 >header1
-CGCAGAGACGGGTAGAACCTCAGTAATCCGAAAAGCCGGGATCGACCGCCCCTTGCTTGCAGCCGGGCACTACAGGACCC
-$ umgap translate -n -a < dna.fa | umgap prot2kmer2lca 9mer.index | tee input.fa
+CGCAGAGACGGGTAGAACCTCAGTAATCCGAAAAGCCGGG
+ATCGACCGCCCCTTGCTTGCAGCCGGGCACTACAGGACCC
+$ umgap translate -n -a < dna.fa | \
+  umgap prot2kmer2lca 9mer.index | \
+  tee input.fa
 >header1|1
 9606 9606 2759 9606 9606 9606 9606 9606 9606 9606 8287
 >header1|2

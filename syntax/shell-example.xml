@@ -9,6 +9,7 @@
       <context attribute="Command" name="Command" lineEndContext="#stay">
         <DetectChar char="#" attribute="Comment" context="Comment"/>
         <RegExpr String="^[^ ]" context="Output" lookAhead="true"/>
+        <LineContinue context="Command"/>
       </context>
       <context attribute="Comment" name="Comment" lineEndContext="#pop"/>
     </contexts>
