@@ -4,18 +4,18 @@
   <highlighting>
     <contexts>
       <context attribute="Output" name="Output" lineEndContext="#stay" >
-        <DetectChar char="$" attribute="Command" context="Command" firstNonSpace="true"/>
+        <Detect2Chars char="$" char1=" " attribute="Command" context="Command" firstNonSpace="true"/>
       </context>
       <context attribute="Command" name="Command" lineEndContext="#stay">
         <DetectChar char="#" attribute="Comment" context="Comment"/>
-        <RegExpr String="^[^ ]" context="Output"/>
+        <RegExpr String="^[^ ]" context="Output" lookAhead="true"/>
       </context>
       <context attribute="Comment" name="Comment" lineEndContext="#pop"/>
     </contexts>
     <itemDatas>
-      <itemData name="Output" defStyleNum="dsNormal"/>
+      <itemData name="Output" defStyleNum="dsOperator"/>
       <itemData name="Comment" defStyleNum="dsComment"/>
-      <itemData name="Command" defStyleNum="dsKeyword"/>
+      <itemData name="Command" defStyleNum="dsNormal"/>
     </itemDatas>
   </highlighting>
 </language>

@@ -49,10 +49,10 @@ via standard output and standard input in FASTA-like formats.
 ## Analysis tools
 \label{section:tools}
 
-A pipeline is compromised of a series of tools. This section contains
-an exhaustive list of the available tools. For each tool, it describes
-the intended use, shows some examples, and finally lists the available
-options to change its behavior.
+A pipeline is composed of a series of command line tools. This section
+contains an exhaustive list of the available tools. For each tool, it
+describes the intended use, shows some examples, and finally lists the
+available options to change its behavior.
 
 ### [fastq2fasta](components/fastq2fasta.md){.include}
 
