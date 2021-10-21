@@ -1,12 +1,12 @@
 ## Case studies and analyses {#section:casestudies}
 
-During development, the still incomplete pipeline was applied to several
-datasets as a means of exploration. This has helped to find bugs,
-usability problems, discover other applications and guide the UMGAP to
-its final form. This section describes the analysis of these datasets,
-as it would be done using the released version of the UMGAP, not as it
-was executed originally. As such, this section may be used as a guide to
-compose a new pipeline for a similar analysis.
+During the development of the UMGAP, the still incomplete pipeline was
+applied to several datasets as a means of exploration. This has helped
+to find bugs, usability problems, discover other applications and guide
+the UMGAP to its final form. This section describes the analysis of some
+of these datasets, as it would be done using the released version of the
+UMGAP, not as it was executed originally. As such, this section may be
+used as a guide to compose a new pipeline for a similar analysis.
 
 ### The preconfigured pipelines {#section:preconf}
 
@@ -18,16 +18,16 @@ such a use case, running the pipeline is reduced to running two or three
 scripts.
 
 The first is a setup script called `umgap-setup.sh`. It is an
-interactive script which helps you get the required databases and
+interactive script that helps you get the required databases and
 optional external tools in the right place. In general, the setup script
 only needs to run once, but it can also be used to verify the file
 locations and download newer versions of the data.
 
-Following code snippet shows the interaction with the setup script.
-It starts out by asking the relevant questions, without delay. At the
-end, it downloads the relevant files in sequence, without further
-interaction. In this snippet, we choose to download the taxonomy and the
-tryptic index, as this example will use a tryptic pipeline.
+The following code snippet shows the interaction with the setup script.
+It starts out by asking the relevant questions, after which, it
+downloads the relevant files in sequence, without further interaction.
+In this snippet, we choose to download the taxonomy and the tryptic
+index, as this example will use a tryptic pipeline.
 
 ```shell
 $ umgap-setup.sh -f /opt/FragGeneScanPlusPlus
@@ -58,6 +58,8 @@ Would you like to download the 9-mer index from 2020-12-02
                               Spent   Speed
 100    12G  100    12G    0  0:34:12   5790k
 ```
+
+<!-- TODO use FragGeneScanRs -->
 
 The script also allows further configuration via some flags.
 
@@ -99,6 +101,8 @@ $ zcat tryptic-prec-output.fa.gz | head -2
 >1198114###CP002480-_Acidobacteria_733918/1_1_100_-
 1
 ```
+
+<!-- TODO beter voorbeeld vinden -->
 
 It seems the pipeline cannot be more specific than root (Taxon ID 1) for
 the first read.
@@ -168,6 +172,8 @@ tryptic-sens-output.fa.gz:
 https://bl.ocks.org/11b7809d6754b9530cf1a49d93a8d568
 ```
 
+<!-- TODO screenshot hier plaatsen -->
+
 The CSV tables contain a record for each taxon found in the sample.
 A record contains, in order, the taxon ID, (for convenience) the
 taxon name and the number of reads assigned to this taxon or below.
@@ -194,7 +200,7 @@ pipeline is to allow composing many diverse metagenomic pipelines
 with the same set of tools. This section builds up a custom pipeline,
 demonstrating how all tools work together.
 
-The 3 reads of the same dataset as in \ref{section:preconf} will
+The first 3 reads of the same dataset as in \ref{section:preconf} will
 be used. This is a paired-end dataset, stored in two FASTQ files.
 Since the pipeline operates on FASTA files, the first step is a format
 conversion.
@@ -369,12 +375,14 @@ taxon id,taxon name,stdin
 
 ### A comparative analysis {#section:comparative}
 
-For a comparative study of 8 shotgun metagenomics samples and the
+For a comparative study of 8 shotgun metagenomics data sets and the
 comparison of the taxonomic diversity therein [@detender], a comparative
-frequency table was added to the UMGAP. Assuming the samples are stored
-in pairs of files, following command will analyze all 8 paired-end
-samples. By putting them together in a single analysis, the UMGAP can
-reuse a memory-loaded index file.
+frequency table was added to the UMGAP. Assuming the data sets are
+stored in pairs of files, the following command will analyze all 8
+paired-end samples. By putting them together in a single analysis, the
+UMGAP can reuse a memory-loaded index file.
+
+<!-- TODO add more context about this study -->
 
 ```shell
 $ umgap-analyse.sh \
@@ -452,13 +460,13 @@ overrepresented in the 4 chitin-rich samples.
 
 ### A transcriptomics analysis pipeline {#section:transcript}
 
-By request of Steve Baeyen, the script below was written to analyse a
-number of transcriptomics samples (stored in `samples`). This script is
-very similar to a specialized `umgap-analyse` script without the various
-parameters and configurations. However, since these are transcriptomics
-samples, instead of joining all reads after identification, the `umgap
-bestof` tool selects the single best frame out of the 6 translated and
-identified frames.
+By request of Steve Baeyen (ILVO), the script below was written to
+analyse a number of transcriptomics samples (stored in `samples`).
+This script is very similar to a specialized `umgap-analyse` script
+without the various parameters and configurations. However, since
+these are transcriptomics samples, instead of joining all reads after
+identification, the `umgap bestof` tool selects the single best frame
+out of the 6 translated and identified frames.
 
 ```sh
 #!/bin/sh
@@ -564,14 +572,3 @@ Voor het ILVO (Annelies Haegeman):
 ```
 -->
 
-### Finding viral traces {#section:viral}
-
-TODO drop?
-
-<!--
-Sebastiaan Theuns https://biblio.ugent.be/person/0767592A-F0EE-11E1-A9DE-61C894A0A6B4
-
-```
-/data/mail/ugent/Inbox/cur/1559131238.16965_1.abysm,U=18505:2,RS
-```
--->

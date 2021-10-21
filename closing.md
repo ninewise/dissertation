@@ -1,5 +1,7 @@
 # Thanks
 
+<!-- TODO moet in het voorwoord komen -->
+
 **Acknowledgments:** We thank Stijn Seghers for his contributions in
 implementing and benchmarking the initial tryptic peptide components of
 UMGAP. We thank Niels De Graef for his contributions in implementing and
