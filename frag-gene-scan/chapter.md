@@ -1,4 +1,4 @@
-# FragGeneScan
+# FragGeneScanRust
 \label{chapter:fgsrs}
 
 One of the important steps in the UMGAP is the translation of DNA
@@ -16,7 +16,7 @@ be found in this chapter.
 
 ## Performance on complete genomes
 
-Originally meant for detecting fragmented genes in short metagenomics
+Originally intended for detecting fragmented genes in short metagenomics
 reads, FragGeneScan had a feature added in 1.16 to allow predicting
 genes from contigs. This feature consists of an additional training set
 (called "complete") and a flag which triggers alternative behaviour
@@ -43,6 +43,8 @@ all. Table \ref{table:fgs-classification} shows the classification
 of the base pairs when compared to the annotated genes. Table
 \ref{table:fgs-metrics} shows the resulting quality metrics.
 
+<!-- TODO reference to the strain study -->
+
  Annotation \\ Prediction  Forward strand  Reverse strand  None
  ------------------------- --------------- --------------- ---------------
  Forward strand            TP              FP              FN
@@ -67,13 +69,14 @@ of the base pairs when compared to the annotated genes. Table
  Speed (bp/s)                 936,398     9,610 2,087,790   416,677
 
  Table: Performance metrics on the gene predictions of FragGeneScan
- (FGS), FragGeneScan+ (FGS+), FragGeneScanRs (FGSrs) and Prodigal on the
- complete *Geobacter anodireducens* strain SD-1 genome. The processing
- speed is calculated as the length of the genome in base pairs over the
- average execution time of 5 runs.\label{table:fgs-metrics}
+ (FGS), FragGeneScan+ (FGS+), FragGeneScanRs (FGSrs) and Prodigal
+ on the complete genome of *Geobacter anodireducens* strain
+ SD-1. The processing speed is calculated as the length of the
+ genome in base pairs over the average execution time of 5
+ runs.\label{table:fgs-metrics}
 
 Prodigal is by far the best included gene predictor for complete
-genomes. FragGeneScan, and FragGeneScanRs which has the same results,
-scores especially more false positives, which impacts its specificity.
+genomes. FragGeneScan and FragGeneScanRs obviously have the same results and
+score especially more false positives, which impacts its specificity.
 Still, it is more than twice as fast (and 5 times faster for FGSrs).
 FragGeneScan+ is far worse in both quality of results and speed.
