@@ -1,4 +1,4 @@
-### Aggregation of taxa per read
+### Per read taxon aggregation
 
 At some point after mapping each peptide in a read on a taxon ID, and
 possibly filtering or manipulating them with other tools, these taxa

@@ -1,4 +1,4 @@
-### Reporting on the analysis results
+### Analysis result reports
 
 At the end of running the analysis, the results need to be gotten
 into a format ready for interpreting. The `umgap taxa2freq` tool

@@ -1,4 +1,4 @@
-### Fragmentation of proteins
+### Protein fragmentation
 
 The UMGAP uses exact string matching on short protein fragments to
 identify parts of reads and aggregate those into a conclusion for the

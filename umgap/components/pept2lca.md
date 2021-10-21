@@ -1,4 +1,4 @@
-### Identifying peptides
+### Peptide identification
 
 At the core of the UMGAP is the taxonomic identification of peptides.
 The interface of the command is surprisingly easy: given an index file,

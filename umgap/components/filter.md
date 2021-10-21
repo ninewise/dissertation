@@ -1,4 +1,4 @@
-### Filtering peptides
+### Peptide filtering
 
 Some protein fragments or peptides may be useless or detrimental to the
 analysis. For instance, short tryptic peptides are very common and won't

@@ -1,4 +1,4 @@
-### Joining consecutive FASTA records
+### Consecutive FASTA record merging
 
 The `umgap uniq` command joins consecutive FASTA records with the same
 header. It can be used to join the predictions from the 2 ends of the

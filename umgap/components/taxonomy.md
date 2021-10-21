@@ -1,4 +1,4 @@
-### Requesting taxonomy information
+### Taxonomy information queries
 
 While watching results or intermediate output from the pipeline, taxon
 IDs aren't easy to interpret and remember. The `umgap taxonomy` command
