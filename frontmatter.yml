@@ -12,6 +12,12 @@ header-includes:
 - \usepackage{booktabs}
 - \usepackage[ruled,vlined,linesnumbered]{algorithm2e}
 - \usepackage{lscape}
+- \hyphenation{bio-po-ly-mers}
+- \hyphenation{meta-gen-omics}
+- \hyphenation{taxo-no-mic}
+- \hyphenation{mar-gi-nal-ly}
+- \hyphenation{e-men-ded}
+- \hyphenation{me-thyl-o-vo-rus}
 colorlinks: true
 lang: en-US
 link-citations: true

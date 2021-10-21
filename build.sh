@@ -5,10 +5,7 @@ else
 	pdfengine="pdflatex"
 fi
 
-output="${1:-dissertation.pdf}"
-
-pandoc --pdf-engine="$pdfengine" \
-       -o "$output" \
+pandoc -s -o "dissertation.tex" \
        --syntax-definition=syntax/shell-example.xml \
        --metadata-file=frontmatter.yml \
        --lua-filter=filters/include.lua \
@@ -22,3 +19,4 @@ pandoc --pdf-engine="$pdfengine" \
        --citeproc \
        README.md
 
+"$pdfengine" dissertation.tex

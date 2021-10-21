@@ -143,7 +143,7 @@ function as RNA.
 
 <!-- TODO image central dogma -->
 
-## Studying organisms and functions from biopolymers
+## Studying biopolymers
 
 The complete set of an organism's DNA is called its genome, and studying
 genomes is called genomics. A genomics study traditionally consists
