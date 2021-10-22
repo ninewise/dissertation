@@ -133,7 +133,7 @@ the corresponding amino acid. The translation table, the mapping of the
 $4^3$ codons onto amino acids (or stop codons), is not the same for
 every organism.
 
-<!-- TODO image translation table -->
+![The standard RNA codon table used to translation. Reading a triplet from inside to outside shows the corresponding amino acid, or indicates a stop codon (\*).\label{fig:translation-table}](./translation-table.svg)
 
 This three-form-two-step process is called the central dogma of
 molecular biology. Most organisms follow these steps, but for instance
