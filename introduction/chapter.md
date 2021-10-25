@@ -122,7 +122,7 @@ DNA strand with T replaced by U.
 
 <!-- TODO mRNA? but it's not all mRNA? ask Caroline to check -->
 
-<!-- TODO image gene expression? -->
+![Free RNA nucleotides are complemented to a template DNA strand, forming a single RNA strand. The formed strand is identical to the coding strand, except thymine (T) is replaced by uracil (U) and the deoxyribose is a ribose. The RNA polymerase performing the splitting and matching is not included in the drawing.](./transcription.svg)
 
 After transcription, the resulting RNA can be translated into yet
 another polymer called a polypeptide, which then folds into a protein.
