@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="281.198mm"
+   height="101.06188mm"
+   viewBox="0 0 281.198 101.06188"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="taxonomy.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1.1687991"
+     inkscape:cx="606.17774"
+     inkscape:cy="269.0796"
+     inkscape:window-width="1920"
+     inkscape:window-height="1200"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-7.7852757,-8.8291966)">
+    <ellipse
+       style="fill:none;stroke:#4e79a7;stroke-width:2.329;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path119"
+       cx="77.864578"
+       cy="61.402229"
+       rx="68.914803"
+       ry="47.324348" />
+    <ellipse
+       style="fill:none;stroke:#f28e2b;stroke-width:2.329;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path3437"
+       cx="85.646843"
+       cy="34.558208"
+       rx="23.542376"
+       ry="16.249905" />
+    <ellipse
+       style="fill:none;stroke:#f28e2b;stroke-width:2.329;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path3439"
+       cx="64.623024"
+       cy="77.298538"
+       rx="34.055527"
+       ry="26.241205" />
+    <ellipse
+       style="fill:none;stroke:#e15759;stroke-width:2.329;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path3543"
+       cx="68.999191"
+       cy="91.254829"
+       rx="16.013121"
+       ry="8.4057512" />
+    <text
+       xml:space="preserve"
+       style="font-size:7.60315px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       x="27.652447"
+       y="42.159386"
+       id="text10949"><tspan
+         sodipodi:role="line"
+         id="tspan10947"
+         style="stroke-width:0.264583"
+         x="27.652447"
+         y="42.159386">Birds</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:7.60315px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       x="68.285454"
+       y="36.655758"
+       id="text12441"><tspan
+         sodipodi:role="line"
+         id="tspan12439"
+         style="stroke-width:0.264583"
+         x="68.285454"
+         y="36.655758">Penguins</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:7.60315px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       x="33.900513"
+       y="80.68644"
+       id="text14769"><tspan
+         sodipodi:role="line"
+         id="tspan14767"
+         style="stroke-width:0.264583"
+         x="33.900513"
+         y="80.68644">Owls</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:7.60315px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       x="61.412743"
+       y="94.089302"
+       id="text21801"><tspan
+         sodipodi:role="line"
+         id="tspan21799"
+         style="stroke-width:0.264583"
+         x="61.412743"
+         y="94.089302">Uhu</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:7.60315px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;stroke-width:0.264583"
+       x="70.069374"
+       y="65.429497"
+       id="text21805"><tspan
+         sodipodi:role="line"
+         id="tspan21803"
+         style="text-align:center;text-anchor:middle;stroke-width:0.264583"
+         x="70.069374"
+         y="65.429497">Snowy</tspan><tspan
+         sodipodi:role="line"
+         style="text-align:center;text-anchor:middle;stroke-width:0.264583"
+         x="70.069374"
+         y="74.933434"
+         id="tspan22973">owl</tspan></text>
+    <ellipse
+       style="fill:none;stroke:#e15759;stroke-width:2.329;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="ellipse24485"
+       cx="70.206734"
+       cy="67.413818"
+       rx="18.025404"
+       ry="12.440075" />
+    <ellipse
+       style="fill:none;stroke:#f28e2b;stroke-width:2.329;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="ellipse24793"
+       cx="120.54079"
+       cy="61.010303"
+       rx="21.947519"
+       ry="16.229691" />
+    <text
+       xml:space="preserve"
+       style="font-size:7.60315px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;stroke-width:0.264583"
+       x="120.04754"
+       y="58.774395"
+       id="text24797"><tspan
+         sodipodi:role="line"
+         id="tspan24795"
+         style="text-align:center;text-anchor:middle;stroke-width:0.264583"
+         x="120.04754"
+         y="58.774395">Pidgeons</tspan><tspan
+         sodipodi:role="line"
+         style="text-align:center;text-anchor:middle;stroke-width:0.264583"
+         x="120.04754"
+         y="68.278336"
+         id="tspan25283">&amp; Doves</tspan></text>
+    <g
+       id="g27897"
+       transform="translate(0,15.555999)">
+      <text
+         xml:space="preserve"
+         style="font-size:7.60315px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+         x="164.79968"
+         y="43.341213"
+         id="text27361"><tspan
+           sodipodi:role="line"
+           id="tspan27359"
+           style="stroke-width:0.264583"
+           x="164.79968"
+           y="43.341213">Penguins</tspan></text>
+      <ellipse
+         style="fill:none;stroke:#f28e2b;stroke-width:2.329;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="ellipse27383"
+         cx="182.16107"
+         cy="41.243664"
+         rx="19.996361"
+         ry="9.8907862" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:7.60315px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;stroke-width:0.264583"
+       x="266.71371"
+       y="54.882172"
+       id="text27367"><tspan
+         sodipodi:role="line"
+         id="tspan27363"
+         style="text-align:center;text-anchor:middle;stroke-width:0.264583"
+         x="266.71371"
+         y="54.882172">Pidgeons</tspan><tspan
+         sodipodi:role="line"
+         style="text-align:center;text-anchor:middle;stroke-width:0.264583"
+         x="266.71371"
+         y="64.386108"
+         id="tspan27365">&amp; Doves</tspan></text>
+    <ellipse
+       style="fill:none;stroke:#f28e2b;stroke-width:2.329;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="ellipse27385"
+       cx="266.90118"
+       cy="56.799664"
+       rx="20.917585"
+       ry="16.697598" />
+    <g
+       id="g27902"
+       transform="translate(2.5641038,16.039027)">
+      <text
+         xml:space="preserve"
+         style="font-size:7.60315px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+         x="212.80092"
+         y="43.595112"
+         id="text27371"><tspan
+           sodipodi:role="line"
+           id="tspan27369"
+           style="stroke-width:0.264583"
+           x="212.80092"
+           y="43.595112">Owls</tspan></text>
+      <ellipse
+         style="fill:none;stroke:#f28e2b;stroke-width:2.329;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="ellipse27387"
+         cx="221.96703"
+         cy="40.760635"
+         rx="16.634516"
+         ry="7.7147665" />
+    </g>
+    <g
+       id="g27958"
+       transform="translate(6.4738023,-0.27535206)">
+      <text
+         xml:space="preserve"
+         style="font-size:7.60315px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+         x="209.07242"
+         y="22.616304"
+         id="text27357"><tspan
+           sodipodi:role="line"
+           id="tspan27355"
+           style="stroke-width:0.264583"
+           x="209.07242"
+           y="22.616304">Birds</tspan></text>
+      <ellipse
+         style="fill:none;stroke:#4e79a7;stroke-width:2.329;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="ellipse27389"
+         cx="218.05733"
+         cy="19.710115"
+         rx="16.893301"
+         ry="9.4410667" />
+    </g>
+    <g
+       id="g27914"
+       transform="translate(7.404062,10.471271)">
+      <text
+         xml:space="preserve"
+         style="font-size:7.60315px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;stroke-width:0.264583"
+         x="195.87791"
+         y="84.263107"
+         id="text27377"><tspan
+           sodipodi:role="line"
+           id="tspan27373"
+           style="text-align:center;text-anchor:middle;stroke-width:0.264583"
+           x="195.87791"
+           y="84.263107">Snowy</tspan><tspan
+           sodipodi:role="line"
+           style="text-align:center;text-anchor:middle;stroke-width:0.264583"
+           x="195.87791"
+           y="93.767044"
+           id="tspan27375">owl</tspan></text>
+      <ellipse
+         style="fill:none;stroke:#e15759;stroke-width:2.329;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="ellipse27391"
+         cx="196.01527"
+         cy="85.367851"
+         rx="18.025404"
+         ry="12.440075" />
+    </g>
+    <g
+       id="g27919"
+       transform="translate(7.404062,10.471271)">
+      <text
+         xml:space="preserve"
+         style="font-size:7.60315px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+         x="232.6647"
+         y="89.650085"
+         id="text27381"><tspan
+           sodipodi:role="line"
+           id="tspan27379"
+           style="stroke-width:0.264583"
+           x="232.6647"
+           y="89.650085">Uhu</tspan></text>
+      <ellipse
+         style="fill:none;stroke:#e15759;stroke-width:2.329;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="ellipse27393"
+         cx="240.25114"
+         cy="86.815613"
+         rx="16.013121"
+         ry="8.4057512" />
+    </g>
+    <path
+       style="fill:none;stroke:#f28e2b;stroke-width:2.329;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 224.66474,32.406912 V 44.490288"
+       id="path28115" />
+    <path
+       style="fill:none;stroke:#f28e2b;stroke-width:2.329;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 209.19069,28.792477 194.24188,43.741281"
+       id="path28311" />
+    <path
+       style="fill:none;stroke:#f28e2b;stroke-width:2.329;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 240.55391,28.797326 11.9561,11.9561"
+       id="path28313" />
+    <path
+       style="fill:none;stroke:#e15759;stroke-width:2.329;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 215.57196,66.366199 207.82945,79.77661"
+       id="path28315" />
+    <path
+       style="fill:none;stroke:#e15759;stroke-width:2.329;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 234.60128,66.366199 10.29031,17.823343"
+       id="path28317" />
+  </g>
+</svg>

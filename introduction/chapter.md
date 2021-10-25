@@ -36,6 +36,7 @@ used taxonomy includes viruses as well as living organisms.
 used this one for practical reasons (linked in uniprot)
 apart from that ther are many other (competing) taxonomies
 (Species 2000, Encyclopedia of Life (EOL))
+-->
 
 Each taxon is directly contained by only a single other taxon, called
 its parent. All taxa together are thus structured in a tree, sometimes
@@ -47,7 +48,7 @@ organism of which all these organisms descend (in reproductive sense),
 just that they are grouped together because they are showing similar
 characteristics.
 
-<!-- TODO tekening tree of life? -->
+![A simplified taxonomy describing some birds, both in subset representation (left) and tree representation (right).](./taxonomy.svg){ width=70% }
 
 One of the interesting ranks of grouping organisms is the species,
 near the bottom of the taxonomic tree. Whereas most taxa are assigned
