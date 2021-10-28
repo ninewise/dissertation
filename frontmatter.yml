@@ -157,6 +157,31 @@ references:
   PMCID: PMC3037419
   DOI: 10.1038/75556
   type: article-journal
+- type: artical-journal
+  id: banki
+  author:
+  - family: Bánki
+    given: O.
+  - family: Roskov
+    given: Y.
+  - family: Vandepitte
+    given: L.
+  - family: DeWalt
+    given: R. E.
+  - family: Remsen
+    given: D.
+  - family: Schalk
+    given: P.
+  - family: Orrell
+    given: T.
+  - family: Keping
+    given: M.
+  - family: Miller
+    given: J.
+  issued: 2021
+  title: Catalogue of Life Checklist (Version 2021-10-18)
+  container-title: Catalogue of Life
+  doi: 10.48580/d4t2
 - type: article-journal
   id: beaz
   author:
@@ -1004,6 +1029,39 @@ references:
   container-title: BMC Genomics
   issued: 2015
   volume: 16
+- type: article-journal
+  id: parr
+  author:
+  - family: Parr
+    given: C.S.
+  - family: Wilson
+    given: N.
+  - family: Leary
+    given: P.
+  - family: Schulz
+    given: K.S.
+  - family: Lans
+    given: K.
+  - family: Walley
+    given: L.
+  - family: Hammock
+    given: J.A.
+  - family: Goddard
+    given: A.
+  - family: Rice
+    given: J.
+  - family: Studer
+    given: M.
+  - family: Holmes
+    given: J.T.G.
+  - family: Corrigan
+    given: R.J.
+  issued: 2014
+  title: "The Encyclopedia of Life v2: Providing Global Access to Knowledge About Life on Earth"
+  container-title: Biodiversity Data Journal
+  volume: 2
+  page: e1079
+  doi: 10.3897/BDJ.2.e1079
 - type: article-journal
   id: pedros
   author:

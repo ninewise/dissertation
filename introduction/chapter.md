@@ -5,8 +5,6 @@
 <!-- TODO rename primer on metagenomics? 
 start with definition of metagenomics, close in on terms -->
 
-<!-- TODO key terms in bold? -->
-
 Upon hearing the term "Animal Kingdom", you might think of either the
 jungle or the stories of Reynard the Fox, where the lion rules over the
 other animals as King. Or you might be reminded of any other number of
@@ -28,15 +26,12 @@ about the number of kingdoms, taxonomists also subdivide kingdoms in
 phyla, those in classes, those in orders, and so forth. Each group of
 organisms is called a taxon and may contain any number of other taxa.
 Kingdom, phyla and class are called taxonomic ranks. In this work, we
-use a taxonomy with 29 named taxonomic ranks (though at the start of my
-PhD, it had only 27), but in between those are many unnamed ranks. The
-used taxonomy includes viruses as well as living organisms.
-
-<!-- TODO refer to NCBI taxonomy by name/cite?
-used this one for practical reasons (linked in uniprot)
-apart from that ther are many other (competing) taxonomies
-(Species 2000, Encyclopedia of Life (EOL))
--->
+use the NCBI taxonomy [@federhen], a taxonomy with 29 named taxonomic
+ranks (though at the start of my PhD, it had only 27), but in between
+those are many unnamed ranks. It includes viruses as well as living
+organisms. The NCBI taxonomy was chosen mostly for practical reasons,
+but there are many competing taxonomies such as the Species 2000
+[@banki] and Encyclopedia of Life [@parr] taxonomies.
 
 Each taxon is directly contained by only a single other taxon, called
 its parent. All taxa together are thus structured in a tree, sometimes
