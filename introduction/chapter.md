@@ -217,6 +217,8 @@ nieuwe metadata: vroeger ook assemblen, niet meer
 
 Conclusie: er zijn veel strategiën, ze werken allemaal op DNA.
 
+<!-- TODO stuk over uniprot (volledige databank ipv selectie) -->
+
 ## Unipept
 
 <!-- TODO references, you can list the references you coauthored at the
@@ -233,6 +235,12 @@ Using such a mapping, Unipept can quickly construct ranked frequency
 tables of taxa for all tryptic peptides uploaded. These tables are
 presented in clear visualizations, providing insight in the biodiversity
 of the sample.
+
+<!-- TODO vermelden dat functional analysis ook kan (of volgende sectie) maar enkel potential toont, zeggen dat wij enkel biodiversity doen -->
+
+<!-- TODO minder highlevel -->
+
+<!-- TODO overlopen van web/cli/desktop -->
 
 ## Metagenomics via metaproteomics
 
