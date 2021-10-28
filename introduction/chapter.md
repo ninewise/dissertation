@@ -49,16 +49,14 @@ One of the interesting ranks of grouping organisms is the species,
 near the bottom of the taxonomic tree. Whereas most taxa are assigned
 subjectively by experienced taxonomists, a species is often defined as
 the largest grouping in which every two organisms (of the appropriate
-sexes or mating types) can reproduce, with fertile offspring. Still,
-this definition does not include organisms which reproduce only
+sexes or mating types) can reproduce, with fertile offspring [@mayden].
+Still, this definition does not include organisms which reproduce only
 asexually, among others.
 
-<!-- TODO you can find many many references on the definition of a species alone: serious source of scientific debate; so at least include some references or add the fact that this is an ongoing discussion -->
-
-The first real taxonomy, by Carl Linnaeus (TODO ref), introduced the
+The first real taxonomy, by Carl Linnaeus [@linnaeus], introduced the
 ranked taxa and a naming system for animal and plant species. It was
 based on visible characteristics, such as appearance and behavior. After
-the evolutionary theory was published by Charles Darwin (TODO ref),
+the evolutionary theory was published by Charles Darwin [@darwin],
 classifications would come to reflect common evolutionary descend. In
 general, the closer two organisms are to their shared precursor, the
 closer they should be in a taxonomy.
@@ -137,7 +135,7 @@ some bacteria blend the transciption and translation into a single step,
 and some DNA segments don't translate to proteins but perform their
 function as RNA.
 
-<!-- TODO image central dogma -->
+<!-- TODO? image central dogma -->
 
 ## Studying biopolymers
 

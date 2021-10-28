@@ -772,6 +772,16 @@ references:
   volume: 2011
   page: bar009
 - type: article-journal
+  id: mayden
+  author:
+  - family: Mayden
+    given: R.L.
+  title: "A hierarchy of species concepts: the denouement in the saga of the species problem"
+  container-title: "Species: The units of biodiversity"
+  issued: 1997
+  volume: 54
+  page: 381-423
+- type: article-journal
   id: menzel
   author:
   - family: Menzel
@@ -1464,6 +1474,15 @@ references:
   doi: 10.1093/nar/gkq275
   issue: 12
 - type: book
+  id: darwin
+  author:
+  - family: Darwin
+    given: Charles
+  issued: 1859
+  title: "On the Origin of Species by Means of Natural Selection, or the Preservation of Favoured Races in the Struggle for Life"
+  publisher: John Murray
+  publisher-place: London
+- type: book
   id: hahn
   author:
   - family: Hahn
@@ -1479,6 +1498,15 @@ references:
   isbn: 978-3-030-16775-2
   doi: 10.1007/978-3-030-16775-2_10
   page: 313-351
+- type: book
+  id: linnaeus
+  author:
+  - family: Linnaeus
+    given: Carl
+  title: "Systema naturae per regna tria naturae"
+  publisher: Laurentius Salvius
+  publisher-place: Stockholm
+  issued: 1758
 - type: book
   id: raymond
   author:
