@@ -39,12 +39,10 @@ the *taxons* table and the *lineages* table. The first contains the
 NCBI taxon ID, its name, its rank, the taxon ID of its parent and
 whether it's valid. The validity of a taxon is used to eliminate some
 unwanted taxa from calculations while keeping them in the database for
-completeness. The latter contains for each taxon its precalculated
-lineage, by traveling to the root taxon via parentage, on fixed ranks.
-This table speeds up the lineage queries on the webserver and the lowest
-common ancestor calculations.
-
-<!-- TODO refer to unipept for validity -->
+completeness [@mesuere2012]. The latter contains for each taxon its
+precalculated lineage, by traveling to the root taxon via parentage, on
+fixed ranks. This table speeds up the lineage queries on the webserver
+and the lowest common ancestor calculations.
 
 In **parse UniProtKB**, the XML formatted UniProtKB is downloaded and
 parsed. The *uniprot entries* are saved in a table with the taxon ID of
@@ -111,8 +109,6 @@ input of `buildindex` for debugging purposes.
 
 #### The `splitkmers` command
 
-<!-- TODO drop 4-number section numbering? check other places -->
-
 The input is given on standard input and should be a TSV formatted
 stream of taxon IDs and a protein sequence from this taxon. The output
 will be written to standard output and consists of a TSV formatted
@@ -169,8 +165,6 @@ is the hybrid approach of the `umgap taxa2agg` command, with a 95%
 factor. This keeps the result close to the lowest common ancestor, but
 filters out some outlying taxa.
 
-<!-- TODO refer to umgap paper -->
-
 The taxonomy to be used is passed as an argument to this command. This
 is a preprocessed version of the NCBI taxonomy.
 
@@ -205,7 +199,7 @@ column should be mapped to the integers (taxon IDs) in the second
 column. A binary file with a compressed mapping is written to standard
 output.
 
-TODO describe the index mechanism
+<!-- TODO describe the index mechanism -->
 
 ```shell
 $ cat input.tsv

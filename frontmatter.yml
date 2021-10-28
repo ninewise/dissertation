@@ -5,7 +5,7 @@ classoption:
 - oneside
 documentclass: book
 numbersections: true
-secnumdepth: 3
+secnumdepth: 2
 toc: true
 toc-depth: 2
 header-includes:
