@@ -184,18 +184,30 @@ the corresponding study is called transcriptomics.
 All of these studies are performed on individual organisms. Studying
 the genomes, proteomes and transcriptomes of all organisms found in
 an environment sample are called metagenomics, metaproteomics and
-metatranscriptomics. Such studies can give interesting insights of,
+metatranscriptomics.
+
+In metagenomics, rather than sequencing isolated organisms from
+cultivated samples, the DNA is extracted directly from the sample.
+This has several advantages. First, the cultivation of samples takes
+time. Second, cultivation may skew the relative abundance of organisms
+in the sample. When extracting DNA without cultivation, the relative
+abundance of taxa in the data set is representative for the relative
+abundance of organisms in the sample. This allows comparative studies
+of environments over time or location. Third, many organisms cannot
+currently be cultivated, and as such cannot be sequenced in genomics
+[@locey;@rappe;@hugenholtz1998;@hoferthemi].
+
+<!-- TODO
+- most metagenomics: 16S (first gen?)
+- we: shotgun (second gen?)
+
+nieuwe metadata: vroeger ook assemblen, niet meer
+
+Such studies can give interesting insights of,
 respectively, which organisms can be found in a sample, which functions
 they are performing, and which genes they are currently expressing. They
 also offer insight in the many organisms which cannot be isolated in lab
 conditions.
-
-<!-- TODO
-meer over 
-shotgun (zeldzaam) vs. targeted metagenomics
-16S vermelden
-
-nieuwe metadata: vroeger ook assemblen, niet meer
 -->
 
 <!-- TODO afbeelding who what 3-pijl-cirkel meta-omics -->

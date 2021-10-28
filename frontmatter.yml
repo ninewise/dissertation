@@ -588,18 +588,21 @@ references:
   volume: 455
   page: 481-483
 - type: article-journal
-  id: hugenholtz
+  id: hugenholtz1998
   author:
   - family: Hugenholtz
     given: P.
-  - family: Tyson
-    given: G. W.
-  issued: 2008
-  title: Metagenomics
-  container-title: Nature
-  volume: 455
-  page: 481-483
-- type: articale-journal
+  - family: Goebel
+    given: B.M.
+  - family: Pace
+    given: N.R.
+  issued: 1998
+  title: Impact of culture-independent studies on the emerging phylogenetic view of bacterial diversity
+  container-title: Journal of Bacteriology
+  volume: 180
+  issue: 18
+  page: 4765-4774
+- type: article-journal
   id: huys
   author:
   - family: Huys
