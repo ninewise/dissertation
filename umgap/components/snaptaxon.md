@@ -9,7 +9,7 @@ one of the listed taxa (e.g., `-t 1598 -t 1883`). If so, the taxon is
 replaced by the most specific of these matching taxa. Otherwise, it is
 mapped to the root of the taxonomy.
 
-#### Usage
+#### Usage {#use-snaptaxon}
 
 The input is given on standard input and may be any sequence of FASTA
 headers and/or lines containing a single taxon ID. The FASTA headers (if
@@ -39,7 +39,7 @@ $ umgap snaptaxon 2020-04-taxons.tsv -t 1239 2 < ~/input.fa
 2
 ```
 
-#### Options & flags
+#### Options & flags {#opts-snaptaxon}
 
 `-h / --help`
   ~ Prints help information

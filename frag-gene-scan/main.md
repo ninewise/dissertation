@@ -1,4 +1,4 @@
-## Introduction
+## Introduction {#introduction-fgs}
 
 Studying environmental communities of archaea, bacteria,
 eukaryotes, and viruses is hampered by problems with isolating
@@ -146,7 +146,7 @@ also note that a bug was introduced in FGS (release 1.30) when the
 backtracking step was converted from Perl to C, which generates DNA and
 protein sequences for complete genomes that are incorrect.
 
-## Results
+## Results {#results-fgs}
 
 The FGSrs command line interface is backward compatible with FGS, so
 it can be used as a faster and memory-friendly drop-in replacement

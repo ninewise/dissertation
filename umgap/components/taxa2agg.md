@@ -143,7 +143,7 @@ the maximum root-to-leaf path.
 \label{alg:hybrid}
 \end{algorithm}
 
-#### Usage
+#### Usage {#use-taxa2agg}
 
 The input is given in a FASTA format on standard input. Each FASTA
 record contains a list of taxon IDs, separated by newlines. The output
@@ -188,7 +188,7 @@ also available via the `-a` and `-m` options, as is a hybrid approach.
   to select a hybrid close to the MRTL (`-f 0.0`) or to the LCA\*
   (`-f 1.0`).
 
-#### Options & flags
+#### Options & flags {#opts-taxa2agg}
 
 `-h / --help`
   ~ Prints help information

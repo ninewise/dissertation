@@ -11,7 +11,7 @@ among the six frames. This last step is performed by `umgap bestof`.
 This command will, given the taxonomic identifications for any number of
 translations of a read, pick the best identifications.
 
-#### Usage
+#### Usage {#use-bestof}
 
 The input is given in FASTA format on standard input. Per FASTA header,
 there should be multiple numbers (taxon IDs). Per 6 FASTA records (or
@@ -47,7 +47,7 @@ $ umgap bestof < input.fa
 Taxon IDs are separated by newlines in the actual output, but are
 separated by spaces in this example.
 
-#### Options & flags
+#### Options & flags {#opts-bestof}
 
 `-h / --help`
   ~ Prints help information

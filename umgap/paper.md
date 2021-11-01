@@ -1,7 +1,7 @@
 ## Context and results
 \label{section:umgap}
 
-### Introduction
+### Introduction {#introduction-umgap}
 
 Biodiversity, in many environments, is formed by complex communities of
 archaea, bacteria, eukaryotes, and viruses. Most of these organisms are
@@ -399,7 +399,7 @@ service hosting the visualizations also support shareable links (e.g.
 
 ![Taxonomic profiling by UMGAP as visualized by the Unipept Web API.\label{visualization}](figures/visualisation.png){ width=90% }
 
-### Results
+### Results {#results-umgap}
 
 UMGAP implements multiple strategies for each step in the pipeline
 (Figure \ref{outline}), with some strategies also driven by

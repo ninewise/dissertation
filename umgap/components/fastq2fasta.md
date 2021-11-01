@@ -13,7 +13,7 @@ when saved in separate files, next to each other in the output stream,
 allowing steps later in the pipeline to join them together to draw a
 conclusion about the whole read.
 
-#### Usage
+#### Usage {#use-fastq2fasta}
 
 The FASTQ input files are given as command line arguments. In order, a
 single record is taken from each of these files, and the record header

@@ -9,7 +9,7 @@ the `umgap taxa2tree` command will directly create interactive
 visualizations to view in the browser. Note that it does contact the
 Unipept API server to create these.
 
-#### Usage
+#### Usage {#use-report}
 
 The input is given on standard input, or (for the `taxa2freq` command)
 in multiple file arguments, a single taxon ID on each line. Each taxon
@@ -56,7 +56,7 @@ $ umgap taxa2tree --url < input2.txt
 https://bl.ocks.org/a686a37e1dcd43dd4ec7d467487bd6a1
 ```
 
-#### Options & flags
+#### Options & flags {#opts-report}
 
 `-h / --help`
   ~ Prints help information

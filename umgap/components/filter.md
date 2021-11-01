@@ -1,4 +1,4 @@
-### Peptide filtering
+### Peptide filtering {#peptide-filtering-component}
 
 Some protein fragments or peptides may be useless or detrimental to the
 analysis. For instance, short tryptic peptides are very common and won't
@@ -7,7 +7,7 @@ them from consideration speeds up the pipeline. With `umgap filter`,
 reads can be filtered on minimum length, maximum length, included amino
 acids and excluded amino acids.
 
-#### Usage
+#### Usage {#use-filter}
 
 The input is given in FASTA format on standard input. Per FASTA header,
 there may be multiple peptides separated by newlines. Each of these
@@ -48,7 +48,7 @@ GLTR
 EAVANR
 ```
 
-#### Options & flags
+#### Options & flags {#opts-filter}
 
 `-h / --help`
   ~ Prints help information

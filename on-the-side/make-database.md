@@ -134,7 +134,7 @@ KLFCVLAAF  176652
 ...
 ```
 
-##### Options & flags
+##### Options & flags {#opts-splitkmers}
 
 `-h / --help`
   ~ Prints help information
@@ -180,7 +180,7 @@ AAAAA   2759  superkingdom
 BBBBBB  9153  family
 ```
 
-##### Options & flags
+##### Options & flags {#opts-joinkmers}
 
 `-h / --help`
   ~ Prints help information
@@ -239,7 +239,7 @@ AAAAADRPLAEHGGPVPR    1827
 ...
 ```
 
-##### Options & flags
+##### Options & flags {#opts-printindex}
 
 `-h / --help`
   ~ Prints help information

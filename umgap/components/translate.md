@@ -6,7 +6,7 @@ the reading frame and a translation table to use. Most notably, it is
 also capable of translating all frames, so the rest of the pipeline can
 execute on each frame and decide which to keep.
 
-#### Usage
+#### Usage {#use-translate}
 
 The DNA sequences are expected in a FASTA format on standard input.
 
@@ -37,7 +37,7 @@ frames.
 With the `-t` flag, you can select a specific translation table, for
 instance `-t11` for the bacterial, archaeal and plant plastid code.
 
-##### Options & Flags
+##### Options & Flags {#opts-translate}
 
 `-a / --all-frames`
   ~ Read and output all six frames

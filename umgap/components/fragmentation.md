@@ -1,4 +1,4 @@
-### Protein fragmentation
+### Protein fragmentation {#protein-fragmentation-component}
 
 The UMGAP uses exact string matching on short protein fragments to
 identify parts of reads and aggregate those into a conclusion for the
@@ -11,7 +11,7 @@ tryptic digest, as the UMGAP originates in a metaproteomics context,
 where trypsin is *de facto* standard. The latter yields all overlapping
 peptides of a fixed length, called *k*-mers.
 
-#### Usage
+#### Usage {#use-fragmentation}
 
 The input is given in a FASTA format on standard input with a single
 peptide per FASTA header, which may be hard wrapped with newlines. The

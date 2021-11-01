@@ -7,7 +7,7 @@ they are aggregated into a single prediction. It is capable of first
 stripping the header past a certain delimiter (e.g. `/` for stripping
 the `/1` and `/2` for paired end reads) before comparison.
 
-#### Usage
+#### Usage {#use-uniq}
 
 The input is given in a FASTA format on standard input. The content
 of all consecutive records with the same FASTA header is joined under

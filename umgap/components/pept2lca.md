@@ -20,7 +20,7 @@ and `umgap prot2kmer`, respectively. These commands avoid the overhead
 of printing and parsing the peptides between fragmentation and
 identification steps.
 
-#### Usage
+#### Usage {#use-pept2lca}
 
 For all three commands, the input is given in a FASTA format on
 *standard input*. The `pept2lca` command accepts multiple sequences

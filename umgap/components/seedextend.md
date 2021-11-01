@@ -81,7 +81,7 @@ over a list of taxonomic identifications, as shown in Algorithm
 \label{alg:seedextend}
 \end{algorithm}
 
-#### Usage
+#### Usage {#use-seedextend}
 
 The input is given in a FASTA format on standard input. It should
 consist of taxon IDs separated by newlines, and the order of these taxa
@@ -133,7 +133,7 @@ taxon.tsv` option to activate this. In this scored mode, extended seeds
 with gaps are given a penalty of 5, which can be made more or less
 severe (higher or lower) with the `-p` option.
 
-#### Options & flags
+#### Options & flags {#opts-seedextend}
 
 `-h / --help`
   ~ Prints help information

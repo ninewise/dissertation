@@ -5,7 +5,7 @@ IDs aren't easy to interpret and remember. The `umgap taxonomy` command
 takes one or more NCBI taxon IDs as input, searches for them in the
 taxonomy and outputs more information about them in a TSV format.
 
-#### Usage
+#### Usage {#use-taxonomy}
 
 The input is given on standard input and may be any sequence of FASTA
 headers and/or lines containing a single NCBI taxon ID. A TSV header is
@@ -83,7 +83,7 @@ taxon_id,taxon_name,taxon_rank,superkingdom_id,
   ,,,,,
 ```
 
-#### Options & flags
+#### Options & flags {#opts-taxonomy}
 
 `-a / --all`
   ~ Show the full lineage of a taxon
