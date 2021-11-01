@@ -139,7 +139,7 @@ the maximum root-to-leaf path.
     }
     $(h', f') \longleftarrow (c, v[c] / s)$\;
   }
-\caption{A hybrid algorithm of the LCA\* and MRTL algorithms.}
+\caption{A hybrid algorithm of the LCA* and MRTL algorithms.}
 \label{alg:hybrid}
 \end{algorithm}
 
