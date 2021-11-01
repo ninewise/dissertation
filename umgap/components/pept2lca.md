@@ -14,11 +14,11 @@ development of the UMGAP. It is now parallelized internally and
 provides several options, such as the option to preload the index in
 memory, to fully use the available computing power.
 
-The UMGAP also provides two combined commands, `umgap prot2tryp2lca` and
-`umgap prot2kmer2lca`, appending this command after `umgap prot2pept`
-and `umgap prot2kmer`, respectively. These commands avoid the overhead
-of printing and parsing the peptides between fragmentation and
-identification steps.
+The UMGAP also provides two commands as a combination of others: `umgap
+prot2tryp2lca` and `umgap prot2kmer2lca`, appending this command
+after `umgap prot2pept` and `umgap prot2kmer`, respectively. These
+commands avoid the overhead of printing and parsing the peptides between
+fragmentation and identification steps.
 
 #### Usage {#use-pept2lca}
 
