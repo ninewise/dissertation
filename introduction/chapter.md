@@ -81,7 +81,7 @@ monomer, and the deoxyribose of yet another. As such, together, the
 deoxyribose-phosphate alternations form two long strands, which spiral
 around each other forming a double helix.
 
-![The structure of DNA, flattened to two dimensions.\label{fig:dna}](dna.svg){ width=50% }
+![The structure of DNA, uncoiled to two dimensions.\label{fig:dna}](dna.svg){ width=50% }
 
 Because the deoxyribose and the phosphate group are the same for each
 monomer, the genetic information in a single strand can be represented
@@ -187,40 +187,41 @@ an environment sample are called metagenomics, metaproteomics and
 metatranscriptomics.
 
 In metagenomics, rather than sequencing isolated organisms from
-cultivated samples, the DNA is extracted directly from the sample.
-This has several advantages. First, the cultivation of samples takes
-time. Second, cultivation may skew the relative abundance of organisms
-in the sample. When extracting DNA without cultivation, the relative
-abundance of taxa in the data set is representative for the relative
-abundance of organisms in the sample. This allows comparative studies
-of environments over time or location. Third, many organisms cannot
-currently be cultivated, and as such cannot be sequenced in genomics
-[@locey;@rappe;@hugenholtz1998;@hoferthemi].
-
-<!-- TODO
-- most metagenomics: 16S (first gen?)
-- we: shotgun (second gen?)
-
-nieuwe metadata: vroeger ook assemblen, niet meer
-
-Such studies can give interesting insights of,
-respectively, which organisms can be found in a sample, which functions
-they are performing, and which genes they are currently expressing. They
-also offer insight in the many organisms which cannot be isolated in lab
-conditions.
--->
+cultivated samples, the DNA is extracted directly from environmental
+samples. This has several advantages. First, the cultivation of samples
+takes time. Second, cultivation may skew the relative abundance of
+organisms in the sample. When extracting DNA without cultivation, the
+relative abundance of taxa in the data set is representative for the
+relative abundance of organisms in the sample. This allows comparative
+studies of environments over time or location. Third, many organisms
+cannot currently be cultivated, and as such cannot be sequenced in
+genomics [@locey;@rappe;@hugenholtz1998;@hoferthemi].
 
 <!-- TODO afbeelding who what 3-pijl-cirkel meta-omics -->
 
-## Existing metagenomics tools
+## Existing metagenomics methods
 
-<!-- TODO -->
+Early metagenomics methods were based on the 16S ribosomal RNA
+sequences. These short sequences occuring in prokaryote cells contain
+both highly conversative (rarely mutating) regions and often mutating
+regions. The conserved regions can be used as primers (markers) to find
+and sequence the 16S rRNA. While this serves to identify prokaryote
+species in a sample, it does not help to assemble complete genomes, nor
+does this work on eukaryotes.
 
+The more recent shotgun metagenomics, on the other hand, use sequencers
+yielding randomly located short reads from the complete environmental
+sample. To provide sufficiently complete coverage to allow assembly of
+all organisms in the sample, much larger (TODO numbers) data sets are
+required compared to genomics.
+
+<!-- TODO
 * Existing metagenomics methods/tools
   - assembly: binning werkt niet goed met meer soorten
   - meest gangbare methoden
 
 Conclusie: er zijn veel strategiën, ze werken allemaal op DNA.
+-->
 
 <!-- TODO stuk over uniprot (volledige databank ipv selectie) -->
 
