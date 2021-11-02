@@ -50,8 +50,7 @@
 
 * lead in UMGAP in laatste paragraaf introductie
 
-
-#### [opening](opening.md){.include}
+#### [preface](preface.md){.include}
 
 #### [introduction](introduction/chapter.md){.include}
 

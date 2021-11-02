@@ -18,6 +18,8 @@ header-includes:
 - \hyphenation{mar-gi-nal-ly}
 - \hyphenation{e-men-ded}
 - \hyphenation{me-thyl-o-vo-rus}
+include-before: |
+  #### [opening](opening.md){.include}
 colorlinks: true
 lang: en-US
 link-citations: true
