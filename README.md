@@ -16,6 +16,8 @@
 
 ### TODO
 
+Verhuizen naar (3?) issue(s).
+
 * Dingen stelen bij https//github.ugent.be/bmesuere/thesis
 
 * Detailplanning opstellen (indienen, interne, publieke)
@@ -50,7 +52,7 @@
 
 * lead in UMGAP in laatste paragraaf introductie
 
-#### [preface](preface.md){.include}
+#### [summaries](summaries.md){.include}
 
 #### [introduction](introduction/chapter.md){.include}
 

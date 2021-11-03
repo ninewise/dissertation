@@ -2,7 +2,7 @@
 
 ## Classifying life
 
-<!-- TODO rename primer on metagenomics? 
+<!-- TODO rename primer on metagenomics? find better title
 start with definition of metagenomics, close in on terms -->
 
 Upon hearing the term "Animal Kingdom", you might think of either the
@@ -30,15 +30,15 @@ use the NCBI taxonomy [@federhen], a taxonomy with 29 named taxonomic
 ranks (though at the start of my PhD, it had only 27), but in between
 those are many unnamed ranks. It includes viruses as well as living
 organisms. The NCBI taxonomy was chosen mostly for practical reasons,
-but there are many competing taxonomies such as the Species 2000
-[@banki] and Encyclopedia of Life [@parr] taxonomies.
+but there are many competing taxonomies such as Species 2000 [@banki]
+and Encyclopedia of Life [@parr].
 
 Each taxon is directly contained by only a single other taxon, called
 its parent. All taxa together are thus structured in a tree, sometimes
 called the tree of life, with the group containing all organisms as
 root of the tree. The taxa containing a taxon, all the way up to the
 root, are called its ancestors; and all taxa contained within a taxon
-are called its descendants. Do note that this does not imply a certain
+are called its descendants. Do note that this does not necessarily imply a certain
 organism of which all these organisms descend (in reproductive sense),
 just that they are grouped together because they are showing similar
 characteristics.
@@ -97,10 +97,10 @@ example, the DNA fragment in Figure \ref{fig:dna} would be written as
 DNA itself is just an information carrier. To perform functions, parts
 of the DNA called genes are generally expressed into proteins. DNA is
 called protein-coding (or just coding), or alternatively non-coding,
-if it encodes a protein. Depending on the organism, the fraction
+if it encodes for a protein. Depending on the organism, the fraction
 of coding versus non-coding DNA wildly varies (for example, the
 pufferfish *Takifugu* has 90% non-coding DNA, while the bladderworm
-plant *Utricularia gibba* as only 3% non-coding DNA).
+plant *Utricularia gibba* has only 3% non-coding DNA).
 
 <!-- TODO image coding density, include genome size -->
 
@@ -111,8 +111,8 @@ picks onto either strand and starts processing it in the 3' to
 nucleotide, thus forming a copy of the other strand in 5' to 3'
 direction. The only exception is that RNA polymerase couples a uracil
 nucleobase (U) with the adenine nucleobases in the DNA strand, instead
-of a thymine. As such, the resulting RNA polymer is copy of the opposing
-DNA strand with T replaced by U.
+of a thymine. As such, the resulting RNA polymer is a copy of the
+opposing DNA strand with T replaced by U.
 
 <!-- TODO mRNA? but it's not all mRNA? ask Caroline to check -->
 
@@ -121,17 +121,17 @@ DNA strand with T replaced by U.
 After transcription, the resulting RNA can be translated into yet
 another polymer called a polypeptide, which then folds into a protein.
 This translation is performed by a ribosome. It scans triplets of
-nucleotides in the RNA, called a codon, starting at the 5'-end, looking
+nucleotides in the RNA, called codons, starting at the 5'-end, looking
 for a start codon. Then, for each codon up to a stop codon, it attaches
 the corresponding amino acid. The translation table, the mapping of the
 $4^3$ codons onto amino acids (or stop codons), is not the same for
 every organism.
 
-![The standard RNA codon table used to translation. Reading a triplet from inside to outside shows the corresponding amino acid, or indicates a stop codon (\*).\label{fig:translation-table}](./translation-table.svg)
+![The standard RNA codon table used for translation. Reading a triplet from inside to outside shows the corresponding amino acid, or indicates a stop codon (\*).\label{fig:translation-table}](./translation-table.svg)
 
 This three-form-two-step process is called the central dogma of
 molecular biology. Most organisms follow these steps, but for instance
-some bacteria blend the transciption and translation into a single step,
+some bacteria blend the transcription and translation into a single step,
 and some DNA segments don't translate to proteins but perform their
 function as RNA.
 
@@ -145,12 +145,12 @@ of three parts: sequencing, assembly and annotation. The first part,
 sequencing, is the conversion of physical DNA molecules into their DNA
 sequence, the order of the nucleotides in the chain. Current machinery
 is incapable of accurately and rapidly sequencing complete molecules.
-The DNA molecules are first split into shorter segments, called reads.
-These reads can vary in length from 100 base pairs up to a few 10.000
-base pairs, depending on the used sequencing technology, with various
-read error types and rates. The result of sequencing is a data set of
-the DNA sequences of reads, along with some metadata such as the quality
-of a read.
+The DNA molecules are first split into shorter segments, from which
+reads are sequenced. These reads can vary in length from 25 base
+pairs up to a few 10.000 base pairs, depending on the used sequencing
+technology, with various read error types and rates. The result of
+sequencing is a data set of the DNA sequences of reads, along with some
+metadata such as the quality of a read.
 
 <!-- TODO mention genome / read set size -->
 
@@ -197,19 +197,21 @@ studies of environments over time or location. Third, many organisms
 cannot currently be cultivated, and as such cannot be sequenced in
 genomics [@locey;@rappe;@hugenholtz1998;@hoferthemi].
 
+<!-- TODO abunance: not true, sequencing also has its bias -->
+
 <!-- TODO afbeelding who what 3-pijl-cirkel meta-omics -->
 
-## Existing metagenomics methods
+## Targeted versus shotgun metagenomics
 
-Early metagenomics methods were based on the 16S ribosomal RNA
-sequences. These short sequences occuring in prokaryote cells contain
-both highly conversative (rarely mutating) regions and often mutating
-regions. The conserved regions can be used as primers (markers) to find
-and sequence the 16S rRNA. While this serves to identify prokaryote
+Early metagenomics methods were based on (partial) 16S ribosomal RNA
+sequences. These short sequences occur in all prokaryote cells, and
+contain both highly conservative (rarely mutating) regions and often
+mutating regions. The conserved regions can be used as primers (markers)
+to sequence the 16S rRNA. While this serves to identify prokaryote
 species in a sample, it does not help to assemble complete genomes, nor
 does this work on eukaryotes.
 
-The more recent shotgun metagenomics, on the other hand, use sequencers
+The more recent shotgun metagenomics, on the other hand, uses sequencers
 yielding randomly located short reads from the complete environmental
 sample. To provide sufficiently complete coverage to allow assembly of
 all organisms in the sample, much larger (TODO numbers) data sets are
@@ -217,18 +219,20 @@ required compared to genomics. The amount of data and the repetitions
 of DNA within and between (allowing the incorrect assembly of chimeras)
 organisms make assembly a hard problem to solve.
 
-To simplify assembly, reads are partioned and assigned to an individual
+To simplify assembly, reads are partitioned and assigned to an individual
 genome. This process is called binning. Afterwards, each bin can be
 assembled as if the reads resulted from a genomics sample. Most binning
 methods work by comparing DNA properties of reads, such as CG-content
 (the ratio of C- or G-nucleotides to A- and T- nucleotides), to the
 properties of known genomes.
 
+<!-- TODO still very short intro on metagenomics -->
+
 ## Unipept
 
 <!-- TODO references, you can list the references you coauthored at the start of this chapter -->
 
-Unipept is an set of tools for the biodiversity and functional analysis
+Unipept is a set of tools for biodiversity and functional analysis
 of metaproteomics data sets. It is based on a mapping of tryptic
 peptides, the most common protein fragment used in metaproteomics,
 onto the smallest taxon grouping all organisms the tryptic peptide is
@@ -250,7 +254,7 @@ of the sample.
 
 ## Metagenomics via metaproteomics
 
-Given the success of Unipept for metaproteomics, could its analysing
+Given the success of Unipept for metaproteomics, could its analyzing
 strategies prove useful for metagenomics as well? By using a gene
 predictor, a metagenomics sample can be transformed *in silico* to a
 metaproteomics data set. As metagenomics data sets are of much larger

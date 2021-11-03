@@ -1,6 +1,6 @@
 # Thanks {.unnumbered}
 
-<!-- TODO moet in het voorwoord komen -->
+<!-- TODO dankwoord -->
 
 **Acknowledgments:** We thank Stijn Seghers for his contributions in
 implementing and benchmarking the initial tryptic peptide components of

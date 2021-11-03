@@ -1,4 +1,4 @@
-personal_ws-1.1 en 200 
+personal_ws-1.1 en 205 
 Acinetobacter
 Aeromonas
 Animalia
@@ -97,6 +97,7 @@ codebase
 coli
 contigs
 de
+deoxyribonucleic
 deoxyribose
 dereplication
 desorption
@@ -170,6 +171,9 @@ putatively
 rRNA
 reimplementation
 rhizobiome
+ribonucleic
+ribose
+ribosomal
 ribosome
 siderophore
 silico
@@ -198,4 +202,5 @@ uncharacterized
 underfitting
 unformatted
 varietas
+walkthroughs
 webserver
