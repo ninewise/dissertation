@@ -213,22 +213,20 @@ The more recent shotgun metagenomics, on the other hand, use sequencers
 yielding randomly located short reads from the complete environmental
 sample. To provide sufficiently complete coverage to allow assembly of
 all organisms in the sample, much larger (TODO numbers) data sets are
-required compared to genomics.
+required compared to genomics. The amount of data and the repetitions
+of DNA within and between (allowing the incorrect assembly of chimeras)
+organisms make assembly a hard problem to solve.
 
-<!-- TODO
-* Existing metagenomics methods/tools
-  - assembly: binning werkt niet goed met meer soorten
-  - meest gangbare methoden
-
-Conclusie: er zijn veel strategiën, ze werken allemaal op DNA.
--->
-
-<!-- TODO stuk over uniprot (volledige databank ipv selectie) -->
+To simplify assembly, reads are partioned and assigned to an individual
+genome. This process is called binning. Afterwards, each bin can be
+assembled as if the reads resulted from a genomics sample. Most binning
+methods work by comparing DNA properties of reads, such as CG-content
+(the ratio of C- or G-nucleotides to A- and T- nucleotides), to the
+properties of known genomes.
 
 ## Unipept
 
-<!-- TODO references, you can list the references you coauthored at the
-start of this chapter -->
+<!-- TODO references, you can list the references you coauthored at the start of this chapter -->
 
 Unipept is an set of tools for the biodiversity and functional analysis
 of metaproteomics data sets. It is based on a mapping of tryptic
@@ -247,6 +245,8 @@ of the sample.
 <!-- TODO minder highlevel -->
 
 <!-- TODO overlopen van web/cli/desktop -->
+
+<!-- TODO stuk over uniprot (volledige databank ipv selectie) -->
 
 ## Metagenomics via metaproteomics
 
