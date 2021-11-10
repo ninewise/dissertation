@@ -18,27 +18,25 @@
 
 Verhuizen naar (3?) issue(s).
 
-* Dingen stelen bij https//github.ugent.be/bmesuere/thesis
-
-* Detailplanning opstellen (indienen, interne, publieke)
-
-* Rebuttal supplementary tables toevoegen
-
-* List of publications toevoegen
-
-* Delen:
+* Toe te voegen delen:
   - voorblad
-  - samenvatting in *laymans terms*
-  - nederlandstalige samenvatting
-  - introductie -> 10 pagina's
-  - SMAP/SPEDE
+  - list of publications
+  - SMAP
+  - SPEDE
   - conclusie
+  - rebuttal supplementary tables
+
+* Verder uit te werken:
+  - introductie (gedeelte metagenomics)
+  - introductie (gedeelte Unipept + Uniprot)
 
 * Jury voorleggen aan OCI (huidig voorstel: Kris Coolsaet
   (voorzitter), Veerle Fack, Jan Fostier, Aurelien Carlier (extern),
   Tom Ruttinck (extern), Caroline De Tender (extern))
 
 * Bounds:
+
+  - indienen op Plato: 1 december. Daarvoor is goedkeuring OCI vereist.
 
   - tenminste 5 dagen voor de interne verdediging: de promotor en ik
     ontvangen alle vereiste beoordelingen via mail door Plato
@@ -49,8 +47,6 @@ Verhuizen naar (3?) issue(s).
     bekend maken via Plato
   
   - tot 60 dagen na de interne verdediging: publieke verdediging
-
-* lead in UMGAP in laatste paragraaf introductie
 
 #### [summaries](summaries.md){.include}
 
