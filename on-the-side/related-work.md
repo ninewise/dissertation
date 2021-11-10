@@ -25,6 +25,16 @@ Pearson correlation coefficient between the two spectra is calculated.
 Should it be above a specified threshold, spectrum $i$ is marked as a
 reference spectrum for $j$.
 
+<!-- TODO Bart: meer detail, ook timings -->
+
+<!-- TODO Peter: prospectie / studenten / afwerking -->
+
+<!-- TODO Peter: nieuw methodologie praktisch bruikbaar gemaakt -->
+
+<!-- TODO Peter: zoon Peter heeft afwerking gedaan -->
+
+<!-- TODO Bart: paragraaf nu nuttig -->
+
 When introduced, the implementation of the described algorithm was
 insufficiently fast for common use. As part of the Computational
 Biology 2018 course, I guided the students through optimizing this
@@ -61,6 +71,8 @@ position in the reference genome. This position is either the same
 (0), different (1) or missing (.) in the read. The resulting string
 of zeroes, ones and points is the haplotype. Finally, it reports the
 frequency of each haplotype on every locus in each sample.
+
+<!-- TODO: same as SPeDE -->
 
 <!-- TODO 2019: focus on haplotype calling -->
 
