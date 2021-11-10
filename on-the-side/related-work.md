@@ -42,4 +42,26 @@ with unused results.
 
 ### SMAP
 
-* SMAP
+SMAP is a software package that analyzes read mapping distributions and
+performs haplotype calling to create multi-allelic molecular markers.
+SMAP delineate processes a series of aligned reads. It groups all
+reads from a single locus (region of reads) with the same start and
+end positions in a stack, with the number of reads in the stack called
+the stack depth. Each of the start and end positions is called a Stack
+Mapping Anchor Point (SMAP). These stacks are gathered per sample into a
+stack cluster (with the number of reads called the stack cluster depth).
+Finally, the collection of all SMAP positions across a sample set is
+called a merged cluster.
+
+SMAP haplotype is the haplotype calling component of the software
+package. Given the SMAP and Single Nucleotide Polymorphism (SNP)
+positions, it calculates the haplotype for each read in all samples.
+It compares the nucleotide on each SMAP or SNP position with that same
+position in the reference genome. This position is either the same
+(0), different (1) or missing (.) in the read. The resulting string
+of zeroes, ones and points is the haplotype. Finally, it reports the
+frequency of each haplotype on every locus in each sample.
+
+<!-- TODO 2019: focus on haplotype calling -->
+
+<!-- TODO 2021: focus on haplotype window -->
