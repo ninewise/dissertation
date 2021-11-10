@@ -18,7 +18,10 @@
 
 Verhuizen naar (3?) issue(s).
 
-* Toe te voegen delen:
+* Na te lezen:
+  - SPeDe
+
+* Toe-te-voegen delen:
   - voorblad
   - list of publications
   - SMAP
