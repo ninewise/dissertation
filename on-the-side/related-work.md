@@ -105,6 +105,13 @@ frequency of each haplotype on every locus in each sample.
 
 <!-- TODO: same as SPeDE -->
 
-<!-- TODO 2019: focus on haplotype calling -->
+<!-- TODO 2019: focus on haplotype calling
+- inputdata:  init rombaut:
+  66M         110s
+  134M        110s
+  266M        800s
+  4G           N/A
+  19G        1200s
+-->
 
 <!-- TODO 2021: focus on haplotype window -->
