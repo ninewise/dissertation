@@ -1,4 +1,4 @@
-personal_ws-1.1 en 206 
+personal_ws-1.1 en 209 
 Acinetobacter
 Aeromonas
 Animalia
@@ -27,6 +27,7 @@ GiB
 Graef
 Haegeman
 HiSeq
+ILVO
 ITG
 Illumina
 InterPro
@@ -79,6 +80,7 @@ VSC
 Valgrind
 Viterbi
 Xeon
+allelic
 anthracis
 archaea
 archaeal
@@ -111,6 +113,7 @@ frameshifts
 genomic
 glucosetrophus
 glucosotrophus
+haplotype
 hydrophila
 infraclass
 infraorder

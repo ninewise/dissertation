@@ -1,16 +1,46 @@
 ## Related Work {#section:relatedwork}
 
-TODO vermelden wat we kunnen bijdragen hebben
+During my PhD, one of the courses of which I was the teaching assistant
+is the Computational Biology course. This is a course given to the
+3rd year computer science students. In this course, they are taught
+practical optimization algorithms and methods, in a mild biological
+context. Since it's a practical course, part of the work is an
+optimization project.
 
-"vanuit het vak is een samenwerking ontstaan..."
+To offer the students experience in working on an existing code base,
+and to keep the course interesting for both us and them, we elected to
+work together with external partners on a project. We look for a third
+party with a (partial) developed code base stuck on the execution time.
+
+I start by analyzing the code myself, to ensure there is room for
+optimizations our students could handle. If there is, we slightly
+package the problems into a cleaner assignment for the students. We
+guide the students through the optimization, serving as first line
+contact for questions (forwarding more complex biological questions to
+the partner). At the end of the semester, while grading, I take notes on
+the results of students (often things I hadn't thought of myself during
+the prior inspection). I present these results to the partner, and
+possibly provide aid in implementing them in the actual product.
+
+Below I describe two of the projects we've worked on. The first
+partner, in 2018, was the Department of Molecular Biology at the Ghent
+University. Charles Dumolin, Aurélien Carlier and Peter Vandamme
+introduced us to the SPeDE project. In 2019, we visited the Flanders
+Research Institute for agriculture, fisheries and food (ILVO) with
+the students on invitation of Tom Ruttink and Dries Schaumont. They
+introduced our students to the SMAP project. In 2020, we partnered
+with ourselves as the Unipept team, and had the students work on
+the FragGeneScan project, the results of which leaded to Chapter
+\ref{chapter:fgsrs}. In 2021, we once more joined up with Tom and Dries
+on the SMAP project.
 
 ### SPeDE: Spectral Dereplication
 
-SPeDE [@dumolin] is a program that is used to dereplicate large sets of
-MALDI-TOF MS spectra. The analysis consist of screening the dataset for
-spectra with unique spectral features and outputs the reduced set of
-selected reference spectra. Spectra not assigned as a reference are
-matched according to their matching reference spectra.
+SPeDE is a program that is used to dereplicate large sets of MALDI-TOF
+MS spectra. The analysis consist of screening the dataset for spectra
+with unique spectral features and outputs the reduced set of selected
+reference spectra. Spectra not assigned as a reference are matched
+according to their matching reference spectra.
 
 The dereplication starts out by creating, for a list of $n$ spectra,
 a $n \times n$ uniqueness matrix of integers. The value at $(i, j)$ in
@@ -25,30 +55,31 @@ Pearson correlation coefficient between the two spectra is calculated.
 Should it be above a specified threshold, spectrum $i$ is marked as a
 reference spectrum for $j$.
 
-<!-- TODO Bart: meer detail, ook timings -->
-
-<!-- TODO Peter: prospectie / studenten / afwerking -->
-
-<!-- TODO Peter: nieuw methodologie praktisch bruikbaar gemaakt -->
-
-<!-- TODO Peter: zoon Peter heeft afwerking gedaan -->
-
-<!-- TODO Bart: paragraaf nu nuttig -->
-
-When introduced, the implementation of the described algorithm was
-insufficiently fast for common use. As part of the Computational
-Biology 2018 course, I guided the students through optimizing this
-implementation.
+When SPeDE was introduced to us, it offered an interesting new
+technology, but the implementation was insufficient. For a small sample
+data set of 500 spectra, the original code took about 15 minutes. More
+realistic data sets would take several weeks to compute. This makes the
+program unusable in practice.
 
 The foremost optimization applied was the parallelization of the
-calculation of the uniqueness matrix. Each value on position $(i, j)$ in
-the uniqueness matrix is calculated independent of all other values except
-the value on position $(j, i)$, allowing for massive parallelization.
+calculation of the uniqueness matrix. Each value on position $(i,
+j)$ in the uniqueness matrix is calculated independent of all other
+values except the value on position $(j, i)$, allowing for massive
+parallelization.
 
 Additionally, optimizations were done on the calculation of the unique
 peaks (mostly by reducing the data stored), some indexing algorithms
 (replacing linear with binary search in sorted arrays) and removing code
 with unused results.
+
+Applying these optimizations, some students managed to process the same
+sample data set in less than a minute and the realistic data sets (5000
+spectra) just under 2 hours.
+
+These results were passed to the Department of Molecular Microbiology,
+and they hired a short-term programmer to combine them and further
+polish the program. A graphical user interface was added, and the final
+result was published [@dumolin].
 
 ### SMAP
 
