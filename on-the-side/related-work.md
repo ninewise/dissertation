@@ -94,6 +94,8 @@ stack cluster (with the number of reads called the stack cluster depth).
 Finally, the collection of all SMAP positions across a sample set is
 called a merged cluster.
 
+#### SMAP haplotype
+
 SMAP haplotype is the haplotype calling component of the software
 package. Given the SMAP and Single Nucleotide Polymorphism (SNP)
 positions, it calculates the haplotype for each read in all samples.
@@ -103,15 +105,49 @@ position in the reference genome. This position is either the same
 of zeroes, ones and points is the haplotype. Finally, it reports the
 frequency of each haplotype on every locus in each sample.
 
-<!-- TODO: same as SPeDE -->
-
 <!-- TODO 2019: focus on haplotype calling
-- inputdata:  init rombaut:
-  66M         110s
-  134M        110s
-  266M        800s
-  4G           N/A
-  19G        1200s
+- pagina 38 & 76 (Marzougui & Renders) 
+                           Dataset (GB)  Originele   Na optimalisatie Versnelling
+4n ind HiPlex PE DOMtetra  0.0572         1m10.329s   0m7.420s         9.4783
+4n ind HiPlex PE DOStetra  0.1159         1m09.047s   0m7.222s         9.5606
+2n pools HiPlex PE         0.1438         3m13.870s   0m9.312s        20.8194
+2n ind HiPlex PE           0.2336        11m18.590s  0m24.987s        27.1577
+4n ind GBS PE DOMtetra     1.9           62m44.140s  3m14.171s        19.3857
+2n ind GBS PE              3.1           49m15.363s  2m55.788s        16.8121
+4n ind GBS PE DOStetra     3.9           61m48.741s  3m17.864s        18.7439
+4n pools GBS PE            18.3          68m53.461s  2m59.557s        23.0203
+2n pools GBS PE            19.3          83m42.120s  3m28.785s        24.0540
 -->
 
-<!-- TODO 2021: focus on haplotype window -->
+For HiPlex dataset of about 230MB, the initial implementation took 10
+minutes to process. For a GBS dataset of 19.3G, this was 83 minutes. The
+first problem in the initial implementation was the iteration of the
+loci. Per reference genome, all reads were considered for haplotyping;
+not just the ones in the current locus. By filtering on locus, most
+reads can be skipped in each iteration.
+
+Secondly, many of the reads are equal, so they will have the same
+haplotype as well. Instead of calculating the haplotype for a read we've
+encountered before, we memoize (some) past reads in a cache with a least
+recently used replacement policy.
+
+The final large optimization is the iteration of the alignmed reads
+when constructing the haplotype string. Originally, the whole reads
+were iterated over, considering for each base pair if it lies on a SNP
+or SMAP position. Instead, iterating over the SNP and SMAP positions
+is much faster, as the vast majority of the base pairs is irrelevant
+for the haplotype string. Utilizing the CIGAR string, which describes
+the insertions and deletions in the alignment, the nucleotides on the
+SNP and SMAP positions can be retrieved in linear time in the number of
+indels instead of in the number of base pairs.
+
+The combination of these major optimizations with some smaller changes
+brought the execution time for the previous data sets to 24 seconds for
+the smaller (27 times faster) and 3.5 minutes for the larger (24 times
+faster).
+
+#### SMAP haplotype-window
+
+SMAP haplotype-window is an alternative method for haplotyping reads.
+
+<!-- TODO: 2021 focus on haplotype window -->
