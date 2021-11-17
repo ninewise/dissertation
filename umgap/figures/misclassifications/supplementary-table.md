@@ -142,7 +142,7 @@ The most striking observations from this more in-depth analysis:
   *Aeromonas hydrophila* subsp. *dhakensis* was established in 2002 as
   a new subspecies of *A. hydrophila* [@huys], whereas in 2015 it was
   reclassified as a separate species *A. dhakensis* by @beaz. @grim
-  reclassified the virulent *A. TODO hydrophila* SSU strain isolated
+  reclassified the virulent *A. hydrophila* SSU strain isolated
   from a patient with diarrhea in the Philippines as *A. dhakensis*
   SSU, showing that in this case UMGAP actually comes up with a correct
   identification and instead the identification in the benchmark should
