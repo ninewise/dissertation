@@ -78,10 +78,49 @@ werkt tot 20 maal sneller.
 
 # List of publications {.unnumbered}
 
-<!-- TODO format publication list -->
+Felix Van der Jeugt, Peter Dawyndt, Bart Mesuere. *Under review*.
+"FragGeneScanRs: better and faster gene prediction for short reads."
+*BMC Bioinformatics*.
 
-* Unipept CLI 2.0 : adding support for visualizations and functional annotations
-* Unipept 4.0 : functional analysis of metaproteome data
-* High-throughput metaproteomics data analysis with Unipept : a tutorial
-* Unipept web services for metaproteomics analysis
-* The unique peptidome : taxon-specific tryptic peptides as biomarkers for targeted metaproteomics
+Felix Van der Jeugt, Rien Maertens, Aranka Steyaert, Pieter
+Verschaffelt, Caroline De Tender, Peter Dawyndt and Bart Mesuere. *Under
+review*. "UMGAP: the Unipept MetaGenomics Analysis Pipeline." *BMC
+Genomics*.
+
+Pieter Verschaffelt, Philippe Van Thienen, Tim Van Den Bossche, Felix
+Van der Jeugt, Caroline De Tender, Lennart Martens, Peter Dawyndt and
+Bart Mesuere. 2020. "Unipept CLI 2.0: adding support for visualizations
+and functional annotations." *Bioinformatics* 20 (14): 4220-4221.
+
+Charles Dumolin, Maarten Aerts, Bart Verheyde, Simon Schellaert, Tim
+Vandamme, Felix Van der Jeugt, Evelien De Canck, Margo Cnockaert,
+Anneleen Wieme, Ilse Cleenwerck, Jindrich Peiren, Peter Dawyndt, Peter
+Vandamme and Aurélien Carlier. 2019. "Introducing SPeDE: high-throughput
+dereplication and accurate determination of microbial diversity from
+matrix-assisted laser desorption-ionization time of flight mass
+spectrometry data." *MSystems* 4 (5): e00437-19.
+
+Caroline De Tender, Bart Mesuere, Felix Van der Jeugt, Annelies
+Haegeman, Tom Ruttink, B Vandecasteele, Peter Dawyndt, J Debode and
+EE Kuramae. 2019. "Peat substrate amended with chitin modulates the
+N-cycle, siderophore and chitinase responses in the lettuce rhizobiome."
+*Scientific reports* 9: 9890.
+
+Robbert Gurdeep Singh, Alessandro Tanca, Antonio Palomba, Felix Van
+der Jeugt, Pieter Verschaffelt, Sergio Uzzau, Lennart Martens, Peter
+Dawyndt and Bart Mesuere. 2019. "Unipept 4.0: functional analysis of
+metaproteome data." *Journal of Proteome Research* 18 (2): 606-615.
+
+Bart Mesuere, Felix Van der Jeugt, Toon Willems, Tom Naessens, Bart
+Devreese, Lennart Martens and Peter Dawyndt. 2018. "High-throughput
+metaproteomics data analysis with Unipept: a tutorial." *Journal of
+Proteomics* 171: 11-22.
+
+Bart Mesuere, Felix Van der Jeugt, Bart Devreese, Peter Vandamme and
+Peter Dawyndt. 2016. "The unique peptidome: taxon-specific tryptic
+peptides as biomarkers for targeted metaproteomics." *Proteomics* 16
+(17): 2313-2318.
+
+Bart Mesuere, Toon Willems, Felix Van der Jeugt, Bart Devreese,
+Peter Vandamme and Peter Dawyndt. 2016. "Unipept web services for
+metaproteomics analysis." *Bioinformatics* 32 (11): 1746-1748.
