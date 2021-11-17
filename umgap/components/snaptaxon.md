@@ -1,4 +1,4 @@
-### Snap taxa to a named rank
+### Snap Taxa to a Named Rank
 
 During an analysis, a researcher may be interested in identifications
 only at a given rank, e.g. species, or the presence or absence of
@@ -39,7 +39,7 @@ $ umgap snaptaxon 2020-04-taxons.tsv -t 1239 2 < ~/input.fa
 2
 ```
 
-#### Options & flags {#opts-snaptaxon}
+#### Options & Flags {#opts-snaptaxon}
 
 `-h / --help`
   ~ Prints help information

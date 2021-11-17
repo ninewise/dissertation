@@ -1,4 +1,4 @@
-### Per read taxon aggregation
+### Per Read Taxon Aggregation
 
 At some point after mapping each peptide in a read on a taxon ID, and
 possibly filtering or manipulating them with other tools, these taxa
@@ -188,7 +188,7 @@ also available via the `-a` and `-m` options, as is a hybrid approach.
   to select a hybrid close to the MRTL (`-f 0.0`) or to the LCA\*
   (`-f 1.0`).
 
-#### Options & flags {#opts-taxa2agg}
+#### Options & Flags {#opts-taxa2agg}
 
 `-h / --help`
   ~ Prints help information

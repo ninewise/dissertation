@@ -1,4 +1,4 @@
-### Conversion from FASTQ to FASTA format
+### Conversion from FASTQ to FASTA Format
 
 The `umgap fastq2fasta` command takes one or more FASTQ files and
 interleaves them into a single FASTA file.

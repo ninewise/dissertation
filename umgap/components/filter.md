@@ -1,4 +1,4 @@
-### Peptide filtering {#peptide-filtering-component}
+### Peptide Filtering {#peptide-filtering-component}
 
 Some protein fragments or peptides may be useless or detrimental to the
 analysis. For instance, short tryptic peptides are very common and won't
@@ -48,7 +48,7 @@ GLTR
 EAVANR
 ```
 
-#### Options & flags {#opts-filter}
+#### Options & Flags {#opts-filter}
 
 `-h / --help`
   ~ Prints help information

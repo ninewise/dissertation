@@ -1,4 +1,4 @@
-### Location-based taxon filtering
+### Location-based Taxon Filtering
 
 When mapping peptides on taxa, mutations and read-errors can cause
 accidental identifications of completely unrelated taxa. These wrong
@@ -133,7 +133,7 @@ taxon.tsv` option to activate this. In this scored mode, extended seeds
 with gaps are given a penalty of 5, which can be made more or less
 severe (higher or lower) with the `-p` option.
 
-#### Options & flags {#opts-seedextend}
+#### Options & Flags {#opts-seedextend}
 
 `-h / --help`
   ~ Prints help information

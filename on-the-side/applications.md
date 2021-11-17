@@ -1,4 +1,4 @@
-## Case studies and analyses {#section:casestudies}
+## Case Studies and Analyses {#section:casestudies}
 
 During the development of the UMGAP, the still incomplete pipeline was
 applied to several datasets as a means of exploration. This has helped
@@ -8,7 +8,7 @@ of these datasets, as it would be done using the released version of the
 UMGAP, not as it was executed originally. As such, this section may be
 used as a guide to compose a new pipeline for a similar analysis.
 
-### The preconfigured pipelines {#section:preconf}
+### The Preconfigured Pipelines {#section:preconf}
 
 The primary and easiest procedure to run the UMGAP on your data, and the
 last addition to the pipeline, is by using one of the six preconfigured
@@ -192,7 +192,7 @@ All records will be at the same specified taxon rank or at root
 `-r rank`
   ~ Set the rank for the CSV frequency table (default: species).
 
-### A home brew taxonomic analysis pipeline {#section:homebrew}
+### A Home Brew Taxonomic Analysis Pipeline {#section:homebrew}
 
 While the preconfigured pipelines make running the UMGAP relatively
 easy, there are only six of them. Part of the reason for using a
@@ -373,7 +373,7 @@ taxon id,taxon name,stdin
 940615,Granulicella tundricola,1
 ```
 
-### A comparative analysis {#section:comparative}
+### A Comparative Analysis {#section:comparative}
 
 For a comparative study of 8 shotgun metagenomics data sets and the
 comparison of the taxonomic diversity therein [@detender], a comparative
@@ -458,7 +458,7 @@ overrepresented in the 4 chitin-rich samples.
 
 ![The relative representation of the 20 most frequent phyla (over all samples) per sample. Phyla with equivalent representation in all 8 samples result in an approximately uniform division of the bar over the samples. Notable are the Ciliophora and Mucoromycota phyla, which are overrepresented in the 4 latter samples, which are the chitin-rich samples](./comparative-phyla.svg){#fig:comparative}
 
-### A transcriptomics analysis pipeline {#section:transcript}
+### A Transcriptomics Analysis Pipeline {#section:transcript}
 
 By request of Steve Baeyen (ILVO), the script below was written to
 analyse a number of transcriptomics samples (stored in `samples`).

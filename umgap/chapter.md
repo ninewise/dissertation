@@ -20,7 +20,7 @@ context and results (\ref{section:umgap}). Finally, it provides an
 extensive list of the various tools in the pipeline, explaining their
 usage and some of the algorithms they use (\ref{section:tools}).
 
-## Intent and structure
+## Intent and Structure
 \label{section:intent}
 
 The analysis of shotgun metagenomics data can be subdivided in two
@@ -59,7 +59,7 @@ via standard output and standard input in FASTA-like formats.
 
 ## [paper](paper.md){.include}
 
-## Analysis tools
+## Analysis Tools
 \label{section:tools}
 
 A pipeline is composed of a series of command line tools. This section

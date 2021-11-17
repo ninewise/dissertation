@@ -94,7 +94,7 @@ stack cluster (with the number of reads called the stack cluster depth).
 Finally, the collection of all SMAP positions across a sample set is
 called a merged cluster.
 
-#### SMAP haplotype
+#### SMAP Haplotype
 
 SMAP haplotype is the haplotype calling component of the software
 package. Given the SMAP and Single Nucleotide Polymorphism (SNP)
@@ -146,7 +146,7 @@ brought the execution time for the previous data sets to 24 seconds for
 the smaller (27 times faster) and 3.5 minutes for the larger (24 times
 faster). The final product was presented at a conference [@ruttink].
 
-#### SMAP haplotype-window
+#### SMAP Haplotype-window
 
 SMAP haplotype-window is an alternative method for haplotyping reads.
 It is primarily meant for use with targeted resequencing: a number of

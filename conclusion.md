@@ -1,4 +1,4 @@
-# Conclusie
+# Conclusion
 
 <!-- TODO vertrokken met tryptische idee, moeten gaan naar maar tryptische en 9-meren voor DNA -->
 

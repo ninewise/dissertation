@@ -1,4 +1,4 @@
-### Reading frame selection
+### Reading Frame Selection
 
 The UMGAP, intended for metagenomics analysis, has also been
 experimentally applied to transcriptomics data. While very similar
@@ -47,7 +47,7 @@ $ umgap bestof < input.fa
 Taxon IDs are separated by newlines in the actual output, but are
 separated by spaces in this example.
 
-#### Options & flags {#opts-bestof}
+#### Options & Flags {#opts-bestof}
 
 `-h / --help`
   ~ Prints help information

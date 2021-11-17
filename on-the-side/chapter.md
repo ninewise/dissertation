@@ -1,4 +1,4 @@
-# Putting it all in action
+# Putting It All In Action
 \label{chapter:on-the-side}
 
 This chapter describes some of the related work that happened alongside

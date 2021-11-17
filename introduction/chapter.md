@@ -1,6 +1,6 @@
 # Introduction
 
-## Classifying life
+## Classifying Life
 
 <!-- TODO rename primer on metagenomics? find better title
 start with definition of metagenomics, close in on terms -->
@@ -66,7 +66,7 @@ strain on division by visible characteristics. These organisms are
 more easily classified by studying their genetic material, carried by
 biopolymers.
 
-## The central dogma of molecular biology
+## The Central Dogma of Molecular Biology
 
 The most well-known carrier of genetic material is without doubt DNA, or
 deoxyribonucleic acid (Figure \ref{fig:dna}). A DNA molecule is a long
@@ -137,7 +137,7 @@ function as RNA.
 
 <!-- TODO? image central dogma -->
 
-## Studying biopolymers
+## Studying Biopolymers
 
 The complete set of an organism's DNA is called its genome, and studying
 genomes is called genomics. A genomics study traditionally consists
@@ -201,7 +201,7 @@ genomics [@locey;@rappe;@hugenholtz1998;@hoferthemi].
 
 <!-- TODO afbeelding who what 3-pijl-cirkel meta-omics -->
 
-## Targeted versus shotgun metagenomics
+## Targeted versus Shotgun Metagenomics
 
 Early metagenomics methods were based on (partial) 16S ribosomal RNA
 sequences. These short sequences occur in all prokaryote cells, and
@@ -252,7 +252,7 @@ of the sample.
 
 <!-- TODO stuk over uniprot (volledige databank ipv selectie) -->
 
-## Metagenomics via metaproteomics
+## Metagenomics via Metaproteomics
 
 Given the success of Unipept for metaproteomics, could its analyzing
 strategies prove useful for metagenomics as well? By using a gene

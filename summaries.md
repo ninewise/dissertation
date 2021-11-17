@@ -76,7 +76,7 @@ bestaande implementaties bleken onvoldoende snel voor onze toepassing,
 en bevatten een aantal fouten. FragGeneScanRs lost deze problemen op en
 werkt tot 20 maal sneller.
 
-# List of publications {.unnumbered}
+# List of Publications {.unnumbered}
 
 Felix Van der Jeugt, Peter Dawyndt, Bart Mesuere. *Under review*.
 "FragGeneScanRs: better and faster gene prediction for short reads."

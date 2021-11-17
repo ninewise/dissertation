@@ -1,4 +1,4 @@
-### Analysis result reports
+### Analysis Result Reports
 
 At the end of running the analysis, the results need to be gotten
 into a format ready for interpreting. The `umgap taxa2freq` tool
@@ -56,7 +56,7 @@ $ umgap taxa2tree --url < input2.txt
 https://bl.ocks.org/a686a37e1dcd43dd4ec7d467487bd6a1
 ```
 
-#### Options & flags {#opts-report}
+#### Options & Flags {#opts-report}
 
 `-h / --help`
   ~ Prints help information
@@ -64,7 +64,7 @@ https://bl.ocks.org/a686a37e1dcd43dd4ec7d467487bd6a1
 `-V / --version`
   ~ Prints version information
 
-#### Options & flags for `taxa2freq`
+#### Options & Flags for `taxa2freq`
 
 `-f / --frequency f`
   ~ The minimum frequency to be reported [default: 1]
@@ -72,7 +72,7 @@ https://bl.ocks.org/a686a37e1dcd43dd4ec7d467487bd6a1
 `-r / --rank r`
   ~ The rank to show [default: species]
 
-#### Options & flags for `taxa2tree`
+#### Options & Flags for `taxa2tree`
 
 `-u / --url`
   ~ Host the result online and return the URL

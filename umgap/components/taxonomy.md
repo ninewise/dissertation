@@ -1,4 +1,4 @@
-### Taxonomy information queries
+### Taxonomy Information Queries
 
 While watching results or intermediate output from the pipeline, taxon
 IDs aren't easy to interpret and remember. The `umgap taxonomy` command
@@ -83,7 +83,7 @@ taxon_id,taxon_name,taxon_rank,superkingdom_id,
   ,,,,,
 ```
 
-#### Options & flags {#opts-taxonomy}
+#### Options & Flags {#opts-taxonomy}
 
 `-a / --all`
   ~ Show the full lineage of a taxon

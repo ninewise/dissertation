@@ -1,4 +1,4 @@
-### Protein fragmentation {#protein-fragmentation-component}
+### Protein Fragmentation {#protein-fragmentation-component}
 
 The UMGAP uses exact string matching on short protein fragments to
 identify parts of reads and aggregate those into a conclusion for the
@@ -52,7 +52,7 @@ AKAYKKAG*
 KAYKKAG*S
 ```
 
-#### Options & flags for `prot2tryp`
+#### Options & Flags for `prot2tryp`
 
 Using the `-p` flag, you can change the splitting pattern. The default
 pattern `([KR])([^P])` splits between any Lysine (K) or Arginine (R),
@@ -69,7 +69,7 @@ followed by any amino acid that is not Proline (P).
     next peptide will be cleaved for tryptic peptides) [default:
     `([KR])([^P])`]
 
-#### Options & flags for `prot2kmer`
+#### Options & Flags for `prot2kmer`
 
 The *k*-mer length is configurable with the `-k` option, and is 9 by
 default.

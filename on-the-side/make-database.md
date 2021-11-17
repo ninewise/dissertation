@@ -1,4 +1,4 @@
-## Constructing the database {#section:makedatabase}
+## Constructing the Database {#section:makedatabase}
 
 The core components of Unipept and the UMGAP both depend on a mapping of
 peptides to taxonomic identifiers. To construct such a mapping, and to
@@ -17,7 +17,7 @@ purpose.
 The code to construct the database is publicly available on
 [GitHub](https://github.com/unipept/make-database).
 
-### Extracting the Unipept database
+### Extracting the Unipept Database
 
 To build a performant application, the data from the UniProtKB
 is parsed, extracted, preprocessed and stored in a relational
@@ -76,7 +76,7 @@ aggregated using a lineage-based lowest common ancestor method. The
 results are brought together in **create sequence table** resulting in
 the *sequences* table.
 
-### Creating a UMGAP index
+### Creating a UMGAP Index
 
 From this complete database, only a three tables are of interest to the
 UMGAP tool. First, as the UMGAP is a taxonomic identification tool,
@@ -107,7 +107,7 @@ compressed index file which is then used by the `umgap pept2lca` tool.
 The `umgap printindex` tool decompresses such an index file back to the
 input of `buildindex` for debugging purposes.
 
-#### The `splitkmers` command
+#### The `splitkmers` Command
 
 The input is given on standard input and should be a TSV formatted
 stream of taxon IDs and a protein sequence from this taxon. The output
@@ -134,7 +134,7 @@ KLFCVLAAF  176652
 ...
 ```
 
-##### Options & flags {#opts-splitkmers}
+##### Options & Flags {#opts-splitkmers}
 
 `-h / --help`
   ~ Prints help information
@@ -149,7 +149,7 @@ KLFCVLAAF  176652
   ~ Print only the $(k-1)$-mer suffixes of the *k*-mers starting with
     this character
 
-#### The `joinkmers` command
+#### The `joinkmers` Command
 
 The `umgap joinkmers` command takes tab-separated peptides and taxon
 IDs, aggregates the taxon IDs where consecutive peptides are equal and
@@ -180,7 +180,7 @@ AAAAA   2759  superkingdom
 BBBBBB  9153  family
 ```
 
-##### Options & flags {#opts-joinkmers}
+##### Options & Flags {#opts-joinkmers}
 
 `-h / --help`
   ~ Prints help information
@@ -188,7 +188,7 @@ BBBBBB  9153  family
 `-V / --version`
   ~ Prints version information
 
-#### The `buildindex` command
+#### The `buildindex` Command
 
 The `umgap buildindex` command takes tab-separated strings and taxon
 IDs, and creates a finite state transducer (FST) of this mapping.
@@ -211,7 +211,7 @@ AAAAA   2759
 BBBBBB  9153
 ```
 
-##### Options & flags
+##### Options & Flags
 
 `-h / --help`
   ~ Prints help information
@@ -219,7 +219,7 @@ BBBBBB  9153
 `-V / --version`
   ~ Prints version information
 
-#### The `printindex` command
+#### The `printindex` Command
 
 Outputs in the string keys and taxon ID values in TSV format, mostly for
 debugging purposes.

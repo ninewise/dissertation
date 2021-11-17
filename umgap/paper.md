@@ -1,4 +1,4 @@
-## Context and results
+## Context and Results
 \label{section:umgap}
 
 ### Introduction {#introduction-umgap}
@@ -97,7 +97,7 @@ of alternative strategies for every step of the analysis. In this
 section, we chronologically discuss the successive steps of the generic
 pipeline, together with their alternative strategies.
 
-#### Protein translation
+#### Protein Translation
 
 UMGAP does not profile a read directly at the DNA level. Instead,
 protein fragments translated from the coding regions in the read are
@@ -114,7 +114,7 @@ prediction in short reads and one based on a full six-frame translation
 
 ![Sample DNA fragment extracted from the *Acinetobacter baumannii* 118362 genome (NCBI Assembly ASM58051v1, positions 37.700-39.530) containing three RefSeq annotated coding regions of a major Facilitator Superfamily protein (EXA88265), a tetR family protein (EXA88191) and a translocator family protein (EXA88255), marked with yellow lines (top). Blue lines indicate coding regions predicted by FGS. Green dots indicate starting positions of 9-mers with an LCA\* on the *A. baumannii* lineage (true positive identifications). Red dots indicate starting positions of 9-mers with an LCA\* outside the *A. baumannii* lineage (false positive identifications). Opacity of colored dots indicates depth in the taxonomic tree: opaque colors indicate highly specific LCA\* (species level) and translucent colors indicate nonspecific LCA\*. This example illustrates the following general observations: (1) the frameshift-correcting topology of the FGS hidden Markov model often incorrectly interprets coding regions of genes that are very close or overlapping as frameshifts and glues them together; (2) missing dots at the end of coding regions is merely an artifact of the visualization: the last 8 codons (24 bases) are never starting positions of $k$-mers; (3) FGS may identify false coding regions or (4) frame shifts, but the extracted peptides from those and (5) translations from non-coding regions in a six-frame translation are mostly filtered automatically as they have no exact match with any UniProt protein or can be filtered with additional heuristics.\label{protein-translation}](figures/6ft-figure/final.svg){ width=90% }
 
-##### Gene prediction
+##### Gene Prediction
 
 In theory, UMGAP may use any gene predictor capable of identifying
 coding regions and their translations in short reads. Not all gene
@@ -141,7 +141,7 @@ negative impact on downstream steps of the pipeline. Especially missed
 coding regions may lead to information loss and reduced precision of the
 pipeline.
 
-##### Six-frame translation
+##### Six-frame Translation
 
 Translation of all coding regions is guaranteed when applied on
 all six reading frames of an error-free read, but at least 83.33%
@@ -154,7 +154,7 @@ While this approach might lead to increased sensitivity compared to gene
 prediction, it yields at least a sixfold increase in the data volume
 that needs to be processed in downstream analysis.
 
-#### Protein fragmentation
+#### Protein Fragmentation
 
 All (partial) proteins that are putatively translated from the read are
 matched against the complete UniProt Knowledgebase [@kim;@magrane].
@@ -166,7 +166,7 @@ inexact matching of protein fragments by breaking them down into short
 peptides. Two approaches are supported: non-overlapping variable-length
 peptides and overlapping fixed-length peptides.
 
-##### Tryptic peptides
+##### Tryptic Peptides
 
 UMGAP breaks protein fragments into non-overlapping variable-length
 peptides by splitting after each lysine (K) or arginine (R) residue
@@ -206,7 +206,7 @@ a read error or a natural variation).
 
 ![Impact of a single nucleotide polymorphism (SNP) on the peptide coverage of a protein fragment. Because tryptic peptides are non-overlapping, each read position is covered by exactly one tryptic peptide. A SNP modifies a single tryptic peptide, but all positions around the SNP covered by the modified peptide are no longer covered (correctly) after matching (53 read positions on average). Because $k$-mers are overlapping, each read position is covered by k peptides, except at the ends of the protein fragments. A SNP modifies k peptides, but apart from reduced peptide coverage around the SNP, only a single codon is no longer covered (correctly) after matching. The redundancy of the overlapping $k$-mers therefore makes up for a reduced impact of SNPs compared to non-overlapping tryptic peptides, at the cost of larger data volumes that need to be processed.\label{snp-impact}](figures/kmer-vs-tryptic/figure.svg){ width=75% }
 
-#### Peptide profiling
+#### Peptide Profiling
 
 Fragmentation of all partial proteins found in a read yields a list
 of peptides (tryptic peptides or $k$-mers). Each peptide may have an
@@ -258,7 +258,7 @@ profiling.
 
 ![All tryptic peptides found in the UniProtKB (release 2020-04-22), classified by length and associated LCA\* rank. Fractions of peptides (y-axis) across all peptide lengths (left) or per peptide length (right). Short tryptic peptides are more frequently associated with less specific ranks in the NCBI Taxonomy and therefore have a lower information content. Relative taxonomic information content (depth of LCA\* rank in tree of life) is low for short peptides (length 8 and below). Because tryptic peptides of length $k$ are a random sample of all $k$-mers, similar ratios and conclusions are expected should this analysis be repeated for all $k$-mers in UniProtKB across all lengths $k$.\label{peptide-length}](figures/rank-accuracy/figure.svg){ width=90% }
 
-#### Peptide filtering
+#### Peptide Filtering
 
 Protein fragmentation may yield false positives: peptides that do
 not occur in proteins encoded in the read. Most false positives
@@ -275,7 +275,7 @@ fragmentation. Peptide filtering aims at strongly reducing the number of
 false positive identifications, while keeping most true positives. UMGAP
 supports three kinds of filters.
 
-##### Short tryptic peptides
+##### Short Tryptic Peptides
 
 Analysis on UniProt proteins shows that short tryptic peptides are
 typically associated with highly unspecific LCA\* consensus taxa, i.e.,
@@ -287,7 +287,7 @@ pipeline. In addition, by being short they often cause spurious matches
 during peptide profiling. UMGAP can skip very short tryptic peptides,
 e.g., having less than 6 amino acids.
 
-##### Low-frequency identifications
+##### Low-frequency Identifications
 
 In the context of peptide profiling, true positive identifications
 should come from the same lineage in the NCBI Taxonomy tree, whereas
@@ -319,7 +319,7 @@ from extended seeds (Figure \ref{seed-extend}).
 
 <!-- TODO afbeelding op volledige breedte (overal eigenlijk) -->
 
-#### Read profiling
+#### Read Profiling
 
 Previous steps of the pipeline result in a list of taxonomic
 identifications, derived from a (filtered) list of peptides extracted
@@ -379,7 +379,7 @@ ties broken arbitrarily) if the fraction of the number of descendants
 in the child node over the number of descendants in the current node is
 larger than or equal to $f$.
 
-#### Summary and visualization
+#### Summary and Visualization
 
 Previous steps assign a consensus taxon to each read (pair). The final
 step of the pipeline computes a frequency table of all identifications
@@ -419,7 +419,7 @@ Both the parameter sweep and the benchmark were executed on a 2.60GHz 16
 core Intel® Xeon® CPU E5-2650 v2 CPU with 195GB RAM running Debian 9.8
 (stretch).
 
-#### Parameter tuning
+#### Parameter Tuning
 
 For protein translation we either used gene prediction or six-frame
 translation. Both FGS and FGS++ were used for gene prediction, as
@@ -468,7 +468,7 @@ separately in what follows.
 
 ![Precision and sensitivity of 3900 UMGAP configurations, with tryptic peptide configurations marked in blue and 9-mer configurations marked in orange.\label{parameter-tuning}](figures/kraken-benchmark/digestor-wrapped.svg){ width=75% }
 
-#### Tryptic configurations
+#### Tryptic Configurations
 
 If we look at the impact of protein translation on the accuracy of all
 2700 tryptic configurations (Figure \ref{tryptic_translator}), the
@@ -520,7 +520,7 @@ precision or higher sensitivity:
 * **tryptic sensitivity** FGS++, minimum peptide length 9, maximum
   peptide length 45, no rare taxon filtering, MRTL
 
-#### 9-mer configurations
+#### 9-mer Configurations
 
 When evaluating all 1200 UMGAP configurations that use 9-mer peptide
 fragmentation, the first observation is that seed-and-extend filtering
@@ -726,7 +726,7 @@ tryptic pipelines that all use the same index) or yield a well-balanced
 trade-off between all performance criteria that adds value compared to
 the trade-offs made by other tools/configurations.
 
-#### In-depth analysis
+#### In-depth Analysis
 
 We would like to stress that UMGAP does not require setting a specific
 target taxonomic rank prior to processing a dataset. Instead, UMGAP

@@ -16,7 +16,7 @@ be found in this chapter.
 
 #### [frag-gene-scan](main.md){.include}
 
-## Performance on complete genomes
+## Performance on Complete Genomes
 
 Originally intended for detecting fragmented genes in short metagenomics
 reads, FragGeneScan had a feature added in 1.16 to allow predicting
