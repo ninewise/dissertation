@@ -119,6 +119,9 @@ frequency of each haplotype on every locus in each sample.
 2n pools GBS PE            19.3          83m42.120s  3m28.785s        24.0540
 -->
 
+The software package was introduced to us and the students as a nearly
+complete product, with the execution speed as a blocking factor for
+publication.
 For HiPlex dataset of about 230MB, the initial implementation took 10
 minutes to process. For a GBS dataset of 19.3G, this was 83 minutes. The
 first problem in the initial implementation was the iteration of the
@@ -142,9 +145,10 @@ SNP and SMAP positions can be retrieved in linear time in the number of
 indels instead of in the number of base pairs.
 
 The combination of these major optimizations with some smaller changes
-brought the execution time for the previous data sets to 24 seconds for
-the smaller (27 times faster) and 3.5 minutes for the larger (24 times
-faster). The final product was presented at a conference [@ruttink].
+introduced a speedup of factor 25, bringing the execution time for the
+previous data sets to 24 seconds for the smaller and 3.5 minutes for the
+larger. The final product was presented at the International Plant &
+Animal Genome conference [@ruttink].
 
 #### SMAP Haplotype-window
 
@@ -163,6 +167,11 @@ and reverse primers from the read. The DNA sequence in the resulting
 window is the haplotype of the read. The haplotypes are aggregated in a
 frequency table.
 
+As with SMAP haplotype, the software presented to us was in a nearly
+finalized state, with extensive documentation and usage manuals. The
+implementation seemed more advanced to me than the SMAP haplotype code
+(before our interference), but still lacking in some areas.
+
 Before starting optimizations, a bug was found in the original
 implementation. When encountering reversed reads (not in the same
 reading direction as the reference sequence), the read was swapped for
@@ -172,7 +181,7 @@ reversed each time, resulting in alternating incorrect reads.
 
 Major optimizations could be made in the implementation by reducing the
 number of dependencies. First, a library called Cutadapt [@cutadapt] was
-used to trim the reads to windows. The cutadapt library, however, is
+used to trim the reads to windows. The Cutadapt library, however, is
 meant for intelligent trimming, allowing errors in the primers. Because
 SMAP haplotype window only needs exact matches, dropping the library and
 matching ourselves proved to be a significant optimization. Second, the
@@ -187,5 +196,5 @@ Further minor optimizations included replacing a list with a dictionary
 for faster lookup of the windows and the combination of several
 filtering loops into a single one.
 
-Over all, the students managed to reduce the execution time from 245 to
-36 seconds for an example data set (speedup of 6.8).
+Over all, the students managed a speedup of 6.8 (reducing the execution
+time from 245 to 36 seconds for an example data set).
