@@ -144,10 +144,48 @@ indels instead of in the number of base pairs.
 The combination of these major optimizations with some smaller changes
 brought the execution time for the previous data sets to 24 seconds for
 the smaller (27 times faster) and 3.5 minutes for the larger (24 times
-faster).
+faster). The final product was presented at a conference [@ruttink].
 
 #### SMAP haplotype-window
 
 SMAP haplotype-window is an alternative method for haplotyping reads.
+It is primarily meant for use with targeted resequencing: a number of
+mutations are chosen and applied to a great number of clones, inducing
+to each clone a random subset of the mutations. Such a multiplex
+combinatorial screen allows testing multiple mutations at the same
+time, and their interactions. SMAP haplotype-window comes in play after
+sequencing the resulting genomes. By deriving a haplotype from the
+sequence in the windows in which the mutations were induced, it groups
+together the combinations of mutations.
 
-<!-- TODO: 2021 focus on haplotype window -->
+In short, the algorithm links reads to windows, and trims the forward
+and reverse primers from the read. The DNA sequence in the resulting
+window is the haplotype of the read. The haplotypes are aggregated in a
+frequency table.
+
+Before starting optimizations, a bug was found in the original
+implementation. When encountering reversed reads (not in the same
+reading direction as the reference sequence), the read was swapped for
+its reverse complement for the remainder of the algorithm. However, when
+multiple reverse reads where encountered in consecutively, the read was
+reversed each time, resulting in alternating incorrect reads.
+
+Major optimizations could be made in the implementation by reducing
+the number of dependencies. First, a library called cutadapt was used
+to trim the reads to windows. The cutadapt library, however, is meant
+for intelligent trimming, allowing errors in the primers. Because SMAP
+haplotype window only needs exact matches, dropping the library and
+matching ourselves proved to be a significant optimization. Second,
+the BedTools library was used to find intersections between windows.
+Unfortunately, to communicate with the fast BedTools executable, the
+reads need to be written to disk. This proves to be a bottleneck
+sufficiently large to outweigh the use of a fast library. A fairly
+simple intersection algorithm was added to the SMAP haplotype window
+code instead.
+
+Further minor optimizations included replacing a list with a dictionary
+for faster lookup of the windows and the combination of several
+filtering loops into a single one.
+
+Over all, the students managed to reduce the execution time from 245 to
+36 seconds for an example data set (speedup of 6.8).

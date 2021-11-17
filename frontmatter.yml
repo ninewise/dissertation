@@ -1607,6 +1607,42 @@ references:
   event-place: Singer Island, United States
   event-date: 1984
   issued: 1984
+- type: paper-conference
+  id: ruttink
+  author:
+  - family: Ruttink
+    given: Tom
+  - family: Veeckman
+    given: Elisabeth
+  - family: Schaumont
+    given: Dries
+  - family: Van Glabeke
+    given: Sabine
+  - family: Haegeman
+    given: Annelies
+  - family: Muylle
+    given: Hilde
+  - family: Roldán-Ruiz
+    given: Isabel
+  - family: Sampoux
+    given: Jean-Paul
+  - family: Barre
+    given: Philippe
+  - family: Byrne
+    given: Stephen
+  - family: Kang
+    given: Jie
+  - family: Van der Jeugt
+    given: Felix
+  - family: Dawyndt
+    given: Peter
+  title: "SMAP: a versatile approach to read-backed haplotyping in stacked NGS read data"
+  event: "International Plant & Animal Genome Conference"
+  issued:
+    date-parts:
+    - - 2020
+      - 01
+      - 15
 - type: post-weblog
   id: gallant
   author:
