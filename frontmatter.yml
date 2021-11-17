@@ -1481,6 +1481,46 @@ references:
   page: e132-e132
   doi: 10.1093/nar/gkq275
   issue: 12
+- type: article-journal
+  id: cutadapt
+  author:
+  - family: Martin
+    given: Marcel
+  title: Cutadapt Removes Adapter Sequences From High-Throughput Sequencing Reads
+  container-title: EMBnet.journal
+  issued: 2011
+  volume: 17
+  issue: 1
+  page: 10-12
+  doi: 10.14806/ej.17.1.200
+- type: article-journal
+  id: pybedtools
+  author:
+  - family: Dale
+    given: RK
+  - family: Pedersen
+    given: BS
+  - family: Quinlan
+    given: AR
+  title: "Pybedtools: a flexible Python library for manipulating genomic datasets and annotations"
+  container-title: Bioinformatics
+  issued: 2011
+  volume: 27
+  issue: 24
+  page: 3423-3424
+- type: article-journal
+  id: bedtools
+  author:
+  - family: Quinlan
+    given: AR
+  - family: Hall
+    given: IM
+  title: "BEDTools: a flexible suite of utilities for comparing genomic features"
+  container-title: Bioinformatics
+  issued: 2010
+  volume: 26
+  issue: 6
+  page: 841-842
 - type: book
   id: darwin
   author:

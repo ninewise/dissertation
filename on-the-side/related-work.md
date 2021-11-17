@@ -131,7 +131,7 @@ haplotype as well. Instead of calculating the haplotype for a read we've
 encountered before, we memoize (some) past reads in a cache with a least
 recently used replacement policy.
 
-The final large optimization is the iteration of the alignmed reads
+The final large optimization is the iteration of the aligned reads
 when constructing the haplotype string. Originally, the whole reads
 were iterated over, considering for each base pair if it lies on a SNP
 or SMAP position. Instead, iterating over the SNP and SMAP positions
@@ -170,18 +170,18 @@ its reverse complement for the remainder of the algorithm. However, when
 multiple reverse reads where encountered in consecutively, the read was
 reversed each time, resulting in alternating incorrect reads.
 
-Major optimizations could be made in the implementation by reducing
-the number of dependencies. First, a library called cutadapt was used
-to trim the reads to windows. The cutadapt library, however, is meant
-for intelligent trimming, allowing errors in the primers. Because SMAP
-haplotype window only needs exact matches, dropping the library and
-matching ourselves proved to be a significant optimization. Second,
-the BedTools library was used to find intersections between windows.
-Unfortunately, to communicate with the fast BedTools executable, the
-reads need to be written to disk. This proves to be a bottleneck
-sufficiently large to outweigh the use of a fast library. A fairly
-simple intersection algorithm was added to the SMAP haplotype window
-code instead.
+Major optimizations could be made in the implementation by reducing the
+number of dependencies. First, a library called Cutadapt [@cutadapt] was
+used to trim the reads to windows. The cutadapt library, however, is
+meant for intelligent trimming, allowing errors in the primers. Because
+SMAP haplotype window only needs exact matches, dropping the library and
+matching ourselves proved to be a significant optimization. Second, the
+pybedtools library [@pybedtools] was used to find intersections between
+windows. Unfortunately, to communicate with the fast BedTools executable
+[@bedtools], the reads need to be written to disk. This proves to be a
+bottleneck sufficiently large to outweigh the use of a fast library. A
+fairly simple intersection algorithm was added to the SMAP haplotype
+window code instead.
 
 Further minor optimizations included replacing a list with a dictionary
 for faster lookup of the windows and the combination of several

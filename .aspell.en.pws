@@ -1,4 +1,4 @@
-personal_ws-1.1 en 209 
+personal_ws-1.1 en 215 
 Acinetobacter
 Aeromonas
 Animalia
@@ -97,6 +97,7 @@ cereus
 chitinase
 codebase
 coli
+combinatorial
 contigs
 de
 deoxyribonucleic
@@ -114,12 +115,16 @@ genomic
 glucosetrophus
 glucosotrophus
 haplotype
+haplotypes
+haplotyping
 hydrophila
+indels
 infraclass
 infraorder
 interrogans
 lookups
 lysine
+memoize
 mer
 mers
 metagenome
@@ -174,6 +179,7 @@ pufferfish
 putatively
 rRNA
 reimplementation
+resequencing
 rhizobiome
 ribonucleic
 ribose
