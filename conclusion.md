@@ -1,12 +1,20 @@
 # Conclusion
 
-<!-- TODO vertrokken met tryptische idee, moeten gaan naar maar tryptische en 9-meren voor DNA -->
+## History of UMGAP
 
-metatranscriptomics werken er ook mee, zie case study
+* doorloping
+  - Tryptische peptiden als thesis van Tom
+    - oorsprong boomgebaseerde LCA
+  - 9-meren als thesis van Stijn
+  - seed-extend met Aranka
+    - oorspronkelijk met scores
+  - benchmark met Niels
+    - start van FGS++
 
-functionele analyse
+## Future Work
 
-<!-- TODO future work:
-- transcriptomics
-- samenvoegen van metaprot en metagen
--->
+* adaptieve k in k-meren
+* metatranscriptomics verder uitwerken
+* targeted databanken (virussen)
+* functionele annotaties toevoegen
+* combinerende studies van meta-omics
