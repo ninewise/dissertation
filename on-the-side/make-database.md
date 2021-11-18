@@ -8,11 +8,15 @@ needs to be based on a vast amount of data. The UniProt Knowledgebase
 cross references, and the NCBI taxonomy [@federhen] are used for this
 purpose.
 
-<!-- TODO
-- hoe lang het duurt om de DB/index op te bouwen; aangeven dat hier in de loop der tijd veel performane improvements geweest zijn; hoeveel onderhuodt kruipt hierin
-- hoe frequent worden de databanken/indexes geupdate; vraagt die nog manueel werk of volledig geautomatiseerd?
-- nood aan regelmatige builds omschrijven
--->
+Before starting my work on the construction of the database, processing
+the source data into a Unipept database took about a month. With new
+releases of the UniProtKB every month, our services were always working
+on outdated information. Initial work on the construction reduced the
+execution time to about a day. The constant growth of the uncurated part
+of UniProtKB and the addition of functional annotations to the Unipept
+database induced yearly revisions of the construction code, leading to a
+single script to construct the Unipept database in two days at the time
+of writing.
 
 The code to construct the database is publicly available on
 [GitHub](https://github.com/unipept/make-database).
