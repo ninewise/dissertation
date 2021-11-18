@@ -66,7 +66,7 @@ Table \ref{table:fgs-metrics} shows the resulting quality metrics.
  Specificity                   73.96%    40.38%    73.96%    88.18%
  Negative Predictive Value     69.89%    76.79%    69.89%    71.72%
  Matthews Correlation C.       62.58%    46.79%    62.58%    72.49%
- Speed (bp/s)                 936,398     9,610 2,087,790   416,677
+ Speed (bp/s)                    936K      9.6K     2088K      417K
 
  Table: Performance metrics on the gene predictions of FragGeneScan
  (FGS), FragGeneScan+ (FGS+), FragGeneScanRs (FGSrs) and Prodigal

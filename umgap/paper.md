@@ -112,7 +112,7 @@ database [@watson]. Two approaches are supported: one based on gene
 prediction in short reads and one based on a full six-frame translation
 (Figure \ref{protein-translation}).
 
-![Sample DNA fragment extracted from the *Acinetobacter baumannii* 118362 genome (NCBI Assembly ASM58051v1, positions 37.700-39.530) containing three RefSeq annotated coding regions of a major Facilitator Superfamily protein (EXA88265), a tetR family protein (EXA88191) and a translocator family protein (EXA88255), marked with yellow lines (top). Blue lines indicate coding regions predicted by FGS. Green dots indicate starting positions of 9-mers with an LCA\* on the *A. baumannii* lineage (true positive identifications). Red dots indicate starting positions of 9-mers with an LCA\* outside the *A. baumannii* lineage (false positive identifications). Opacity of colored dots indicates depth in the taxonomic tree: opaque colors indicate highly specific LCA\* (species level) and translucent colors indicate nonspecific LCA\*. This example illustrates the following general observations: (1) the frameshift-correcting topology of the FGS hidden Markov model often incorrectly interprets coding regions of genes that are very close or overlapping as frameshifts and glues them together; (2) missing dots at the end of coding regions is merely an artifact of the visualization: the last 8 codons (24 bases) are never starting positions of $k$-mers; (3) FGS may identify false coding regions or (4) frame shifts, but the extracted peptides from those and (5) translations from non-coding regions in a six-frame translation are mostly filtered automatically as they have no exact match with any UniProt protein or can be filtered with additional heuristics.\label{protein-translation}](figures/6ft-figure/final.svg){ width=90% }
+![Sample DNA fragment extracted from the *Acinetobacter baumannii* 118362 genome (NCBI Assembly ASM58051v1, positions 37.700-39.530) containing three RefSeq annotated coding regions of a major Facilitator Superfamily protein (EXA88265), a tetR family protein (EXA88191) and a translocator family protein (EXA88255), marked with yellow lines (top). Blue lines indicate coding regions predicted by FGS. Green dots indicate starting positions of 9-mers with an LCA\* on the *A. baumannii* lineage (true positive identifications). Red dots indicate starting positions of 9-mers with an LCA\* outside the *A. baumannii* lineage (false positive identifications). Opacity of colored dots indicates depth in the taxonomic tree: opaque colors indicate highly specific LCA\* (species level) and translucent colors indicate nonspecific LCA\*. This example illustrates the following general observations: (1) the frameshift-correcting topology of the FGS hidden Markov model often incorrectly interprets coding regions of genes that are very close or overlapping as frameshifts and glues them together; (2) missing dots at the end of coding regions is merely an artifact of the visualization: the last 8 codons (24 bases) are never starting positions of $k$-mers; (3) FGS may identify false coding regions or (4) frame shifts, but the extracted peptides from those and (5) translations from non-coding regions in a six-frame translation are mostly filtered automatically as they have no exact match with any UniProt protein or can be filtered with additional heuristics.\label{protein-translation}](figures/6ft-figure/final.svg)
 
 ##### Gene Prediction
 
@@ -245,7 +245,7 @@ data structures that take advantage of common prefixes to reduce the
 memory footprint, FSTs are even more compressed by taking both common
 prefixes and suffixes into account (Figure \ref{fst}).
 
-![Finite state transducer mapping all weekdays to their index number (Monday $=1$, Tuesday $=2$, ...). Integer labels are not shown on edges with zero weight. Adding weights along the path spelled by the letters of the word Thursday, from the initial state on the left (indicated by a triangle) to the final state on the right (indicated by a double circle), yields $2+1+1 = 4$. So, Thursday is the fourth day in the week.\label{fst}](figures/day-index/figure.svg){ width=75% }
+![Finite state transducer mapping all weekdays to their index number (Monday $=1$, Tuesday $=2$, ...). Integer labels are not shown on edges with zero weight. Adding weights along the path spelled by the letters of the word Thursday, from the initial state on the left (indicated by a triangle) to the final state on the right (indicated by a double circle), yields $2+1+1 = 4$. So, Thursday is the fourth day in the week.\label{fst}](figures/day-index/figure.svg)
 
 For UniProt release 2020-04, a 19.3 GiB FST-index maps all 1.2 billion
 tryptic peptides to their LCA\* and a 132.9 GiB FST-index maps all
@@ -256,7 +256,7 @@ $k \geq 10$. The only viable options were $k = 8$ and $k = 9$, with the
 latter giving the best balance between index size and accuracy of read
 profiling.
 
-![All tryptic peptides found in the UniProtKB (release 2020-04-22), classified by length and associated LCA\* rank. Fractions of peptides (y-axis) across all peptide lengths (left) or per peptide length (right). Short tryptic peptides are more frequently associated with less specific ranks in the NCBI Taxonomy and therefore have a lower information content. Relative taxonomic information content (depth of LCA\* rank in tree of life) is low for short peptides (length 8 and below). Because tryptic peptides of length $k$ are a random sample of all $k$-mers, similar ratios and conclusions are expected should this analysis be repeated for all $k$-mers in UniProtKB across all lengths $k$.\label{peptide-length}](figures/rank-accuracy/figure.svg){ width=90% }
+![All tryptic peptides found in the UniProtKB (release 2020-04-22), classified by length and associated LCA\* rank. Fractions of peptides (y-axis) across all peptide lengths (left) or per peptide length (right). Short tryptic peptides are more frequently associated with less specific ranks in the NCBI Taxonomy and therefore have a lower information content. Relative taxonomic information content (depth of LCA\* rank in tree of life) is low for short peptides (length 8 and below). Because tryptic peptides of length $k$ are a random sample of all $k$-mers, similar ratios and conclusions are expected should this analysis be repeated for all $k$-mers in UniProtKB across all lengths $k$.\label{peptide-length}](figures/rank-accuracy/figure.svg)
 
 #### Peptide Filtering
 
@@ -315,9 +315,7 @@ gap size $g$, the precision of the pipeline will decrease, and its
 sensitivity will increase. UMGAP can skip peptides that are excluded
 from extended seeds (Figure \ref{seed-extend}).
 
-![Seed-and-extend strategy for filtering false positive identifications after peptide profiling, with minimum seed size $s=3$ and maximum gap size $g=1$. Successive peptides fragmented from (partial) protein are shown as a sequence of dots. Green dots indicate correct identifications (true positives). Red dots indicate wrong identifications (false positives). Brightness of colored dots indicates depth in the taxonomic tree: dark colors indicate highly specific LCA\* (species level) and light colors indicate nonspecific LCA\*. Grey dots indicate peptides without an associated LCA\*.\label{seed-extend}](figures/seed-extend/figure.svg){ width=75% }
-
-<!-- TODO afbeelding op volledige breedte (overal eigenlijk) -->
+![Seed-and-extend strategy for filtering false positive identifications after peptide profiling, with minimum seed size $s=3$ and maximum gap size $g=1$. Successive peptides fragmented from (partial) protein are shown as a sequence of dots. Green dots indicate correct identifications (true positives). Red dots indicate wrong identifications (false positives). Brightness of colored dots indicates depth in the taxonomic tree: dark colors indicate highly specific LCA\* (species level) and light colors indicate nonspecific LCA\*. Grey dots indicate peptides without an associated LCA\*.\label{seed-extend}](figures/seed-extend/figure.svg){ width=90% }
 
 #### Read Profiling
 
@@ -466,7 +464,7 @@ but they also have a higher runtime and memory footprint. To simplify
 further discussion, we will treat tryptic and 9-mer configurations
 separately in what follows.
 
-![Precision and sensitivity of 3900 UMGAP configurations, with tryptic peptide configurations marked in blue and 9-mer configurations marked in orange.\label{parameter-tuning}](figures/kraken-benchmark/digestor-wrapped.svg){ width=75% }
+![Precision and sensitivity of 3900 UMGAP configurations, with tryptic peptide configurations marked in blue and 9-mer configurations marked in orange.\label{parameter-tuning}](figures/kraken-benchmark/digestor-wrapped.svg){ width=90% }
 
 #### Tryptic Configurations
 
@@ -483,7 +481,7 @@ profiling. As it also yields much more work during the peptide profiling
 step, combining six-frame translation with tryptic peptides proves less
 favorable.
 
-![Precision and sensitivity of 2700 tryptic UMGAP configurations, classified per protein translation method: configurations using FGS gene predictions marked in cyan, configurations using FGS++ gene predictions marked in orange and configurations using six-frame translations (6FT) marked in blue.\label{tryptic_translator}](figures/kraken-benchmark/tryptic_translator-wrapped.svg){ width=75% }
+![Precision and sensitivity of 2700 tryptic UMGAP configurations, classified per protein translation method: configurations using FGS gene predictions marked in cyan, configurations using FGS++ gene predictions marked in orange and configurations using six-frame translations (6FT) marked in blue.\label{tryptic_translator}](figures/kraken-benchmark/tryptic_translator-wrapped.svg){ width=90% }
 
 Shorter peptides have a higher probability of random hits in a protein
 database. With tryptic peptides, it is therefore recommended to
@@ -493,7 +491,7 @@ tryptic peptides with a length of at least 9 amino acids (Figure
 peptide length cutoff on the accuracy of the predictions, but the effect
 is negligible except for a marginal gain in the speed of the pipeline.
 
-![Precision and sensitivity of 2700 tryptic UMGAP configurations, classified per minimal peptide length.\label{tryptic_length}](figures/kraken-benchmark/tryptic_length-wrapped.svg){ width=75% }
+![Precision and sensitivity of 2700 tryptic UMGAP configurations, classified per minimal peptide length.\label{tryptic_length}](figures/kraken-benchmark/tryptic_length-wrapped.svg){ width=90% }
 
 Tryptic configurations effectively profile only a limited number of
 peptides per read, such that filtering taxa after peptide profiling
@@ -504,7 +502,7 @@ high precision at the cost of a steep drop in sensitivity (Figure
 profile reads based on a single peptide, increasing the risk of spurious
 predictions.
 
-![Precision and sensitivity of 2700 tryptic UMGAP configurations, classified according to filtering of low-frequency identifications.\label{tryptic_freq}](figures/kraken-benchmark/tryptic_freq-wrapped.svg){ width=75% }
+![Precision and sensitivity of 2700 tryptic UMGAP configurations, classified according to filtering of low-frequency identifications.\label{tryptic_freq}](figures/kraken-benchmark/tryptic_freq-wrapped.svg){ width=90% }
 
 The choice of read profiling method has no significant impact on the
 performance of the pipelines, again because of the limited number of
@@ -532,7 +530,7 @@ when working with 9-mers. As a result, we recommend to always apply
 seed-and-extend filtering in 9-mer configurations, and we will only
 focus on these configurations in any further analysis.
 
-![Precision and sensitivity of 1200 UMGAP configurations using 9-mer peptide fragmentation, with configurations that don’t use seed-and-extend filtering marked in blue and configurations that do use seed-and-extend filtering marked in orange.\label{kmer_seedornot}](figures/kraken-benchmark/kmer_seedornot-wrapped.svg){ width=75% }
+![Precision and sensitivity of 1200 UMGAP configurations using 9-mer peptide fragmentation, with configurations that don’t use seed-and-extend filtering marked in blue and configurations that do use seed-and-extend filtering marked in orange.\label{kmer_seedornot}](figures/kraken-benchmark/kmer_seedornot-wrapped.svg){ width=90% }
 
 With respect to protein translation method, the same observations
 concerning accuracy hold as with the tryptic configurations (Figure
@@ -544,7 +542,7 @@ peptide profiling step. However, effective filtering of spurious
 identifications after peptide profiling is still needed in order to
 avoid poor precision.
 
-![Precision and sensitivity of 1125 UMGAP configurations using 9-mer peptide fragmentation in combination with seed-and-extend filtering, classified per protein translation method: configurations using FGS gene predictions marked in cyan, configurations using FGS++ gene predictions marked in orange and configurations using six-frame translations (6FT) marked in blue.\label{seedextend_translator}](figures/kraken-benchmark/seedextend_translator-wrapped.svg){ width=75% }
+![Precision and sensitivity of 1125 UMGAP configurations using 9-mer peptide fragmentation in combination with seed-and-extend filtering, classified per protein translation method: configurations using FGS gene predictions marked in cyan, configurations using FGS++ gene predictions marked in orange and configurations using six-frame translations (6FT) marked in blue.\label{seedextend_translator}](figures/kraken-benchmark/seedextend_translator-wrapped.svg){ width=90% }
 
 Gene prediction is best combined with minimum seed size $s = 2$
 for optimal sensitivity and with minimum seed size $s = 3$ for
@@ -559,15 +557,15 @@ for six-frame translation (Figures \ref{seedextend_fgs_profiler},
 \ref{seedextend_6ft_freq}). In both cases, the maximum gap size $g$ has
 no significant impact on the accuracy (data not shown).
 
-![Precision and sensitivity of 750 UMGAP configurations using 9-mer peptide fragmentation in combination with seed-and-extend filtering, classified per minimal seed size and protein translation method. Gene prediction with FGS++ has been excluded.\label{seedextend_translator_seedsize}](figures/kraken-benchmark/seedextend_translator_seedsize-wrapped.svg){ width=75% }
+![Precision and sensitivity of 750 UMGAP configurations using 9-mer peptide fragmentation in combination with seed-and-extend filtering, classified per minimal seed size and protein translation method. Gene prediction with FGS++ has been excluded.\label{seedextend_translator_seedsize}](figures/kraken-benchmark/seedextend_translator_seedsize-wrapped.svg){ width=90% }
 
-![Precision and sensitivity of 375 UMGAP configurations using 9-mer peptide fragmentation, seed-and-extend filtering and gene prediction, classified per read profiling method.\label{seedextend_fgs_profiler}](figures/kraken-benchmark/seedextend_fgs_profiler-wrapped.svg){ width=75% }
+![Precision and sensitivity of 375 UMGAP configurations using 9-mer peptide fragmentation, seed-and-extend filtering and gene prediction, classified per read profiling method.\label{seedextend_fgs_profiler}](figures/kraken-benchmark/seedextend_fgs_profiler-wrapped.svg){ width=90% }
 
-![Precision and sensitivity of 375 UMGAP configurations using 9-mer peptide fragmentation, seed-and-extend filtering and gene prediction, classified per filtering of low-frequency identifications.\label{seedextend_fgs_freq}](figures/kraken-benchmark/seedextend_fgs_freq-wrapped.svg){ width=75% }
+![Precision and sensitivity of 375 UMGAP configurations using 9-mer peptide fragmentation, seed-and-extend filtering and gene prediction, classified per filtering of low-frequency identifications.\label{seedextend_fgs_freq}](figures/kraken-benchmark/seedextend_fgs_freq-wrapped.svg){ width=90% }
 
-![Precision and sensitivity of 375 UMGAP configurations using 9-mer peptide fragmentation, seed-and-extend filtering and six-frame translation, classified per read profiling method.\label{seedextend_6ft_profiler}](figures/kraken-benchmark/seedextend_6ft_profiler-wrapped.svg){ width=75% }
+![Precision and sensitivity of 375 UMGAP configurations using 9-mer peptide fragmentation, seed-and-extend filtering and six-frame translation, classified per read profiling method.\label{seedextend_6ft_profiler}](figures/kraken-benchmark/seedextend_6ft_profiler-wrapped.svg){ width=90% }
 
-![Precision and sensitivity of 375 UMGAP configurations using 9-mer peptide fragmentation, seed-and-extend filtering and six-frame translation, classified per filtering of low-frequency identifications.\label{seedextend_6ft_freq}](figures/kraken-benchmark/seedextend_6ft_freq-wrapped.svg){ width=75% }
+![Precision and sensitivity of 375 UMGAP configurations using 9-mer peptide fragmentation, seed-and-extend filtering and six-frame translation, classified per filtering of low-frequency identifications.\label{seedextend_6ft_freq}](figures/kraken-benchmark/seedextend_6ft_freq-wrapped.svg){ width=90% }
 
 Based on the above observations we have selected four 9-mer
 configurations that represent different accuracy trade-offs. Ranging in

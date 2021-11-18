@@ -81,7 +81,7 @@ monomer, and the deoxyribose of yet another. As such, together, the
 deoxyribose-phosphate alternations form two long strands, which spiral
 around each other forming a double helix.
 
-![The structure of DNA, uncoiled to two dimensions.\label{fig:dna}](dna.svg){ width=50% }
+![The structure of DNA, uncoiled to two dimensions.\label{fig:dna}](dna.svg){ width=60% }
 
 Because the deoxyribose and the phosphate group are the same for each
 monomer, the genetic information in a single strand can be represented

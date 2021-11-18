@@ -148,12 +148,14 @@ command.
 `-o file`
   ~ The output file.
 
-The output file contains a single taxonomic prediction for every read
-after the analysis script. To interpret these results without parsing
-and scripting visualizations, the `umgap-visualize.sh` script is
-provided. This visualization script can create importable CSV frequency
-tables and interactive visualizations. The latter can be stored locally
-or hosted online. The following snippet creates all three in turn.
+The output file contains a single taxonomic prediction for every
+read after the analysis script. To interpret these results without
+parsing and scripting visualizations, the `umgap-visualize.sh` script
+is provided. This visualization script can create importable CSV
+frequency tables and interactive visualizations. The latter can be
+stored locally or hosted online. The following snippet creates all three
+in turn. Figure \ref{fig:sunburst} contains a screenshot of the online
+visualizations.
 
 ```shell
 $ umgap-visualize.sh -t -r phylum tryptic-prec-output.fa.gz
@@ -170,7 +172,7 @@ tryptic-sens-output.fa.gz:
 https://bl.ocks.org/11b7809d6754b9530cf1a49d93a8d568
 ```
 
-<!-- TODO screenshot hier plaatsen -->
+![Screenshot of the visualization of an analysis result as a sunburst.\label{fig:sunburst}](./sunburst.png)
 
 The CSV tables contain a record for each taxon found in the sample.
 A record contains, in order, the taxon ID, (for convenience) the
