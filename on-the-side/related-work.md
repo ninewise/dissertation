@@ -105,7 +105,7 @@ position in the reference genome. This position is either the same
 of zeroes, ones and points is the haplotype. Finally, it reports the
 frequency of each haplotype on every locus in each sample.
 
-<!-- TODO 2019: focus on haplotype calling
+<!--
 - pagina 38 & 76 (Marzougui & Renders) 
                            Dataset (GB)  Originele   Na optimalisatie Versnelling
 4n ind HiPlex PE DOMtetra  0.0572         1m10.329s   0m7.420s         9.4783

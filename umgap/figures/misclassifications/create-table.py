@@ -100,7 +100,7 @@ for organism in sorted(organisms.values(), key=lambda o: taxons.get(o.annotation
 	corrects = [0] * len(ranks)
 	wrongs = [Counter() for _ in range(len(ranks))]
 	unspecifieds = [0] * len(ranks)
-	# corrects['unspecified'] = len(organism.reads) # TODO actually include reads FGS dropped
+	# corrects['unspecified'] = len(organism.reads) # FIXME actually include reads FGS dropped
 	for read in organism.reads:
 		for r, rank in enumerate(ranks):
 			if read.ranked[r] == organism.annotation.ranked[r]:
@@ -113,7 +113,6 @@ for organism in sorted(organisms.values(), key=lambda o: taxons.get(o.annotation
 	s = lambda r, n: f'{r}: {n} ({n * 100000 // readinfo[organism.name][1] / 1000}%)'
 	b = lambda s, c: f'**{s}**' if c else s
 
-	# TODO expected species -> target identification op alle rangen (vraag Peter)
 	target = organism.annotation.free
 	while target != 1 and (not taxons.get(target, {3:False})[3] or taxons.get(target, {1:None})[1] not in above_species):
 		target = taxons.get(target, {2:1})[2]

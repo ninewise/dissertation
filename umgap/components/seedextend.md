@@ -26,8 +26,6 @@ of a set of extended seeds and a single candidate extended seed
 over a list of taxonomic identifications, as shown in Algorithm
 \ref{alg:seedextend}.
 
-<!-- TODO decrease vertical size -->
-
 \begin{algorithm}[h]
   \DontPrintSemicolon
   \KwData{The minimum seed size $s$, the maximum gap size $g$, and a list of taxa $r$.}

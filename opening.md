@@ -1,7 +1,6 @@
 # Thanks {.unnumbered}
 
-<!-- TODO dankwoord -->
-
+<!-- TODO dankwoord
 **Acknowledgments:** We thank Stijn Seghers for his contributions in
 implementing and benchmarking the initial tryptic peptide components of
 UMGAP. We thank Niels De Graef for his contributions in implementing and
@@ -18,3 +17,4 @@ to acknowledge Research Foundation - Flanders (FWO) [grants 1164420N,
 Foundation--Flanders (FWO) (12I5220N to B.M.) We thank the students of
 the Computational Biology class of 2019-2020 for scrutinizing issues
 with the code of FGS and FGS+.
+-->

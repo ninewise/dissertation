@@ -1521,6 +1521,28 @@ references:
   volume: 26
   issue: 6
   page: 841-842
+- type: article-journal
+  id: anodireducens
+  author:
+  - family: Sun
+    given: Dan 
+  - family: Cheng
+    given: Shaoan 
+  - family: Wang
+    given: Aijie 
+  - family: Huang
+    given: Fangliang 
+  - family: Liu
+    given: Wenzong 
+  - family: Xia
+    given: Xue 
+  title: "Complete Genome Sequence of Geobacter anodireducens SD-1T, a Salt-Tolerant Exoelectrogenic Microbe in Bioelectrochemical Systems"
+  container-title: Genome Announcements
+  issued: 2016
+  volume: 4
+  issue: 3
+  page: e00415-e00416
+  doi: 10.1128/genomeA.00415-16
 - type: book
   id: darwin
   author:

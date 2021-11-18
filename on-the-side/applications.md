@@ -30,11 +30,11 @@ In this snippet, we choose to download the taxonomy and the tryptic
 index, as this example will use a tryptic pipeline.
 
 ```shell
-$ umgap-setup.sh -f /opt/FragGeneScanPlusPlus
+$ umgap-setup.sh -f /opt/FragGeneScanRs
 Use '/home/user/.config/unipept' as configuration directory?
 [y]/n y
 Created directory /home/user/.config/unipept.
-Found, tested and remembered the FragGeneScan++ location.
+Found, tested and remembered the FragGeneScan location.
 Use '/home/user/.local/share/unipept' as data directory?
 [y]/n y
 Created directory /home/user/.local/share/unipept.
@@ -58,8 +58,6 @@ Would you like to download the 9-mer index from 2020-12-02
                               Spent   Speed
 100    12G  100    12G    0  0:34:12   5790k
 ```
-
-<!-- TODO use FragGeneScanRs -->
 
 The script also allows further configuration via some flags.
 

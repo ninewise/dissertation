@@ -37,15 +37,13 @@ Also included in the benchmark is a tool specifically built for
 detecting genes in complete prokaryotic genomes and assemblies, Prodigal
 [@hyatt2010].
 
-Each tool was executed on the genome of *Geobacter anodireducens* strain
-SD-1. To compare the results, each single base pair is considered
-either as part of a predicted gene on the forward strand, part of a
-predicted gene on the reverse strand, or not in a predicted gene at
-all. Table \ref{table:fgs-classification} shows the classification
-of the base pairs when compared to the annotated genes. Table
-\ref{table:fgs-metrics} shows the resulting quality metrics.
-
-<!-- TODO reference to the strain study -->
+Each tool was executed on the genome of *Geobacter anodireducens*
+strain SD-1 [@anodireducens]. To compare the results, each single base
+pair is considered either as part of a predicted gene on the forward
+strand, part of a predicted gene on the reverse strand, or not in a
+predicted gene at all. Table \ref{table:fgs-classification} shows the
+classification of the base pairs when compared to the annotated genes.
+Table \ref{table:fgs-metrics} shows the resulting quality metrics.
 
  Annotation \\ Prediction  Forward strand  Reverse strand  None
  ------------------------- --------------- --------------- ---------------
