@@ -93,14 +93,16 @@ CGGCGGCGAGGTGGTCGCAGATCTCGGCGACCTCTGCGTTGAGGGTCGGG
 +
 AADEGGAGIIEIHFHKHJKKJKHIJJIIKCJAHBFKKFHIJIF;JIH5DE
 $I>CBE$E:FGEJCGABEEECCDKD?D?C$ECEEE;CEEDEEAD=?ED$D
-$ umgap-analyse.sh -1 A1.fq -2 A2.fq -t tryptic-precision \
-  -z -o tryptic-prec-output.fa.gz
-$ zcat tryptic-prec-output.fa.gz | head -2
+$ umgap-analyse.sh -1 A1.fq -2 A2.fq -t tryptic-sensitivity \
+  -z -o tryptic-sens-output.fa.gz
+$ zcat tryptic-sens-output.fa.gz | head -6
 >1198114###CP002480-_Acidobacteria_733918/1_1_100_-
+1198114
+>234267###CP000473-_Acidobacteria_534657
 1
+>234267###CP000473-_Acidobacteria_235735
+332163
 ```
-
-<!-- TODO beter voorbeeld vinden -->
 
 It seems the pipeline cannot be more specific than root (Taxon ID 1) for
 the first read.
@@ -375,14 +377,14 @@ taxon id,taxon name,stdin
 
 ### A Comparative Analysis {#section:comparative}
 
-For a comparative study of 8 shotgun metagenomics data sets and the
-comparison of the taxonomic diversity therein [@detender], a comparative
-frequency table was added to the UMGAP. Assuming the data sets are
-stored in pairs of files, the following command will analyze all 8
-paired-end samples. By putting them together in a single analysis, the
-UMGAP can reuse a memory-loaded index file.
-
-<!-- TODO add more context about this study -->
+In a study by @detender, the effect of chitin addition to peat substrate
+on the taxonomic profile, functional profile and nutrient content was
+analyzed. For the taxonomic profile, UMGAP was used. To compare the
+taxonomic diversity amongst the 8 samples, a comparative frequency table
+was added to the UMGAP. Assuming the data sets are stored in pairs of
+files, the following command will analyze all 8 paired-end samples.
+By putting them together in a single analysis, the UMGAP can reuse a
+memory-loaded index file.
 
 ```shell
 $ umgap-analyse.sh \

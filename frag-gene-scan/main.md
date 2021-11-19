@@ -44,7 +44,7 @@ from release 1.19) to implement FragGeneScan-Plus (FGS+): a pure C
 implementation with speedups for single threaded execution and better
 scaling for multithreading [@kim].
 
-<!-- TODO add image of HMM with some explanation -->
+![The HMM of FragGeneScan with seven super-states. The super-states are denoted as seven shaded boxes representing gene regions: (i) start codons (ii) and stop codons (iii) for both the forward (i–iii) and backward (v–vii) strands, and non-coding regions (iv). The states for gene regions (i and vii) consist of six consecutive match states represented by diamonds, insertion states by triangles and deletion states by squares, which collectively correspond to a six-periodic inhomogeneous HMM. (Figure and caption from @rho)](./hmm.jpeg)
 
 Both FGS and FGS+ now have pure C implementations that support parallel
 execution, but their latest releases suffer from their own issues. FGS

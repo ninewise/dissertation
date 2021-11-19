@@ -203,8 +203,6 @@ column should be mapped to the integers (taxon IDs) in the second
 column. A binary file with a compressed mapping is written to standard
 output.
 
-<!-- TODO describe the index mechanism -->
-
 ```shell
 $ cat input.tsv
 AAAAA   2759

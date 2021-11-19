@@ -226,9 +226,9 @@ either be descendants or ancestors of the LCA\* in the NCBI Taxonomy
 the LCA\* algorithm introduced by UMGAP as a variation on the lowest
 common ancestor (LCA) algorithm.
 
-UMGAP uses a finite state transducer [@gallant] as its index structure
-to lookup the LCA\* consensus taxon for each peptide extracted from
-a read. This index structure supports high-performance and parallel
+UMGAP uses a finite state transducer [@gallant;@mihov] as its index
+structure to lookup the LCA\* consensus taxon for each peptide extracted
+from a read. This index structure supports high-performance and parallel
 lookups, supports both fixed and variable length peptides, and has a
 relatively small memory footprint. The latter is important, given the
 large number of peptides extracted from UniProt. The index should be
