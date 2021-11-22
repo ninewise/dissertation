@@ -1,7 +1,7 @@
 ### Peptide identification
 
-At the core of the UMGAP is the taxonomic identification of peptides.
-The interface of the command is surprisingly easy: given an index file,
+At the core of UMGAP is the taxonomic identification of peptides. The
+interface of the command is surprisingly easy: given an index file,
 `umgap pept2lca` will search for each peptide on its input in the index
 and write out the corresponding taxon ID. In our indices, a peptide maps
 on the taxon ID which is the lowest common ancestor of all taxa whose
@@ -10,11 +10,11 @@ protein contains this peptide.
 However, despite the simple principle, searching for peptides in the
 index is the computationally hardest step in the pipeline. Optimizing
 the `pept2lca` command was one of the major hurdles during the
-development of the UMGAP. It is now parallelized internally and
-provides several options, such as the option to preload the index in
-memory, to fully use the available computing power.
+development of UMGAP. It is now parallelized internally and provides
+several options, such as the option to preload the index in memory, to
+fully use the available computing power.
 
-The UMGAP also provides two commands as a combination of others: `umgap
+UMGAP also provides two commands as a combination of others: `umgap
 prot2tryp2lca` and `umgap prot2kmer2lca`, appending this command
 after `umgap prot2pept` and `umgap prot2kmer`, respectively. These
 commands avoid the overhead of printing and parsing the peptides between

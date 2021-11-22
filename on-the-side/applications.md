@@ -1,21 +1,21 @@
 ## Case Studies and Analyses {#section:casestudies}
 
-During the development of the UMGAP, the still incomplete pipeline was
+During the development of UMGAP, the still incomplete pipeline was
 applied to several datasets as a means of exploration. This has helped
 to find bugs, usability problems, discover other applications and guide
-the UMGAP to its final form. This section describes the analysis of some
-of these datasets, as it would be done using the released version of the
-UMGAP, not as it was executed originally. As such, this section may be
-used as a guide to compose a new pipeline for a similar analysis.
+UMGAP to its final form. This section describes the analysis of some of
+these datasets, as it would be done using the released version of UMGAP,
+not as it was executed originally. As such, this section may be used as
+a guide to compose a new pipeline for a similar analysis.
 
 ### The Preconfigured Pipelines {#section:preconf}
 
-The primary and easiest procedure to run the UMGAP on your data, and the
+The primary and easiest procedure to run UMGAP on your data, and the
 last addition to the pipeline, is by using one of the six preconfigured
 pipelines. They are six diverging ways of configuring the pipeline,
-picked to cover the most probable use cases. Should your data fall within
-such a use case, running the pipeline is reduced to running two or three
-scripts.
+picked to cover the most probable use cases. Should your data fall
+within such a use case, running the pipeline is reduced to running two
+or three scripts.
 
 The first is a setup script called `umgap-setup.sh`. It is an
 interactive script that helps you get the required databases and
@@ -196,11 +196,11 @@ All records will be at the same specified taxon rank or at root
 
 ### A Home Brew Taxonomic Analysis Pipeline {#section:homebrew}
 
-While the preconfigured pipelines make running the UMGAP relatively
-easy, there are only six of them. Part of the reason for using a
-pipeline is to allow composing many diverse metagenomic pipelines
-with the same set of tools. This section builds up a custom pipeline,
-demonstrating how all tools work together.
+While the preconfigured pipelines make running UMGAP relatively easy,
+there are only six of them. Part of the reason for using a pipeline is
+to allow composing many diverse metagenomic pipelines with the same set
+of tools. This section builds up a custom pipeline, demonstrating how
+all tools work together.
 
 The first 3 reads of the same dataset as in \ref{section:preconf} will
 be used. This is a paired-end dataset, stored in two FASTQ files.
@@ -229,11 +229,11 @@ CAAAATGGAGTGGGCGCTACTGCTCCGTGAGCAGGGTCAGTTGGAGGGAT
 TGGGGCGTGCGCTCGGGGATGCTAATGGCGGTGCCCCTGGATTCCTGAGA
 ```
 
-This command interleaves the given FASTQ files to output a single
-FASTA stream, in which the paired ends alternate. This FASTA stream is
-a stream of DNA reads. Each read needs to be translated to an amino
-acid sequence. While any gene prediction tool could be used here, the
-UMGAP was tested with FragGeneScan and its variants.
+This command interleaves the given FASTQ files to output a single FASTA
+stream, in which the paired ends alternate. This FASTA stream is a
+stream of DNA reads. Each read needs to be translated to an amino acid
+sequence. While any gene prediction tool could be used here, UMGAP was
+tested with FragGeneScan and its variants.
 
 ```shell
 $ FGS -s preprocessed.fa -o predicted-genes -w0 \
@@ -262,8 +262,8 @@ PTLNAEVAEICDHLAAARPTAVNLFWGIGRVRD
 ...
 ```
 
-The UMGAP uses exact substring matching to identify reads. The next
-step of the pipeline maps each 9-mer encountered in each of the protein
+UMGAP uses exact substring matching to identify reads. The next step
+of the pipeline maps each 9-mer encountered in each of the protein
 fragments via a provided index file. The available index files pair
 each peptide from the UniProtKB onto the lowest common ancestor of all
 proteins it occurs in.
@@ -349,8 +349,8 @@ https://bl.ocks.org/5960ffd859fb17439d7975896f513bc3
 ![A screenshot of the visualization created by the `taxa2tree` command.](treeview-advanced.png)
 
 Running these commands in discrete steps, as above, is of course an
-option, but the UMGAP wouldn't be a pipeline if it were the only option.
-By putting all steps in a single command, they can run in parallel.
+option, but UMGAP wouldn't be a pipeline if it were the only option. By
+putting all steps in a single command, they can run in parallel.
 
 ```shell
 $ umgap fastq2fasta A1.fq A2.fq | \
@@ -381,10 +381,10 @@ In a study by @detender, the effect of chitin addition to peat substrate
 on the taxonomic profile, functional profile and nutrient content was
 analyzed. For the taxonomic profile, UMGAP was used. To compare the
 taxonomic diversity amongst the 8 samples, a comparative frequency table
-was added to the UMGAP. Assuming the data sets are stored in pairs of
-files, the following command will analyze all 8 paired-end samples.
-By putting them together in a single analysis, the UMGAP can reuse a
-memory-loaded index file.
+was added to UMGAP. Assuming the data sets are stored in pairs of files,
+the following command will analyze all 8 paired-end samples. By putting
+them together in a single analysis, UMGAP can reuse a memory-loaded
+index file.
 
 ```shell
 $ umgap-analyse.sh \
@@ -430,9 +430,9 @@ ERR1654126.tid.fa.gz:
 https://bl.ocks.org/f25941840ce1e706623750d561d7c47d
 ```
 
-Of more interest here is a comparative visualization. While the UMGAP
-does not support such visualizations directly, it does support exporting
-a comparative CSV frequency table.
+Of more interest here is a comparative visualization. While UMGAP does
+not support such visualizations directly, it does support exporting a
+comparative CSV frequency table.
 
 ```shell
 $ umgap-visualize.sh -r phylum -t *.tid.fa.gz > frequencies.csv

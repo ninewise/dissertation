@@ -1,9 +1,6 @@
-# Introduction
+# Primer on Metagenomics
 
 ## Classifying Life
-
-<!-- TODO rename primer on metagenomics? find better title
-start with definition of metagenomics, close in on terms -->
 
 Upon hearing the term "Animal Kingdom", you might think of either the
 jungle or the stories of Reynard the Fox, where the lion rules over the
@@ -134,8 +131,6 @@ molecular biology. Most organisms follow these steps, but for instance
 some bacteria blend the transcription and translation into a single step,
 and some DNA segments don't translate to proteins but perform their
 function as RNA.
-
-<!-- TODO? image central dogma -->
 
 ## Studying Biopolymers
 
@@ -268,7 +263,7 @@ In chapter \ref{chapter:fgsrs}, we introduce a new implementation of
 FragGeneScan, to be used as an improved gene predictor in the pipeline.
 In chapter \ref{chapter:on-the-side}, we include some of the metawork
 on the pipeline, such as the improved construction of the Unipept (and
-UMGAP) index and a few walkthroughs describing the usage of the UMGAP in
+UMGAP) index and a few walkthroughs describing the usage of UMGAP in
 other studies.
 
 <!-- TODO more active phrasing -->

@@ -1,14 +1,13 @@
 ### Protein Fragmentation {#protein-fragmentation-component}
 
-The UMGAP uses exact string matching on short protein fragments to
-identify parts of reads and aggregate those into a conclusion for the
-whole read. The `umgap prot2tryp` and `umgap prot2kmer` provide such
-fragmentation.
+UMGAP uses exact string matching on short protein fragments to identify
+parts of reads and aggregate those into a conclusion for the whole read.
+The `umgap prot2tryp` and `umgap prot2kmer` provide such fragmentation.
 
 The first splits protein sequence into variable length peptides, based
 on a pattern in the sequence. The default pattern is an *in silico*
-tryptic digest, as the UMGAP originates in a metaproteomics context,
-where trypsin is *de facto* standard. The latter yields all overlapping
+tryptic digest, as UMGAP originates in a metaproteomics context, where
+trypsin is *de facto* standard. The latter yields all overlapping
 peptides of a fixed length, called *k*-mers.
 
 #### Usage {#use-fragmentation}

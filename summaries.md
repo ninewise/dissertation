@@ -15,26 +15,26 @@ organisms, called a taxon.
 
 In this work, we present the Unipept Metagenomics Analysis Pipeline
 (UMGAP), a set of tools for taxonomic identification of shotgun
-metagenomics reads. With the UMGAP, we explore the possibility of
-performing taxonomic identifications of DNA reads using the proteins
-this DNA encodes. Unlike most taxonomic identification tools, which map
-DNA reads directly to taxa, the UMGAP will first predict which (partial)
+metagenomics reads. With UMGAP, we explore the possibility of performing
+taxonomic identifications of DNA reads using the proteins this DNA
+encodes. Unlike most taxonomic identification tools, which map DNA
+reads directly to taxa, UMGAP will first predict which (partial)
 protein is encoded in a DNA read and map this protein on a taxon using
 a general purpose protein database. This detour adds robustness to
 the identification process, as proteins are more conserved than the
 underlying DNA.
 
-The UMGAP turns out to be a valid alternative for existing metagenomics
+UMGAP turns out to be a valid alternative for existing metagenomics
 identification tools, though it cannot equal the speed and accuracy
 of all. The pipeline does offer interesting avenues towards
 functional analysis (what organisms are doing in the sample) and
 metatranscriptomics (analyzing RNA reads instead of DNA reads).
 
-As part of the development of the UMGAP, we also introduce an
-alternative implementation for FragGeneScan in Rust, called
-FragGeneScanRs. FragGeneScan plays an important role in the UMGAP:
-prediction of proteins (or gene fragments) from DNA reads. However, the
-existing implementation, nor any of the available alternatives, proved
+As part of the development of UMGAP, we also introduce an alternative
+implementation for FragGeneScan in Rust, called FragGeneScanRs.
+FragGeneScan plays an important role in UMGAP: prediction of
+proteins (or gene fragments) from DNA reads. However, the existing
+implementation, nor any of the available alternatives, proved
 sufficiently fast for our applications and contained a number of bugs.
 FragGeneScanRs fixes these bugs and runs up to 20 times faster.
 

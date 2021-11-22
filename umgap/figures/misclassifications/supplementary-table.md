@@ -21,13 +21,13 @@ references:
 
 # Analysis of misclassifications per Operational Taxonomic Unit
 
-This file contains an in-depth analysis in which we investigate
-the accuracy of the taxonomic profilings of UMGAP. This analysis
-uses a single setting of the UMGAP pipeline (high-precision) and
-reports accuracy metrics per operational taxonomic unit (OTU), i.e.
-all (paired-end) reads are grouped per OTU from which they were
-extracted/generated. We still use species as the target rank, but in a
-less stringent way compared to the MetaBenchmark.
+This file contains an in-depth analysis in which we investigate the
+accuracy of the taxonomic profilings of UMGAP. This analysis uses a
+single setting of UMGAP (high-precision) and reports accuracy metrics
+per operational taxonomic unit (OTU), i.e. all (paired-end) reads are
+grouped per OTU from which they were extracted/generated. We still use
+species as the target rank, but in a less stringent way compared to the
+MetaBenchmark.
 
 We performed the analysis on both datasets, used in the manuscript for
 parameter tuning (smaller dataset; 10 OTUs) and benchmarking (larger

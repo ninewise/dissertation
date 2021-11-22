@@ -1,6 +1,6 @@
 ## Constructing the Database {#section:makedatabase}
 
-The core components of Unipept and the UMGAP both depend on a mapping of
+The core components of Unipept and UMGAP both depend on a mapping of
 peptides to taxonomic identifiers. To construct such a mapping, and to
 have it be generic enough to recognize a wide variety of peptides, it
 needs to be based on a vast amount of data. The UniProt Knowledgebase
@@ -55,8 +55,7 @@ It outputs the EC, GO, RefSeq [@oleary], EMBL [@lopez], InterPro and
 proteome [@nightingale] annotations to their respective cross references
 tables and saves all encountered tryptic peptides in the *peptides*
 table and proteomes for further processing. A *proteomes* table is
-created with additional downloaded data, but it is not used in the
-UMGAP.
+created with additional downloaded data, but it is not used in UMGAP.
 
 In **join equalized peptides and uniprot entries** and **join original
 peptides and uniprot entries**, the encountered tryptic peptide
@@ -67,10 +66,9 @@ peptides, whether equalized or original, are given numeric IDs in
 **enumerate sequences**. These numeric IDs replace the actual sequences
 in the peptides table in **substitute equalized sequences** and
 **substitute original sequences** to form the final peptides table.
-Functional annotations, not used in the UMGAP, are also extracted
-from the peptides in the **calculate equalized functional JSON**
-and **calculate original functional JSON** steps to be added to the
-*sequences* table.
+Functional annotations, not used in UMGAP, are also extracted from the
+peptides in the **calculate equalized functional JSON** and **calculate
+original functional JSON** steps to be added to the *sequences* table.
 
 The amino acid sequences are also replaced with their numeric IDs in
 the equalized peptide/taxon and original peptide/taxon pairs as first
@@ -82,8 +80,8 @@ the *sequences* table.
 
 ### Creating a UMGAP Index
 
-From this complete database, only a three tables are of interest to the
-UMGAP tool. First, as the UMGAP is a taxonomic identification tool,
+From this complete database, only a three tables are of interest to
+the UMGAP tool. First, as UMGAP is a taxonomic identification tool,
 is the processed NCBI taxonomy *taxons*. Second is the *sequences*
 table, which contains the mapping of tryptic peptides onto their lowest
 common ancestor. Third is the *uniprot entries* table, which contains

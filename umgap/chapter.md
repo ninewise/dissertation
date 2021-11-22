@@ -1,4 +1,4 @@
-# The Unipept Metagenomics Analysis Pipeline {pageheading="The UMGAP"}
+# The Unipept Metagenomics Analysis Pipeline {pageheading="UMGAP"}
 \label{chapter:umgap}
 
 <!-- TODO Peter: schrap al dit schrijfwerk en gebruik gewoon de abstract
@@ -51,7 +51,7 @@ the added benefit of modularity: with analysis steps as a top-level
 concept, steps can easily be added, skipped and exchanged to modify the
 type of analysis.
 
-The UMGAP has chosen the second dimension of subdivision as primary
+UMGAP has chosen the second dimension of subdivision as primary
 subdivision. Each analysis step was programmed as a separate subcommand
 of the `umgap` executable, sharing a single source code tree. Each step
 runs in a process, chained together using UNIX pipes, passing the reads
