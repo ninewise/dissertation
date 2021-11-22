@@ -99,8 +99,6 @@ of coding versus non-coding DNA wildly varies (for example, the
 pufferfish *Takifugu* has 90% non-coding DNA, while the bladderworm
 plant *Utricularia gibba* has only 3% non-coding DNA).
 
-<!-- TODO image coding density, include genome size -->
-
 To perform gene expression, the DNA is first transcribed into another
 polymer called ribonucleic acid (RNA). An enzyme called RNA polymerase
 picks onto either strand and starts processing it in the 3' to
@@ -110,8 +108,6 @@ direction. The only exception is that RNA polymerase couples a uracil
 nucleobase (U) with the adenine nucleobases in the DNA strand, instead
 of a thymine. As such, the resulting RNA polymer is a copy of the
 opposing DNA strand with T replaced by U.
-
-<!-- TODO mRNA? but it's not all mRNA? ask Caroline to check -->
 
 ![Free RNA nucleotides are complemented to a template DNA strand, forming a single RNA strand. The formed strand is identical to the coding strand, except thymine (T) is replaced by uracil (U) and the deoxyribose is a ribose. The RNA polymerase performing the splitting and matching is not included in the drawing.](./transcription.svg)
 
@@ -147,8 +143,6 @@ technology, with various read error types and rates. The result of
 sequencing is a data set of the DNA sequences of reads, along with some
 metadata such as the quality of a read.
 
-<!-- TODO mention genome / read set size -->
-
 Since the DNA molecules were segmented into reads, the next step is
 assembling the reads again into the complete genome sequence. When the
 sequenced DNA sequence is of an organism closely related to an organism
@@ -156,7 +150,9 @@ with a known genome, comparative assembly (read mapping) can be used.
 The sequenced reads are mapped onto the reference sequence to form the
 new sequence. When there's no reference genome, *de novo* assembly is
 used. In *de novo* assembly, an attempt is made to form the complete
-genome by overlapping the short reads.
+genome by overlapping the short reads. As reference, the average fruit
+fly, human and SARS-CoV-2 genomes are respectively 139.991 Mb, 2864.1 Mb
+and 29.882 Kb long,
 
 Finally the assembled sequence is annotated. Coding and non-coding
 parts are identified, the genes in the coding parts are predicted, the
@@ -172,6 +168,12 @@ sequence of these segments, called (tryptic) peptides, is then
 determined by for example comparing the measured mass spectrum to a
 set of predicted mass spectra. However, since tryptic peptides do not
 overlap, assembly is not possible.
+
+In this work, we will be using the UniProt Knowledgebase [UniProtKB,
+@magrane] as reference database. UniProt, short for the Universal
+Protein Resource, is a comprehensive resource for protein sequence and
+annotation data. Their UniProtKB contains more than 200 million proteins
+annotated with an NCBI taxon identifier among other properties.
 
 Finally, the set of an organism's RNA is called its transcriptome, and
 the corresponding study is called transcriptomics.
@@ -192,10 +194,6 @@ studies of environments over time or location. Third, many organisms
 cannot currently be cultivated, and as such cannot be sequenced in
 genomics [@locey;@rappe;@hugenholtz1998;@hoferthemi].
 
-<!-- TODO abunance: not true, sequencing also has its bias -->
-
-<!-- TODO afbeelding who what 3-pijl-cirkel meta-omics -->
-
 ## Targeted versus Shotgun Metagenomics
 
 Early metagenomics methods were based on (partial) 16S ribosomal RNA
@@ -208,11 +206,12 @@ does this work on eukaryotes.
 
 The more recent shotgun metagenomics, on the other hand, uses sequencers
 yielding randomly located short reads from the complete environmental
-sample. To provide sufficiently complete coverage to allow assembly of
-all organisms in the sample, much larger (TODO numbers) data sets are
-required compared to genomics. The amount of data and the repetitions
-of DNA within and between (allowing the incorrect assembly of chimeras)
-organisms make assembly a hard problem to solve.
+sample. To provide sufficiently complete coverage to allow assembly
+of all organisms in the sample, much larger data sets are required
+compared to genomics (3.3 million genes from 567.7 Gbp sequence data
+for the human gut microbiome gene catalog). The amount of data and the
+repetitions of DNA within and between (allowing the incorrect assembly
+of chimeras) organisms make assembly a hard problem to solve.
 
 To simplify assembly, reads are partitioned and assigned to an individual
 genome. This process is called binning. Afterwards, each bin can be
@@ -221,31 +220,39 @@ methods work by comparing DNA properties of reads, such as CG-content
 (the ratio of C- or G-nucleotides to A- and T- nucleotides), to the
 properties of known genomes.
 
-<!-- TODO still very short intro on metagenomics -->
-
 ## Unipept
 
-<!-- TODO references, you can list the references you coauthored at the start of this chapter -->
+Unipept [@mesuere2012;@mesuere2015] is a set of tools for biodiversity
+and functional analysis of metaproteomics data sets. It is based on
+a mapping of tryptic peptides, the most common protein fragment used
+in metaproteomics, onto the smallest taxon grouping all organisms the
+tryptic peptide is found in, called the lowest common ancestor. This
+mapping is created by processing the extensive and diverse list of
+organisms and their proteome found in the UniProtKB.
 
-Unipept is a set of tools for biodiversity and functional analysis
-of metaproteomics data sets. It is based on a mapping of tryptic
-peptides, the most common protein fragment used in metaproteomics,
-onto the smallest taxon grouping all organisms the tryptic peptide is
-found in, called the lowest common ancestor. This mapping is created by
-processing an extensive list of organisms and their proteome.
+Unipept currently offers three services:
 
-Using such a mapping, Unipept can quickly construct ranked frequency
-tables of taxa for all tryptic peptides uploaded. These tables are
-presented in clear visualizations, providing insight in the biodiversity
-of the sample.
+* The **tryptic peptide analysis** service reports to the user the list
+  of all UniProt entries which contain a given tryptic peptide. For each
+  entry, the taxonomic lineage is shown. More recently [@verschaffelt],
+  an overview of the functional annotations on the listed entries was
+  included.
 
-<!-- TODO vermelden dat functional analysis ook kan (of volgende sectie) maar enkel potential toont, zeggen dat wij enkel biodiversity doen -->
+* The **metaproteome analysis** service applies the tryptic peptide
+  analysis to lists of tryptic peptides, creating reports for a whole
+  metaproteomics sample. It offers visualizations of the taxonomic
+  diversity and functional activity in the sample.
 
-<!-- TODO minder highlevel -->
+* The peptidome analysis services has a **unique peptide finder**
+  which searches the UniProtKB for tryptic peptides occurring only in a
+  requested set of proteomes. Useful to find the targets for targeted
+  proteomics experiments. Alongside, the same set of proteomes can be
+  placed into a similarity matrix based on their tryptic peptidome with
+  **peptidome clustering**.
 
-<!-- TODO overlopen van web/cli/desktop -->
-
-<!-- TODO stuk over uniprot (volledige databank ipv selectie) -->
+It offers these services as a web application and API server, the latter
+also accessible via a command line interface and a desktop client
+[@verschaffelt2021].
 
 ## Metagenomics via Metaproteomics
 
@@ -255,7 +262,9 @@ predictor, a metagenomics sample can be transformed *in silico* to a
 metaproteomics data set. As metagenomics data sets are of much larger
 volume than metaproteomics data sets, the Unipept index is wrapped in a
 local command line tool to avoid the network bottlenecks of an online
-tool. Thus the Unipept Metagenomics Analysis Pipeline is born.
+tool. Thus the Unipept Metagenomics Analysis Pipeline is born, as an
+experiment to perform a metagenomics biodiversity analysis by making a
+detour through a general purpose metaproteomics database.
 
 In chapter \ref{chapter:umgap}, we describe the complete pipeline
 and evaluate it as an alternative method of metagenomics analysis.
@@ -265,5 +274,3 @@ In chapter \ref{chapter:on-the-side}, we include some of the metawork
 on the pipeline, such as the improved construction of the Unipept (and
 UMGAP) index and a few walkthroughs describing the usage of UMGAP in
 other studies.
-
-<!-- TODO more active phrasing -->

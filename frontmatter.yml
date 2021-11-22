@@ -21,6 +21,7 @@ header-includes:
 - \hyphenation{mar-gi-nal-ly}
 - \hyphenation{e-men-ded}
 - \hyphenation{me-thyl-o-vo-rus}
+- \hyphenation{Uni-Prot-KB}
 include-before: |
   #### [opening](opening.md){.include}
 colorlinks: true
