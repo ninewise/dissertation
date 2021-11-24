@@ -8,6 +8,6 @@
 
 #### [on-the-side](on-the-side/chapter.md){.include}
 
-#### [conclusion](conclusion.md){.include}
+#### [conclusion](conclusion/chapter.md){.include}
 
 #### [closing](closing.md){.include}

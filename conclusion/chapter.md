@@ -65,15 +65,48 @@ solution for overrepresentation in the UniProtKB. Organisms with a lot
 of recorded genomes tend to occur randomly in completely unrelated
 samples.
 
-* functionele annotaties toevoegen
-  - mapping op functionele annotaties
-  - probleem: geen boomstructuur -> geen eenvoudige aggregatie
-  - doen we al voor metaproteomics
-  - metagenomics is sowieso enkel functional potential
+### Functional Annotations
 
-* metatranscriptomics verder uitwerken
-  - werken al, maar kan meer aandacht gebruiken om te specialiseren
-  - momenteel thesis over bezig
+Because UMGAP predicts genes and links those genes to taxonomic
+annotations, it could, in principle, be extended to also link to
+functional annotations, similar to how functional annotations were
+added to Unipept [@gurdeep]. Indeed, each tryptic peptide or 9-mer
+in the UniProtKB can easily be associated with a list of functional
+annotations.
+
+The problem is the aggregation of this list. Taxonomic annotations are
+structured in a tree with sufficient depth, which makes aggregation
+strategies such as the lineage-based and modified LCA possible.
+Functional annotations are are structured in a tree of insufficient
+depth (e.g. EC-numbers have 4 ranks), which is too few for relevant
+aggregation, in a directed acyclic graph (e.g. GO-terms), which is a too
+complex structure for meaningful aggregations, or are not structured at
+all.
+
+In Unipept, which is for the tryptic peptide index, this was solved by
+simply not aggregating them. Tryptic peptides are mapped to a list of
+annotations. When visualizing samples, the frequency of each annotation
+in all lists is reported, as shown in Figure \ref{fig:go-terms}. While
+this is a viable and valuable solution for tryptic peptides, this method
+is simply impossible with the current 9-mer index. The associated lists
+would increase the size of the index beyond usability.
+
+![GO terms related to biological processes found in the marine example data set in Unipept. On the left, a list is shown with the related terms ordered by the numbered of peptides annotated with them. On the right, the relation between the 5 most occuring terms can be zoomed in on. This image is provided by QuickGO [@quickgo].\label{fig:go-terms}](./go-terms.png)
+
+Should a practical and meaninful aggregation strategy be found,
+functional annotation would be a great addition to UMGAP, as they would
+allow exploring the functional potential of a metagenomics sample.
+
+### Metatranscriptomics via Metaproteomics
+
+As shown in section \ref{section:transcript}, by removing the gene
+prediction step from UMGAP, it can be applied to metatranscriptomics
+data sets. Experimentation shows this modified UMGAP (UMPAP?) is a
+potential metaproteomics analysis tool, but further finetuning and
+benchmarking studies are in order. Combining such an extension with
+functional annotations as detailed above would result in a very useful
+metaproteomics tools, allowing both taxonomic diversity and functional
+activity analyses.
 
 * integratie in desktopapplicatie
   - ontwikkeling door Pieter

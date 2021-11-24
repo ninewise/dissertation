@@ -1544,6 +1544,27 @@ references:
   issue: 3
   page: e00415-e00416
   doi: 10.1128/genomeA.00415-16
+- type: article-journal
+  id: quickgo
+  author:
+  - family: Binns
+    given: D.
+  - family: Dimmer
+    given: E.
+  - family: Huntley
+    given: R.
+  - family: Barrell
+    given: D.
+  - family: O'Donovan
+    given: C.
+  - family: Apweiler
+    given: R.
+  title: "QuickGO: a web-based tool for Gene Ontology searching"
+  container-title: Bioinformatics
+  issued: 2009
+  volume: 25
+  page: 3045-3046
+  doi: 10.1093/bioinformatics/btp536
 - type: book
   id: darwin
   author:
