@@ -91,7 +91,7 @@ this is a viable and valuable solution for tryptic peptides, this method
 is simply impossible with the current 9-mer index. The associated lists
 would increase the size of the index beyond usability.
 
-![GO terms related to biological processes found in the marine example data set in Unipept. On the left, a list is shown with the related terms ordered by the numbered of peptides annotated with them. On the right, the relation between the 5 most occuring terms can be zoomed in on. This image is provided by QuickGO [@quickgo].\label{fig:go-terms}](./go-terms.png)
+![GO terms related to biological processes found in the marine example data set in Unipept. On the left, a list is shown with the related terms ordered by the numbered of peptides annotated with them. On the right, the relation between the 5 most occuring terms can be zoomed in on. This graph is provided by QuickGO [@quickgo].\label{fig:go-terms}](./go-terms.png)
 
 Should a practical and meaninful aggregation strategy be found,
 functional annotation would be a great addition to UMGAP, as they would
@@ -108,17 +108,46 @@ functional annotations as detailed above would result in a very useful
 metaproteomics tools, allowing both taxonomic diversity and functional
 activity analyses.
 
-* integratie in desktopapplicatie
-  - ontwikkeling door Pieter
-  - toegankelijker voor biologen
-  - uitdagingen: linken typescript/rust
-  - webassembly is optie, maar waarschijnlijk te traag
+### Integration in Desktop Application
 
-* comparatieve studies
-  - reeds voorzien op primitieve wijze
-  - betere ondersteuning, vooral grafisch
+UMGAP was originally developed separately from the Unipept web
+application because the data set size in metagenomics would make
+network traversal an issue. Even though most other metagenomics tools
+are command line clients as well, a graphical client would most
+likely be appreciated by many users. Now Unipept has a desktop client
+[@verschaffelt2021], UMGAP could be integrated in this client without
+the rest of network issues.
 
-* combinerende studies van meta-omics
-  - samples op verschillende manieren gesequeneerd
-  - gemeenschappelijke conclusies proberen nemen
-  - (we zien een bias tussen 16S en shotgun in metagenomics ook)
+There are several possible approaches to integrate UMGAP in the desktop
+client. One would be to call the command line client from the desktop
+client as a child process. This is possibly the most loose coupling of
+the two programs, and the least work. However, the users would need to
+install both tools themselves, which makes this approach less attractive
+(the main reason for integration being usability).
+
+Secondly, UMGAP could be linked into the desktop client as a native
+library. Some work would be required to make the commands offered by
+UMGAP more generic. For instance, most command currently assume input
+via *standard input* or files, and a library would also need to accept
+input via streams or other data structures. Finding a proper method of
+integrating native libraries in the self-contained and sandboxed desktop
+client might also be a challenge.
+
+Thirdly, because UMGAP was written in Rust, it could be compiled into
+web assembly instead of native code. The resulting library would be more
+easily callable from the desktop client's typescript code, but there
+would likely be a performance impact on UMGAP.
+
+Nevertheless, integration in the desktop client would be an interesting
+avenue. Apart from ease of use, it would also allow more complex
+visualizations on the results of the analysis. For instance, comparative
+studies are supported by the current version of UMGAP, but the results
+can only be viewed as CSV frequency tables. While these can be
+visualized in other software, proper visualizations provided by UMGAP
+(or the desktop client) would be of better quality.
+
+Moreover, should UMGAP be integrated in the metaproteomics desktop
+client, and metatranscriptomics support be extended, the Unipept desktop
+client could become a powerful tool for generalized meta-omics studies,
+in which the three types of study could work together to draw all
+possible information from a single sample.
