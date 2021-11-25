@@ -109,6 +109,8 @@ nucleobase (U) with the adenine nucleobases in the DNA strand, instead
 of a thymine. As such, the resulting RNA polymer is a copy of the
 opposing DNA strand with T replaced by U.
 
+<!-- TODO first transcribed into (only?) mRNA (ask Caroline) -->
+
 ![Free RNA nucleotides are complemented to a template DNA strand, forming a single RNA strand. The formed strand is identical to the coding strand, except thymine (T) is replaced by uracil (U) and the deoxyribose is a ribose. The RNA polymerase performing the splitting and matching is not included in the drawing.](./transcription.svg)
 
 After transcription, the resulting RNA can be translated into yet
@@ -139,6 +141,8 @@ and some DNA segments don't translate to proteins but perform their
 function as RNA.
 
 ## Studying Biopolymers
+
+<!-- TODO Bart: Je hebt beschreven wat het proces van een genomics experiment is, maar het doel van zo'n experiment komt amper of niet aan bod. Zelfde opmerking over proteomics en eigenlijk ook transcriptomics. -->
 
 The complete set of an organism's DNA is called its genome, and studying
 genomes is called genomics. A genomics study traditionally consists
@@ -200,6 +204,17 @@ genomics [@locey;@rappe;@hugenholtz1998;@hoferthemi].
 
 ## Targeted versus Shotgun Metagenomics
 
+<!-- TODO Bart: geen referenties, en ook hier mis ik een beetje het doel. Waarom doen we dit?
+* metagenomics verantwoorden
+* want eiwitten zijn geconserveerder dan coding regions?
+* waarom 16S versus shotgun - wanneer kies je welk (herhaling uit inleiding artikel?)
+  - nadeel 16S: horizontal gene transfer (16S makkelijk overgezet omdat het kort is)
+  - voordeel shotgun: potentieel meer informatie
+  - nadeel shotgun:
+    - bij ons: enkel coding -> eiwitten geconserveerder
+  - voordeel 16S: primers overal dezelfde, dus ook nuttig voor metagenomics
+-->
+
 Early metagenomics methods were based on (partial) 16S ribosomal RNA
 sequences. These short sequences occur in all prokaryote cells, and
 contain both highly conservative (rarely mutating) regions and often
@@ -225,6 +240,8 @@ methods work by comparing DNA properties of reads, such as CG-content
 properties of known genomes.
 
 ## Unipept
+
+<!-- TODO Bart: waarom doen we dit, waarom zou een onderzoeker zijn data in Unipept steken? (beantwoord?) -->
 
 Unipept is a set of tools for biodiversity and functional analysis
 of metaproteomics data sets. It was originally made available as
@@ -283,6 +300,8 @@ proteins in the UniProtKB after it is released. More details on this
 process can be found in section \ref{section:makedatabase}.
 
 ## Metagenomics via Metaproteomics
+
+<!-- TODO Bart: De insteek hiervan lijkt me nog niet helemaal ok. Ik zou er meer de nadruk op leggen dat we, dankzij unipept, een index hebben die tryptische peptiden mapt op taxa en dat de vraag is of we die index ook zouden kunnen hergebruiken voor andere doeleinden. -->
 
 Given the success of Unipept for metaproteomics, could its analyzing
 strategies prove useful for metagenomics as well? By using a gene

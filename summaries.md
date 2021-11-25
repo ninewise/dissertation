@@ -1,5 +1,7 @@
 # Summary {.unnumbered}
 
+<!-- TODO samenvattingen langer maken -->
+
 In shotgun metagenomics, a great number of random DNA fragments, called
 reads, are sequenced from an environmental sample. By identifying which
 organism each read originates from, one can draw conclusions about the
@@ -11,7 +13,14 @@ because there are unknown organisms in the sample. Instead, each read is
 identified as coming from a group of evolutionary more-or-less related
 organisms, called a taxon.
 
-<!-- TODO abundance: gevaarlijk om te zeggen, want sequenering zorgt voor bias in organismes -->
+<!-- TODO abundance: gevaarlijk om te zeggen, want sequenering zorgt voor bias in organismes
+
+https://www.sciencedirect.com/science/article/abs/pii/S1047279716300795?via%3Dihub=
+https://www.nature.com/articles/nature02340?error=cookies_not_supported&code=a8aa23d8-d84e-4838-a33e-742baa31d266
+https://en.wikipedia.org/wiki/Metagenomics#Shotgun_metagenomics
+https://www.nature.com/articles/nbt.3981?error=cookies_not_supported&code=0adb706a-edc1-40f3-87d6-86a236bf111c
+https://elifesciences.org/articles/46923
+-->
 
 In this work, we present the Unipept Metagenomics Analysis Pipeline
 (UMGAP), a set of tools for taxonomic identification of shotgun

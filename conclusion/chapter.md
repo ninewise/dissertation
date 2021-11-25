@@ -1,5 +1,10 @@
 # Conclusion
 
+<!-- TODO Peter: paragraaf omkeren (eerst positief, dan negatief, dan: we hebben nog ideeën...)
+
+titel: conclusions and future work; future work titel schrappen; tussentitels ontnummeren
+-->
+
 In it's current state, UMGAP is unfortunately unable to better all
 similar metagenomics diversity analysis tools. The roundtrip through
 metaproteomics UMGAP makes carries a hit on performance with it, and it

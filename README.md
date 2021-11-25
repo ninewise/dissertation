@@ -1,3 +1,13 @@
+<!-- TODO dingen toevoegen op het titelblad
+- titel
+- auteur
+- supervisors:
+- ...
+bekijken in andere PhD's
+-->
+
+<!-- TODO compileren in book-style -->
+
 #### [summaries](summaries.md){.include}
 
 #### [introduction](introduction/chapter.md){.include}
