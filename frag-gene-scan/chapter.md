@@ -1,18 +1,17 @@
-# FragGeneScanRust
+# FragGeneScanRs
 \label{chapter:fgsrs}
 
-One of the important steps in UMGAP is the translation of DNA reads to
-amino acid sequences via gene prediction. When starting out, the domain
-standard, FragGeneScan, and its faster reimplementation FragGeneScan+
-were used. However, both have their own set of problems. As a masters
-thesis, @degraef forked FragGeneScan+ to FragGeneScan++ to solve a
-number of bugs found in FragGeneScan+. Due to the complex thread model
-and codebase, not all bugs were fixable. Finally, we decided to create
-a brand new implementation of FragGeneScan, called FragGeneScanRs. The
-application note publishing this implementation can be found in this
-chapter.
+FragGeneScanRs is a better and faster Rust implementation of the
+FragGeneScan gene prediction model for short and error-prone reads. Its
+command line interface is backward compatible and adds extra features
+for more flexible usage. Compared to the original C implementation,
+shotgun metagenomic reads are processed up to 22 times faster using a
+single thread, with better scaling for multithreaded execution.[^foot:fgsrs]
 
-<!-- TODO Peter schrapt paragraaf; again why not abstract + cite on first page -->
+[^foot:fgsrs]: This chapter is based on an application note:
+    Felix Van der Jeugt, Peter Dawyndt, Bart Mesuere. *Under review*.
+    "FragGeneScanRs: better and faster gene prediction for short reads."
+    *BMC Bioinformatics*.
 
 #### [frag-gene-scan](main.md){.include}
 

@@ -1,65 +1,25 @@
 # The Unipept Metagenomics Analysis Pipeline {pageheading="UMGAP"}
 \label{chapter:umgap}
 
-<!-- TODO Peter: schrap al dit schrijfwerk en gebruik gewoon de abstract
+Shotgun metagenomics is now commonplace to gain insights into
+communities from diverse environments, but fast, memory-friendly, and
+accurate tools are needed for deep taxonomic analysis of the metagenome
+data. To meet this need we developed UMGAP, a highly versatile open
+source command line tool implemented in Rust for taxonomic profiling of
+shotgun metagenomes. It differs from state-of-the-art tools in its use
+of protein code regions identified in short reads for robust taxonomic
+identifications, a broad-spectrum index that can identify both archaea,
+bacteria, eukaryotes and viruses, a non-monolithic design, and support
+for interactive visualizations of complex biodiversities.[^foot:umgap]
 
-* zeg eerst waarover dit hoofdstuk zal gaan -> gebruik abstract van artikel
-
-* ik zie geen meerwaarde vn dit deel, ik zou gewoon
-  - abstract artikel
-  - cite artikel waarop hoofdstuk gebaseerd is
-  - artikel + suppl materiaal verwerkt tot 1 tekst
-  - extra tabellen als suppl. materiaal
-
-* vermeld publicatie als volledige referentie waarop dit hoofdstuk gebaseerd is
--->
-
-This chapter starts with describing the intent and structure of the
-pipeline (\ref{section:intent}). After, it includes a report on the
-context and results (\ref{section:umgap}). Finally, it provides an
-extensive list of the various tools in the pipeline, explaining their
-usage and some of the algorithms they use (\ref{section:tools}).
-
-## Intent and Structure
-\label{section:intent}
-
-The analysis of shotgun metagenomics data can be subdivided in two
-dimensions. First, as a sequence of individual reads to be analyzed, and
-second, as a sequence of steps each read is analyzed by.
-
-Shotgun metagenomics data is traditionally saved in FASTA and FASTQ
-files. These formats are long sequences of reads, each with a header and
-data. In biodiversity analysis, each of these reads can be processed
-individually. After fully processing individual reads, for final
-aggregation, the reads must be brought together again, for instance to
-create a frequency table. This suggests subdividing the data per read.
-
-This dimension of subdivision gives the opportunity for easy
-parallelization, following a map-reduce strategy. Each
-read can be processed in a separate thread, with little to no
-parallelization overhead. This allows realization of the full power of
-the executing machine.
-
-The other dimension of subdivision, as a sequence of analysis steps,
-allows for better optimization of each step. After all, a program
-given a single task can specialize and can share the cost of a possibly
-slow initialization step over all reads it will process. Parallelization
-is still possible with this subdivision, though less efficient, by
-running each step in a separate process, passing along reads after a
-process has finished its task. However, this manner of subdivision has
-the added benefit of modularity: with analysis steps as a top-level
-concept, steps can easily be added, skipped and exchanged to modify the
-type of analysis.
-
-UMGAP has chosen the second dimension of subdivision as primary
-subdivision. Each analysis step was programmed as a separate subcommand
-of the `umgap` executable, sharing a single source code tree. Each step
-runs in a process, chained together using UNIX pipes, passing the reads
-via standard output and standard input in FASTA-like formats.
+[^foot:umgap]: This chapter is based on the article: Felix Van der
+Jeugt, Rien Maertens, Aranka Steyaert, Pieter Verschaffelt, Caroline
+De Tender, Peter Dawyndt and Bart Mesuere. *Under review*. "UMGAP: the
+Unipept MetaGenomics Analysis Pipeline." *BMC Genomics*.
 
 ## [paper](paper.md){.include}
 
-## Analysis Tools
+## Overview of UMGAP Tools
 \label{section:tools}
 
 A pipeline is composed of a series of command line tools. This section

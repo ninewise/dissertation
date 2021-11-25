@@ -1,21 +1,5 @@
 # Conclusion
 
-<!-- TODO hoeft niet volgens Bart en Peter
-## History of UMGAP
-
-* doorloping
-  - Tryptische peptiden als thesis van Tom
-    - oorsprong boomgebaseerde LCA
-  initieel: puur uitgegaan van metaproteomics strategie; met filterstap beter; dan kmeren
-  - 9-meren als thesis van Stijn
-  - seed-extend met Aranka
-    - oorspronkelijk met scores
-  - benchmark met Niels
-    - start van FGS++
-
-Peter: eventueel iets over Rust, waarom dat comfortable is en er potentieel in zit
--->
-
 In it's current state, UMGAP is unfortunately unable to better all
 similar metagenomics diversity analysis tools. The roundtrip through
 metaproteomics UMGAP makes carries a hit on performance with it, and it
