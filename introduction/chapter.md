@@ -245,7 +245,7 @@ properties of known genomes.
 
 Unipept is a set of tools for biodiversity and functional analysis
 of metaproteomics data sets. It was originally made available as
-a web application with a focus on interactive datavisualizations
+a web application with a focus on interactive data visualizations
 [@mesuere2012;@mesuere2015]. It offers three services.
 
 The tryptic peptide analysis service is used to gather information about
@@ -262,20 +262,21 @@ terms, EC numbers and InterPro entries linked to the matching proteins.
 The metaproteome analysis service applies the tryptic peptide analysis
 to the list of tryptic peptides found in a sample. For each peptide, it
 calculates the lineage-based LCA and the lists of functional annotations
-linked to the matching proteins. The LCA's are visualized in sunbursts,
-treemaps, heatmaps and other interactive visualizations, giving insight
-in the biodiversity of the sample (Figure \ref{fig:unipept:ma}). The
-lists of functional annotations are added together and also reported.
+linked to the matching proteins. The LCAs are visualized in sunbursts,
+tree maps, heat maps and other interactive visualizations, giving
+insight in the biodiversity of the sample (Figure \ref{fig:unipept:ma}).
+The lists of functional annotations are added together and also
+reported.
 
 ![The sunburst visualization of a marine example data set. Clicking on any of the arcs zooms in on the corresponding subset of the taxa.\label{fig:unipept:ma}](unipept-sunburst.svg)
 
 Finally, the peptidome analysis service offers information about the
 complete set of (tryptic) peptides encoded in the proteome of one or
 multiple organisms [@peptidome]. The unique peptide finder is an aid
-for targeted proteomics. It searches for the disjunct sets of tryptic
+for targeted proteomics. It searches for the disjoint sets of tryptic
 peptides that are unique to an single proteome within a list of selected
-proteomes. These disjunct sets can then be used as markers for targeted
-proteomics experiments. The peptidome clusterer, on the other hand,
+proteomes. These disjoint sets can then be used as markers for targeted
+proteomics experiments. The peptidome clustering, on the other hand,
 searches for similarities between the proteomes of, again, a list of
 selected organisms. This makes it a very useful tool to, for instance,
 detect misclassifications in a taxonomy (Figure \ref{fig:unipept:pa}).
@@ -289,10 +290,10 @@ This has allowed for integration in other services such as Galaxy
 [@galaxy] and the development of a command line interface (CLI) for
 power users. Furthermore, the web application was rewritten to be more
 portable, leading to the release of a desktop client [@verschaffelt2021]
-that largely shares the same codebase as the web application.
+that largely shares the same code base as the web application.
 
 Running a service such a Unipept as a web application is only possible
-due to a thoughfully designed database with proper indexing and the
+due to a thoughtfully designed database with proper indexing and the
 caching of relevant data. In fact, the lowest common ancestor of all
 known tryptic peptides and the lists of functional annotations are
 already stored in the database. This is achieved by preprocessing all
