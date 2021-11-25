@@ -122,6 +122,16 @@ every organism.
 
 ![The standard RNA codon table used for translation. Reading a triplet from inside to outside shows the corresponding amino acid, or indicates a stop codon (\*).\label{fig:translation-table}](./translation-table.svg)
 
+The constructed protein performs certain functions before it degrades.
+In this work, we will be using the UniProt Knowledgebase [UniProtKB,
+@magrane] as reference database. UniProt, short for the Universal
+Protein Resource, is a comprehensive resource for protein sequence and
+annotation data. Their UniProtKB contains more than 200 million proteins
+not only annotated with an NCBI taxon identifier, but also linked to EC
+numbers, GO terms en InterPro entries. These point to information on
+functions in respectively the EBI enzyme database [@alcantara], the Gene
+Ontology [@ashburner] and the InterPro database [@blum].
+
 This three-form-two-step process is called the central dogma of
 molecular biology. Most organisms follow these steps, but for instance
 some bacteria blend the transcription and translation into a single step,
@@ -151,8 +161,8 @@ The sequenced reads are mapped onto the reference sequence to form the
 new sequence. When there's no reference genome, *de novo* assembly is
 used. In *de novo* assembly, an attempt is made to form the complete
 genome by overlapping the short reads. As reference, the average fruit
-fly, human and SARS-CoV-2 genomes are respectively 139.991 Mb, 2864.1 Mb
-and 29.882 Kb long,
+fly, human and SARS-CoV-2 genomes are respectively 139.991 Mbp ($10^6$
+base pairs), 2864.1 Mbp and 29882 bp long.
 
 Finally the assembled sequence is annotated. Coding and non-coding
 parts are identified, the genes in the coding parts are predicted, the
@@ -168,12 +178,6 @@ sequence of these segments, called (tryptic) peptides, is then
 determined by for example comparing the measured mass spectrum to a
 set of predicted mass spectra. However, since tryptic peptides do not
 overlap, assembly is not possible.
-
-In this work, we will be using the UniProt Knowledgebase [UniProtKB,
-@magrane] as reference database. UniProt, short for the Universal
-Protein Resource, is a comprehensive resource for protein sequence and
-annotation data. Their UniProtKB contains more than 200 million proteins
-annotated with an NCBI taxon identifier among other properties.
 
 Finally, the set of an organism's RNA is called its transcriptome, and
 the corresponding study is called transcriptomics.
@@ -222,37 +226,61 @@ properties of known genomes.
 
 ## Unipept
 
-Unipept [@mesuere2012;@mesuere2015] is a set of tools for biodiversity
-and functional analysis of metaproteomics data sets. It is based on
-a mapping of tryptic peptides, the most common protein fragment used
-in metaproteomics, onto the smallest taxon grouping all organisms the
-tryptic peptide is found in, called the lowest common ancestor. This
-mapping is created by processing the extensive and diverse list of
-organisms and their proteome found in the UniProtKB.
+Unipept is a set of tools for biodiversity and functional analysis
+of metaproteomics data sets. It was originally made available as
+a web application with a focus on interactive datavisualizations
+[@mesuere2012;@mesuere2015]. It offers three services.
 
-Unipept currently offers three services:
+The tryptic peptide analysis service is used to gather information about
+a single tryptic peptide. It searches for the proteins this peptide
+occurs in and shows the taxonomic lineage for each of there proteins
+in a table (Figure \ref{fig:unipept:tpa}). It also reports a lowest
+common ancestor taxon (LCA) of all these proteins based on this lineage
+table. Finally, since functional annotations were also added to Unipept
+[@gurdeep], the tryptic peptide analysis service also lists the GO
+terms, EC numbers and InterPro entries linked to the matching proteins.
 
-* The **tryptic peptide analysis** service reports to the user the list
-  of all UniProt entries which contain a given tryptic peptide. For each
-  entry, the taxonomic lineage is shown. More recently [@verschaffelt],
-  an overview of the functional annotations on the listed entries was
-  included.
+![The lineage table of some of the proteins in which the tryptic peptide 'ENFVYLAK' occurs. We call the taxon 'Magnoliopsida' the lowest common ancestor associated with the peptide 'ENFVYLAK' because it is the taxon at the lowest named rank (class for this peptide) which is the same in all lineages.\label{fig:unipept:tpa}](./unipept-lineage-table.png)
 
-* The **metaproteome analysis** service applies the tryptic peptide
-  analysis to lists of tryptic peptides, creating reports for a whole
-  metaproteomics sample. It offers visualizations of the taxonomic
-  diversity and functional activity in the sample.
+The metaproteome analysis service applies the tryptic peptide analysis
+to the list of tryptic peptides found in a sample. For each peptide, it
+calculates the lineage-based LCA and the lists of functional annotations
+linked to the matching proteins. The LCA's are visualized in sunbursts,
+treemaps, heatmaps and other interactive visualizations, giving insight
+in the biodiversity of the sample (Figure \ref{fig:unipept:ma}). The
+lists of functional annotations are added together and also reported.
 
-* The peptidome analysis services has a **unique peptide finder**
-  which searches the UniProtKB for tryptic peptides occurring only in a
-  requested set of proteomes. Useful to find the targets for targeted
-  proteomics experiments. Alongside, the same set of proteomes can be
-  placed into a similarity matrix based on their tryptic peptidome with
-  **peptidome clustering**.
+![The sunburst visualization of a marine example data set. Clicking on any of the arcs zooms in on the corresponding subset of the taxa.\label{fig:unipept:ma}](unipept-sunburst.svg)
 
-It offers these services as a web application and API server, the latter
-also accessible via a command line interface and a desktop client
-[@verschaffelt2021].
+Finally, the peptidome analysis service offers information about the
+complete set of (tryptic) peptides encoded in the proteome of one or
+multiple organisms [@peptidome]. The unique peptide finder is an aid
+for targeted proteomics. It searches for the disjunct sets of tryptic
+peptides that are unique to an single proteome within a list of selected
+proteomes. These disjunct sets can then be used as markers for targeted
+proteomics experiments. The peptidome clusterer, on the other hand,
+searches for similarities between the proteomes of, again, a list of
+selected organisms. This makes it a very useful tool to, for instance,
+detect misclassifications in a taxonomy (Figure \ref{fig:unipept:pa}).
+
+TODO add picture of similarity matrix - the web application seems down atm? \label{fig:unipept:pa}
+
+Where Unipept started out as a web application, a platform chosen for
+it's ease of access and user friendliness, it has spread over the years.
+An API was added for machine interactions with Unipept [@unipeptapi].
+This has allowed for integration in other services such as Galaxy
+[@galaxy] and the development of a command line interface (CLI) for
+power users. Furthermore, the web application was rewritten to be more
+portable, leading to the release of a desktop client [@verschaffelt2021]
+that largely shares the same codebase as the web application.
+
+Running a service such a Unipept as a web application is only possible
+due to a thoughfully designed database with proper indexing and the
+caching of relevant data. In fact, the lowest common ancestor of all
+known tryptic peptides and the lists of functional annotations are
+already stored in the database. This is achieved by preprocessing all
+proteins in the UniProtKB after it is released. More details on this
+process can be found in section \ref{section:makedatabase}.
 
 ## Metagenomics via Metaproteomics
 

@@ -1565,6 +1565,93 @@ references:
   volume: 25
   page: 3045-3046
   doi: 10.1093/bioinformatics/btp536
+- type: article-journal
+  id: unipeptapi
+  author:
+  - family: Mesuere
+    given: Bart
+  - family: Willems
+    given: Toon
+  - family: Van der Jeugt
+    given: Felix
+  - family: Devreese
+    given: Bart
+  - family: Vandamme
+    given: Peter
+  - family: Dawyndt
+    given: Peter
+  title: "Unipept web services for metaproteomics analysis"
+  container-title: Bioinformatics
+  issued: 2016
+  volume: 32
+  issue: 11
+  page: 1746-1748
+- type: article-journal
+  id: peptidome
+  author:
+  - family: Mesuere
+    given: Bart
+  - family: Van der Jeugt
+    given: Felix
+  - family: Devreese
+    given: Bart
+  - family: Vandamme
+    given: Peter
+  - family: Dawyndt
+    given: Peter
+  title: "The unique peptidome: taxon-specific tryptic peptides as biomarkers for targeted metaproteomics"
+  container-title: Proteomics
+  issued: 2016
+  volume: 16
+  issue: 17
+  page: 2313-2318
+- type: article-journal
+  id: galaxy
+  author:
+  - family: Afgan
+    given: Enis
+  - family: Baker
+    given: Dannon
+  - family: Batut
+    given: Bérénice
+  - family: van den Beek
+    given: Marius
+  - family: Bouvier
+    given: Dave
+  - family: Čech
+    given: Martin
+  - family: Chilton
+    given: John
+  - family: Clements
+    given: Dave
+  - family: Coraor
+    given: Nate
+  - family: Grüning
+    given: Björn
+  - family: Guerler
+    given: Aysam
+  - family: Hillman-Jackson
+    given: Jennifer
+  - family: Jalili
+    given: Vahid
+  - family: Rasche
+    given: Helena
+  - family: Soranzo
+    given: Nicola
+  - family: Goecks
+    given: Jeremy
+  - family: Taylor
+    given: James
+  - family: Nekrutenko
+    given: Anton
+  - family: Blankenberg
+    given: Daniel
+  title: "The Galaxy platform for accessible, reproducible and collaborative biomedical analyses: 2018 update"
+  container-title: Nucleic Acids Research
+  issued: 2018
+  volume: 46
+  issue: W1
+  page: W537-W544
 - type: book
   id: darwin
   author:

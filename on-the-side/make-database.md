@@ -35,7 +35,7 @@ Figure \ref{fig:makeflow} describes the flow of data from our online
 sources to the final database tables. On the left, independent from the
 rest of the flow, the EC numbers, GO terms and InterPro entries are
 downloaded from respectively the EBI enzyme database [@alcantara], the
-Gene Ontology [@ashburner]and EBI InterPro database [@blum].
+Gene Ontology [@ashburner] and the InterPro database [@blum].
 
 On the right, the flow starts with downloading the NCBI taxonomy
 and process it in the **create taxon tables** function to create
