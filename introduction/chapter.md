@@ -282,7 +282,7 @@ searches for similarities between the proteomes of, again, a list of
 selected organisms. This makes it a very useful tool to, for instance,
 detect misclassifications in a taxonomy (Figure \ref{fig:unipept:pa}).
 
-TODO add picture of similarity matrix - the web application seems down atm? \label{fig:unipept:pa}
+![Peptidome clustering of all 15 *Bacillus anthracis* proteomes and the 3 *Bacillus cereus* reference proteomes of UniProt using the "union" similarity measure.\label{fig:unipept:pa}](unipept-similarity-matrix.png)
 
 Where Unipept started out as a web application, a platform chosen
 for its ease of access and user friendliness, the ecosystem has been
