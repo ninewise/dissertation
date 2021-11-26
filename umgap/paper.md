@@ -747,7 +747,7 @@ i.e. all (paired-end) reads are grouped per OTU from which they were
 extracted/generated. Results are reported in separate tables for one of
 the small datasets we used for parameter tuning (10 OTUs) and one of
 the large MetaBenchmark datasets (1105 OTUs), split into real (963),
-simulated (32) and shuffled (110) OTUs (Table S5 TODO). In what follows,
+simulated (32) and shuffled (110) OTUs (In Addendum). In what follows,
 we discuss some general observations from the in-depth analysis and
 illustrate them with specific use cases.
 

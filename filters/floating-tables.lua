@@ -62,12 +62,18 @@ end
 
 function Table(elem)
 	local result = pandoc.List()
-	result:insert(block('\\begin{table}[ht]\n\\centering\n'))
-	result:insert(block('\\begin{tabular}{@{}' .. alignment(elem.colspecs) .. '@{}}\n\\toprule\n'))
-	result:insert(headers(elem.head))
-	result:extend(contents(elem.bodies))
-	result:insert(block('\\bottomrule\n\\end{tabular}\n'))
-	result:insert(caption(elem.caption))
-	result:insert(block('\\end{table}'))
+	if pandoc.utils.stringify(elem.caption) ~= "" then
+		result:insert(block('\\begin{table}[ht]\n\\centering\n'))
+		result:insert(block('\\begin{tabular}{@{}' .. alignment(elem.colspecs) .. '@{}}\n\\toprule\n'))
+		result:insert(headers(elem.head))
+		result:extend(contents(elem.bodies))
+		result:insert(block('\\bottomrule\n\\end{tabular}\n'))
+		result:insert(caption(elem.caption))
+		result:insert(block('\\end{table}'))
+	else
+		result:insert(pandoc.RawBlock('latex', '\\begin{scriptsize}\n'))
+		result:insert(elem)
+		result:insert(pandoc.RawBlock('latex', '\\end{scriptsize}\n'))
+	end
 	return result
 end

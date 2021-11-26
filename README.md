@@ -1,8 +1,4 @@
 <!-- TODO dingen toevoegen op het titelblad
-- titel
-- auteur
-- supervisors:
-- ...
 bekijken in andere PhD's
 -->
 
@@ -21,3 +17,5 @@ bekijken in andere PhD's
 #### [conclusion](conclusion/chapter.md){.include}
 
 #### [closing](closing.md){.include}
+
+#### [appendix](appendix/chapter.md){.include}
