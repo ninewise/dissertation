@@ -1,3 +1,32 @@
+\begin{titlepage}
+	\centering
+	\includegraphics[width=0.3\textwidth]{logo.pdf}
+
+	\vfill
+
+	{\Huge The Unipept Metagenomics Analysis Pipeline}
+
+	by\par
+	{\large Felix Van der Jeugt}
+
+	Promotors:\par
+	{\large Prof. Dr. Peter Dawyndt\\Dr. Bart Mesuere}
+
+	\vfill
+
+	Thesis submitted to obtain the degree of\\Doctor of Science: Computer Science
+
+	\vfill
+
+	\begin{minipage}[t]{0.49\textwidth}
+	\raggedright
+	\includegraphics[width=3cm]{ugent.pdf}
+	\end{minipage}\hfill\begin{minipage}[b]{0.49\textwidth}
+	\raggedleft
+	Department of Applied Mathematics, Computer Science, and Statistics.
+	\end{minipage}
+\end{titlepage}
+
 <!-- TODO dankwoord
 # Thanks {.unnumbered}
 

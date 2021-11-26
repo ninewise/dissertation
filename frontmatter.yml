@@ -1,10 +1,3 @@
-author:
-- Felix Van der Jeugt
-- Prof. Dr. Peter Dawyndt (promotor)
-- Dr. Bart Mesuere (promotor)
-title: The Unipept Metagenomics Analysis Pipeline
-date: "Thesis submitted to obtain the degree of Doctor of Science: Computer Science"
-institute: Department of Applied Mathematics, Computer Science, and Statistics. Ghent University.
 papersize: A5
 geometry:
 - margin=0.8in
