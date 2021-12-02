@@ -140,20 +140,22 @@ function as RNA.
 
 ## Studying Biopolymers
 
-<!-- TODO Bart: Je hebt beschreven wat het proces van een genomics experiment is, maar het doel van zo'n experiment komt amper of niet aan bod. Zelfde opmerking over proteomics en eigenlijk ook transcriptomics. -->
-
 The complete set of an organism's DNA is called its genome, and studying
-genomes is called genomics. A genomics study traditionally consists
-of three parts: sequencing, assembly and annotation. The first part,
-sequencing, is the conversion of physical DNA molecules into their DNA
-sequence, the order of the nucleotides in the chain. Current machinery
-is incapable of accurately and rapidly sequencing complete molecules.
-The DNA molecules are first split into shorter segments, from which
-reads are sequenced. These reads can vary in length from 25 base
-pairs up to a few 10.000 base pairs, depending on the used sequencing
-technology, with various read error types and rates. The result of
-sequencing is a data set of the DNA sequences of reads, along with some
-metadata such as the quality of a read.
+genomes is called genomics. Genomics aims at a deeper understanding of
+organisms by collecting and annotating all of an organism's genes, and
+studying their interrelations and influence on the organism.
+
+A genomics study traditionally consists of three parts: sequencing,
+assembly and annotation. The first part, sequencing, is the conversion
+of physical DNA molecules into their DNA sequence, the order of the
+nucleotides in the chain. Current machinery is incapable of accurately
+and rapidly sequencing complete molecules. The DNA molecules are first
+split into shorter segments, from which reads are sequenced. These reads
+can vary in length from 25 base pairs up to a few 10.000 base pairs,
+depending on the used sequencing technology, with various read error
+types and rates. The result of sequencing is a data set of the DNA
+sequences of reads, along with some metadata such as the quality of a
+read.
 
 Since the DNA molecules were segmented into reads, the next step is
 assembling the reads again into the complete genome sequence. When the
@@ -174,15 +176,19 @@ a mixture of both.
 
 Similar to a genome, the collection of an organism's proteins is
 called its proteome, with the corresponding study called proteomics.
-Large scale proteomics studies may follow the same pattern as genomics
-studies: the proteins are segmented, often with trypsin. The protein
-sequence of these segments, called (tryptic) peptides, is then
-determined by for example comparing the measured mass spectrum to a
-set of predicted mass spectra. However, since tryptic peptides do not
-overlap, assembly is not possible.
+Since a protein performs a function, studying the proteome of an
+organism provides insight in what this organism can do. Large scale
+proteomics studies may follow the same pattern as genomics studies: the
+proteins are segmented, often with trypsin. The protein sequence of
+these segments, called (tryptic) peptides, is then determined by for
+example comparing the measured mass spectrum to a set of predicted mass
+spectra. However, since tryptic peptides do not overlap, assembly is not
+possible.
 
-Finally, the set of an organism's RNA is called its transcriptome, and
-the corresponding study is called transcriptomics.
+Finally, the set of an organism's RNA transcripts is called its
+transcriptome, and the corresponding study is called transcriptomics.
+The study of a transcriptome provides similar insights to a proteomics
+study.
 
 All of these studies are performed on individual organisms. Studying
 the genomes, proteomes and transcriptomes of all organisms found in
