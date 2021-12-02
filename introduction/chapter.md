@@ -109,8 +109,6 @@ nucleobase (U) with the adenine nucleobases in the DNA strand, instead
 of a thymine. As such, the resulting RNA polymer is a copy of the
 opposing DNA strand with T replaced by U.
 
-<!-- TODO first transcribed into (only?) mRNA (ask Caroline) -->
-
 ![Free RNA nucleotides are complemented to a template DNA strand, forming a single RNA strand. The formed strand is identical to the coding strand, except thymine (T) is replaced by uracil (U) and the deoxyribose is a ribose. The RNA polymerase performing the splitting and matching is not included in the drawing.](./transcription.svg)
 
 After transcription, the resulting RNA can be translated into yet
@@ -196,11 +194,11 @@ cultivated samples, the DNA is extracted directly from environmental
 samples. This has several advantages. First, the cultivation of samples
 takes time. Second, cultivation may skew the relative abundance of
 organisms in the sample. When extracting DNA without cultivation, the
-relative abundance of taxa in the data set is representative for the
-relative abundance of organisms in the sample. This allows comparative
-studies of environments over time or location. Third, many organisms
-cannot currently be cultivated, and as such cannot be sequenced in
-genomics [@locey;@rappe;@hugenholtz1998;@hoferthemi].
+relative abundance of taxa in the data set is more representative
+for the relative abundance of organisms in the sample. This allows
+comparative studies of environments over time or location [@metabias].
+Third, many organisms cannot currently be cultivated, and as such cannot
+be sequenced in genomics [@locey;@rappe;@hugenholtz1998;@hoferthemi].
 
 ## Targeted versus Shotgun Metagenomics
 
@@ -240,8 +238,6 @@ methods work by comparing DNA properties of reads, such as CG-content
 properties of known genomes.
 
 ## Unipept
-
-<!-- TODO Bart: waarom doen we dit, waarom zou een onderzoeker zijn data in Unipept steken? (beantwoord?) -->
 
 Unipept is a set of tools for biodiversity and functional analysis
 of metaproteomics data sets. It was originally made available as

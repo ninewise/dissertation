@@ -1649,6 +1649,28 @@ references:
   volume: 46
   issue: W1
   page: W537-W544
+- type: article-journal
+  id: metabias
+  author:
+  - family: Wesolowska-Andersen
+    given: Agata
+  - family: Bahl
+    given: Martin Iain
+  - family: Carvalho
+    given: Vera
+  - family: Kristiansen
+    given: Karsten
+  - family: Sicheritz-Pontén
+    given: Thomas
+  - family: Gupta
+    given: Ramneek
+  - family: Licht
+    given: Tine Rask
+  title: "Choice of bacterial DNA extraction method from fecal material influences community structure as evaluated by metagenomic analysis"
+  container-title: Microbiome
+  issued: 2014
+  volume: 2
+  page: 19
 - type: book
   id: darwin
   author:
