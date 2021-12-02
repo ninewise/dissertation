@@ -1,18 +1,14 @@
 # Conclusions and Future Work
 
-<!-- TODO Peter: paragraaf omkeren (eerst positief, dan negatief, dan: we hebben nog ideeën...)
-add sentence to lead in the next paragraph
--->
-
-In its current state, UMGAP is unfortunately unable to better all
-similar metagenomics diversity analysis tools. UMGAP's focus on
-coding regions that are processed in protein space carries a hit on
-performance with it, and it enforces an upper limit on sensitivity
-because only coding regions can be matched to a protein database. Still,
-UMGAP's accuracy rivals that of the best tools around and it has a
-hard-to-measure advantage on previously unsequenced genomes because it
-is based on database with a wide spectrum.
-
+In its current state, UMGAP's accuracy rivals that of the best
+metagenomics diversity tools around and it has a hard-to-measure
+advantage on previously unsequenced genomes because it is based on a
+database with a wide spectrum. UMGAP's focus on coding regions that are
+processed in protein space does carry a hit on performance with it, and
+it enforces an upper limit on sensitivity because only coding regions
+can be matched to a protein database, but it did help with robustness
+of the pipeline. Though UMGAP is currently unable to better all similar
+tools, it is still open to some major improvements.
 
 #### Adaptive K-mer Length
 
