@@ -308,10 +308,8 @@ is released. More details on this process can be found in section
 
 ## Metagenomics via Metaproteomics
 
-<!-- TODO Bart: De insteek hiervan lijkt me nog niet helemaal ok. Ik zou er meer de nadruk op leggen dat we, dankzij unipept, een index hebben die tryptische peptiden mapt op taxa en dat de vraag is of we die index ook zouden kunnen hergebruiken voor andere doeleinden. -->
-
-Given the success of Unipept for metaproteomics, could its analyzing
-strategies prove useful for metagenomics as well? By using a gene
+Given the success of Unipept for metaproteomics, could we reuse the
+peptide-to-taxa mapping for metagenomics as well? By using a gene
 predictor, a metagenomics data set can be transformed *in silico* to a
 metaproteomics data set. As metagenomics data sets are of much larger
 volume than metaproteomics data sets, the Unipept index is wrapped in a
@@ -322,9 +320,11 @@ detour through a general purpose metaproteomics database.
 
 In chapter \ref{chapter:umgap}, we describe the complete pipeline
 and evaluate it as an alternative method of metagenomics analysis.
-In chapter \ref{chapter:fgsrs}, we introduce a new implementation of
-FragGeneScan, to be used as an improved gene predictor in the pipeline.
-In chapter \ref{chapter:on-the-side}, we include some of the metawork
-on the pipeline, such as the improved construction of the Unipept (and
-UMGAP) index and a few walkthroughs describing the usage of UMGAP in
-other studies.
+An index operating on fixed-length overlapping peptides is
+introduced as alternative for the tryptic peptide index. In chapter
+\ref{chapter:fgsrs}, we introduce a new implementation of FragGeneScan,
+to be used as an improved gene predictor in the pipeline. In chapter
+\ref{chapter:on-the-side}, we include some of the metawork on the
+pipeline, such as the improved construction of the Unipept (and UMGAP)
+index and a few walkthroughs describing the usage of UMGAP in other
+studies.
