@@ -124,3 +124,11 @@ peptides as biomarkers for targeted metaproteomics." *Proteomics* 16
 Bart Mesuere, Toon Willems, **Felix Van der Jeugt**, Bart Devreese,
 Peter Vandamme and Peter Dawyndt. 2016. "Unipept web services for
 metaproteomics analysis." *Bioinformatics* 32 (11): 1746-1748.
+
+<!-- TODO overzicht van software artefacten
+- naam
+- repo link
+- description
+- umgap, fgsrs/fgs++, makedatabase, spede, smap, ...?
+als kapstok voor samenvattingen
+-->

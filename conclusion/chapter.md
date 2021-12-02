@@ -49,7 +49,12 @@ solution for overrepresentation in the UniProtKB. Organisms with a lot
 of recorded genomes tend to occur randomly in completely unrelated
 samples.
 
-<!-- TODO Peter: fungal diversity - why would this be interesting? -->
+<!-- TODO Peter: fungal diversity - why would this be interesting?
+- fungal niet specifiek bij plaatsen
+- opsplitsing paragraaf virussen, paragraaf algemene problemen
+  - algemeen, minder geannoteerd
+  - biased
+-->
 
 #### Functional Annotations
 
