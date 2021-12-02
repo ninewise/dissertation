@@ -33,28 +33,29 @@ when analysing unknown samples, in most studies there is preliminary
 knowledge about the sample or an interest in only some aspects of the
 sample. Constructing an index from the relevant data would not only
 result in a more specific index, but the index would also be smaller and
-as such the analysis would be faster. Of course, one should remain wary
-of the bias implicit in such an index: some peptides that would match
-only with specific organisms in such a database might occur in many
-other organisms not included.
+as such the analysis would be faster.
 
-Such targeted index files would especially be useful for studies on
-samples taken to analyse viral or fungal diversity. Both are strongly
-underrepresented in the UniProtKB. Viral genomes in particular are often
+Of course, one should remain wary of the bias implicit in such an
+index: some peptides that would match only with specific organisms in
+such a database might occur in many other organisms not included. On
+the other hand, a bias is also present in a general purpose database
+such as the UniProtKB. At the moment of writing, it contains 152M
+bacterial entries, 50M eukaryote entries, but only 6M Archaea and 5M
+viral entries. Furthermore, general purpose databases as large as
+the UniProtKB inherently suffer in the quality of the annotations. A
+smaller, targeted but properly curated database may serve better.
+
+Such targeted index files would especially be useful for studies
+on samples taken to analyse viral diversity. Not only are these
+underrepresented in the UniProtKB, (partial) viral genomes are often
 included in assemblies of their host genomes, resulting in at best a
 'root' identification for the whole genome (if the viral genome is also
 included in UniProtKB separately) or a completely wrong identification
-(if it isn't). Similarly, targeted index files could also provide a
-solution for overrepresentation in the UniProtKB. Organisms with a lot
-of recorded genomes tend to occur randomly in completely unrelated
-samples.
+(if it isn't).
 
-<!-- TODO Peter: fungal diversity - why would this be interesting?
-- fungal niet specifiek bij plaatsen
-- opsplitsing paragraaf virussen, paragraaf algemene problemen
-  - algemeen, minder geannoteerd
-  - biased
--->
+Similarly, targeted index files could also provide a solution for
+overrepresentation in the UniProtKB. Organisms with a lot of recorded
+genomes tend to occur randomly in completely unrelated samples.
 
 #### Functional Annotations
 
@@ -82,9 +83,9 @@ is simply impossible with the current 9-mer index. The associated lists
 would increase the size of the index beyond what could practically be
 stored and processed within a realistic time frame.
 
-![GO terms related to biological processes found in the marine example data set in Unipept. On the left, a list is shown with the related terms ordered by the numbered of peptides annotated with them. On the right, the relation between the 5 most occuring terms can be zoomed in on. This graph is provided by QuickGO [@quickgo].\label{fig:go-terms}](./go-terms.png)
+![GO terms related to biological processes found in the marine example data set in Unipept. On the left, a list is shown with the related terms ordered by the numbered of peptides annotated with them. On the right, the relation between the 5 most occurring terms can be zoomed in on. This graph is provided by QuickGO [@quickgo].\label{fig:go-terms}](./go-terms.png)
 
-Should a practical and meaninful aggregation strategy be found,
+Should a practical and meaningful aggregation strategy be found,
 functional annotation would be a great addition to UMGAP, as it would
 allow exploring the functional potential of a metagenomics sample.
 
@@ -93,7 +94,7 @@ allow exploring the functional potential of a metagenomics sample.
 As shown in section \ref{section:transcript}, by removing the gene
 prediction step from UMGAP, it can be applied to metatranscriptomics
 data sets. Experimentation shows this modified UMGAP is a potential
-metaproteomics analysis tool, but further finetuning and benchmarking
+metaproteomics analysis tool, but further fine tuning and benchmarking
 studies are in order. Combining such an extension with functional
 annotations as detailed above would result in a very useful
 metaproteomics tool, allowing both taxonomic and functional analyses.
@@ -101,7 +102,7 @@ metaproteomics tool, allowing both taxonomic and functional analyses.
 #### Integration in Desktop Application
 
 UMGAP was originally developed separately from the Unipept web
-application because the sizo of data sets in metagenomics would make
+application because the size of data sets in metagenomics would make
 network traversal an issue. Even though most other metagenomics tools
 are command line clients as well, a graphical client would most
 likely be appreciated by many users. Now Unipept has a desktop client
