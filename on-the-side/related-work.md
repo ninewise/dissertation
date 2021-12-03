@@ -30,7 +30,7 @@ Research Institute for agriculture, fisheries and food (ILVO) with
 the students on invitation of Tom Ruttink and Dries Schaumont. They
 introduced our students to the SMAP project. In 2020, we partnered
 with ourselves as the Unipept team, and had the students work on
-the FragGeneScan project, the results of which leaded to Chapter
+the FragGeneScan project, the results of which lead to Chapter
 \ref{chapter:fgsrs}. In 2021, we once more joined up with Tom and Dries
 on the SMAP project.
 
