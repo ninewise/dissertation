@@ -76,6 +76,70 @@ bestaande implementaties bleken onvoldoende snel voor onze toepassing,
 en bevatten een aantal fouten. FragGeneScanRs lost deze problemen op en
 werkt tot 20 maal sneller.
 
+# Software Repositories {.unnumbered}
+
+The focus of this PhD was the development of bioinformatics software
+tools. While this dissertation decribes those tools and the results of
+their application, no text can better describe software than the code
+by which it is defined. As all tools contributed to are (to be) freely
+available and open source, you may find a list of the relevant software
+repositories below.
+
+UMGAP
+  ~ https://github.com/unipept/umgap
+
+    The Unipept Metagenomics Analysis Pipeline is the main focus of
+    this dissertation. It is a collection of tools to be composed into
+    an taxonomic classifier for shotgun metagenomics reads. Given the
+    DNA found in an environment sample, it explores the organisms found
+    using frequency tables and interactive visualizations.
+
+Unipept's Database Creation
+  ~ https://github.com/unipept/make-database
+
+    Both the Unipept metaproteomics and metagenomics pipelines operate
+    on data found in UniProt's database. This collections of scripts
+    downloads and processes that database, and others, into the actual
+    database tables and indices used by Unipept.
+
+FragGeneScan++
+  ~ https://github.com/unipept/FragGeneScanPlusPlus
+
+    FragGeneScan++ is our fork of the FragGeneScan-Plus project,
+    which is a scalable high-throughput short-read gene predictor.
+    Since FragGeneScan-Plus was no longer maintained, we took over
+    maintainance and fixed a series of bugs. Note that FragGeneScan++
+    has since been replaced by FragGeneScanRs.
+
+FragGeneScanRs
+  ~ https://github.com/unipept/FragGeneScanRs
+
+    An better and faster implementation of the FragGeneScan gene
+    prediction model for short and error-prone reads. It is a *de facto*
+    replacement of both FragGeneScan and FragGeneScan-Plus.
+
+SPeDE
+  ~ https://github.com/LM-UGent/SPeDE
+
+    Contributions were made to the Spectral Dereplication tool by the
+    microbiology lab of Ghent University. SPeDE is a program used to
+    dereplicate large sets of MALDI-TOF MS spectra.
+
+SMAP
+  ~ https://gitlab.com/truttink/smap
+
+    SMAP is an analysis tool for stack-based NGS read mapping. It
+    has several components, including read distribution analysis,
+    comparison between two samples sets, and delineation of haplotypes.
+    Contributions were made to the SMAP haplotype tool.
+
+SMAP-Haplotype-Window
+  ~ https://gitlab.com/dschaumont/smap-haplotype-window (to be published)
+
+    SMAP-Haplotype-Window is a plugin for SMAP that allows for the
+    analysis of sequencing data from CRISPR edited loci. The software
+    was analyzed and advice on the development was given.
+
 # List of Publications {.unnumbered}
 
 **Felix Van der Jeugt**, Peter Dawyndt, Bart Mesuere. *Under review*.
@@ -124,11 +188,3 @@ peptides as biomarkers for targeted metaproteomics." *Proteomics* 16
 Bart Mesuere, Toon Willems, **Felix Van der Jeugt**, Bart Devreese,
 Peter Vandamme and Peter Dawyndt. 2016. "Unipept web services for
 metaproteomics analysis." *Bioinformatics* 32 (11): 1746-1748.
-
-<!-- TODO overzicht van software artefacten
-- naam
-- repo link
-- description
-- umgap, fgsrs/fgs++, makedatabase, spede, smap, ...?
-als kapstok voor samenvattingen
--->
