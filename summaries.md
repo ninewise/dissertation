@@ -54,7 +54,7 @@ runs up to 22 times faster.
 [sum-fgsrs]: https://github.com/unipept/FragGeneScanRs
 [sum-fgs++]: https://github.com/unipept/FragGeneScanPlusPlus
 
-Both the UMGAP and the original Unipept application (The Unipept
+Both UMGAP and the original Unipept application (The Unipept
 Metaproteomics Analysis Pipeline, or UMPAP) are, at their core,
 a mapping of peptides onto taxa. This mapping is processed
 from the UniProtKB, a large database of annotated proteins. In
@@ -75,27 +75,43 @@ made to the [SPeDE][sum-spede] and [SMAP][sum-smap] projects.
 
 # Samenvatting {.unnumbered}
 
-<!-- TODO translate english summary -->
+Elk organisme draagt zijn volledige genetische code, het genoom,
+opgeslagen in DNA in zijn cellen. DNA wordt overgeschreven naar RNA
+in een proces genaamd transcriptie, wat op zijn beurt vertaald wordt
+naar eiwitten in een proces genaamd translatie. Die eiwitten voeren
+vervolgende functies uit voor het organisme. De volledige verzameling
+aan potentieel overgeschreven RNA noemt met het transcriptoom van
+een organisme, de volledige verzameling aan potentieel vertaalde
+eiwitten het proteoom. Wanneer studies gemaakt worden van de genomen,
+transcriptomen en proteomen van meerdere organismen tesamen, noemt
+men dit metagenomics, metatranscriptomics en metaproteomics. Dit
+proefschrift beschrijft de ontwikkeling en de resultaten van enkele
+bioinformaticatools ontworpen om te helpen met zulke studies.
 
 Bij *shotgun metagenomics* worden een groot aantal willekeurige
 stukjes DNA uitgelezen uit een omgevingsstaal. Door voor elk van deze
 stukjes, *reads* genaamd, te bepalen uit welk organisme ze afkomstig
 zijn, kan men conclusies trekken over de aanwezige organismen in het
 omgevingsstaal. Vaak zijn *reads* echter te kort om een specifiek
-organisme aan te duiden, omdat ze voorkomen in het DNA van een hele
-groep aan evolutionair min-of-meer verwante organismen, genaamd een
-taxon.
+organisme aan te duiden, omdat ze voorkomen in het DNA van meerdere
+organismen. Mogelijks zijn *reads* zelfs niet terug te vinden in enig
+gekend organisme. Daarom wordt elke *read* geïdentificeerd als komende
+uit een hele groep aan evolutionair min-of-meer verwante organismen,
+genaamd een taxon.
 
-In dit werk stellen we de *Unipept Metagenomics Analysis Pipeline*
-(UMGAP) voor, een suite van programma's voor taxonomische identificatie
-van *shotgun metagenomics reads*. Met de UMGAP zoeken we uit of
-taxonomische identificatie van DNA ook kan gebeuren aan de hand van de
-eiwitten die DNA codeert. In tegenstelling tot de meeste gelijkaardige
-programma's, die *DNA reads* rechtstreeks proberen te identificeren, zal
-de UMGAP eerst proberen te voorspellen welk (gedeeltelijk) eiwit een
-*DNA read* codeert en vervolgens dat eiwit (-fragment) opzoeken in een
-algemene eiwitdatabank. Deze extra stap voegt robuustheid toe aan het
-process (eiwitten zijn evolutionair meer geconserveerd DNA).
+De *Unipept Metagenomics Analysis Pipeline* ([UMGAP][sam-umgap]),
+omschreven in hoofdstuk \ref{chapter:umgap} is een suite van programma's
+voor taxonomische identificatie van *shotgun metagenomics reads*. Met
+de UMGAP zoeken we uit of taxonomische identificatie van DNA ook kan
+gebeuren aan de hand van de eiwitten die DNA codeert. In tegenstelling
+tot de meeste gelijkaardige programma's, die *DNA reads* rechtstreeks
+proberen te identificeren, zal de UMGAP eerst proberen te voorspellen
+welk (gedeeltelijk) eiwit een *DNA read* codeert en vervolgens dat
+eiwitfragment opzoeken in een algemene eiwitdatabank. Deze extra stap
+voegt robuustheid toe aan het process (eiwitten zijn evolutionair meer
+geconserveerd DNA).
+
+[sam-umgap]: https://github.com/unipept/umgap
 
 De UMGAP blijkt een waardig alternatief te vormen voor reeds
 bestaande programma's, al kan het niet van allen de snelheid en
@@ -105,13 +121,37 @@ functies de organismen in het omgevingsstaal vervullen) en
 metatranscriptomics (waar we vertrekken vanaf *RNA reads* in plaats van
 *DNA reads*).
 
-Naast de ontwikkeling van de UMGAP wordt ook een alternatieve Rust
-implementatie van FragGeneScan, genaamd FragGeneScanRs, voorgesteld.
-Dit programma vervult een belangrijke rol in de UMGAP, namelijk het
-voorspellen van eiwitten (of genfragmenten) uit *DNA reads*. De
-bestaande implementaties bleken onvoldoende snel voor onze toepassing,
-en bevatten een aantal fouten. FragGeneScanRs lost deze problemen op en
-werkt tot 20 maal sneller.
+Als deel van de ontwikkeling van de UMGAP wordt ook een
+alternatieve Rust implementatie van FragGeneScan, genaamd
+[FragGeneScanRs][sam-fgsrs], voorgesteld. Dit programma vervult een
+belangrijke rol in de UMGAP, namelijk het voorspellen van eiwitten
+(of genfragmenten) uit *DNA reads*. De bestaande implementatie bleken
+onvoldoende snel voor onze toepassing. Het meest gebruikte alternatief,
+FragGeneScan-Plus, hetwelke we gedeeltelijk verbeterden in een kopie
+genaamd [FragGeneScan-PlusPlus][sam-fgs++], bevat een aantal moeilijk
+op-te-lossen fouten in de parallelizatie.FragGeneScanRs lost deze
+problemen op en werkt tot 22 maal sneller.
+
+[sam-fgsrs]: https://github.com/unipept/FragGeneScanRs
+[sam-fgs++]: https://github.com/unipept/FragGeneScanPlusPlus
+
+De UMGAP en de oorspronkelijke Unipept applicatie (de *Unipept
+Metaproteomics Analysis Pipeline*, of UMPAP) steunen beide op een
+omzetting van eiwitfragmenten op taxa. Deze omzetting wordt berekend uit
+de UniprotKB, een grote databank van geannoteerde eiwitten. In hoofdstuk
+\ref{chapter:on-the-side} omschrijven we het [proces][sam-database]
+dat de UniProtKB inleest en de Unipept databanktabellen opstelt. Om de
+eiwitfragment-naar-taxonomzetting op te stellen, verzamelt het de taxa
+waarmee alle eiwitten waarin elk eiwitfragment voorkomt in de UniProtKB.
+Het aggregeert deze lijsten tot een enkel taxon per eiwitfragment via
+een *lowest common ancestor*-method: het taxon dat alle taxa uit die
+lijst omvat. Hoofdstuk \ref{chapter:on-the-side} omschrijft verder ook
+nog bijdragen aan de [SPeDE][sam-spede] en [SMAP][sam-smap] projecten.
+
+[sam-database]: https://github.com/unipept/make-database
+[sam-spede]: https://github.com/LM-UGent/SPeDE
+[sam-smap]: https://gitlab.com/truttink/smap
+[sam-smap2]: https://gitlab.com/dschaumont/smap-haplotype-window
 
 # Software Repositories {.unnumbered}
 
