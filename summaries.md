@@ -1,6 +1,14 @@
 # Summary {.unnumbered}
 
-<!-- TODO samenvattingen langer maken -->
+Each organism carries its complete genetic code, the genome, in the form
+of DNA in their cells. To perform functions, the DNA is transcribed to
+RNA, which is translated into proteins. The complete set of potentially
+transcribed RNA is called the transcriptome, and the complete set of
+potentially expressed proteins is called the proteome. When studies
+are performed on the genomes, transcriptomes and proteomes of multiple
+organisms at once, they are called metagenomics, transcriptomics and
+proteomics. This dissertation describes the development and results of
+several bioinformatics tools to help with meta-omics.
 
 In shotgun metagenomics, a great number of random DNA fragments, called
 reads, are sequenced from an environmental sample. By identifying which
@@ -13,16 +21,18 @@ DNA or sequencing errors in the read; or just because there are unknown
 organisms in the sample. Instead, each read is identified as coming from
 a group of evolutionary more-or-less related organisms, called a taxon.
 
-In this work, we present the Unipept Metagenomics Analysis Pipeline
-(UMGAP), a set of tools for taxonomic identification of shotgun
-metagenomics reads. With UMGAP, we explore the possibility of performing
-taxonomic identifications of DNA reads using the proteins this DNA
-encodes. Unlike most taxonomic identification tools, which map DNA
-reads directly to taxa, UMGAP will first predict which (partial)
-protein is encoded in a DNA read and map this protein on a taxon using
-a general purpose protein database. This detour adds robustness to
-the identification process, as proteins are more conserved than the
-underlying DNA.
+The Unipept Metagenomics Analysis Pipeline ([UMGAP][sum-umgap]),
+described in chapter \ref{chapter:umgap} is a set of tools for taxonomic
+identification of shotgun metagenomics reads. With UMGAP, we explore the
+possibility of performing taxonomic identifications of DNA reads using
+the proteins this DNA encodes. Unlike most taxonomic identification
+tools, which map DNA reads directly to taxa, UMGAP will first predict
+which (partial) protein (or peptide) is encoded in a DNA read and map
+this peptide on a taxon using a general purpose protein database. This
+detour adds robustness to the identification process, as proteins are
+more conserved than the underlying DNA.
+
+[sum-umgap]: https://github.com/unipept/umgap
 
 UMGAP turns out to be a valid alternative for existing metagenomics
 identification tools, though it cannot equal the speed and accuracy
@@ -30,15 +40,42 @@ of all. The pipeline does offer interesting avenues towards
 functional analysis (what organisms are doing in the sample) and
 metatranscriptomics (analyzing RNA reads instead of DNA reads).
 
-As part of the development of UMGAP, we also introduce an alternative
-implementation for FragGeneScan in Rust, called FragGeneScanRs.
+As part of the development of UMGAP, we also introduce an
+alternative implementation for FragGeneScan in Rust, called
+[FragGeneScanRs][sum-fgsrs], in chapter \ref{chapter:fgsrs}.
 FragGeneScan plays an important role in UMGAP: prediction of
 proteins (or gene fragments) from DNA reads. However, the existing
-implementation, nor any of the available alternatives, proved
-sufficiently fast for our applications and contained a number of bugs.
-FragGeneScanRs fixes these bugs and runs up to 20 times faster.
+implementation proved to be insufficiently fast. The primary
+alternative, FragGeneScan-Plus, which we forked and partially debugged
+as [FragGeneScanPlusPlus][sum-fgs++], is faster but contains a number of
+hard-to-solve parallelization bugs. FragGeneScanRs fixes these bugs and
+runs up to 22 times faster.
+
+[sum-fgsrs]: https://github.com/unipept/FragGeneScanRs
+[sum-fgs++]: https://github.com/unipept/FragGeneScanPlusPlus
+
+Both the UMGAP and the original Unipept application (The Unipept
+Metaproteomics Analysis Pipeline, or UMPAP) are, at their core,
+a mapping of peptides onto taxa. This mapping is processed
+from the UniProtKB, a large database of annotated proteins. In
+chapter \ref{chapter:on-the-side}, we describe the [Database
+creation][sum-database] repository. This repository contains the code to
+parse the UniProtKB and compose the Unipept database tables. To create
+the peptide-taxon mapping, it gathers for each peptide occurring in
+the UniProtKB the taxa the proteins in which it occurs are annotated
+with. It aggregates these taxa using a lowest common ancestor method,
+resulting in a single taxon per peptide which contains all taxa in the
+list. Chapter \ref{chapter:on-the-side} also describes the contributions
+made to the [SPeDE][sum-spede] and [SMAP][sum-smap] projects.
+
+[sum-database]: https://github.com/unipept/make-database
+[sum-spede]: https://github.com/LM-UGent/SPeDE
+[sum-smap]: https://gitlab.com/truttink/smap
+[sum-smap2]: https://gitlab.com/dschaumont/smap-haplotype-window
 
 # Samenvatting {.unnumbered}
+
+<!-- TODO translate english summary -->
 
 Bij *shotgun metagenomics* worden een groot aantal willekeurige
 stukjes DNA uitgelezen uit een omgevingsstaal. Door voor elk van deze
