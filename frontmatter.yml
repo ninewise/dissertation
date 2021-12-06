@@ -1,8 +1,6 @@
 papersize: A5
 geometry:
 - margin=0.8in
-classoption:
-- oneside
 documentclass: book
 numbersections: true
 secnumdepth: 2
