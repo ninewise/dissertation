@@ -2,7 +2,7 @@
 bekijken in andere PhD's
 -->
 
-<!-- TODO compileren in book-style -->
+<!-- TODO fix headers above unnumbered chapters -->
 
 #### [summaries](summaries.md){.include}
 

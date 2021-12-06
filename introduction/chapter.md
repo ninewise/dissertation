@@ -208,40 +208,47 @@ be sequenced in genomics [@locey;@rappe;@hugenholtz1998;@hoferthemi].
 
 ## Targeted versus Shotgun Metagenomics
 
-<!-- TODO Bart: geen referenties, en ook hier mis ik een beetje het doel. Waarom doen we dit?
-* metagenomics verantwoorden
-* want eiwitten zijn geconserveerder dan coding regions?
-* waarom 16S versus shotgun - wanneer kies je welk (herhaling uit inleiding artikel?)
-  - nadeel 16S: horizontal gene transfer (16S makkelijk overgezet omdat het kort is)
-  - voordeel shotgun: potentieel meer informatie
-  - nadeel shotgun:
-    - bij ons: enkel coding -> eiwitten geconserveerder
-  - voordeel 16S: primers overal dezelfde, dus ook nuttig voor metagenomics
--->
-
 Early metagenomics methods were based on (partial) 16S ribosomal RNA
-sequences. These short sequences occur in all prokaryote cells, and
-contain both highly conservative (rarely mutating) regions and often
-mutating regions. The conserved regions can be used as primers (markers)
-to sequence the 16S rRNA. While this serves to identify prokaryote
-species in a sample, it does not help to assemble complete genomes, nor
-does this work on eukaryotes.
+sequences [@phylogeny16s]. These short sequences occur in all prokaryote
+cells, and contain both highly conservative (rarely mutating) regions
+and often mutating regions. The conserved regions can be used as
+primers (markers) to sequence the 16S rRNA. The mutating regions in
+between the primers can than be used to differentiate between organisms
+[@primers16s]. While this makes a powerful tool to identify prokaryote
+species in a sample and build phylogenetic trees of these organisms,
+it does not help to assemble complete genomes, nor does this work on
+eukaryotes. Furthermore, the short 16S sequence can be subjected to
+horizontal gene transfer, which makes it less reliable as identifying
+sequence [@horizontal16S].
 
-The more recent shotgun metagenomics, on the other hand, uses sequencers
-yielding randomly located short reads from the complete environmental
-sample. To provide sufficiently complete coverage to allow assembly
-of all organisms in the sample, much larger data sets are required
-compared to genomics (3.3 million genes from 567.7 Gbp sequence data
-for the human gut microbiome gene catalog). The amount of data and the
-repetitions of DNA within and between (allowing the incorrect assembly
-of chimeras) organisms make assembly a hard problem to solve.
+The more recent shotgun metagenomics [@quince], on the other hand,
+uses non-targeted sequencers yielding randomly located short reads
+from all genomes in the complete environmental sample. Because reads
+from the complete genome are sequenced, shotgun metagenomics allow not
+only profiling of the taxonomic composition, but also the functional
+potential.
 
-To simplify assembly, reads are partitioned and assigned to an individual
-genome. This process is called binning. Afterwards, each bin can be
-assembled as if the reads resulted from a genomics sample. Most binning
-methods work by comparing DNA properties of reads, such as CG-content
-(the ratio of C- or G-nucleotides to A- and T- nucleotides), to the
-properties of known genomes.
+The taxonomic profiling of shotgun metagenomics data
+is approached from two angles. First, the reads are
+assembled into larger contigs, which are then profiled
+[@peng2011;@namiki;@peng2012;@simpson;@boisvert;@pell]. To provide
+sufficiently complete coverage to allow assembly of all organisms in the
+sample, much larger data sets are required compared to genomics (3.3
+million genes from 567.7 Gbp sequence data for the human gut microbiome
+gene catalog). The amount of data and the repetitions of DNA within and
+between (allowing the incorrect assembly of chimeras) organisms make
+assembly a hard problem to solve.
+
+Alternatively, the reads are individually partitioned and assigned to
+an individual genome [@huson;@brady;@wood2014]. This process is called
+binning. By directly classifying the reads, assembly problems are
+avoided, less computations are required, and low-abundance organisms
+that cannot be assembled *de novo* can still be profiled [@quince].
+Afterwards binning, each bin can still be assembled as if the reads
+resulted from a genomics sample. Most binning methods work by comparing
+DNA properties of reads, such as CG-content (the ratio of C- or
+G-nucleotides to A- and T- nucleotides), to the properties of known
+genomes.
 
 ## Unipept
 

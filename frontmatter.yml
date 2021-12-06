@@ -1672,6 +1672,23 @@ references:
   issued: 2014
   volume: 2
   page: 19
+- type: article-journal
+  id: primers16s
+  author:
+  - family: Weisburg
+    given: W.G.
+  - family: Barns
+    given: S.M.
+  - family: Pelletier
+    given: D.A.
+  - family: Lane
+    given: D.J.
+  title: "16S ribosomal DNA amplification for phylogenetic study"
+  container-title: Journal of Bacteriology"
+  issued: 1991
+  volume: 173
+  issue: 2
+  page: 697-703
 - type: book
   id: darwin
   author:
@@ -1852,6 +1869,38 @@ references:
   publisher: Springer
   event-place: Berlin, Heidelberg
   doi: 10.1007/3-540-44674-5_18
+- type: paper-conference
+  id: phylogeny16s
+  author:
+  - family: Woese
+    given: C.R.
+  - family: Fox
+    given: G.E.
+  title: "Phylogenetic structure of the prokaryotic domain: the primary kingdoms."
+  event: National Academy of Sciences of the United States of America
+  issued: 1977
+  event-date: 1977
+  volume: 74
+  issue: 11
+  page: 5088-5090
+  doi: 10.1073/pnas.74.11.5088
+- type: paper-conference
+  id: horizontal16S
+  author:
+  - family: Kitahara
+    given: Kei
+  - family: Yasutake
+    given: Yoshiaki
+  - family: Miyazaki
+    given: Kentaro
+  title: "Mutational robustness of 16S ribosomal RNA, shown by experimental horizontal gene transfer in Escherichia coli"
+  event: National Academy of Sciences of the United States of America
+  issued: 2012
+  event-date: 2012
+  volume: 109
+  issue: 47
+  doi: 10.1073/pnas.1213609109
+  page: 19220-19225
 - type: post-weblog
   id: gallant
   author:
