@@ -6,9 +6,9 @@ RNA, which is translated into proteins. The complete set of potentially
 transcribed RNA is called the transcriptome, and the complete set of
 potentially expressed proteins is called the proteome. When studies
 are performed on the genomes, transcriptomes and proteomes of multiple
-organisms at once, they are called metagenomics, transcriptomics and
-proteomics. This dissertation describes the development and results of
-several bioinformatics tools to help with meta-omics.
+organisms at once, they are called metagenomics, metatranscriptomics and
+metaproteomics. This dissertation describes the development and results
+of several bioinformatics tools to help with such studies.
 
 In shotgun metagenomics, a great number of random DNA fragments, called
 reads, are sequenced from an environmental sample. By identifying which
