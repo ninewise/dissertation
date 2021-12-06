@@ -19,6 +19,9 @@ header-includes:
 - \hyphenation{e-men-ded}
 - \hyphenation{me-thyl-o-vo-rus}
 - \hyphenation{Uni-Prot-KB}
+- \hyphenation{Frag-Gene-Scan-Rs}
+- \hyphenation{Frag-Gene-Scan-Plus-Plus}
+- \hyphenation{UM-GAP}
 include-before: |
   #### [opening](opening.md){.include}
 colorlinks: true
