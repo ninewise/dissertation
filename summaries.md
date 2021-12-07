@@ -79,6 +79,8 @@ projects.
 # Summary (Dutch) {.unnumbered}
 
 ::: {lang=nl}
+\hyphenation{Frag-Gene-Scan-Rs}
+
 Elk organisme draagt zijn volledige genetische code (het genoom) in
 zijn cellen, opgeslagen als DNA. DNA wordt overgeschreven naar RNA
 in een proces genaamd transcriptie, wat op zijn beurt vertaald wordt
@@ -178,7 +180,9 @@ UMGAP
     frequency tables and interactive visualizations.
 
 Unipept's Database Creation
-  ~ https://github.com/unipept/make-database
+  ~ &nbsp;
+  
+    https://github.com/unipept/make-database
 
     Both the Unipept metaproteomics and metagenomics pipelines operate
     on data found in UniProt's database. This collections of scripts
@@ -186,7 +190,9 @@ Unipept's Database Creation
     database tables and indices used by Unipept.
 
 FragGeneScan++
-  ~ https://github.com/unipept/FragGeneScanPlusPlus
+  ~ &nbsp;
+  
+    https://github.com/unipept/FragGeneScanPlusPlus
 
     FragGeneScan++ is our fork of the FragGeneScan-Plus project, a
     scalable high-throughput short-read gene predictor implemented in

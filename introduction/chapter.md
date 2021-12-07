@@ -206,7 +206,7 @@ comparative studies of environments over time or location [@metabias].
 Third, many organisms cannot currently be cultivated, and as such cannot
 be sequenced in genomics [@locey;@rappe;@hugenholtz1998;@hoferthemi].
 
-## Targeted versus Shotgun Metagenomics
+## Targeted and Shotgun Metagenomics
 
 Early sequencing methods for metagenomics methods were based on
 (partial) 16S ribosomal RNA sequences [@phylogeny16s]. These short
