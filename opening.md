@@ -6,8 +6,11 @@
 
 	{\Huge The Unipept Metagenomics Analysis Pipeline}
 
-	by\par
+	\vfill
+
 	{\large Felix Van der Jeugt}
+
+	\vfill
 
 	Promotors:\par
 	{\large Prof. Dr. Peter Dawyndt\\Dr. Bart Mesuere}
@@ -18,10 +21,10 @@
 
 	\vfill
 
-	\begin{minipage}[t]{0.49\textwidth}
+	\begin{minipage}[t]{0.39\textwidth}
 	\raggedright
 	\includegraphics[width=3cm]{ugent.pdf}
-	\end{minipage}\hfill\begin{minipage}[b]{0.49\textwidth}
+	\end{minipage}\hfill\begin{minipage}[b]{0.59\textwidth}
 	\raggedleft
 	Department of Applied Mathematics, Computer Science, and Statistics.
 	\end{minipage}

@@ -208,21 +208,21 @@ be sequenced in genomics [@locey;@rappe;@hugenholtz1998;@hoferthemi].
 
 ## Targeted versus Shotgun Metagenomics
 
-Early metagenomics methods were based on (partial) 16S ribosomal RNA
-sequences [@phylogeny16s]. These short sequences occur in all prokaryote
-cells, and contain both highly conservative (rarely mutating) regions
-and often mutating regions. The conserved regions can be used as
-primers (markers) to sequence the 16S rRNA. The mutating regions in
-between the primers can than be used to differentiate between organisms
-[@primers16s]. While this makes a powerful tool to identify prokaryote
-species in a sample and build phylogenetic trees of these organisms,
-it does not help to assemble complete genomes, nor does this work on
-eukaryotes. Furthermore, the short 16S sequence can be subjected to
-horizontal gene transfer, which makes it less reliable as identifying
-sequence [@horizontal16S].
+Early sequencing methods for metagenomics methods were based on
+(partial) 16S ribosomal RNA sequences [@phylogeny16s]. These short
+sequences occur in all prokaryote cells, and contain both highly
+conservative (rarely mutating) regions and often mutating regions. The
+conserved regions can be used as primers (markers) to sequence the 16S
+rRNA. The mutating regions in between the primers can than be used
+to differentiate between organisms [@primers16s]. While this makes a
+powerful tool to identify prokaryote species in a sample and build
+phylogenetic trees of these organisms, it does not help to assemble
+complete genomes, nor does this work on eukaryotes. Furthermore, the
+short 16S sequence can be subject to horizontal gene transfer, which
+makes it less reliable as identifying sequence [@horizontal16S].
 
-The more recent shotgun metagenomics [@quince], on the other hand,
-uses non-targeted sequencers yielding randomly located short reads
+The more recent shotgun metagenomics method [@quince], on the other
+hand, uses non-targeted sequencers yielding randomly located short reads
 from all genomes in the complete environmental sample. Because reads
 from the complete genome are sequenced, shotgun metagenomics allow not
 only profiling of the taxonomic composition, but also the functional
@@ -239,15 +239,15 @@ gene catalog). The amount of data and the repetitions of DNA within and
 between (allowing the incorrect assembly of chimeras) organisms make
 assembly a hard problem to solve.
 
-Alternatively, the reads are individually partitioned and assigned to
-an individual genome [@huson;@brady;@wood2014]. This process is called
-binning. By directly classifying the reads, assembly problems are
-avoided, less computations are required, and low-abundance organisms
-that cannot be assembled *de novo* can still be profiled [@quince].
-Afterwards binning, each bin can still be assembled as if the reads
-resulted from a genomics sample. Most binning methods work by comparing
-DNA properties of reads, such as CG-content (the ratio of C- or
-G-nucleotides to A- and T- nucleotides), to the properties of known
+Alternatively, the reads are individually partitioned and assigned
+to an individual genome [@huson;@brady;@wood2014]. This process is
+called binning. By directly classifying the reads, assembly problems
+are avoided, less computations are required, and low-abundance
+organisms that cannot be assembled *de novo* can still be profiled
+[@quince]. After binning, each bin can still be assembled as if the
+reads resulted from a genomics sample. Most binning methods work by
+comparing DNA properties of reads, such as CG-content (the ratio of C-
+or G-nucleotides to A- and T- nucleotides), to the properties of known
 genomes.
 
 ## Unipept
@@ -278,7 +278,7 @@ visualizations, giving insight in the biodiversity of the sample (Figure
 \ref{fig:unipept:ma}). The lists of functional annotations are added
 together and also reported.
 
-![The sunburst visualization of a marine example data set. Clicking on any of the arcs zooms in on the corresponding subset of the taxa.\label{fig:unipept:ma}](unipept-sunburst.svg)
+![The sunburst visualization of a marine data set. Clicking on any of the arcs zooms in on the corresponding subset of the taxa.\label{fig:unipept:ma}](unipept-sunburst.svg)
 
 Finally, the **peptidome analysis** service offers information about the
 complete set of (tryptic) peptides encoded in the proteome of one or
@@ -304,9 +304,9 @@ client [@verschaffelt2021] that largely shares the same code base as
 the web application, but also supports the use of custom reference
 databases.
 
-Running a service such a Unipept as a web application is only
-possible due to a thoughtfully designed database with proper indexing
-and the caching of relevant data. In fact, the lowest common
+Running a service such a Unipept as a highly responsive web application
+is only possible due to a thoughtfully designed database with proper
+indexing and caching of relevant data. In fact, the lowest common
 ancestor of all known tryptic peptides and the lists of functional
 annotations are precomputed and stored in the database. This is
 achieved by preprocessing all proteins in the UniProtKB after it
@@ -316,19 +316,20 @@ is released. More details on this process can be found in section
 ## Metagenomics via Metaproteomics
 
 Given the success of Unipept for metaproteomics, could we reuse the
-peptide-to-taxa mapping for metagenomics as well? By using a gene
-predictor, a metagenomics data set can be transformed *in silico* to a
-metaproteomics data set. As metagenomics data sets are of much larger
-volume than metaproteomics data sets, the Unipept index is wrapped in a
-local command line tool to avoid the network bottlenecks of an online
-tool. Thus the Unipept Metagenomics Analysis Pipeline is born, as an
-experiment to perform a metagenomics biodiversity analysis by making a
-detour through a general purpose metaproteomics database.
+fast and accurate peptide-to-taxa mapping also for the analysis of
+metagenomics data sets? By using a gene predictor, a metagenomics data
+set can be transformed *in silico* to a metaproteomics data set. As
+metagenomics data sets are of much larger volume than metaproteomics
+data sets, the Unipept index is wrapped in a local command line tool
+to avoid the network bottlenecks of an online tool. Thus the Unipept
+Metagenomics Analysis Pipeline is born, as an experiment to perform a
+metagenomics biodiversity analysis by making a detour through a general
+purpose metaproteomics database.
 
 In chapter \ref{chapter:umgap}, we describe the complete pipeline
-and evaluate it as an alternative method of metagenomics analysis.
+and evaluate it as an alternative method for metagenomics analysis.
 An index operating on fixed-length overlapping peptides is
-introduced as alternative for the tryptic peptide index. In chapter
+introduced as an alternative for the tryptic peptide index. In chapter
 \ref{chapter:fgsrs}, we introduce a new implementation of FragGeneScan,
 to be used as an improved gene predictor in the pipeline. In chapter
 \ref{chapter:on-the-side}, we include some of the metawork on the
