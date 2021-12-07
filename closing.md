@@ -1,4 +1,5 @@
-# References
+# References {.unnumbered}
+\markboth{References}
 
 ::: {#refs}
 :::

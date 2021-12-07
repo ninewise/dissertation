@@ -2,8 +2,6 @@
 bekijken in andere PhD's
 -->
 
-<!-- TODO fix headers above unnumbered chapters -->
-
 #### [summaries](summaries.md){.include}
 
 #### [introduction](introduction/chapter.md){.include}

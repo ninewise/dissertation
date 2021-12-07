@@ -1,6 +1,7 @@
 # Appendix A {.unnumbered}
+\markboth{Appendix A}{}
 
-## Analysis of misclassifications per Operational Taxonomic Unit {.unnumbered}
+## Analysis of misclassifications per OTU {.unnumbered}
 
 This appendix contains an in-depth analysis in which we investigate the
 accuracy of the taxonomic profilings of UMGAP. This analysis uses a

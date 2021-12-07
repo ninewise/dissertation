@@ -1,4 +1,5 @@
 # Summary (English) {.unnumbered}
+\markboth{Summary (English)}
 
 Each organism carries its complete genetic code, the genome, in
 its cells, in the form of DNA. To perform functions, the DNA is
@@ -77,6 +78,7 @@ projects.
 [sum-smap2]: https://gitlab.com/dschaumont/smap-haplotype-window
 
 # Summary (Dutch) {.unnumbered}
+\markboth{Summary (Dutch)}
 
 ::: {lang=nl}
 \hyphenation{Frag-Gene-Scan-Rs}
@@ -162,6 +164,7 @@ bijdragen aan de [SPeDE][sam-spede] en [SMAP][sam-smap] projecten.
 :::
 
 # Software Artefacts {.unnumbered}
+\markboth{Software Artefacts}
 
 The focus of this PhD was the development and improvement of
 bioinformatics software tools. While this dissertation decribes those
@@ -232,6 +235,7 @@ SMAP-Haplotype-Window
     was analyzed and advice on the development was given.
 
 # List of Publications {.unnumbered}
+\markboth{List of Publications}
 
 **Felix Van der Jeugt**, Peter Dawyndt, Bart Mesuere. (submitted).
 "FragGeneScanRs: better and faster gene prediction for short reads."
