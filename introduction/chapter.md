@@ -20,15 +20,15 @@ classifications are a rather gray area and they have been reassigned
 often. In fact, the study of naming and classifying groups of organisms
 is a whole branch of biology, called taxonomy. Other than discussing
 about the number of kingdoms, taxonomists also subdivide kingdoms in
-phyla, those in classes, those in orders, and so forth. Each group of
-organisms is called a taxon and may contain any number of other taxa.
-Kingdom, phyla and class are called taxonomic ranks. In this work, we
-use the NCBI taxonomy [@federhen], a taxonomy with 29 named taxonomic
-ranks (though at the start of my PhD, it had only 27), but in between
-those are many unnamed ranks. It includes viruses as well as living
-organisms. The NCBI taxonomy was chosen mostly for practical reasons,
-but there are many competing taxonomies such as Species 2000 [@banki]
-and Encyclopedia of Life [@parr].
+phyla, those in classes, orders, families, genera, species and more.
+Each group of organisms is called a taxon and may contain any number of
+other taxa. Kingdom, phyla and class are called taxonomic ranks. In this
+work, we use the NCBI taxonomy [@federhen], a taxonomy with 29 named
+taxonomic ranks (though at the start of my PhD, it had only 27), but
+in between those are many unnamed ranks. It includes viruses as well
+as living organisms. The NCBI taxonomy was chosen mostly for practical
+reasons, but there are many competing taxonomies such as Species 2000
+[@banki] and Encyclopedia of Life [@parr].
 
 Each taxon is directly contained by only a single other taxon, called
 its parent. All taxa together are thus structured in a tree, sometimes
@@ -101,34 +101,37 @@ plant *Utricularia gibba* has only 3% non-coding DNA).
 
 To perform gene expression, the DNA is first transcribed into another
 polymer called ribonucleic acid (RNA). An enzyme called RNA polymerase
-picks onto either strand and starts processing it in the 3' to
-5' direction. For each nucleotide, it attaches the complementary
-nucleotide, thus forming a copy of the other strand in 5' to 3'
-direction. The only exception is that RNA polymerase couples a uracil
-nucleobase (U) with the adenine nucleobases in the DNA strand, instead
-of a thymine. As such, the resulting RNA polymer is a copy of the
-opposing DNA strand with T replaced by U.
+picks onto either strand and starts processing it in the 3' to 5'
+direction, as shown in Figure \ref{fig:transcription}. For each
+nucleotide, it attaches the complementary nucleotide, thus forming a
+copy of the other strand in 5' to 3' direction. The only exception is
+that RNA polymerase couples a uracil nucleobase (U) with the adenine
+nucleobases in the DNA strand, instead of a thymine. As such, the
+resulting RNA polymer is a copy of the opposing DNA strand with T
+replaced by U.
 
-![Free RNA nucleotides are complemented to a template DNA strand, forming a single RNA strand. The formed strand is identical to the coding strand, except thymine (T) is replaced by uracil (U) and the deoxyribose is a ribose. The RNA polymerase performing the splitting and matching is not included in the drawing.](./transcription.svg)
+![Free RNA nucleotides are complemented to a template DNA strand, forming a single RNA strand. The formed strand is identical to the coding strand, except thymine (T) is replaced by uracil (U) and the deoxyribose is a ribose. The RNA polymerase performing the splitting and matching is not included in the drawing.\label{fig:transcription}](./transcription.svg)
 
 After transcription, the resulting RNA can be translated into yet
 another polymer called a polypeptide, which then folds into a protein.
 This translation is performed by a ribosome. It scans triplets of
 nucleotides in the RNA, called codons, starting at the 5'-end, looking
-for a start codon. Then, for each codon up to a stop codon, it attaches
-the corresponding amino acid. The translation table, the mapping of the
-$4^3$ codons onto amino acids (or stop codons), is not the same for
-every organism.
+for a start codon (`AUG`). Then, including the start codon, for each
+codon up to but excluding a stop codon (`UAA`, `UAG` or `UGA`), it
+attaches the corresponding amino acid. The translation table, the
+mapping of the $4^3$ codons onto amino acids (or stop codons) as
+visualized in Figure \ref{fig:translation-table}, is not the same for
+every organism. The constructed protein performs certain functions
+before it degrades.
 
 ![The standard RNA codon table used for translation. Reading a triplet from inside to outside shows the corresponding amino acid, or indicates a stop codon (\*).\label{fig:translation-table}](./translation-table.svg)
 
-The constructed protein performs certain functions before it degrades.
 In this work, we will be using the UniProt Knowledgebase [UniProtKB,
 @magrane] as reference database. UniProt, short for the Universal
 Protein Resource, is a comprehensive resource for protein sequence and
 annotation data. Their UniProtKB contains more than 200 million proteins
 not only annotated with an NCBI taxon identifier, but also linked to EC
-numbers, GO terms en InterPro entries. These point to information on
+numbers, GO terms and InterPro entries. These point to information on
 functions in respectively the EBI enzyme database [@alcantara], the Gene
 Ontology [@ashburner] and the InterPro database [@blum].
 

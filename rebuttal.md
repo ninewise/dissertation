@@ -97,29 +97,33 @@ TODO
 > into families, genera up to species level, as this is important later
 > on to the depth on which your method could distinguish the organisms.
 
-TODO
+All "main" named ranks were added, with minor changes to the sentence.
 
 > 7. Small remark: I think on page 14, third paragraph, you forgot to
 > refer to Figure 1.3, illustrating the RNA transcription. The same goes
 > for Figure 1.4. I suppose the reference to this figure needs to be
 > present in paragraph 4 of the same page on translation.
 
-TODO
+Added references to the figures.
 
 > 8. Page 14, paragraph 4. Can you add the nucleotide formation of a
 > start codon and stop codon between brackets here?
 
-TODO
+Done.
 
 > 9. The sentence: "The constructed protein performs certain functions
 > before it degrades", I would add this in the paragraph above, so you
 > can start this paragraph with the Uniprot databased.
 
-TODO
+Done.
 
 > 10. On page 15 you mention EC numbers, GO terms and (you wrote "en"
-> in Dutch) InterPro entries. What are these, why are they important to
-> mention? Can you elaborate a bit more on this?
+> in Dutch) InterPro entries.
+
+Fixed.
+
+> What are these, why are they important to mention? Can you elaborate a
+> bit more on this?
 
 TODO
 
