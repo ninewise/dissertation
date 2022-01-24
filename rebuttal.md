@@ -125,7 +125,8 @@ Fixed.
 > What are these, why are they important to mention? Can you elaborate a
 > bit more on this?
 
-TODO
+I added a paragraph with an example protein and the cross-references,
+which should clarify what these databases are.
 
 > 11. On page 17 on studying the biopolymers, you describe the second
 > step in the process of studying the genomic DNA: the assembly of
@@ -151,7 +152,7 @@ TODO
 > in section 1.1. This goes quite drastically, and an intermediate part
 > on why you focus on bacteria/microorganisms would be nice here.
 
-TODO
+TODO - because there are easier methods to study larger organisms?
 
 > 14. In this first chapter, I am really missing a part where you
 > explain how metagenomics data is analyzed today/which tools are used
@@ -181,11 +182,17 @@ TODO
 > of these proteins as well? Or is preprocessing/another pipeline
 > necessary to do so?
 
-TODO
+It is, but it's hard to link a peptide (kmer of peptide) to a single
+functional identifier. EC numbers would be doable, because they're
+also nodes in a tree, but the tree is not deep enough for meaningful
+aggregation. GO terms and interpro represent more complex structures.
+Mapping to those would require different aggregation techniques or other
+mapping structures.
 
 > 17. Page 31: you mention that false negatives and false positives
 > might occur during gene prediction. Do you have an idea how often this
-> occurs? For example, did you worked with a
+> occurs? For example, did you worked with a benchmarked dataset or a
+> mock community to verify this?
 
 TODO
 
@@ -298,8 +305,12 @@ TODO
 
 TODO
 
-> 33. For this specific part, it would be nice to include a conclus  ion
-> section on the use of FGSr. Putting it all in act                  ion
+> 33. For this specific part, it would be nice to include a conclusion
+> section on the use of FGSr.
+
+TODO
+
+### Putting it all in action
 
 TODO
 

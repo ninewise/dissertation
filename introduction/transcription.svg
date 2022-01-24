@@ -8,7 +8,7 @@
    viewBox="0 0 319.28613 135.15471"
    version="1.1"
    id="svg1483"
-   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -24,13 +24,13 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="1.1687991"
-     inkscape:cx="508.64173"
+     inkscape:cx="713.9807"
      inkscape:cy="259.66824"
-     inkscape:window-width="1920"
-     inkscape:window-height="1080"
-     inkscape:window-x="0"
+     inkscape:window-width="1918"
+     inkscape:window-height="1078"
+     inkscape:window-x="1920"
      inkscape:window-y="0"
-     inkscape:window-maximized="1"
+     inkscape:window-maximized="0"
      inkscape:current-layer="layer1"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -1941,7 +1941,7 @@
        transform="scale(-1)" />
     <text
        xml:space="preserve"
-       style="font-size:3.80157px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       style="font-size:3.80157px;line-height:1;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
        x="-42.595036"
        y="229.88911"
        id="text48963"><tspan
@@ -1949,11 +1949,11 @@
          id="tspan48961"
          style="stroke-width:0.264583"
          x="-42.595036"
-         y="229.88911">Deoxy-</tspan><tspan
+         y="230.80238">Deoxy-</tspan><tspan
          sodipodi:role="line"
          style="stroke-width:0.264583"
          x="-42.595036"
-         y="234.64108"
+         y="234.60396"
          id="tspan49260">ribose</tspan></text>
     <circle
        style="fill:#b07aa1;fill-opacity:1;stroke-width:0.6;stroke-linejoin:round"
@@ -1980,5 +1980,23 @@
        cy="-230.90633"
        r="2.6938145"
        transform="scale(-1)" />
+    <circle
+       style="fill:#76b7b2;fill-opacity:1;stroke-width:0.600001;stroke-linejoin:round"
+       id="circle18988"
+       cx="-41.512161"
+       cy="182.06732"
+       r="5.387629"
+       transform="scale(-1,1)" />
+    <text
+       xml:space="preserve"
+       style="font-size:7.60315px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       x="39.190018"
+       y="184.83868"
+       id="text18992"><tspan
+         sodipodi:role="line"
+         id="tspan18990"
+         style="stroke-width:0.264583"
+         x="39.190018"
+         y="184.83868">T</tspan></text>
   </g>
 </svg>

@@ -135,6 +135,25 @@ numbers, GO terms and InterPro entries. These point to information on
 functions in respectively the EBI enzyme database [@alcantara], the Gene
 Ontology [@ashburner] and the InterPro database [@blum].
 
+For instance, Uniprot Entry Q9DF66 is the "Snake venom serine
+protease 3" protein. It is annotated with Taxon ID 242841, which is
+Protobothrops jerdonii or the Jerdon's pitviper. It's linked to EC
+number `EC3.4.21.-`, a classifier for all serine endopeptidases (part
+of enzymes acting on peptide bonds). The GO numbers are from two of
+the three available types (excluding a biological process annotation).
+`GO:0004252` refers to a molecular function, serine-type endopeptidase
+activity, similar to the EC number. `GO:0005576` refers to a cellular
+component, the location relative to cellular structures in which a
+gene performs a function. This particular GO term means the function
+is performed in an extracellular region (the thing the snake is
+biting). `GO:0090729` is also a molecular function: the more general
+"toxin activity". Finally, the cross-referenced InterPro entries
+are `IPR009003﻿` (Peptidase S1, PA clan), `IPR043504﻿` (Peptidase
+S1, PA clan, chymotrypsin-like fold), `IPR001314﻿` (Peptidase S1A,
+chymotrypsin family), `IPR001254﻿` (Serine proteases, trypsin domain)
+and `IPR018114﻿` (Serine proteases, trypsin family, histidine active
+site).
+
 This three-form-two-step process is called the central dogma of
 molecular biology. Most organisms follow these steps, but for instance
 some bacteria blend the transcription and translation into a single step,
