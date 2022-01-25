@@ -398,3 +398,136 @@ TODO
 > metatranscriptomics/metagenomics dataset
 
 TODO
+
+## Wesley De Neve
+
+>  1. [General] The dissertation still contains a number of typos.
+>     A careful, final proofread may help in minimizing these
+>     imperfections.
+
+TODO
+
+>  2. [General] In the different conclusions sections (e.g., Section
+>     2.4), it may be good to better emphasize the robustness
+>     (generalization) aspect of the UMGAP pipeline, and where
+>     robustness is primarily treated as a qualitative feature of the
+>     proposed pipeline (with the exception of the experiment with
+>     shuffled genomes).
+
+TODO
+
+>  3. [Chapter 1] It would be good to add a figure that shows the
+>     hierarchy of the different taxonomic ranks often used in the
+>     dissertation.
+
+TODO
+
+>  4. [Chapter 1] It would be good to add a figure that visualizes the
+>     relationship between UniProtKB, NCBI, EC numbers, GO terms, and
+>     InterPro entries.
+
+TODO
+
+>  5. [Chapter 1, Fig. 1.5] It would be good to add an arrow that
+>     denotes increasing rank.
+
+TODO
+
+>  6. [Chapter 1] It may be good to split up Section 1.6 into (1) a
+>     section that lists the different contributions and (2) a section
+>     that describes the overall organization of the dissertation.
+
+TODO
+
+>  7. [Chapter 2] Given the importance and the size of this chapter, it
+>     may be of interest to better clarify the overall structure of this
+>     chapter, so to better help the reader to navigate this chapter.
+>     This could for instance be done in the introductory section of
+>     Chapter 2 (this remark could also be applied to Chapter 3 and
+>     Chapter 4).
+>
+>     Specifically, it would be good to explicitly mention that the
+>     chapter consists of three major parts: methods, experiments, and
+>     tools. Furthermore, in this context, it would also be good to
+>     explicitly mention that the experiments section also consists of
+>     three major parts: pipeline identification, benchmarking, and
+>     in-depth analysis.
+
+TODO
+
+>  8. [Chapter 2] When mentioning the total number of investigated UMGAP
+>     configurations for the first time (i.e., 3900), it would be good
+>     to immediately point out that these configurations can be split
+>     into 2700 tryptic configurations and 1200 9-mer configurations.
+
+TODO
+
+>  9. [Chapter 2] It would be good to add a note to explain what is
+>     meant with 'shuffled genomes'.
+
+TODO
+
+> 10. [Chapter 2] The definition of Operational Taxonomic Unit (OTU) is
+>     not clear. Providing an example may be helpful.
+
+TODO
+
+> 11. [Chapter 2] Part of Section 2.5.9, which discusses per read taxon
+>     aggregation, could be merged with Section 2.2.5, or it would be
+>     good to have Section 2.2.5 at least refer to Section 2.5.9.
+
+TODO
+
+> 12. [Chapter 3] It may be good to mention a number of pipelines,
+>     frameworks, and/or projects that are making use of FragGeneScan.
+
+TODO
+
+> 13. [Chapter 3] Throughout the dissertation, it would be good to keep
+>     the notation for FGS, FGS+, FGS++, and FGSrs consistent. For
+>     example, in Section 3.4, a sudden switch from short-form notation
+>     to long-form notation can be noticed for the different versions of
+>     FragGeneScan.
+
+TODO
+
+> 14. [Chapter 3] When presenting averages, it would be good to present
+>     standard deviations as well, either visually (through error bars)
+>     or textually (by mentioning the standard deviation in the caption
+>     of a plot).
+
+TODO
+
+> 15. [Chapter 4] Fig. 4.1 currently gives an overwhelming
+>     impression. It may therefore be of interest to work with a
+>     coarse-to-fine-grained approach, first presenting a high-level
+>     visualization and then a more detailed visualization.
+
+TODO
+
+> 16. [Chapter 4] From the current discussion, the link between the
+>     newly introduced tools and the use of a relational database was
+>     not clear to me. I assume that the relational database sits at the
+>     application layer.
+>
+>     In this context, I also would like to point out that the following
+>     statement is not completely clear to me:
+>
+>     "While querying a relational database is fast enough for a
+>     metaproteomics tool, it does not suffice for a metagenomics tool,
+>     which is expected to handle much larger amounts of data."
+
+TODO
+
+> 17. [Chapter 4] Similar to Chapter 2 and Chapter 3, it may be good
+>     to add a footnote to the beginning of Chapter 4 that efforts
+>     described in this chapter contributed to (at least) two papers (as
+>     implicitly mentioned in Section 4.3).
+
+TODO
+
+> 18. [Appendix A] I am not aware of a reference to this appendix from
+>     within the main text of the dissertation. I believe it would be
+>     good to incorporate such a reference (from within Chapter 2).
+
+TODO
