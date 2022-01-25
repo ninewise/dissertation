@@ -10,19 +10,6 @@ mainfont: Nimbus Sans L
 
 ## Carolien De Tender
 
-> The dissertation of Felix Van der Jeugt covers an interesting
-> topic/method for the analysis of metagenomics data. After a brief
-> summary of the field, two chapters are included describing the
-> tools Felix constructed during his PhD period: the UMGAP method, a
-> modification of Unipept to be used on metagenomics data, and FGSr, an
-> alternative and improved implementation of FGS to predict proteins from
-> a DNA sequence. The thesis reads easily, even for someone not in the
-> field of informatics and is in many ways in good balance between broad
-> descriptions and details. Below I have some general recommendations to
-> improve the manuscript. Generally I have two main suggestions.
-
-TODO
-
 > First, the first chapter is a bit limited in information concerning
 > other methods. I would advise the doctoral candidate to include
 > information on the current methods available on metagenomics analyses
@@ -34,153 +21,154 @@ TODO
 > not focused yet on functional data, but as he mentions it multiple
 > times, an explanation of these terms should be added.
 
-TODO
+<!-- TODO -->
 
 > Second, you will see that there are several questions I asked myself
 > while reading chapter 2, which are resolved when I got to chapter 4. I
 > think it would be good if this comes later in another chapter, you
 > should refer to this chapter, or move the information.
 
-TODO
+<!-- TODO -->
 
 ### Summary
 
-> 1. In the summary, you first describe the methods metagenomics,
-> -transcriptomics, and -proteomics. In the following paragraph you
-> start with the word shotgun metagenomics. What is the difference
-> between metagenomics and shotgun metagenomics? Is it the same term or
-> why do you specify the shotgun?
+>  1. In the summary, you first describe the methods metagenomics,
+>     -transcriptomics, and -proteomics. In the following paragraph you
+>     start with the word shotgun metagenomics. What is the difference
+>     between metagenomics and shotgun metagenomics? Is it the same term
+>     or why do you specify the shotgun?
 
-TODO
+<!-- TODO -->
 
-> 2. What do you specifically mean with the following sentence: "Often
-> the reads are too short to identify a specific organism, because they
-> occur in a number of organisms?" Are the reads too short to allocate
-> them to an organism, or are the reads not specific enough to assign
-> them to an organism?
+>  2. What do you specifically mean with the following sentence: "Often
+>     the reads are too short to identify a specific organism, because
+>     they occur in a number of organisms?" Are the reads too short to
+>     allocate them to an organism, or are the reads not specific enough
+>     to assign them to an organism?
 
-TODO
+<!-- TODO -->
 
-> 3. Explain the sentence: "The pipeline does offer interesting avenues
-> towards functional analysis (what organisms are doing in the sample)
-> and metatranscriptomics (analyzing RNA reads instead of DNA reads)."
-> In what way is metatranscriptomics not a functional analysis of the
-> sample? Do you refer to proteins here?
+>  3. Explain the sentence: "The pipeline does offer interesting avenues
+>     towards functional analysis (what organisms are doing in the
+>     sample) and metatranscriptomics (analyzing RNA reads instead of
+>     DNA reads)." In what way is metatranscriptomics not a functional
+>     analysis of the sample? Do you refer to proteins here?
 
-TODO
+<!-- TODO -->
 
-> 4. The sentence: "However, the existing implementations proved to
-> be insufficiently fast." Sounds a bit strange. Perhaps change to
-> insufficient in terms of speed.
+>  4. The sentence: "However, the existing implementations proved to
+>     be insufficiently fast." Sounds a bit strange. Perhaps change to
+>     insufficient in terms of speed.
 
-TODO
+Suggestion applied.
 
-> 5. In general I would change the start of the summary. Now, it seems
-> that you have developed a platform to look into both metagenomics,
-> metagenomics and metaproteomics data. I think you should state that
-> you work further on an existing platform in the beginning (Unipept)
-> and adapted this for the analysis for metagenomics data. Then you can
-> elaborate further on FragGenescan+ and the other methods, as these are
-> part of the development on the tool. I also don't see the point to
-> start with the definition of metagenomics/transcriptomics/proteomics,
-> as for this thesis proposal, you are only working with the first one.
-> I think this is good for an introductory section though.
+>  5. In general I would change the start of the summary. Now, it seems
+>     that you have developed a platform to look into both metagenomics,
+>     metagenomics and metaproteomics data. I think you should state
+>     that you work further on an existing platform in the beginning
+>     (Unipept) and adapted this for the analysis for metagenomics
+>     data. Then you can elaborate further on FragGenescan+ and the
+>     other methods, as these are part of the development on the
+>     tool. I also don't see the point to start with the definition
+>     of metagenomics/transcriptomics/proteomics, as for this thesis
+>     proposal, you are only working with the first one. I think this is
+>     good for an introductory section though.
 
-TODO
+<!-- TODO -->
 
 ### Primer on metagenomics
 
-> 6. I must say, it is a rather interesting start of the thesis you
-> propose here, which I am not used of, but it reads easily. On the end
-> of page 11, you state that kingdoms are divided in classes and orders
-> and so forth. I would like that you also mention the classification
-> into families, genera up to species level, as this is important later
-> on to the depth on which your method could distinguish the organisms.
+>  6. I must say, it is a rather interesting start of the thesis you
+>     propose here, which I am not used of, but it reads easily. On the
+>     end of page 11, you state that kingdoms are divided in classes
+>     and orders and so forth. I would like that you also mention the
+>     classification into families, genera up to species level, as this
+>     is important later on to the depth on which your method could
+>     distinguish the organisms.
 
 All "main" named ranks were added, with minor changes to the sentence.
 
-> 7. Small remark: I think on page 14, third paragraph, you forgot to
-> refer to Figure 1.3, illustrating the RNA transcription. The same goes
-> for Figure 1.4. I suppose the reference to this figure needs to be
-> present in paragraph 4 of the same page on translation.
+>  7. Small remark: I think on page 14, third paragraph, you forgot to
+>     refer to Figure 1.3, illustrating the RNA transcription. The same
+>     goes for Figure 1.4. I suppose the reference to this figure needs
+>     to be present in paragraph 4 of the same page on translation.
 
 Added references to the figures.
 
-> 8. Page 14, paragraph 4. Can you add the nucleotide formation of a
-> start codon and stop codon between brackets here?
+>  8. Page 14, paragraph 4. Can you add the nucleotide formation of a
+>     start codon and stop codon between brackets here?
 
 Done.
 
-> 9. The sentence: "The constructed protein performs certain functions
-> before it degrades", I would add this in the paragraph above, so you
-> can start this paragraph with the Uniprot databased.
+>  9. The sentence: "The constructed protein performs certain functions
+>     before it degrades", I would add this in the paragraph above, so
+>     you can start this paragraph with the Uniprot databased.
 
 Done.
 
-> 10. On page 15 you mention EC numbers, GO terms and (you wrote "en"
-> in Dutch) InterPro entries.
-
-Fixed.
-
-> What are these, why are they important to mention? Can you elaborate a
-> bit more on this?
+> 10. On page 15 you mention EC numbers, GO terms and (you wrote "en" in
+>     Dutch) InterPro entries. What are these, why are they important to
+>     mention? Can you elaborate a bit more on this?
 
 I added a paragraph with an example protein and the cross-references,
 which should clarify what these databases are.
 
 > 11. On page 17 on studying the biopolymers, you describe the second
-> step in the process of studying the genomic DNA: the assembly of
-> the genome. Do you think this is always necessary when studying the
-> genome of an organism or when you want to look to taxonomy or specific
-> functions?
+>     step in the process of studying the genomic DNA: the assembly of
+>     the genome. Do you think this is always necessary when studying
+>     the genome of an organism or when you want to look to taxonomy or
+>     specific functions?
 
-TODO
+<!-- TODO Carolien 2 -->
 
 > 12. You state that the study of a transcriptome provides similar
-> insights of that of a proteomics study. Why would you specifically
-> choose for a transcriptome or a proteome study then? Are there
-> computational limitations for either of the two? For example, the
-> number of metaproteomics studies is much more limited to those of
-> metatranscriptomics studies. What could be the reason behind this?
+>     insights of that of a proteomics study. Why would you specifically
+>     choose for a transcriptome or a proteome study then? Are there
+>     computational limitations for either of the two? For example, the
+>     number of metaproteomics studies is much more limited to those of
+>     metatranscriptomics studies. What could be the reason behind this?
 
-TODO
+<!-- TODO Carolien 3 -->
 
 > 13. During your first chapter, you always give examples of
-> higher-order organisms (e.g. fish). From point 1.4 onwards you start
-> talking about microorganisms and the extraction of the DNA from those
-> organisms (e.g. 16S rRNA genes). You already mentioned these organisms
-> in section 1.1. This goes quite drastically, and an intermediate part
-> on why you focus on bacteria/microorganisms would be nice here.
+>     higher-order organisms (e.g. fish). From point 1.4 onwards you
+>     start talking about microorganisms and the extraction of the DNA
+>     from those organisms (e.g. 16S rRNA genes). You already mentioned
+>     these organisms in section 1.1. This goes quite drastically, and
+>     an intermediate part on why you focus on bacteria/microorganisms
+>     would be nice here.
 
-TODO - because there are easier methods to study larger organisms?
+<!-- TODO Carolien 4 because there are easier methods to study larger organisms? -->
 
 > 14. In this first chapter, I am really missing a part where you
-> explain how metagenomics data is analyzed today/which tools are used
-> nowadays. I think this is important as you need to make the comparison
-> later on with your method and where you perform better/worse + what
-> differentiates your method from the current existing ones. You mention
-> this very briefly at the start of the second chapter, but I think this
-> should be described in more detail.
+>     explain how metagenomics data is analyzed today/which tools are
+>     used nowadays. I think this is important as you need to make
+>     the comparison later on with your method and where you perform
+>     better/worse + what differentiates your method from the current
+>     existing ones. You mention this very briefly at the start of the
+>     second chapter, but I think this should be described in more
+>     detail.
 
-TODO
+<!-- TODO -->
 
 ### UMGAP
 
-> 15. Page 26, you mention that metagenomics can be used to bypass
-> the cultivation step to enable genomic analysis. Maybe you should
-> define for which organisms this is the case, as with metagenomics
-> (as you mentioned), you will not only find microorganisms, but also
-> eukaryotes, such as plant or even human DNA. It can thus also be used
-> to track plant DNA in soils for example. With the introduction of the
-> first chapter I read, this is not completely clear.
+> 15. Page 26, you mention that metagenomics can be used to bypass the
+>     cultivation step to enable genomic analysis. Maybe you should
+>     define for which organisms this is the case, as with metagenomics
+>     (as you mentioned), you will not only find microorganisms, but
+>     also eukaryotes, such as plant or even human DNA. It can thus
+>     also be used to track plant DNA in soils for example. With the
+>     introduction of the first chapter I read, this is not completely
+>     clear.
 
-TODO
+<!-- TODO Carolien 5 -->
 
 > 16. For UMGAP, you know focused on the taxonomical identification;
-> However, as you translate your DNA into protein sequences and map
-> these to UniProtKB, wouldn't it be possible to retrieve the functions
-> of these proteins as well? Or is preprocessing/another pipeline
-> necessary to do so?
+>     However, as you translate your DNA into protein sequences and
+>     map these to UniProtKB, wouldn't it be possible to retrieve the
+>     functions of these proteins as well? Or is preprocessing/another
+>     pipeline necessary to do so?
 
 It is, but it's hard to link a peptide (kmer of peptide) to a single
 functional identifier. EC numbers would be doable, because they're
@@ -190,108 +178,139 @@ Mapping to those would require different aggregation techniques or other
 mapping structures.
 
 > 17. Page 31: you mention that false negatives and false positives
-> might occur during gene prediction. Do you have an idea how often this
-> occurs? For example, did you worked with a benchmarked dataset or a
-> mock community to verify this?
+>     might occur during gene prediction. Do you have an idea how often
+>     this occurs? For example, did you worked with a benchmarked
+>     dataset or a mock community to verify this?
 
-TODO
+<!-- TODO Carolien 6 -->
 
 > 18. Page 37: you indicate that UMGAP can skip these short peptide
-> fragments. As an example, you give a length of 6 amino acids. Is this
-> length fixed within the UMGAP pipeline? Can it be changed by the user?
-> For the last scenario, do you make any recommendations what cut-off
-> users should at least use?
+>     fragments. As an example, you give a length of 6 amino acids. Is
+>     this length fixed within the UMGAP pipeline? Can it be changed by
+>     the user? For the last scenario, do you make any recommendations
+>     what cut-off users should at least use?
 
-TODO
+<!-- Carolien 18 -->
+
+This can be changed by the user, if not using one of the (later
+introduced) preconfigured pipelines. I would advise using 5 as cut-off.
 
 > 19. Overall question methodology: in the description of the pipeline,
-> I can't find if you (1) check the quality of the reads upfront (or
-> do the users need to do that in advance by themselves? If this is
-> the case, do you have any recommendations?); (2) filter and trim the
-> reads. Do you remove reads that are very small (e.g. less than 20-50
-> bp). Do you trim the reads once the quality drops below a certain
-> phred score (e.g. 20). Is this something that is implemented in the
-> pipeline, or should the user do this upfront as well? And if this is
-> the case, do you recommend a program for this?
+>     I can't find if you (1) check the quality of the reads upfront
+>     (or do the users need to do that in advance by themselves? If
+>     this is the case, do you have any recommendations?); (2) filter
+>     and trim the reads. Do you remove reads that are very small (e.g.
+>     less than 20-50 bp). Do you trim the reads once the quality drops
+>     below a certain phred score (e.g. 20). Is this something that is
+>     implemented in the pipeline, or should the user do this upfront
+>     as well? And if this is the case, do you recommend a program for
+>     this?
 
-TODO
+The pipeline has neither of these steps explicitly. Removing or trimming
+reads of low quality would be an interesting step to add (and trivial to
+add). Removing small reads is not required: these would not slow down
+the processing by much and likely give no output. Overall, it may be
+important to keep (dummy-replacements of) these reads in the pipeline,
+because removing them would skew the reported negatives at the end of
+the pipeline.
 
 > 20. General comment result section: did you also benchmark your method
-> by looking into mock communities (a predefined sample for which you
-> know which organisms are present).
+>     by looking into mock communities (a predefined sample for which
+>     you know which organisms are present).
 
-TODO
+No, because those would be harder to measure the results.
 
 > 21. Page 41. You mentioned here that you used some smaller datasets
-> to measure and analyze the performance metrics. Please indicate here
-> which datasets you used and if these are freely available. I suppose
-> it are these of Wood and Salzberg you mention later. I would already
-> indicate these here.
+>     to measure and analyze the performance metrics. Please indicate
+>     here which datasets you used and if these are freely available.
+>     I suppose it are these of Wood and Salzberg you mention later. I
+>     would already indicate these here.
 
-TODO
+Suggestion applied.
 
 > 22. Page 43: You indicate the higher runtime and memory footprint of
-> the 9-mer configurations. How much larger is this?
+>     the 9-mer configurations. How much larger is this?
 
-TODO
+3 times the execution time and 10 times the memory required. Inserted
+into the text.
 
-> 23. Page 46: It can be that I just read over it in the text, but
-> for the two tryptic configurations you selected, I understand each
-> decision except the choice of MRTL read profiling method. Why did
-> you specifically choose this one? Same question for page 49: why did
-> you select hybrid f and MRTL as the preferred methods for the 9-mer
-> configurations?
+> 23. Page 46: It can be that I just read over it in the text, but for
+>     the two tryptic configurations you selected, I understand each
+>     decision except the choice of MRTL read profiling method. Why did
+>     you specifically choose this one? Same question for page 49: why
+>     did you select hybrid f and MRTL as the preferred methods for the
+>     9-mer configurations?
 
-TODO
+<!-- Carolien 23 -->
+
+For tryptic peptides, you did not read over it. Because there is
+rarely more than a single tryptic peptide, the aggregation method does
+not matter much. MTRL was chosen because it is marginally faster to
+calculate and would further reduce the sensitivity least.
+
+For the 9-mer selection, I picked the outmost variants based on Figures
+2.16 and 2.18.
 
 > 24. You compare the UMGAP methods with those of Kraken, CLARK and
-> Kaiju. Is their data processing very different from those of UMGAP and
-> if so, on which parts? It would be nice that you introduce these as
-> well in the first chapter to know the differences between your method
-> and the others.
+>     Kaiju. Is their data processing very different from those of UMGAP
+>     and if so, on which parts? It would be nice that you introduce
+>     these as well in the first chapter to know the differences between
+>     your method and the others.
 
-TODO
+<!-- TODO -->
 
 > 25. UMGAP tryptic precision has a very high precision, but a low
-> sensitivity, even almost 0%. Does this mean that you have a very high
-> abundance of false negatives in your data? (sensitivity= TP/(TP+FN)
+>     sensitivity, even almost 0%. Does this mean that you have a very
+>     high abundance of false negatives in your data? (sensitivity=
+>     TP/(TP+FN))
 
-TODO
+Yes, the tryptic precision pipeline classifies most reads as root
+because it cannot find any sure evidence in them.
 
 > 26. Page 57-58: I suppose for this in depth analysis, you need to
-> refer to appendix A?
+>     refer to appendix A?
 
-TODO
+Reference added.
 
 > 27. Page 60: when you show here that if the divergence increases,
-> t becomes harder to identify the reads on genus/species level,
-> would this imply for example that it will also be harder to
-> differentiate/identify more complex species (with more complex
-> genomes) such as plants or nematodes?
+>     it becomes harder to identify the reads on genus/species level,
+>     would this imply for example that it will also be harder to
+>     differentiate/identify more complex species (with more complex
+>     genomes) such as plants or nematodes?
 
-TODO
+<!-- Carolien 27 -->
+
+Not necessarily; the divergence here is divergence from the reference
+genome by introducing errors in the reads. As long as the species do not
+diverge too much from any species in Uniprot, detection is possible.
 
 > 28. Page 60: you say you can also find viruses. I suppose it are only
-> the DNA viruses you will find here, as you are not looking into RNA.
+>     the DNA viruses you will find here, as you are not looking into RNA.
 
-TODO
+Yes, clarified in the text.
 
 > 29. The runtimes you indicate for UMGAP, are these based on running
-> the program locally on the computer?
+>     the program locally on the computer?
 
-TODO
+No, there were executed on the rather powerful server that was mentioned
+way back at the start of the results section.
 
 > 30. At the end, a frequency table is created (page 77). For all steps
-> above, you speak about one sample you are looking at. However, in most
-> cases metagenomics samples are also used for comparison between each
-> other (e.g. because a treatment was added). Is there a command in the
-> UMGAP pipeline introduced as well that makes it possible to merge
-> several frequency tables and make it possible to compare samples for
-> further statistical analyses?
+>     above, you speak about one sample you are looking at. However,
+>     in most cases metagenomics samples are also used for comparison
+>     between each other (e.g. because a treatment was added). Is there
+>     a command in the UMGAP pipeline introduced as well that makes it
+>     possible to merge several frequency tables and make it possible to
+>     compare samples for further statistical analyses?
 
-TODO
+The command which produces the frequency table allows for multiple
+samples. As such it should allow to incorporate multiple samples into
+a single CSV file. However, UMGAP does not provide further statistical
+analysis on these frequency tables.
 
-### FragGenescanR
+### FragGeneScanRs
+
+HERE
 
 > 31. Page 88: change pair-end into paired end (normally used
 > nomenclature)

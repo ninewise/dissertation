@@ -1,5 +1,7 @@
 ## Introduction {#introduction-umgap}
 
+<!-- TODO Carolien 5 -->
+
 Biodiversity, in many environments, is formed by complex communities of
 archaea, bacteria, eukaryotes, and viruses. Most of these organisms are
 hard to isolate and culture in lab conditions, so getting insight into
@@ -129,6 +131,8 @@ with improved multithreading support and several critical bug fixes has
 been released as FGS++.
 
 [FragGeneScan++]: https://github.com/unipept/FragGeneScanPlusPlus
+
+<!-- TODO Carolien 6 -->
 
 FGS and its derivatives are functionally equivalent and can thus be
 plugged into UMGAP interchangeably. They perform gene prediction
@@ -274,6 +278,8 @@ supports three kinds of filters.
 
 #### Short Tryptic Peptides
 
+<!-- Carolien 18 -->
+
 Analysis on UniProt proteins shows that short tryptic peptides are
 typically associated with highly unspecific LCA\* consensus taxa, i.e.,
 taxa at or close to the root of the NCBI Taxonomy tree [@mesuere2012]
@@ -400,7 +406,7 @@ UMGAP implements multiple strategies for each step in the pipeline
 (Figure \ref{outline}), with some strategies also driven by
 user-specified parameters. Runtime, memory footprint and accuracy
 of UMGAP were benchmarked as a two-step process. Using some smaller
-data sets, we first measured and analyzed performance metrics for a
+data sets [@wood2014], we first measured and analyzed performance metrics for a
 large number of relevant combinations of strategies and parameter
 settings. This broad exploration allowed us to investigate how different
 strategies/parameter settings led to different performance trade-offs.
@@ -457,9 +463,9 @@ Figure \ref{parameter-tuning} shows the precision and sensitivity of all
 method has a major influence on sensitivity. The difference in precision
 is less pronounced at first glance. In general, 9-mer configurations
 (orange) have a higher sensitivity than tryptic configurations (blue),
-but they also have a higher runtime and memory footprint. To simplify
-further discussion, we will treat tryptic and 9-mer configurations
-separately in what follows.
+but they also have a higher runtime (about 3 times longer) and memory
+footprint (about 10 times more). To simplify further discussion, we will
+treat tryptic and 9-mer configurations separately in what follows.
 
 ![Precision and sensitivity of 3900 UMGAP configurations, with tryptic peptide configurations marked in blue and 9-mer configurations marked in orange.\label{parameter-tuning}](figures/kraken-benchmark/digestor-wrapped.svg){ width=90% }
 
@@ -508,6 +514,8 @@ performance of the pipelines, again because of the limited number of
 Based on the above observations we have selected two tryptic
 configurations with good accuracy trade-offs, either favoring higher
 precision or higher sensitivity:
+
+<!-- Carolien 23 -->
 
 * **tryptic precision** FGS++, minimum peptide length 5, maximum peptide
   length 45, minimum 2 taxon hits, MRTL
@@ -568,6 +576,8 @@ Based on the above observations we have selected four 9-mer
 configurations that represent different accuracy trade-offs. Ranging in
 optimization from precision to sensitivity they use the following UMGAP
 configurations:
+
+<!-- Carolien 23 -->
 
 * **max precision** FGS++, minimum 5 taxon hits, seed-and-extend with
   $s=2$ and $g=2$, hybrid$_f$ with $f=0.75$
@@ -744,12 +754,13 @@ compared to the MetaBenchmark.
 We performed the analysis using the UMGAP high precision pipeline.
 Accuracy metrics are reported per operational taxonomic unit (OTU),
 i.e. all (paired-end) reads are grouped per OTU from which they were
-extracted/generated. Results are reported in separate tables for one of
-the small datasets we used for parameter tuning (10 OTUs) and one of
-the large MetaBenchmark datasets (1105 OTUs), split into real (963),
-simulated (32) and shuffled (110) OTUs (In Addendum). In what follows,
-we discuss some general observations from the in-depth analysis and
-illustrate them with specific use cases.
+extracted/generated. Results are reported in separate tables for
+one of the small datasets we used for parameter tuning (10 OTUs, in
+\nameref{chapter:appendix-a}) and one of the large MetaBenchmark
+datasets (1105 OTUs, not included due to size), split into real (963),
+simulated (32) and shuffled (110) OTUs. In what follows, we discuss some
+general observations from the in-depth analysis and illustrate them with
+specific use cases.
 
 In addition to correct identifications at the species level (the
 typical rank of the expected identification derived from the benchmark
@@ -820,6 +831,8 @@ Almost all shuffled reads in the large dataset are mapped to the root of
 the NCBI Taxonomy, which corresponds to no identification at all. This
 reflects the robustness of UMGAP against spurious identifications.
 
+<!-- Carolien 27 -->
+
 The large dataset contains reads simulated from genomes that were
 artificially diverged from a *Leptospira interrogans* reference genome
 (AE016823). In total, reads for 32 OTUs were generated from 8 simulated
@@ -841,8 +854,8 @@ genomes with little divergence or the genomes with medium divergence.
 The protein space detour for taxonomic profiling of shotgun metagenomic
 data sets shows to be very promising. Despite our design choices
 of an extra protein translation step, a broad spectrum index that
-can identify both archaea, bacteria, eukaryotes and viruses, and
-a highly configurable non-monolithic design, UMGAP achieves low
+can identify both archaea, bacteria, eukaryotes and DNA viruses,
+and a highly configurable non-monolithic design, UMGAP achieves low
 runtime, manageable memory footprint and high accuracy that makes
 it highly competitive with state-of-the-art shotgun metagenomics
 tools. Integrating the command line tool with the interactive Unipept

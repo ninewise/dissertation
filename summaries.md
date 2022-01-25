@@ -12,6 +12,8 @@ metatranscriptomics and metaproteomics. This dissertation describes the
 development and results of several bioinformatics tools to help with
 such studies.
 
+<!-- TODO Carolien 1 -->
+
 In shotgun metagenomics, a great number of random DNA fragments, called
 reads, are sequenced from an environmental sample. By identifying which
 organism each read originates from, one can draw conclusions about
@@ -46,8 +48,8 @@ As part of the development of UMGAP, we also introduce an
 alternative implementation for FragGeneScan in Rust, called
 [FragGeneScanRs][sum-fgsrs] (chapter \ref{chapter:fgsrs}). FragGeneScan
 plays an important role in UMGAP: prediction of proteins (or gene
-fragments) from DNA reads. However, the existing implementations
-proved to be insufficiently fast. The primary alternative,
+fragments) from DNA reads. However, the existing implementations proved
+to be insufficiently in terms of speed. The primary alternative,
 FragGeneScan-Plus, which we forked and partially debugged as
 [FragGeneScanPlusPlus][sum-fgs++], is faster but contains a number
 of hard-to-solve parallelization bugs. FragGeneScanRs fixes these

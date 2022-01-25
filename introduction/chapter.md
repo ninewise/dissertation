@@ -148,10 +148,10 @@ gene performs a function. This particular GO term means the function
 is performed in an extracellular region (the thing the snake is
 biting). `GO:0090729` is also a molecular function: the more general
 "toxin activity". Finally, the cross-referenced InterPro entries
-are `IPR009003﻿` (Peptidase S1, PA clan), `IPR043504﻿` (Peptidase
-S1, PA clan, chymotrypsin-like fold), `IPR001314﻿` (Peptidase S1A,
-chymotrypsin family), `IPR001254﻿` (Serine proteases, trypsin domain)
-and `IPR018114﻿` (Serine proteases, trypsin family, histidine active
+are `IPR009003` (Peptidase S1, PA clan), `IPR043504` (Peptidase
+S1, PA clan, chymotrypsin-like fold), `IPR001314` (Peptidase S1A,
+chymotrypsin family), `IPR001254` (Serine proteases, trypsin domain)
+and `IPR018114` (Serine proteases, trypsin family, histidine active
 site).
 
 This three-form-two-step process is called the central dogma of
@@ -178,6 +178,8 @@ depending on the used sequencing technology, with various read error
 types and rates. The result of sequencing is a data set of the DNA
 sequences of reads, along with some metadata such as the quality of a
 read.
+
+<!-- TODO Carolien 2 -->
 
 Since the DNA molecules were segmented into reads, the next step is
 assembling the reads again into the complete genome sequence. When the
@@ -207,6 +209,8 @@ example comparing the measured mass spectrum to a set of predicted mass
 spectra. However, since tryptic peptides do not overlap, assembly is not
 possible.
 
+<!-- TODO Carolien 3 -->
+
 Finally, the set of an organism's RNA transcripts is called its
 transcriptome, and the corresponding study is called transcriptomics.
 The study of a transcriptome provides similar insights to a proteomics
@@ -227,6 +231,8 @@ for the relative abundance of organisms in the sample. This allows
 comparative studies of environments over time or location [@metabias].
 Third, many organisms cannot currently be cultivated, and as such cannot
 be sequenced in genomics [@locey;@rappe;@hugenholtz1998;@hoferthemi].
+
+<!-- TODO Carolien 4 -->
 
 ## Targeted and Shotgun Metagenomics
 

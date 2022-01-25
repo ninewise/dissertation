@@ -1,5 +1,6 @@
 # Appendix A {.unnumbered}
 \markboth{Appendix A}{}
+\label{chapter:appendix-a}
 
 ## Analysis of misclassifications per OTU {.unnumbered}
 
