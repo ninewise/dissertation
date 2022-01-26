@@ -550,3 +550,242 @@ TODO
 >     good to incorporate such a reference (from within Chapter 2).
 
 TODO
+
+## Aurélien Carlier
+
+> The dissertation entitled « The Unipept metagenomics analysis
+> pipeline” by Felix Van der Jeugt is a well written manuscript,
+> describing interesting work that undoubtedly advances the field
+> of metagenomics analysis. The dissertation is focused on the
+> development and applications of a suite of tools (notably UMGAP and
+> FragGeneScanR) dedicated to metagenomics (and metatranscriptomics)
+> analyses. In particular, UMGAP leverages taxonomic information
+> contained in the Uniprot database and taxon schemes from NCBI to
+> rapidly assign consensus taxonomic information to short sequencing
+> reads. The algorithms are in general well described and easy to read
+> even for a lay person, and the results of benchmarking and case
+> studies clearly laid out.
+
+> The data presented are certainly of sufficient quality to allow
+> the candidate to defend his PhD. In addition, the candidate has
+> contributed to several published articles as co-authors and has 2
+> manuscripts submitted to journals as a first author.
+
+### General comments
+
+> My only general comment pertaining to the dissertation is that
+> there is sometimes some confusion throughout between protein (i.e.
+> the biological entity) & amino acid sequence; DNA and nucleotide
+> sequence; organism and genome, etc… This can be quite confusing to
+> read for a molecular biologist. Make sure to clearly distinguish
+> biological entities from their representations. I tried to flag as
+> many instances of such conflation the annotated PDF of the thesis,
+> but I advise careful proofreading.
+
+### Specific comments:
+
+> There is a number of typos and grammatical errors. I will send an
+> annotated PDF of the dissertation to the candidate after the closed
+> defense.
+
+#### Introduction:
+
+> - Introduce some taxonomic and phylogenetic concepts (tree crown and
+>   clade, etc…). Perhaps in the form of a box with some definitions.
+
+TODO
+
+> - A (brief) discussion about introns/exons is missing. The tools
+>   described were clearly created with bacteria in mind, but they
+>   should also be applicable to archaea and eukaryotes.
+
+TODO
+
+> - Maybe a sentence or two about post-translational modifications and
+>   how they are expected to impact proteomics data analysis.
+
+TODO
+
+> - expand definitions of GO, InterPro, EC
+
+TODO
+
+> - P15: Misleading statement: “[…] some bacteria blend the
+>   transcription and translation into a single step”. Although
+>   transcription and translation are coupled in prokaryotes, this is
+>   still a 2-step process.
+
+TODO
+
+> - P19: Add a little bit more explanation (one or two sentences) on
+>   how contigs are profiled to be grouped into bins
+
+TODO
+
+> - Since much of this thesis relies on gene finding, or at least
+>   matching DNA to AA sequences databases. It would be good to have
+>   a brief overview of gene finding, and the various limitations
+>   of applying gene finding software to metagenomics: higher error
+>   profiles, difficulty in obtaining representative training datasets,
+>   choice of codon table, problems with sometimes unreliable
+>   annotations (especially true for automatically generated
+>   annotations). Especially, I would have liked to see in Introduction
+>   an overview of FragGeneScan, which is introduced in Chapter 2
+>   without much explanation.
+
+TODO
+
+#### Chapter 2
+
+> - Is FragGeneScan codon usage-aware? How are the gene models
+>   created/updated?
+
+TODO
+
+> - P32, tryptic peptides: what do you mean by “it is a random
+>   fragmentation strategy”? This seems counterintuitive since peptides
+>   are digested in silico in a systematic manner.
+
+TODO
+
+> - P35. Peptide Filtering. The first sentence of this paragraph should
+>   be rephrased. Protein fragmentation may yield false positives:
+>   peptides that do not occur in proteins encoded in the read. First,
+>   I’m assuming that this is referring to spurious AA sequences that
+>   are translated from non-coding regions in a read, but the phrasing
+>   is ambiguous. Second: do not confuse protein and amino-acid
+>   sequence, and do not confuse read and gene (a read does not encode
+>   anything).
+
+TODO
+
+> - P42. Were the simulated reads generated from coding regions only?
+
+TODO
+
+> - P42. Do you expect true negatives to occur in real metagenome
+>   datasets? Would this depend on the sequencing technology used
+>   (error profiles)?
+
+TODO
+
+> - Fig. 2.17 & 2.19: what was the read profiling method used to
+>   generate these data?
+
+TODO
+
+> - The parameters for max precision are set according to results
+>   presented on Fig 2.16, but it’s not obvious to me why hybrid
+>   profiling is chosen over LCA*. Could you explain?
+
+TODO
+
+> - P52. What does snaptaxon do? This comes later in the chapter, but a
+>   brief explanation would be useful here, or at least a reference to
+>   the paragraph where it is described.
+
+TODO
+
+> - P60. The discussion on the degradation of the signal with increased
+>   divergence of Leptospira reads is very interesting. Do you know by
+>   how much the different simulated genomes diverged (%ANI)?
+
+TODO
+
+> - P61. Are other input formats supported (e.g. BAM, SAM) ?
+
+TODO
+
+> - Remark: A major selling point of UMGAP might be the taxonomic
+>   breadth of the database (including eukaryotes). That may make the
+>   tool ideally suited for host-associated microbiomes, where tools
+>   like e.g. Kraken or to a smaller extent Kaiju become unwieldy.
+
+TODO
+
+> - P60. Discussion. You propose to further explore functional
+>   characterization of metagenomes using UMGAP or similar methods. This
+>   would be extremely interesting for biologists. What would the main
+>   limitations be? Do you think UMGAP would perform better or worse
+>   than tools like HUMAnN2 (with DIAMOND under the hood, if I remember
+>   correctly)?
+
+TODO
+
+#### Chapter 3
+
+> - This chapter describes an improved implementation of a piece
+>   of software, FragGeneScan, used to predict coding sequences
+>   in short, error-prone reads. The technical details in this
+>   chapter are in general way over my head, and I do not have any
+>   particular comments. From the data presented, FragGeneScanR
+>   looks like convincing improvement over the older software. The
+>   observation that the behavior of FGS++ deviates from FGS in terms
+>   of sensitivity and precision is certainly of concern. Is this
+>   specific to the latest version of FGS++ ?
+
+TODO
+
+> - How does FragGeneScan deal with the problem of identifying the
+>   correct 5’ end (start codon) of a gene?
+
+TODO
+
+#### Chapter 4
+
+> - P98. What are “unwanted” taxa?
+
+TODO
+
+> - P100. What are “equalized” peptides?
+
+TODO
+
+> - P102. Would there be anything to gain by filtering out low
+>   complexity sequences in building the kmer to taxon table?
+
+TODO
+
+> - P115. “This sets the stage for the optional filtering of the taxa
+>   based on their location”. I’m assuming you mean the location of
+>   taxonomic matches within the read. Is this correct? Cold you
+>   rephrase to make it less ambiguous?
+
+TODO
+
+> - P116. “This lists of taxa need to be aggregated…”. I find this
+>   sentence unclear. It says all consecutive reads with the same
+>   header are gathered… But these should all be putative genes from
+>   a single read, or am I missing something? What do you mean by
+>   “ends” in the sentence “translate must keep together the ends and
+>   translations of a read”?
+
+TODO
+
+> - P120. Similar ambiguity in the sentence “instead of joining all the
+>   reads after identification”
+
+TODO
+
+> - P123. Could you briefly explain what the HiPlex and GBS datasets
+> - are?
+
+TODO
+
+#### Chapter 5
+
+> - P121. Adaptive kmer length. You argue that 10-mers should be
+>   investigated because they might offer more specific matches.
+>   It’s difficult to compare this directly, but Fig 2.11 shows only
+>   marginal improvement of tryptic peptides > 10 aa over 9 aa. Do you
+>   expect 10-mers to behave differently? How would increasing the
+>   length of the kmer from 9 to 10 affect memory usage? Are there any
+>   possible strategies that could be applied to reduce the size of the
+>   index?
+
+TODO
+
+> - P123. I would add that GO-terms are near useless in metagenome
+>   analyses, but that’s just my opinion...
+
+TODO
