@@ -310,28 +310,26 @@ analysis on these frequency tables.
 
 ### FragGeneScanRs
 
-HERE
-
 > 31. Page 88: change pair-end into paired end (normally used
 > nomenclature)
 
-TODO
+Done (and elsewhere).
 
 > 32. You introduce here FraggenescanR. It is not clear for me if this
 > is the same as FGS++ or not. If it is not the same, in which way do
 > the two differ and which would be best to use in UMGAP (now you (have)
 > used FGS++ if I am correct).
 
-TODO
+Indeed, the benchmarks reported in the book use FGS++. The UMGAP has by
+now been modified to use FGSrs. The latter should have better results,
+but they are functionally interchangeable.
 
 > 33. For this specific part, it would be nice to include a conclusion
 > section on the use of FGSr.
 
-TODO
+<!-- TODO -->
 
 ### Putting it all in action
-
-TODO
 
 > 34. I am not sure if the title of this chapter covers the load of what
 > is presented. Based on the title, I would have expected that you use
@@ -341,35 +339,40 @@ TODO
 > I would prefer you change the title so it covers the complete load of
 > this chapter.
 
-TODO
+<!-- TODO -->
 
 > 35. Based on the scheme you represent here, I think in the first
 > chapter you really should add information on the different databases
 > you use and describe, with especially Uniprot, but alo the explanation
 > on EC, interpro, etc.
 
-TODO
+<!-- TODO -->
 
 > 36. First sentence under 4.1.2: remove the "a" before "three tables"
 
-TODO
+Fixed.
 
 > 37. You give information on how to run UMGAP for datasets, but what
 > would you advise: to use the desktop version or the web-based version?
 
-TODO
+This depends: the web-based version is easier, but for confidential data
+I'd prefer the desktop version. (Then data is sent only to the unipept
+servers, not publicly available on the web.)
 
 > 38. In the taxa2tree command, can you also add the frequency on the
 > edges or nodes of the figure (e.g. figure 4.3)?
 
-TODO
+This information is provided on hover.
 
 > 39. Page 114: I am not sure if I understand the following sentence:
 > "However, since these are transcriptomics samples, instead of joining
 > all reads after identification, the umgap bestof tool selects the
 > single best frame out of the 6 translated and identified frames.
 
-TODO
+Changed to 'However, since these are transcriptomics samples, instead
+of joining all translations from the same read after identification,
+the `umgap bestof` tool selects the single best frame out of the 6
+translated and identified frames.'
 
 > 40. Page 115: it is a bit confusing that you first state that you will
 > illustrate two examples here, and a bit further you describe three
@@ -378,19 +381,19 @@ TODO
 > the usefulness of this project-driven work, as this was part of your
 > PhD. And then you can elaborate more on two external projects.
 
-TODO
+<!-- TODO Carolien 40 -->
 
 > 41. For SPeDe, you said that you were able (together with the student)
 > to reduce the analysing time to 2 hours for a realistic dataset.
 > Before the improvements, what was the time of analysis?
 
-TODO
+I don't have exact numbers for this, but our estimate was several weeks.
 
 > 42. 4.3.2: what is a haplotype? As you introduce this here, I think
 > you should include some definitions as well (for example, also explain
 > what a SNP is).
 
-TODO
+<!-- TODO Carolien 42 -->
 
 ### Conclusions and future work
 
@@ -400,13 +403,13 @@ TODO
 > there a bias towards certain type of organisms? (e.g. the higher
 > abundance of bacteria compared to eukaryotes in the database).
 
-TODO
+<!-- TODO Carolien 43 -->
 
 > 44. For the functional annotation, couldn't you refer for this to
 > other methods (e.g. MG-Rast). You can still comment on this if it is a
 > good strategy or not though.
 
-TODO
+<!-- TODO -->
 
 > 45. In this part, shouldn't you include as well the transition
 > from metagenomics to metatranscriptomics? You mention it
@@ -416,7 +419,7 @@ TODO
 > on this and what the differences may be (computationally) for a
 > metatranscriptomics/metagenomics dataset
 
-TODO
+<!-- TODO -->
 
 ## Wesley De Neve
 

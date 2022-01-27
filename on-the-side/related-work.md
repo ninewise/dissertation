@@ -22,6 +22,8 @@ the results of students (often things I hadn't thought of myself during
 the prior inspection). I present these results to the partner, and
 possibly provide aid in implementing them in the actual product.
 
+<!-- TODO Carolien 40 -->
+
 Below I describe two of the projects we've worked on. The first
 partner, in 2018, was the Department of Molecular Biology at the Ghent
 University. Charles Dumolin, Aurélien Carlier and Peter Vandamme
@@ -82,6 +84,8 @@ polish the program. A graphical user interface was added, and the final
 result was published [@dumolin].
 
 ### SMAP
+
+<!-- TODO Carolien 42 -->
 
 SMAP is a software package that analyzes read mapping distributions and
 performs haplotype calling to create multi-allelic molecular markers.

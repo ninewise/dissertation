@@ -35,6 +35,8 @@ sample. Constructing an index from the relevant data would not only
 result in a more specific index, but the index would also be smaller and
 as such the analysis would be faster.
 
+<!-- TODO Carolien 43 -->
+
 Of course, one should remain wary of the bias implicit in such an
 index: some peptides that would match only with specific organisms in
 such a database might occur in many other organisms not included. On

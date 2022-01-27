@@ -80,7 +80,7 @@ the *sequences* table.
 
 ### Creating a UMGAP Index
 
-From this complete database, only a three tables are of interest to
+From this complete database, only three tables are of interest to
 the UMGAP tool. First, as UMGAP is a taxonomic identification tool,
 is the processed NCBI taxonomy *taxons*. Second is the *sequences*
 table, which contains the mapping of tryptic peptides onto their lowest

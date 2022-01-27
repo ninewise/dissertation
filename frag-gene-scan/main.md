@@ -50,7 +50,7 @@ Both FGS and FGS+ now have pure C implementations that support parallel
 execution, but their latest releases suffer from their own issues. FGS
 implements multithreading in a very inefficient way, making it much
 slower than FGS+. The implementation doesn't preserve input order,
-breaking for example the synchronization between pair-end read files
+breaking for example the synchronization between paired end read files
 without an extra sorting step in postprocessing. Bugs have also been
 introduced when replacing Perl code with C functions. In addition,
 out-of-bound memory access may corrupt its results and cause the

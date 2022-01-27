@@ -116,11 +116,11 @@ command.
   ~ Set a different configuration directory.
 
 `-1 file`
-  ~ Single ended FASTA or first pair-ended FASTQ input file, optionally
+  ~ Single ended FASTA or first paired end FASTQ input file, optionally
     compressed.
 
 `-2 file`
-  ~ Second pair-ended FASTQ input file, optionally compressed.
+  ~ Second paired end FASTQ input file, optionally compressed.
 
 `-t`
   ~ Type of the analysis. This flag allows you to select one of the
@@ -463,12 +463,12 @@ overrepresented in the 4 chitin-rich samples.
 ### A Transcriptomics Analysis Pipeline {#section:transcript}
 
 By request of Steve Baeyen (ILVO), the script below was written to
-analyse a number of transcriptomics samples (stored in `samples`).
-This script is very similar to a specialized `umgap-analyse` script
-without the various parameters and configurations. However, since
-these are transcriptomics samples, instead of joining all reads after
-identification, the `umgap bestof` tool selects the single best frame
-out of the 6 translated and identified frames.
+analyse a number of transcriptomics samples (stored in `samples`). This
+script is very similar to a specialized `umgap-analyse` script without
+the various parameters and configurations. However, since these are
+transcriptomics samples, instead of joining all translations from the
+same read after identification, the `umgap bestof` tool selects the
+single best frame out of the 6 translated and identified frames.
 
 ```sh
 #!/bin/sh
