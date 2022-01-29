@@ -19,16 +19,19 @@ Bacteria. Why usually? Well, life being life, the borders between these
 classifications are a rather gray area and they have been reassigned
 often. In fact, the study of naming and classifying groups of organisms
 is a whole branch of biology, called taxonomy. Other than discussing
-about the number of kingdoms, taxonomists also subdivide kingdoms in
-phyla, those in classes, orders, families, genera, species and more.
-Each group of organisms is called a taxon and may contain any number of
-other taxa. Kingdom, phyla and class are called taxonomic ranks. In this
-work, we use the NCBI taxonomy [@federhen], a taxonomy with 29 named
-taxonomic ranks (though at the start of my PhD, it had only 27), but
-in between those are many unnamed ranks. It includes viruses as well
-as living organisms. The NCBI taxonomy was chosen mostly for practical
-reasons, but there are many competing taxonomies such as Species 2000
-[@banki] and Encyclopedia of Life [@parr].
+about the number of kingdoms, taxonomists also subdivide kingdoms
+in phyla, those in classes, those in orders, and so forth (Figure
+\ref{fig:ranks}). Each group of organisms is called a taxon and may
+contain any number of other taxa. Kingdom, phyla and class are called
+taxonomic ranks. In this work, we use the NCBI taxonomy [@federhen],
+a taxonomy with 29 named taxonomic ranks (though at the start of my
+PhD, it had only 27), but in between those are many unnamed ranks.
+It includes viruses as well as living organisms. The NCBI taxonomy
+was chosen mostly for practical reasons, but there are many competing
+taxonomies such as Species 2000 [@banki] and Encyclopedia of Life
+[@parr].
+
+![Commonly used taxonomic ranks ordered from least to most specific, with the most important for this thesis highlighted.\label{fig:ranks}](ranks.svg){ width=60% }
 
 Each taxon is directly contained by only a single other taxon, called
 its parent. All taxa together are thus structured in a tree, sometimes
@@ -266,6 +269,8 @@ million genes from 567.7 Gbp sequence data for the human gut microbiome
 gene catalog). The amount of data and the repetitions of DNA within and
 between (allowing the incorrect assembly of chimeras) organisms make
 assembly a hard problem to solve.
+
+<!-- TODO Aurelien 1 -->
 
 Alternatively, the reads are individually partitioned and assigned
 to an individual genome [@huson;@brady;@wood2014]. This process is

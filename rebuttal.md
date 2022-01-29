@@ -86,7 +86,7 @@ Suggestion applied.
 >     is important later on to the depth on which your method could
 >     distinguish the organisms.
 
-All "main" named ranks were added, with minor changes to the sentence.
+Figure was added as requested by Wesley De Neve.
 
 >  7. Small remark: I think on page 14, third paragraph, you forgot to
 >     refer to Figure 1.3, illustrating the RNA transcription. The same
@@ -423,12 +423,6 @@ I don't have exact numbers for this, but our estimate was several weeks.
 
 ## Wesley De Neve
 
->  1. [General] The dissertation still contains a number of typos.
->     A careful, final proofread may help in minimizing these
->     imperfections.
-
-TODO
-
 >  2. [General] In the different conclusions sections (e.g., Section
 >     2.4), it may be good to better emphasize the robustness
 >     (generalization) aspect of the UMGAP pipeline, and where
@@ -436,30 +430,30 @@ TODO
 >     proposed pipeline (with the exception of the experiment with
 >     shuffled genomes).
 
-TODO
+<!-- TODO -->
 
 >  3. [Chapter 1] It would be good to add a figure that shows the
 >     hierarchy of the different taxonomic ranks often used in the
 >     dissertation.
 
-TODO
+Figure added, and this also covers remark 6 by Carolien De Tender.
 
 >  4. [Chapter 1] It would be good to add a figure that visualizes the
 >     relationship between UniProtKB, NCBI, EC numbers, GO terms, and
 >     InterPro entries.
 
-TODO
+Instead of a figure, a paragraph with an example was added.
 
 >  5. [Chapter 1, Fig. 1.5] It would be good to add an arrow that
 >     denotes increasing rank.
 
-TODO
+Since this image is a direct screenshot from Unipept, I won't change it.
 
 >  6. [Chapter 1] It may be good to split up Section 1.6 into (1) a
 >     section that lists the different contributions and (2) a section
 >     that describes the overall organization of the dissertation.
 
-TODO
+<!-- TODO maybe -->
 
 >  7. [Chapter 2] Given the importance and the size of this chapter, it
 >     may be of interest to better clarify the overall structure of this
@@ -475,35 +469,37 @@ TODO
 >     three major parts: pipeline identification, benchmarking, and
 >     in-depth analysis.
 
-TODO
+<!-- TODO -->
 
 >  8. [Chapter 2] When mentioning the total number of investigated UMGAP
 >     configurations for the first time (i.e., 3900), it would be good
 >     to immediately point out that these configurations can be split
 >     into 2700 tryptic configurations and 1200 9-mer configurations.
 
-TODO
+Added.
 
 >  9. [Chapter 2] It would be good to add a note to explain what is
 >     meant with 'shuffled genomes'.
 
-TODO
+Added.
 
 > 10. [Chapter 2] The definition of Operational Taxonomic Unit (OTU) is
 >     not clear. Providing an example may be helpful.
 
-TODO
+Added.
 
 > 11. [Chapter 2] Part of Section 2.5.9, which discusses per read taxon
 >     aggregation, could be merged with Section 2.2.5, or it would be
 >     good to have Section 2.2.5 at least refer to Section 2.5.9.
 
-TODO
+These sections are intentionally kept seperate, with section 2.1 to 2.5
+showing the possibilities, and section 2.5 outlining the commands used
+to achieve the above.
 
 > 12. [Chapter 3] It may be good to mention a number of pipelines,
 >     frameworks, and/or projects that are making use of FragGeneScan.
 
-TODO
+<!-- TODO -->
 
 > 13. [Chapter 3] Throughout the dissertation, it would be good to keep
 >     the notation for FGS, FGS+, FGS++, and FGSrs consistent. For
@@ -511,21 +507,23 @@ TODO
 >     to long-form notation can be noticed for the different versions of
 >     FragGeneScan.
 
-TODO
+Made consistent.
+
+<!-- TODO in chapter 3, todo: 2, 4, 5 -->
 
 > 14. [Chapter 3] When presenting averages, it would be good to present
 >     standard deviations as well, either visually (through error bars)
 >     or textually (by mentioning the standard deviation in the caption
 >     of a plot).
 
-TODO
+<!-- TODO -->
 
 > 15. [Chapter 4] Fig. 4.1 currently gives an overwhelming
 >     impression. It may therefore be of interest to work with a
 >     coarse-to-fine-grained approach, first presenting a high-level
 >     visualization and then a more detailed visualization.
 
-TODO
+<!-- TODO -->
 
 > 16. [Chapter 4] From the current discussion, the link between the
 >     newly introduced tools and the use of a relational database was
@@ -539,20 +537,20 @@ TODO
 >     metaproteomics tool, it does not suffice for a metagenomics tool,
 >     which is expected to handle much larger amounts of data."
 
-TODO
+<!-- TODO -->
 
 > 17. [Chapter 4] Similar to Chapter 2 and Chapter 3, it may be good
 >     to add a footnote to the beginning of Chapter 4 that efforts
 >     described in this chapter contributed to (at least) two papers (as
 >     implicitly mentioned in Section 4.3).
 
-TODO
+<!-- TODO -->
 
 > 18. [Appendix A] I am not aware of a reference to this appendix from
 >     within the main text of the dissertation. I believe it would be
 >     good to incorporate such a reference (from within Chapter 2).
 
-TODO
+Fixed.
 
 ## Aurélien Carlier
 
@@ -576,14 +574,14 @@ TODO
 
 ### General comments
 
-> My only general comment pertaining to the dissertation is that
-> there is sometimes some confusion throughout between protein (i.e.
-> the biological entity) & amino acid sequence; DNA and nucleotide
-> sequence; organism and genome, etc… This can be quite confusing to
-> read for a molecular biologist. Make sure to clearly distinguish
-> biological entities from their representations. I tried to flag as
-> many instances of such conflation the annotated PDF of the thesis,
-> but I advise careful proofreading.
+> My only general comment pertaining to the dissertation is that there
+> is sometimes some confusion throughout between protein (i.e. the
+> biological entity) & amino acid sequence; DNA and nucleotide sequence;
+> organism and genome, etc... This can be quite confusing to read for
+> a molecular biologist. Make sure to clearly distinguish biological
+> entities from their representations. I tried to flag as many instances
+> of such conflation the annotated PDF of the thesis, but I advise
+> careful proofreading.
 
 ### Specific comments:
 
@@ -596,34 +594,34 @@ TODO
 > - Introduce some taxonomic and phylogenetic concepts (tree crown and
 >   clade, etc…). Perhaps in the form of a box with some definitions.
 
-TODO
+<!-- TODO under consideration: I don't use these terms -->
 
 > - A (brief) discussion about introns/exons is missing. The tools
 >   described were clearly created with bacteria in mind, but they
 >   should also be applicable to archaea and eukaryotes.
 
-TODO
+<!-- TODO -->
 
 > - Maybe a sentence or two about post-translational modifications and
 >   how they are expected to impact proteomics data analysis.
 
-TODO
+<!-- TODO introns exons? -->
 
 > - expand definitions of GO, InterPro, EC
 
-TODO
+I added an example, which should clarify what these are.
 
 > - P15: Misleading statement: “[…] some bacteria blend the
 >   transcription and translation into a single step”. Although
 >   transcription and translation are coupled in prokaryotes, this is
 >   still a 2-step process.
 
-TODO
+<!-- TODO -->
 
 > - P19: Add a little bit more explanation (one or two sentences) on
 >   how contigs are profiled to be grouped into bins
 
-TODO
+<!-- TODO Aurelien 1 -->
 
 > - Since much of this thesis relies on gene finding, or at least
 >   matching DNA to AA sequences databases. It would be good to have
@@ -636,75 +634,84 @@ TODO
 >   an overview of FragGeneScan, which is introduced in Chapter 2
 >   without much explanation.
 
-TODO
+<!-- TODO section state of the art tools? -->
 
 #### Chapter 2
 
 > - Is FragGeneScan codon usage-aware? How are the gene models
 >   created/updated?
 
-TODO
+<!-- TODO -->
 
 > - P32, tryptic peptides: what do you mean by “it is a random
 >   fragmentation strategy”? This seems counterintuitive since peptides
 >   are digested in silico in a systematic manner.
 
-TODO
+Replaced random with arbitrary. It is indeed systematic, but has
+no biological meaning (so the breaks seem random from a biological
+perspective).
 
 > - P35. Peptide Filtering. The first sentence of this paragraph should
->   be rephrased. Protein fragmentation may yield false positives:
->   peptides that do not occur in proteins encoded in the read. First,
->   I’m assuming that this is referring to spurious AA sequences that
+>   be rephrased. 'Protein fragmentation may yield false positives:
+>   peptides that do not occur in proteins encoded in the read.' First,
+>   I'm assuming that this is referring to spurious AA sequences that
 >   are translated from non-coding regions in a read, but the phrasing
 >   is ambiguous. Second: do not confuse protein and amino-acid
 >   sequence, and do not confuse read and gene (a read does not encode
 >   anything).
 
-TODO
+Rephrased to 'Protein fragmentation may yield false positives: peptides
+translated from non-coding regions in a read.'
 
 > - P42. Were the simulated reads generated from coding regions only?
 
-TODO
+<!-- Aurelien 2 -->
+
+No, they include reads from non-coding regions as well.
 
 > - P42. Do you expect true negatives to occur in real metagenome
 >   datasets? Would this depend on the sequencing technology used
 >   (error profiles)?
 
-TODO
+No, all reads in real metagenome datasets should be positives.
+Of course, the sequencer may make mistakes which make the read
+unrecognizable, but it would still count as a (false) positive in the
+end result.
 
 > - Fig. 2.17 & 2.19: what was the read profiling method used to
 >   generate these data?
 
-TODO
+Both contain all 5 read profiling methods.
 
 > - The parameters for max precision are set according to results
 >   presented on Fig 2.16, but it’s not obvious to me why hybrid
 >   profiling is chosen over LCA*. Could you explain?
 
-TODO
+I'm afraid this has no particular reason; I could find little difference
+in the used parameter sweep. The sensitivity for the hybrid version is a
+bit better when combined with other configurations.
 
 > - P52. What does snaptaxon do? This comes later in the chapter, but a
 >   brief explanation would be useful here, or at least a reference to
 >   the paragraph where it is described.
 
-TODO
+References were added.
 
 > - P60. The discussion on the degradation of the signal with increased
 >   divergence of Leptospira reads is very interesting. Do you know by
 >   how much the different simulated genomes diverged (%ANI)?
 
-TODO
+<!-- TODO Aurilien 3 -->
 
 > - P61. Are other input formats supported (e.g. BAM, SAM) ?
 
-TODO
+No. I suppose they could be added, but I haven't been approached by
+people with data in these formats for now, for a metagenomics study.
 
 > - Remark: A major selling point of UMGAP might be the taxonomic
 >   breadth of the database (including eukaryotes). That may make the
 >   tool ideally suited for host-associated microbiomes, where tools
 >   like e.g. Kraken or to a smaller extent Kaiju become unwieldy.
-
-TODO
 
 > - P60. Discussion. You propose to further explore functional
 >   characterization of metagenomes using UMGAP or similar methods. This
@@ -713,7 +720,10 @@ TODO
 >   than tools like HUMAnN2 (with DIAMOND under the hood, if I remember
 >   correctly)?
 
-TODO
+The main problem is the lack of a proper functional database, or
+rather the lack of a functional database with a proper structure.
+Algorithms similar to the ones used for the index do not work on
+none-tree structures.
 
 #### Chapter 3
 
@@ -727,34 +737,40 @@ TODO
 >   of sensitivity and precision is certainly of concern. Is this
 >   specific to the latest version of FGS++ ?
 
-TODO
+No, this was included in FGS++ from the start.
 
 > - How does FragGeneScan deal with the problem of identifying the
->   correct 5’ end (start codon) of a gene?
+>   correct 5' end (start codon) of a gene?
 
-TODO
+The possible start and end codons are included in the code. To find the
+correct one, the algorithm depends on the training data. It choses the
+one with the highest scoring markov path.
 
 #### Chapter 4
 
 > - P98. What are “unwanted” taxa?
 
-TODO
+There are some incorrectly marked taxa in the NCBI taxonomy. For example
+taxa with 'undetermined' or 'unspecified' or 'metagenome' in their name.
 
 > - P100. What are “equalized” peptides?
 
-TODO
+In metaproteomics via mass spectrometry, I and L amino acids cannot
+be distinquished. So Unipept calculates all indices with both I and L
+equalized (as if they were the same) and not equalized (as if they are
+not).
 
 > - P102. Would there be anything to gain by filtering out low
 >   complexity sequences in building the kmer to taxon table?
 
-TODO
+<!-- TODO low complexity sequences? -->
 
-> - P115. “This sets the stage for the optional filtering of the taxa
->   based on their location”. I’m assuming you mean the location of
+> - P109. "This sets the stage for the optional filtering of the taxa
+>   based on their location". I’m assuming you mean the location of
 >   taxonomic matches within the read. Is this correct? Cold you
 >   rephrase to make it less ambiguous?
 
-TODO
+Correct, and clarified.
 
 > - P116. “This lists of taxa need to be aggregated…”. I find this
 >   sentence unclear. It says all consecutive reads with the same
@@ -763,17 +779,23 @@ TODO
 >   “ends” in the sentence “translate must keep together the ends and
 >   translations of a read”?
 
-TODO
+Rephrased paragraph: 'These lists of taxa need to be aggregated into a
+single consensus taxon per read. However, in data sets with paired end
+reads the two ends are under different FASTA headers. The same goes
+for the 6 different reading frames. Here it becomes important that the
+`fastq2fasta` and `translate` steps kept these reads together: the
+`uniq` tool will gather all consecutive reads with the same header after
+dropping a possible suffix.'
 
 > - P120. Similar ambiguity in the sentence “instead of joining all the
 >   reads after identification”
 
-TODO
+Rephrased.
 
 > - P123. Could you briefly explain what the HiPlex and GBS datasets
-> - are?
+>   are?
 
-TODO
+<!-- TODO -->
 
 #### Chapter 5
 
@@ -786,9 +808,24 @@ TODO
 >   possible strategies that could be applied to reduce the size of the
 >   index?
 
-TODO
+10-mers wouldn't be much different, but in theory we could go to 20 or
+30-mers sometimes. A pure 10-mer-index went over 500GiB while under
+construction, which is when the machine ran out of disk space. The whole
+index is preferable kept in memory, so a fast 10-mer index as the 9-mer
+index is currently used would be impractical.
+
+Structural changes to the index to decrease it in size would be hard,
+so I would focus on removing less useful 9-mers. Only 10% of the 9-mers
+maps to root, but do we really need anything above genus?
 
 > - P123. I would add that GO-terms are near useless in metagenome
 >   analyses, but that’s just my opinion...
 
-TODO
+## Veerle Fack
+
+No changes requested.
+
+## Tom Ruttinck
+
+Remarks requested as notes in a PDF. I will list questions and answers
+below, but will fix small remarks directly in the text.

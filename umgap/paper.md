@@ -173,7 +173,7 @@ UMGAP breaks protein fragments into non-overlapping variable-length
 peptides by splitting after each lysine (K) or arginine (R) residue
 that is not followed by proline (P). This is the classic *in silico*
 emulation of a trypsin digest, the most widespread protein digestion
-used for mass spectrometry [@vandermarliere]. It is a random
+used for mass spectrometry [@vandermarliere]. It is an arbitrary
 fragmentation strategy in the context of metagenomics, but finds its
 roots in the Unipept metaproteomics analysis pipeline as the initial
 starting point for UMGAP, and is merely an attempt to reuse part of the
@@ -261,14 +261,14 @@ profiling.
 
 ### Peptide Filtering
 
-Protein fragmentation may yield false positives: peptides that do
-not occur in proteins encoded in the read. Most false positives
-are automatically filtered as they have no exact match with any
-UniProt protein. As a result, they cannot be associated with a taxon
-during peptide profiling. This is the case for most peptides from
-translations of wrong gene predictions or outside coding regions in a
-six-frame translation (Figure \ref{protein-translation}). But peptide
-profiling itself may also yield false positive identifications: peptides
+Protein fragmentation may yield false positives: peptides translated
+from non-coding regions in a read. Most false positives are
+automatically filtered as they have no exact match with any UniProt
+protein. As a result, they cannot be associated with a taxon during
+peptide profiling. This is the case for most peptides from translations
+of wrong gene predictions or outside coding regions in a six-frame
+translation (Figure \ref{protein-translation}). But peptide profiling
+itself may also yield false positive identifications: peptides
 associated with an inconsistent taxon, i.e., a taxon that is not the
 correct taxon or one of its ancestors in the NCBI Taxonomy tree. This
 could be the case for both true and false positive peptides from protein
@@ -447,27 +447,31 @@ platforms whose read error models have been used for simulation. For
 each data set 1000 reads were simulated from 10 bacterial genomes, for a
 total of 10.000 reads per data set.
 
-Accuracy of each UMGAP configuration was evaluated at the genus level
-by computing precision and sensitivity of the taxonomic profiling for
-each data set. Using the UMGAP `snaptaxon` tool and guided by the NCBI
-Taxonomy tree, more specific UMGAP predictions were mapped to the genus
-level because expected predictions were only known at the genus level
-for these data sets. True positives (TP) are reads assigned to the
-expected genus. False positives (FP) are reads assigned to a genus other
-than the expected genus. False negatives (FN) are reads that UMGAP could
+<!-- Aurelien 2 -->
+
+Accuracy of each UMGAP configuration was evaluated at the genus
+level by computing precision and sensitivity of the taxonomic
+profiling for each data set. Using the UMGAP `snaptaxon` tool
+(\ref{chapter:components:snaptaxon}) and guided by the NCBI Taxonomy
+tree, more specific UMGAP predictions were mapped to the genus level
+because expected predictions were only known at the genus level for
+these data sets. True positives (TP) are reads assigned to the expected
+genus. False positives (FP) are reads assigned to a genus other than
+the expected genus. False negatives (FN) are reads that UMGAP could
 not assign at or below the genus level. As these data sets contain no
 invalid reads, there are no true negatives (TN).
 
 Figure \ref{parameter-tuning} shows the precision and sensitivity of all
 3900 UMGAP configurations tested. As expected, the protein fragmentation
 method has a major influence on sensitivity. The difference in precision
-is less pronounced at first glance. In general, 9-mer configurations
-(orange) have a higher sensitivity than tryptic configurations (blue),
-but they also have a higher runtime (about 3 times longer) and memory
-footprint (about 10 times more). To simplify further discussion, we will
-treat tryptic and 9-mer configurations separately in what follows.
+is less pronounced at first glance. In general, the 1200 9-mer
+configurations (orange) have a higher sensitivity than the 2700 tryptic
+configurations (blue), but they also have a higher runtime (about 3
+times longer) and memory footprint (about 10 times more). To simplify
+further discussion, we will treat tryptic and 9-mer configurations
+separately in what follows.
 
-![Precision and sensitivity of 3900 UMGAP configurations, with tryptic peptide configurations marked in blue and 9-mer configurations marked in orange.\label{parameter-tuning}](figures/kraken-benchmark/digestor-wrapped.svg){ width=90% }
+![Precision and sensitivity of 3900 UMGAP configurations, with 2700 tryptic peptide configurations marked in blue and 1200 9-mer configurations marked in orange.\label{parameter-tuning}](figures/kraken-benchmark/digestor-wrapped.svg){ width=90% }
 
 ### Tryptic Configurations
 
@@ -612,26 +616,27 @@ in relative abundance of the individual phyla and that have three
 replicates each. The six data sets contain between 27 and 37 million
 read pairs simulated from both real, simulated, and shuffled genomes,
 with read length 100 and mean insert size 500 (standard deviation 25).
-All data sets contain 20% reads simulated from shuffled genomes that
-serve as a negative control and also contain reads simulated from
-genomes that were artificially diverged from a *Leptospira interrogans*
-reference genome to test the robustness of the tools against natural
-variation.
+The simulated genomes are artificially diverged from a *Leptospira
+interrogans* reference genome to test the robustness of the tools
+against natural variation. The shuffled genomes are derived actual
+genomes of which the sequences were thoroughly mixed, to serve as a
+negative control.
 
-In addition to evaluating the accuracy of taxonomic profiling tools at
-the phylum and genus levels, we also evaluated their accuracy at the
-species level (Table \ref{species-table}). Using the UMGAP `snaptaxon`
-tool and guided by the NCBI Taxonomy tree, predictions more specific
-than the taxonomic rank under evaluation were mapped to the taxonomic
-rank under evaluation. Predictions less specific than the taxonomic rank
-under evaluation were considered as no assignment to any taxon. Reads
-whose expected identification is less specific than the taxonomic rank
-under evaluation are ignored. True positives (TP) are non-shuffled reads
-assigned to the expected taxon. False positives (FP) are non-shuffled
-reads assigned to a taxon that differs from the expected taxon or
-shuffled reads assigned to a taxon. True negatives (TN) are shuffled
-reads not assigned to any taxon. False negatives (FN) are non-shuffled
-reads not assigned to any taxon.
+In addition to evaluating the accuracy of taxonomic profiling tools
+at the phylum and genus levels, we also evaluated their accuracy
+at the species level (Table \ref{species-table}). Using the UMGAP
+`snaptaxon` tool (\ref{chapter:components:snaptaxon}) and guided by the
+NCBI Taxonomy tree, predictions more specific than the taxonomic rank
+under evaluation were mapped to the taxonomic rank under evaluation.
+Predictions less specific than the taxonomic rank under evaluation
+were considered as no assignment to any taxon. Reads whose expected
+identification is less specific than the taxonomic rank under evaluation
+are ignored. True positives (TP) are non-shuffled reads assigned to the
+expected taxon. False positives (FP) are non-shuffled reads assigned to
+a taxon that differs from the expected taxon or shuffled reads assigned
+to a taxon. True negatives (TN) are shuffled reads not assigned to any
+taxon. False negatives (FN) are non-shuffled reads not assigned to any
+taxon.
 
 <div class="landscape">
  Tool                  Precision  Sensitivity  Specificity         NPV        MCC  Run time  Index size
@@ -752,11 +757,12 @@ still uses species as the target rank, but in a less stringent way
 compared to the MetaBenchmark.
 
 We performed the analysis using the UMGAP high precision pipeline.
-Accuracy metrics are reported per operational taxonomic unit (OTU),
-i.e. all (paired-end) reads are grouped per OTU from which they were
-extracted/generated. Results are reported in separate tables for
-one of the small datasets we used for parameter tuning (10 OTUs, in
-\nameref{chapter:appendix-a}) and one of the large MetaBenchmark
+Accuracy metrics are reported per operational taxonomic unit (OTU, a
+pragmatic proxy for "species", not necessarily all at the same taxonomic
+level), i.e. all (paired-end) reads are grouped per OTU from which
+they were extracted/generated. Results are reported in separate tables
+for one of the small datasets we used for parameter tuning (10 OTUs,
+in \nameref{chapter:appendix-a}) and one of the large MetaBenchmark
 datasets (1105 OTUs, not included due to size), split into real (963),
 simulated (32) and shuffled (110) OTUs. In what follows, we discuss some
 general observations from the in-depth analysis and illustrate them with
@@ -848,6 +854,8 @@ genus level. Of the OTUs generated from simulated genomes with high
 divergence, almost no reads could be identified. OTUs generated from
 simulated genomes with mixed divergence either follow the pattern of
 genomes with little divergence or the genomes with medium divergence.
+
+<!-- Aurelien 3 -->
 
 ## Discussion
 

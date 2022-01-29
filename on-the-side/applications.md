@@ -291,7 +291,7 @@ $ umgap prot2kmer2lca -o -k9 9-mer.index \
 
 The `-o` flag requests unrecognized peptides to be included as taxon ID
 0. This sets the stage for the optional filtering of the taxa based on
-their location: the seed extend tool.
+the location of the match within the read: the seed extend tool.
 
 ```shell
 $ umgap seedextend < found-kmers.fa | tee selected-seeds.fa
@@ -309,12 +309,14 @@ $ umgap seedextend < found-kmers.fa | tee selected-seeds.fa
 ...
 ```
 
-These lists of taxa need to be aggregated into a single consensus
-taxon per read. The `uniq` tool will gather all consecutive reads with
-the same header after dropping a possible suffix, which is why the
-`fastq2fasta` and `translate` steps must keep together the ends and
-translations of a read. Next, the `taxa2agg` command aggregates the
-complete set using a given taxonomy.
+These lists of taxa need to be aggregated into a single consensus taxon
+per read. However, in data sets with paired end reads the two ends
+are under different FASTA headers. The same goes for the 6 different
+reading frames. Here it becomes important that the `fastq2fasta` and
+`translate` steps kept these reads together: the `uniq` tool will gather
+all consecutive reads with the same header after dropping a possible
+suffix. Next, the `taxa2agg` command aggregates the complete set using a
+given taxonomy.
 
 ```shell
 $ umgap uniq -d / < selected-seeds.fa | \

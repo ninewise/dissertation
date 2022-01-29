@@ -1,4 +1,5 @@
 ### Snap Taxa to a Named Rank
+\label{chapter:components:snaptaxon}
 
 During an analysis, a researcher may be interested in identifications
 only at a given rank, e.g. species, or the presence or absence of

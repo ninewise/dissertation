@@ -18,23 +18,22 @@ single thread, with better scaling for multithreaded execution.[^foot:fgsrs]
 ## Performance on Complete Genomes
 
 Originally intended for detecting fragmented genes in short metagenomics
-reads, FragGeneScan had a feature added in 1.16 to allow predicting
-genes from contigs. This feature consists of an additional training set
-(called "complete") and a flag which triggers alternative behaviour
-while calculating the probabilities in the Hidden Markov Model and
-during the postprocessing of the detected genes. First, the flag
-disallows all deletion states in the Markov Chain, effectively banning
-deletions in detected genes. Second, the flag increases the minimum size
-of detected genes to 120 base pairs instead of 60. Finally, it causes a
-scan in the area surrounding the beginning and end of the detected gene
-to search for start and stop codons, refining the detected gene.
+reads, FGS had a feature added in 1.16 to allow predicting genes from
+contigs. This feature consists of an additional training set (called
+"complete") and a flag which triggers alternative behaviour while
+calculating the probabilities in the HMM and during the postprocessing
+of the detected genes. First, the flag disallows all deletion states
+in the Markov Chain, effectively banning deletions in detected genes.
+Second, the flag increases the minimum size of detected genes to
+120 base pairs instead of 60. Finally, it causes a scan in the area
+surrounding the beginning and end of the detected gene to search for
+start and stop codons, refining the detected gene.
 
-As the same behaviour is implemented in FragGeneScanRs, a benchmark
-comparing the prediction results from FragGeneScan, FragGeneScan+
-and FragGeneScanRs on a complete and annotated genome is possible.
-Also included in the benchmark is a tool specifically built for
-detecting genes in complete prokaryotic genomes and assemblies, Prodigal
-[@hyatt2010].
+As the same behaviour is implemented in FGSrs, a benchmark comparing
+the prediction results from FGS, FGS+ and FGSrs on a complete and
+annotated genome is possible. Also included in the benchmark is a tool
+specifically built for detecting genes in complete prokaryotic genomes
+and assemblies, Prodigal [@hyatt2010].
 
 Each tool was executed on the genome of *Geobacter anodireducens*
 strain SD-1 [@anodireducens]. To compare the results, each single base
@@ -67,16 +66,14 @@ Table \ref{table:fgs-metrics} shows the resulting quality metrics.
  Matthews Correlation C.       62.58%    46.79%    62.58%    72.49%
  Speed (bp/s)                    936K      9.6K     2088K      417K
 
- Table: Performance metrics on the gene predictions of FragGeneScan
- (FGS), FragGeneScan+ (FGS+), FragGeneScanRs (FGSrs) and Prodigal
- on the complete genome of *Geobacter anodireducens* strain
- SD-1. The processing speed is calculated as the length of the
- genome in base pairs over the average execution time of 5
+ Table: Performance metrics on the gene predictions of FGS, FGS+, FGSrs
+ and Prodigal on the complete genome of *Geobacter anodireducens*
+ strain SD-1. The processing speed is calculated as the length of
+ the genome in base pairs over the average execution time of 5
  runs.\label{table:fgs-metrics}
 
 Prodigal is by far the best included gene predictor for complete
-genomes. FragGeneScan and FragGeneScanRs obviously have the same
-results and score especially more false positives, which impacts its
-specificity. Still, it is more than twice as fast as Prodigal (and 5
-times faster for FGSrs). FragGeneScan+ is far worse in both quality of
-results and speed.
+genomes. FGS and FGSrs obviously have the same results and score
+especially more false positives, which impacts its specificity. Still,
+it is more than twice as fast as Prodigal (and 5 times faster for
+FGSrs). FGS+ is far worse in both quality of results and speed.

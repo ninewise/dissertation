@@ -124,14 +124,13 @@ frequency of each haplotype on every locus in each sample.
 -->
 
 The software package was introduced to us and the students as a nearly
-complete product, with the execution speed as a blocking factor for
-publication.
-For HiPlex dataset of about 230MB, the initial implementation took 10
-minutes to process. For a GBS dataset of 19.3G, this was 83 minutes. The
-first problem in the initial implementation was the iteration of the
-loci. Per reference genome, all reads were considered for haplotyping;
-not just the ones in the current locus. By filtering on locus, most
-reads can be skipped in each iteration.
+complete product, with the execution speed as a blocking factor
+for publication. For a HiPlex dataset of about 230MB, the initial
+implementation took 10 minutes to process. For a GBS dataset of 19.3G,
+this was 83 minutes. The first problem in the initial implementation
+was the iteration of the loci. Per reference genome, all reads were
+considered for haplotyping; not just the ones in the current locus. By
+filtering on locus, most reads can be skipped in each iteration.
 
 Secondly, many of the reads are equal, so they will have the same
 haplotype as well. Instead of calculating the haplotype for a read we've
