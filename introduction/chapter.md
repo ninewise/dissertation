@@ -173,14 +173,14 @@ studying their interrelations and influence on the organism.
 A genomics study traditionally consists of three parts: sequencing,
 assembly and annotation. The first part, sequencing, is the conversion
 of physical DNA molecules into their DNA sequence, the order of the
-nucleotides in the chain. Current machinery is incapable of accurately
-and rapidly sequencing complete molecules. The DNA molecules are first
-split into shorter segments, from which reads are sequenced. These reads
-can vary in length from 25 base pairs up to a few 10.000 base pairs,
-depending on the used sequencing technology, with various read error
-types and rates. The result of sequencing is a data set of the DNA
-sequences of reads, along with some metadata such as the quality of a
-read.
+nucleotides in the chain. Current machinery is capable of accurately and
+rapidly sequencing DNA molecules of a certain length range (Illumina 50
+base pairs (bp) to 500bp, PacBIO 1kbp to several 10kbp, Oxford Nanopore
+from 10kbp up to Mbp range, each with differing read error types and
+rates), so the DNA fragments are randomly split into shorter fragments
+according to the size range fit per instrument. The result of sequencing
+is a data set of the DNA sequences of reads, along with some metadata
+such as the quality of a read.
 
 <!-- TODO Carolien 2 -->
 
@@ -204,7 +204,7 @@ a mixture of both.
 Similar to a genome, the collection of an organism's proteins is
 called its proteome, with the corresponding study called proteomics.
 Since a protein performs a function, studying the proteome of an
-organism provides insight in what this organism can do. Large scale
+organism provides insight in what this organism is doing. Large scale
 proteomics studies may follow the same pattern as genomics studies: the
 proteins are segmented, often with trypsin. The protein sequence of
 these segments, called (tryptic) peptides, is then determined by for
@@ -242,18 +242,20 @@ be sequenced in genomics [@locey;@rappe;@hugenholtz1998;@hoferthemi].
 Early sequencing methods for metagenomics methods were based on
 (partial) 16S ribosomal RNA sequences [@phylogeny16s]. These short
 sequences occur in all prokaryote cells, and contain both highly
-conservative (rarely mutating) regions and often mutating regions. The
-conserved regions can be used as primers (markers) to sequence the 16S
-rRNA. The mutating regions in between the primers can than be used
-to differentiate between organisms [@primers16s]. While this makes a
-powerful tool to identify prokaryote species in a sample and build
-phylogenetic trees of these organisms, it does not help to assemble
-complete genomes, nor does this work on eukaryotes. Furthermore, the
-short 16S sequence can be subject to horizontal gene transfer, which
-makes it less reliable as identifying sequence [@horizontal16S].
+conserved (rarely mutating) regions and variable (often mutating)
+regions. The conserved regions can be used as primers (markers) to
+sequence the 16S rRNA. The mutating regions in between the primers
+can than be used to differentiate between organisms [@primers16s].
+While this makes a powerful tool to identify prokaryote species in a
+sample and build phylogenetic trees of these organisms, it does not
+help to assemble complete genomes, nor does this work on eukaryotes
+(though there are other regions usable for subgroups of eukaryotes).
+Furthermore, the short 16S sequence can be subject to horizontal
+gene transfer, which makes it less reliable as identifying sequence
+[@horizontal16S].
 
 The more recent shotgun metagenomics method [@quince], on the other
-hand, uses non-targeted sequencers yielding randomly located short reads
+hand, uses non-targeted sequencing yielding randomly located short reads
 from all genomes in the complete environmental sample. Because reads
 from the complete genome are sequenced, shotgun metagenomics allow not
 only profiling of the taxonomic composition, but also the functional
@@ -350,14 +352,14 @@ is released. More details on this process can be found in section
 
 Given the success of Unipept for metaproteomics, could we reuse the
 fast and accurate peptide-to-taxa mapping also for the analysis of
-metagenomics data sets? By using a gene predictor, a metagenomics data
-set can be transformed *in silico* to a metaproteomics data set. As
-metagenomics data sets are of much larger volume than metaproteomics
-data sets, the Unipept index is wrapped in a local command line tool
-to avoid the network bottlenecks of an online tool. Thus the Unipept
-Metagenomics Analysis Pipeline is born, as an experiment to perform a
-metagenomics biodiversity analysis by making a detour through a general
-purpose metaproteomics database.
+metagenomics data sets? By using a gene (fragment) predictor, a
+metagenomics data set can be transformed *in silico* to a metaproteomics
+data set. As metagenomics data sets are of much larger volume than
+metaproteomics data sets, the Unipept index is wrapped in a local
+command line tool to avoid the network bottlenecks of an online
+tool. Thus the Unipept Metagenomics Analysis Pipeline is born, as an
+experiment to perform a metagenomics biodiversity analysis by making a
+detour through a general purpose metaproteomics database.
 
 In chapter \ref{chapter:umgap}, we describe the complete pipeline
 and evaluate it as an alternative method for metagenomics analysis.

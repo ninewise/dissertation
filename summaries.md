@@ -41,7 +41,7 @@ more conserved than the underlying DNA.
 UMGAP turns out to be a valid alternative for existing metagenomics
 identification tools, though it cannot equal the speed and accuracy
 of all. The pipeline does offer interesting avenues towards
-functional analysis (what organisms are doing in the sample) and
+functional analysis (what organisms in the sample are doing) and
 metatranscriptomics (analyzing RNA reads instead of DNA reads).
 
 As part of the development of UMGAP, we also introduce an

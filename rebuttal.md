@@ -829,3 +829,161 @@ No changes requested.
 
 Remarks requested as notes in a PDF. I will list questions and answers
 below, but will fix small remarks directly in the text.
+
+
+> The role of assembly in metagenomics is not explained, but is is
+> required, necessary, possible at all, for downstream analysis?
+>
+> You explain assembly and annotation for genomics, proteomics and
+> transcriptomics, but your thesis concerns meta-'omics', so it is (even
+> more) important to discuss assembly and annotation in that context,
+> too. (Last paragraph of 1.3)
+
+<!-- TODO -->
+
+> explain 'profiled' in better detail? are only 18S (16S, or other)
+> sequences classified by comparison against a taxonomic reference
+> database? or all sequences? against what kind of database? (1.4 third
+> paragraph)
+
+<!-- TODO -->
+
+> what is a typical data set size (compared to numbers mentioned in the
+> paragraph above?)
+>
+> also: what is the meaning of partitioning of reads in this context?
+>
+> also: discuss the shift of limitations: it moves to the "completeness
+> of the reference genome sets" if no assembled reference genomes
+> are available in the reference database for the organisms in the
+> environmental sample, this limits the fraction of reads that can be
+> classified.
+>
+> catch22: if organisms can not be cultured, they can not be assembled,
+> they can not be used as reference. So, the fraction of the
+> "unculturable" organisms in metagenomics data still remains unexplored
+> (because of the blind spot in the reference databases).
+>
+> also, mathematically speaking, the GC content is the ratio of C and
+> G nucleotides to all nucleotides, (not just the AT fraction) (Last
+> paragraph of 1.4)
+
+<!-- TODO -->
+
+> because it is six-frame? and: how can the user define the translation
+> table? are there proposed translation tables, depending on the
+> expected majority taxonomy abundance groups? like: focus on
+> eukaryotes, please use table X, bacterial profiling, please use table
+> Y, etc?
+>
+> how far can one be off, by choosing an inappropriate translation
+> table? was this tested/calibrated? (Six-frame translation paragraph in
+> 2.2.1)
+
+Yes, because it's six-frame; yes, the user picks a single table for the
+whole analysis; this has not been tested.
+
+> Methylovorus glucos'e'trophus or glucos'o'trophus 
+
+https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=582744
+
+> I do not know if this is possible, but it might be nice to discuss
+> how important the benchmarks of table 3.2 are in terms of the final
+> change in taxonomic classifications of the UMGAP pipeline as a whole?
+> how critical is the FragGeneScan step in the final classification and
+> calculation of relative abundance per taxon in shotgun metagenome
+> data? does the aggregation step buffer for the slightly lower
+> performance of FGSrs vs for instance Prodigal? how important is
+> it that FGS does not recognize all proteins, or picks up a false
+> positive? (Chapter FGSrs title)
+
+<!-- TODO -->
+
+> some advice on changing that to different k-values for different
+> purposes? for instance, what is the optimal if targetted analsyis on
+> virus samples are done? or for bacterial?
+> 
+> can this work be applied to plant communities?
+> 
+> how many plant species with sufficiently complete genome sequences are
+> currently included in UniProtKB? what is a lower limit of coverage
+> per organism (nr of proteins?) for effective taxonomic sensitivity /
+> specificity? (section The `splitkmers` Command, at the 9 as default)
+
+<!-- TODO -->
+
+> Culture collections, botanical gardens and musea keep collections of
+> specimens. Often, these contain both unique and (partially) replicated
+> genotypes.
+> 
+> if we can state that (peak = haplotype); given a set of detected
+> haplotypes for each individual in a set of hundreds or thousands of
+> individuals (collection), as defined by SMAP in it's absence/presence
+> haplotype call table; Question: would it be possible to implement a
+> version of SPeDe to 'dereplicate genotypes', in the frame of creating a
+> core collection : the minimal set of individuals that together contain
+> all variation (all haplotypes) at least once? Also, reference spectra
+> of closely clustered individuals would be very useful to reduce the
+> representation of the entire set, classify new individuals, and link to
+> other - external collections worldwide. This is of great interest for
+> data analysis downstream of SMAP software. We have such data at hand on
+> a collection of several hundred Coffea trees in collaboration with the
+> Botanical garden of Meise :). It could make for a nice future project
+> for BioComp. (4.3.1 SPeDE title)
+
+<!-- TODO -->
+
+> about robustness in the pipeline for the accurate quantification
+> of taxonomy in a complex environmental sample: could you compare
+> 16S metabarcoding pipelines and metagenomics pipelines, and say
+> something about the effect of differential copy number of 16S, versus
+> the buffering effect of using all genome tags to estimate relative
+> abundance of a species in a community?
+>
+> do you correct for differential genome size along the aggregation
+> steps? A larger genome, or a genome with more protein coding length,
+> can look like more abundant compared to a smaller genome size
+> organism. how does this work in your approach? (marked robustness in
+> the first paragraph of conclusions)
+
+<!-- TODO -->
+
+> virusses may also shuffle their protein content, so that many
+> "taxonomically distinct" virusses may share protein domains. (and
+> opening a discussion on the "molecular" versus "phenotypic" basis of
+> taxonomic classification). how do you account for that? is the degree
+> of protein-domain sharing similar across all domains of the taxonomic
+> kingdoms? d some kingdoms have inherently "lower" resolution due to
+> increased horizontal gene transfer protein-domain shuffling, and
+> LCA-based classification of taxonomy? (viral genomes in targetted
+> index files, conclusions)
+
+<!-- TODO -->
+
+> would it still be possible to perform "targetted functional
+> annotation" with a controlled aggregation, based on sequences
+> signatures of components of specific metabolic pathways? (and ignore
+> the rest of the data - (or use the rest as as bulk background for
+> normalisation purposes?)). (functional annotations title in future
+> work)
+
+<!-- TODO -->
+
+> who would be your envisioned "users" of the desktop application?
+> (desktop application title in conclusion)
+
+<!-- TODO -->
+
+> This is a very important set of observations, as it show how gaps in
+> the data bases are important to be filled! can you estimate (somehow?)
+> the (size of) gaps the the protein sequence space that are expected
+> to represent actual organisms that exist in nature? how much more do
+> we need to sequence environmental samples, and what gap (size) is
+> (expected to be) represented by non-assembled genomes of unculturable
+> organisms?
+>
+> by comparison, how many species are "known" to exist, and how many
+> are included in the databases? (per kingdom?) (last bullet point in
+> appendix A)
+
+<!-- TODO -->

@@ -85,7 +85,7 @@ is simply impossible with the current 9-mer index. The associated lists
 would increase the size of the index beyond what could practically be
 stored and processed within a realistic time frame.
 
-![GO terms related to biological processes found in the marine example data set in Unipept. On the left, a list is shown with the related terms ordered by the numbered of peptides annotated with them. On the right, the relation between the 5 most occurring terms can be zoomed in on. This graph is provided by QuickGO [@quickgo].\label{fig:go-terms}](./go-terms.png)
+![GO terms related to biological processes found in the marine example data set in Unipept. On the left, a list is shown with the related terms ordered by the number of peptides annotated with them. On the right, the relation between the 5 most occurring terms can be zoomed in on. This graph is provided by QuickGO [@quickgo].\label{fig:go-terms}](./go-terms.png)
 
 Should a practical and meaningful aggregation strategy be found,
 functional annotation would be a great addition to UMGAP, as it would
@@ -96,10 +96,11 @@ allow exploring the functional potential of a metagenomics sample.
 As shown in section \ref{section:transcript}, by removing the gene
 prediction step from UMGAP, it can be applied to metatranscriptomics
 data sets. Experimentation shows this modified UMGAP is a potential
-metaproteomics analysis tool, but further fine tuning and benchmarking
-studies are in order. Combining such an extension with functional
-annotations as detailed above would result in a very useful
-metaproteomics tool, allowing both taxonomic and functional analyses.
+metatranscriptomics analysis tool, but further fine tuning and
+benchmarking studies are in order. Combining such an extension with
+functional annotations as detailed above would result in a very useful
+metatranscriptomics tool, allowing both taxonomic and functional
+analyses.
 
 #### Integration in Desktop Application
 

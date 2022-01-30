@@ -41,7 +41,7 @@ $ umgap pept2lca tryptic-peptides.index < input.fa
 
 This selfsame result could come from the combined `prot2tryp2lca`
 command, which accepts only a single sequence per FASTA header. This
-sequence in split in tryptic peptides before index lookup.
+sequence is split in tryptic peptides before index lookup.
 
 ```shell
 $ cat input.fa
@@ -53,8 +53,8 @@ $ umgap prot2tryp2lca tryptic-peptides.index < input.fa
 3398
 ```
 
-By default, sequences not found in the index are ignored. Using the -o
-(--on-on-one) flag, they are mapped to 0, instead.
+By default, sequences not found in the index are ignored. Using the `-o`
+(`--one-on-one`) flag, they are mapped to 0, instead.
 
 ```shell
 $ cat input.fa

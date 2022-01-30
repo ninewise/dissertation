@@ -8,7 +8,7 @@ context. Since it's a practical course, part of the work is an
 optimization project.
 
 To offer the students experience in working on an existing code base,
-and to keep the course interesting for both us and them, we elected to
+and to keep the course interesting for both us and them, we chose to
 work together with external partners on a project. We look for a third
 party with a (partial) developed code base stuck on the execution time.
 
@@ -87,27 +87,29 @@ result was published [@dumolin].
 
 <!-- TODO Carolien 42 -->
 
-SMAP is a software package that analyzes read mapping distributions and
-performs haplotype calling to create multi-allelic molecular markers.
-SMAP delineate processes a series of aligned reads. It groups all
-reads from a single locus (region of reads) with the same start and
-end positions in a stack, with the number of reads in the stack called
-the stack depth. Each of the start and end positions is called a Stack
-Mapping Anchor Point (SMAP). These stacks are gathered per sample into a
-stack cluster (with the number of reads called the stack cluster depth).
-Finally, the collection of all SMAP positions across a sample set is
-called a merged cluster.
+SMAP is a software package that analyzes read mapping distributions
+and performs haplotype calling to create multi-allelic molecular
+markers. SMAP delineate processes a series of aligned reads. It groups
+all reads from a single locus (region on the reference genome with
+mapped reads) with the same start and end positions in a stack, with
+the number of reads in the stack called the stack depth. Each of the
+start and end positions is called a Stack Mapping Anchor Point (SMAP).
+The positionally overlapping stacks are gathered per sample into a
+StackCluster (with the number of reads called the StackCluster depth).
+Finally, all StackClusters that positionally overlap across the samples
+of a sample set are collapsed into a MergedCluster.
 
-#### SMAP Haplotype
+#### SMAP Haplotype-sites
 
-SMAP haplotype is the haplotype calling component of the software
+SMAP haplotype-sites is the haplotype calling component of the software
 package. Given the SMAP and Single Nucleotide Polymorphism (SNP)
 positions, it calculates the haplotype for each read in all samples.
 It compares the nucleotide on each SMAP or SNP position with that same
-position in the reference genome. This position is either the same
-(0), different (1) or missing (.) in the read. The resulting string
-of zeroes, ones and points is the haplotype. Finally, it reports the
-frequency of each haplotype on every locus in each sample.
+position in the reference genome. This position is either the same (0),
+different (1), a gap (-) or missing (.) in the read. The resulting
+string of zeroes, ones and points is the haplotype. Finally, it counts
+all reads per haplotype, per locus, per sample, and reports the relative
+haplotype frequency on every locus in each sample.
 
 <!--
 - pagina 38 & 76 (Marzougui & Renders) 
@@ -149,31 +151,34 @@ indels instead of in the number of base pairs.
 
 The combination of these major optimizations with some smaller changes
 introduced a speedup of factor 25, bringing the execution time for the
-previous data sets to 24 seconds for the smaller and 3.5 minutes for the
-larger. The final product was presented at the International Plant &
-Animal Genome conference [@ruttink].
+previous data sets to 24 seconds for the smaller and 3.5 minutes for
+the larger. The final product was presented at the International Plant
+& Animal Genome conference [@ruttink]. A manuscript describing the
+method and it's applications is currently in preparation. The tool has
+since it's major updates been applied in several studies, in various
+agronomically important species, also soon to be published.
 
 #### SMAP Haplotype-window
 
 SMAP haplotype-window is an alternative method for haplotyping reads.
-It is primarily meant for use with targeted resequencing: a number of
-mutations are chosen and applied to a great number of clones, inducing
-to each clone a random subset of the mutations. Such a multiplex
-combinatorial screen allows testing multiple mutations at the same
-time, and their interactions. SMAP haplotype-window comes in play after
-sequencing the resulting genomes. By deriving a haplotype from the
-sequence in the windows in which the mutations were induced, it groups
-together the combinations of mutations.
+It is primarily meant for use with targeted resequencing via Multiplex
+amplicon sequencing. At a given set of loci, collections of plant
+materials are screened for naturally occurring sequence variation,
+and/or CRISPR-Cas induced mutations. In case of CRISPR-Cas induced
+mutations, combinatorial screens may be set up, where multiple targets
+and selected to be genome edited, and the sequencing allows to screen
+each plant for the presence of a random combination of induced
+mutations.
 
 In short, the algorithm links reads to windows, and trims the forward
 and reverse primers from the read. The DNA sequence in the resulting
 window is the haplotype of the read. The haplotypes are aggregated in a
 frequency table.
 
-As with SMAP haplotype, the software presented to us was in a nearly
-finalized state, with extensive documentation and usage manuals. The
-implementation seemed more advanced to me than the SMAP haplotype code
-(before our interference), but still lacking in some areas.
+As with SMAP haplotype-sites, the software presented to us was in a
+nearly finalized state, with extensive documentation and usage manuals.
+The implementation seemed more advanced to me than the SMAP haplotype
+code (before our interference), but still lacking in some areas.
 
 Before starting optimizations, a bug was found in the original
 implementation. When encountering reversed reads (not in the same

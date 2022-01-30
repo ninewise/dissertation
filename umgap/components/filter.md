@@ -12,7 +12,7 @@ acids and excluded amino acids.
 The input is given in FASTA format on standard input. Per FASTA header,
 there may be multiple peptides separated by newlines. Each of these
 peptides are checked against the filter criteria and written to standard
-output they pass them. The criteria are specified as options:
+output if they pass them. The criteria are specified as options:
 
 * `-m 5` sets the minimum length of the peptides to 5.
 

@@ -56,7 +56,7 @@ For each OTU, the tables report:
   the OTU.
 
 * (first column) absolute and relative number of (paired-end) reads for
-  the OTU that could be identified; UMGAP yields not identification if
+  the OTU that could be identified; UMGAP yields no identification if
   no peptides could be extracted from the read (e.g. because the read
   contains no coding regions or no coding regions could be predicted on
   the read).
