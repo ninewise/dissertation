@@ -375,13 +375,14 @@ existing gene predictor called FragGeneScan [@rho]. ...
 
 ## Structure of this dissertation
 
-In chapter \ref{chapter:umgap}, we describe the complete pipeline
-and evaluate it as an alternative method for metagenomics analysis.
-An index operating on fixed-length overlapping peptides is
-introduced as an alternative for the tryptic peptide index. In chapter
+In chapter \ref{chapter:umgap}, we describe the complete pipeline and
+evaluate it as an alternative method for metagenomics analysis. An
+index operating on fixed-length overlapping peptides is introduced
+as an alternative for the tryptic peptide index. In chapter
 \ref{chapter:fgsrs}, we introduce a new implementation of FragGeneScan,
 to be used as an improved gene predictor in the pipeline. In chapter
-\ref{chapter:on-the-side}, we include some of the metawork on the
+\ref{chapter:in-practice}, we include some of the metawork on the
 pipeline, such as the improved construction of the Unipept (and UMGAP)
 index and a few walkthroughs describing the usage of UMGAP in other
-studies.
+studies. Finally, in chapter \ref{chapter:related-work}, I shortly
+detail some related work done during my PhD.

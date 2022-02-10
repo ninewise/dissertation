@@ -10,7 +10,9 @@ bekijken in andere PhD's
 
 #### [frag-gene-scan](frag-gene-scan/chapter.md){.include}
 
-#### [on-the-side](on-the-side/chapter.md){.include}
+#### [in-practice](in-practice/chapter.md){.include}
+
+#### [related-work](related-work/chapter.md){.include}
 
 #### [conclusion](conclusion/chapter.md){.include}
 

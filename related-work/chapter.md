@@ -1,4 +1,4 @@
-## Related Work {#section:relatedwork}
+# Related Work {#chapter:related-work}
 
 During my PhD, one of the courses of which I was the teaching assistant
 is the Computational Biology course. This is a course given to the
@@ -36,7 +36,7 @@ the FragGeneScan project, the results of which lead to Chapter
 \ref{chapter:fgsrs}. In 2021, we once more joined up with Tom and Dries
 on the SMAP project.
 
-### SPeDE: Spectral Dereplication
+## SPeDE: Spectral Dereplication
 
 SPeDE is a program that is used to dereplicate large sets of MALDI-TOF
 MS spectra. The analysis consist of screening the dataset for spectra
@@ -83,7 +83,7 @@ and they hired a short-term programmer to combine them and further
 polish the program. A graphical user interface was added, and the final
 result was published [@dumolin].
 
-### SMAP
+## SMAP
 
 <!-- TODO Carolien 42 -->
 
@@ -99,7 +99,7 @@ StackCluster (with the number of reads called the StackCluster depth).
 Finally, all StackClusters that positionally overlap across the samples
 of a sample set are collapsed into a MergedCluster.
 
-#### SMAP Haplotype-sites
+### SMAP Haplotype-sites
 
 SMAP haplotype-sites is the haplotype calling component of the software
 package. Given the SMAP and Single Nucleotide Polymorphism (SNP)
@@ -158,7 +158,7 @@ method and it's applications is currently in preparation. The tool has
 since it's major updates been applied in several studies, in various
 agronomically important species, also soon to be published.
 
-#### SMAP Haplotype-window
+### SMAP Haplotype-window
 
 SMAP haplotype-window is an alternative method for haplotyping reads.
 It is primarily meant for use with targeted resequencing via Multiplex

@@ -1,4 +1,6 @@
 #!/bin/sh
+set -e
+
 if tectonic --version > /dev/null; then
 	pdfengine="tectonic"
 else
