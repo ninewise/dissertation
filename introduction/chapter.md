@@ -356,10 +356,24 @@ metagenomics data sets? By using a gene (fragment) predictor, a
 metagenomics data set can be transformed *in silico* to a metaproteomics
 data set. As metagenomics data sets are of much larger volume than
 metaproteomics data sets, the Unipept index is wrapped in a local
-command line tool to avoid the network bottlenecks of an online
-tool. Thus the Unipept Metagenomics Analysis Pipeline is born, as an
-experiment to perform a metagenomics biodiversity analysis by making a
-detour through a general purpose metaproteomics database.
+command line tool to avoid the network bottlenecks of an online tool.
+Thus the Unipept Metagenomics Analysis Pipeline, UMGAP for short, is
+born, as an experiment to perform a metagenomics biodiversity analysis
+by making a detour through a general purpose metaproteomics database.
+
+## Existing tools
+
+Of course, UMGAP is not the first tool for analyzing metagenomics
+samples. In fact, we will evaluate UMGAP by comparing its use, speed and
+results to several state-of-the-art metagenomic tools. There are called
+Kraken [@wood2014], Kaiju [@menzel] and CLARK [@ounit].
+
+... TODO
+
+To translate our DNA reads to amino acid sequences, we will be using an
+existing gene predictor called FragGeneScan [@rho]. ...
+
+## Structure of this dissertation
 
 In chapter \ref{chapter:umgap}, we describe the complete pipeline
 and evaluate it as an alternative method for metagenomics analysis.
