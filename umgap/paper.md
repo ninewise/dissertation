@@ -1,4 +1,4 @@
-## Introduction {#introduction-umgap}
+## Introduction {#section:umgap:intro}
 
 <!-- TODO Carolien 5 -->
 
@@ -85,7 +85,7 @@ website.
 [Documentation]: https://unipept.ugent.be/umgap
 [case studies]: https://unipept.ugent.be/umgap/casestudies
  
-## Methods
+## Methods {#section:umgap:methods}
 
 UMGAP performs taxonomic profiling of individual reads or read pairs
 in a shotgun metagenomics data set. Results can be summarized for the
@@ -400,7 +400,7 @@ service hosting the visualizations also support shareable links (e.g.
 
 ![Taxonomic profiling by UMGAP as visualized by the Unipept Web API.\label{visualization}](figures/visualisation.png){ width=90% }
 
-## Results {#results-umgap}
+## Results {#section:umgap:results}
 
 UMGAP implements multiple strategies for each step in the pipeline
 (Figure \ref{outline}), with some strategies also driven by
@@ -420,7 +420,7 @@ Both the parameter sweep and the benchmark were executed on a 2.60GHz 16
 core Intel® Xeon® CPU E5-2650 v2 CPU with 195GB RAM running Debian 9.8
 (stretch).
 
-### Parameter Tuning
+### Parameter Tuning {#section:umgap:results:tuning}
 
 For protein translation we either used gene prediction or six-frame
 translation. Both FGS and FGS++ were used for gene prediction, as
@@ -597,7 +597,7 @@ configurations:
   low-frequency identifications, seed-and-extend with $s=2$ and $g=0$,
   MRTL
 
-### Benchmark
+### Benchmark {#section:umgap:results:benchmark}
 
 The six preconfigured UMGAP pipelines selected from the parameter sweep
 analysis were compared with the two best-performing shotgun metagenomics
@@ -734,7 +734,7 @@ tryptic pipelines that all use the same index) or yield a well-balanced
 trade-off between all performance criteria that adds value compared to
 the trade-offs made by other tools/configurations.
 
-### In-depth Analysis
+### In-depth Analysis {#section:umgap:results:analysis}
 
 We would like to stress that UMGAP does not require setting a specific
 target taxonomic rank prior to processing a dataset. Instead, UMGAP
@@ -857,7 +857,7 @@ genomes with little divergence or the genomes with medium divergence.
 
 <!-- Aurelien 3 -->
 
-## Discussion
+## Discussion {#section:umgap:discussion}
 
 The protein space detour for taxonomic profiling of shotgun metagenomic
 data sets shows to be very promising. Despite our design choices

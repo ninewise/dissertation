@@ -19,8 +19,7 @@ Unipept MetaGenomics Analysis Pipeline." *BMC Genomics*.
 
 ## [paper](paper.md){.include}
 
-## Overview of UMGAP Tools
-\label{section:tools}
+## Overview of UMGAP Tools {#section:umgap:tools}
 
 A pipeline is composed of a series of command line tools. This section
 contains an exhaustive list of the available tools. For each tool, it

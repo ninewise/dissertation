@@ -404,14 +404,38 @@ and error-prone DNA reads.
 
 ## Structure of this dissertation
 
-In chapter \ref{chapter:umgap}, we describe the complete pipeline and
-evaluate it as an alternative method for metagenomics analysis. An
-index operating on fixed-length overlapping peptides is introduced
-as an alternative for the tryptic peptide index. In chapter
-\ref{chapter:fgsrs}, we introduce a new implementation of FragGeneScan,
-to be used as an improved gene predictor in the pipeline. In chapter
-\ref{chapter:in-practice}, we include some of the metawork on the
-pipeline, such as the improved construction of the Unipept (and UMGAP)
-index and a few walkthroughs describing the usage of UMGAP in other
-studies. Finally, in chapter \ref{chapter:related-work}, I shortly
+Chapter \ref{chapter:umgap} describes the pipeline as a whole. It
+starts out by describing more context and the general structure
+of the pipeline (\ref{section:umgap:intro}). After this, section
+\ref{section:umgap:methods} provides details on each step in the
+pipeline, with variants on each step grouped together. The results of
+the pipeline are evaluated in section \ref{section:umgap:results},
+split into an overview of the many possible variants to find
+the best configurations (\ref{section:umgap:results:tuning}),
+a more in-depth benchmark of a few selected configurations
+compared to other tools (\ref{section:umgap:results:benchmark})
+and finally a detailed analysis of the misclassifications
+UMGAP makes (\ref{section:umgap:results:analysis}). Section
+\ref{section:umgap:discussion} presents short discussion on the current
+and future state of the pipeline. The chapter concludes with the details
+on every tool written to be part of the pipeline, their usage, and some
+examples (\ref{section:umgap:tools}).
+
+In chapter \ref{chapter:fgsrs}, we introduce a new implementation
+of FragGeneScan, to be used as an improved gene predictor in the
+pipeline. Section \ref{section:fgsrs:introduction} provides some
+details on the inner workings of FragGeneScan and the problems emerging
+in the implementation of FragGeneScan and a variant, FragGeneScan+.
+Section \ref{section:fgsrs:implementation} describes our new version,
+FragGeneScanRs, and the major differences with FragGeneScan. A
+comparison of the results concerning processing speed and memory
+footprint is made in \ref{section:fgsrs:results}. Finally, a short
+side-step (\ref{section:fgsrs:complete}) discusses the accuracy and
+processing speed of FragGeneScanRs on complete genomes, as compared to a
+tool meant for gene prediction on complete genomes, Prodigal.
+
+In chapter \ref{chapter:in-practice}, we include some of the metawork
+on the pipeline, such as the improved construction of the Unipept (and
+UMGAP) index and a few walkthroughs describing the usage of UMGAP in
+other studies. Finally, in chapter \ref{chapter:related-work}, I shortly
 detail some related work done during my PhD.

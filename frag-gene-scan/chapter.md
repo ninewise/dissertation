@@ -15,7 +15,7 @@ single thread, with better scaling for multithreaded execution.[^foot:fgsrs]
 
 #### [frag-gene-scan](main.md){.include}
 
-## Performance on Complete Genomes
+## Performance on Complete Genomes {#section:fgsrs:complete}
 
 Originally intended for detecting fragmented genes in short metagenomics
 reads, FGS had a feature added in 1.16 to allow predicting genes from

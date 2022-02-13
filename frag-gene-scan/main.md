@@ -1,4 +1,4 @@
-## Introduction {#introduction-fgs}
+## Introduction {#section:fgsrs:introduction}
 
 Studying environmental communities of archaea, bacteria,
 eukaryotes, and viruses is hampered by problems with isolating
@@ -80,7 +80,7 @@ reliable, high-performance, and accurate Rust implementation of the FGS
 gene prediction model. We ran a benchmark to show that FGSrs produces
 the same results as FGS and is faster than both FGS and FGS+.
 
-## Implementation
+## Implementation {#section:fgsrs:implementation}
 
 FGSrs is implemented in Rust, a programming language known for its
 focus on speed and memory-efficiency. In addition, segmentation faults
@@ -146,7 +146,7 @@ also note that a bug was introduced in FGS (release 1.30) when the
 backtracking step was converted from Perl to C, which generates DNA and
 protein sequences for complete genomes that are incorrect.
 
-## Results {#results-fgs}
+## Results {#section:fgsrs:results}
 
 The FGSrs command line interface is backward compatible with FGS, so
 it can be used as a faster and memory-friendly drop-in replacement
