@@ -368,10 +368,39 @@ samples. In fact, we will evaluate UMGAP by comparing its use, speed and
 results to several state-of-the-art metagenomic tools. There are called
 Kraken [@wood2014], Kaiju [@menzel] and CLARK [@ounit].
 
-... TODO
+Kraken utilizes a Jellyfish [@jellyfish] database of DNA *k*-mers,
+sequences of by default 31 bases, and the taxon this *k*-mer occurs in.
+This taxon is usually a single organism, but sometimes it is the lowest
+common ancestor of several. For every *k*-mer in a read, this database
+is queried and the taxa are structured into a classification tree.
+Finally, each read is classified as the taxon on the leaf in this tree
+with most *k*-mer hits on the path to the root.
 
-To translate our DNA reads to amino acid sequences, we will be using an
-existing gene predictor called FragGeneScan [@rho]. ...
+Where Kraken 1 uses the concept of minimizers [@minimizers] to speed up
+queries into the database, Kraken 2 [@wood2019] further improves on this
+method by storing only the minimizers of the *k*-mers rather than the
+complete *k*-mer. This greatly reduces storage volume of the database
+and improves query speed, at the cost of some specificity and accuracy.
+
+CLARK uses a similar approach as Kraken, but targets a predetermined
+taxon rank. It stores only the discriminative *k*-mers at that rank
+in the database. This reduces the size of the index, but impacts the
+flexibility of the tool.
+
+The authors of Kaiju also recognize the possibilities of protein-level
+sequence classification for metagenomic samples. They translate
+metagenomic sequencing reads into the six possible reading frames and
+search for the number of exact matches in a reference protein database.
+A read is classified as the taxon annotated on the protein with the
+maximum number of exact matches. A Burrows-Wheeler transform of the
+protein database is used for fast exact querying.
+
+Where Kaiju chose for a complete six-frame translation of the
+metagenomic reads, which is also an option in UMGAP, we will also be
+using an existing gene predictor called FragGeneScan [@rho] to translate
+our DNA reads to amino acid sequences. FragGeneScan uses a probabilistic
+approach based on a hidden Markov model to find gene fragments in short
+and error-prone DNA reads.
 
 ## Structure of this dissertation
 

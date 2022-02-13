@@ -1689,6 +1689,36 @@ references:
   volume: 173
   issue: 2
   page: 697-703
+- type: article-journal
+  id: jellyfish
+  author:
+  - family: Marçais
+    given: G.
+  - family: Kingsford
+    given: C.
+  title: "A fast, lock-free approach for efficient parallel counting of occurrences of *k*-mers"
+  container-title: Bioinformatics
+  issued: 2011
+  volume: 27
+  page: 764-770
+- type: article-journal
+  id: minimizers
+  author:
+  - family: Roberts
+    given: M.
+  - family: Hayes
+    given: W.
+  - family: Hunt
+    given: B.
+  - family: Mount
+    given: S.
+  - family: Yorke
+    given: J.
+  title: Reducing storage requirements for biological sequence comparison
+  container-title: Bioinformatics
+  issued: 2004
+  volume: 20
+  page: 3363-3369
 - type: book
   id: darwin
   author:
