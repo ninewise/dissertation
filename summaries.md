@@ -18,7 +18,7 @@ In shotgun metagenomics, a great number of random DNA fragments, called
 reads, are sequenced from an environmental sample. By identifying which
 organism each read originates from, one can draw conclusions about
 the organisms in the environmental sample or compare the abundance
-between samples. Often the reads are too short to identify a specific
+between samples. Often the reads are too short to identify a single
 organism, because they occur in a number of organisms. They might also
 not match with any known organism, because of natural mutation in the
 DNA or sequencing errors in the read; or just because there are unknown
@@ -41,8 +41,9 @@ more conserved than the underlying DNA.
 UMGAP turns out to be a valid alternative for existing metagenomics
 identification tools, though it cannot equal the speed and accuracy
 of all. The pipeline does offer interesting avenues towards
-functional analysis (what organisms in the sample are doing) and
-metatranscriptomics (analyzing RNA reads instead of DNA reads).
+functional analysis (what organisms in the sample could do) and even
+metatranscriptomics (what organisms in the sample are doing, by
+analyzing RNA reads instead of DNA reads).
 
 As part of the development of UMGAP, we also introduce an
 alternative implementation for FragGeneScan in Rust, called
@@ -102,12 +103,11 @@ Bij *shotgun metagenomics* worden een groot aantal willekeurige
 stukjes DNA uitgelezen uit een omgevingsstaal. Door voor elk van deze
 stukjes, *reads* genaamd, te bepalen uit welk organisme ze afkomstig
 zijn, kan men conclusies trekken over de aanwezige organismen in het
-omgevingsstaal. Vaak zijn *reads* echter te kort om een specifiek
-organisme aan te duiden, omdat ze voorkomen in het DNA van meerdere
-organismen. Bovendien kan het ook gebeuren dat sommige *reads* niet
-terug te vinden in enig gekend organisme. Daarom wordt elke *read*
-geïdentificeerd als komende uit een groep aan organismen, genaamd een
-taxon.
+omgevingsstaal. Vaak zijn *reads* echter te kort om een enkel organisme
+aan te duiden, omdat ze voorkomen in het DNA van meerdere organismen.
+Bovendien kan het ook gebeuren dat sommige *reads* niet terug te vinden
+in enig gekend organisme. Daarom wordt elke *read* geïdentificeerd als
+komende uit een groep aan organismen, genaamd een taxon.
 
 De *Unipept Metagenomics Analysis Pipeline* ([UMGAP][sam-umgap]), die
 we beschrijven in hoofdstuk \ref{chapter:umgap}, is een suite van
@@ -127,9 +127,9 @@ De UMGAP blijkt een waardig alternatief te vormen voor reeds
 bestaande programma's, al kan het niet van allen de snelheid en
 nauwkeurigheid evenaren. De *pipeline* biedt echter wel interessante
 uitbereidingsmogelijkheden betreffende functionele analyse (welke
-functies de organismen in het omgevingsstaal vervullen) en
-metatranscriptomics (waar we vertrekken vanaf *RNA reads* in plaats van
-*DNA reads*).
+functies de organismen in het omgevingsstaal kunnen vervullen) en
+metatranscriptomics (welke functies de organismen momenteel vervullen,
+waarvoor we vertrekken vanaf *RNA reads* in plaats van *DNA reads*).
 
 Als deel van de ontwikkeling van de UMGAP wordt ook een
 alternatieve Rust implementatie van FragGeneScan, genaamd

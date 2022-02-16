@@ -21,14 +21,15 @@ mainfont: Nimbus Sans L
 > not focused yet on functional data, but as he mentions it multiple
 > times, an explanation of these terms should be added.
 
-<!-- TODO -->
+A section on current methods has been added, and some examples of EC/...
+should clarify their meaning.
 
 > Second, you will see that there are several questions I asked myself
 > while reading chapter 2, which are resolved when I got to chapter 4. I
 > think it would be good if this comes later in another chapter, you
 > should refer to this chapter, or move the information.
 
-<!-- TODO -->
+Handled individually below.
 
 ### Summary
 
@@ -38,7 +39,8 @@ mainfont: Nimbus Sans L
 >     between metagenomics and shotgun metagenomics? Is it the same term
 >     or why do you specify the shotgun?
 
-<!-- TODO -->
+I think this is clear; metagenomics are general studies, shotgun
+metagenomics use a great number of random DNA fragments...
 
 >  2. What do you specifically mean with the following sentence: "Often
 >     the reads are too short to identify a specific organism, because
@@ -46,7 +48,7 @@ mainfont: Nimbus Sans L
 >     allocate them to an organism, or are the reads not specific enough
 >     to assign them to an organism?
 
-<!-- TODO -->
+Clarified by replacing 'specific' with 'single'.
 
 >  3. Explain the sentence: "The pipeline does offer interesting avenues
 >     towards functional analysis (what organisms are doing in the
@@ -54,7 +56,7 @@ mainfont: Nimbus Sans L
 >     DNA reads)." In what way is metatranscriptomics not a functional
 >     analysis of the sample? Do you refer to proteins here?
 
-<!-- TODO -->
+Extended explanation.
 
 >  4. The sentence: "However, the existing implementations proved to
 >     be insufficiently fast." Sounds a bit strange. Perhaps change to
@@ -119,7 +121,7 @@ which should clarify what these databases are.
 >     the genome of an organism or when you want to look to taxonomy or
 >     specific functions?
 
-<!-- TODO Carolien 2 -->
+[question]
 
 > 12. You state that the study of a transcriptome provides similar
 >     insights of that of a proteomics study. Why would you specifically
@@ -128,7 +130,7 @@ which should clarify what these databases are.
 >     number of metaproteomics studies is much more limited to those of
 >     metatranscriptomics studies. What could be the reason behind this?
 
-<!-- TODO Carolien 3 -->
+[question]
 
 > 13. During your first chapter, you always give examples of
 >     higher-order organisms (e.g. fish). From point 1.4 onwards you
@@ -149,7 +151,7 @@ which should clarify what these databases are.
 >     second chapter, but I think this should be described in more
 >     detail.
 
-<!-- TODO -->
+Section on other tools was added.
 
 ### UMGAP
 
@@ -179,10 +181,11 @@ mapping structures.
 
 > 17. Page 31: you mention that false negatives and false positives
 >     might occur during gene prediction. Do you have an idea how often
->     this occurs? For example, did you worked with a benchmarked
+>     this occurs? For example, did you work with a benchmarked
 >     dataset or a mock community to verify this?
 
-<!-- TODO Carolien 6 -->
+[question] We verified this for a complete genome with FGSrs but did not
+include the results since FGS isn't meant for complete genomes.
 
 > 18. Page 37: you indicate that UMGAP can skip these short peptide
 >     fragments. As an example, you give a length of 6 amino acids. Is
@@ -257,7 +260,7 @@ For the 9-mer selection, I picked the outmost variants based on Figures
 >     these as well in the first chapter to know the differences between
 >     your method and the others.
 
-<!-- TODO -->
+Added.
 
 > 25. UMGAP tryptic precision has a very high precision, but a low
 >     sensitivity, even almost 0%. Does this mean that you have a very
@@ -327,7 +330,7 @@ but they are functionally interchangeable.
 > 33. For this specific part, it would be nice to include a conclusion
 > section on the use of FGSr.
 
-<!-- TODO -->
+We didn't include this because the usage is nearly the same as for FGS.
 
 ### Putting it all in action
 
@@ -339,14 +342,14 @@ but they are functionally interchangeable.
 > I would prefer you change the title so it covers the complete load of
 > this chapter.
 
-<!-- TODO -->
+Chapter has been split and renamed.
 
 > 35. Based on the scheme you represent here, I think in the first
 > chapter you really should add information on the different databases
 > you use and describe, with especially Uniprot, but alo the explanation
 > on EC, interpro, etc.
 
-<!-- TODO -->
+An example for EC/... as seen from Uniprot was added.
 
 > 36. First sentence under 4.1.2: remove the "a" before "three tables"
 
@@ -403,7 +406,7 @@ I don't have exact numbers for this, but our estimate was several weeks.
 > there a bias towards certain type of organisms? (e.g. the higher
 > abundance of bacteria compared to eukaryotes in the database).
 
-<!-- TODO Carolien 43 -->
+[question]
 
 > 44. For the functional annotation, couldn't you refer for this to
 > other methods (e.g. MG-Rast). You can still comment on this if it is a
@@ -419,7 +422,7 @@ I don't have exact numbers for this, but our estimate was several weeks.
 > on this and what the differences may be (computationally) for a
 > metatranscriptomics/metagenomics dataset
 
-<!-- TODO -->
+Fixed.
 
 ## Wesley De Neve
 
@@ -453,7 +456,7 @@ Since this image is a direct screenshot from Unipept, I won't change it.
 >     section that lists the different contributions and (2) a section
 >     that describes the overall organization of the dissertation.
 
-<!-- TODO maybe -->
+Split.
 
 >  7. [Chapter 2] Given the importance and the size of this chapter, it
 >     may be of interest to better clarify the overall structure of this
@@ -469,7 +472,7 @@ Since this image is a direct screenshot from Unipept, I won't change it.
 >     three major parts: pipeline identification, benchmarking, and
 >     in-depth analysis.
 
-<!-- TODO -->
+A more complete overview of the whole thesis was added to chapter 1.
 
 >  8. [Chapter 2] When mentioning the total number of investigated UMGAP
 >     configurations for the first time (i.e., 3900), it would be good
@@ -499,7 +502,7 @@ to achieve the above.
 > 12. [Chapter 3] It may be good to mention a number of pipelines,
 >     frameworks, and/or projects that are making use of FragGeneScan.
 
-<!-- TODO -->
+Added in chapter 2 for UMGAP; it's hard to estimate other users.
 
 > 13. [Chapter 3] Throughout the dissertation, it would be good to keep
 >     the notation for FGS, FGS+, FGS++, and FGSrs consistent. For
@@ -544,7 +547,7 @@ Made consistent.
 >     described in this chapter contributed to (at least) two papers (as
 >     implicitly mentioned in Section 4.3).
 
-<!-- TODO -->
+Added at end of chapter 1.
 
 > 18. [Appendix A] I am not aware of a reference to this appendix from
 >     within the main text of the dissertation. I believe it would be
@@ -605,7 +608,7 @@ Fixed.
 > - Maybe a sentence or two about post-translational modifications and
 >   how they are expected to impact proteomics data analysis.
 
-<!-- TODO introns exons? -->
+<!-- TODO splicing -->
 
 > - expand definitions of GO, InterPro, EC
 
@@ -634,14 +637,17 @@ I added an example, which should clarify what these are.
 >   an overview of FragGeneScan, which is introduced in Chapter 2
 >   without much explanation.
 
-<!-- TODO section state of the art tools? -->
+A paragraph on FragGeneScan was added to the introduction.
+
+<!-- TODO extend it? -->
 
 #### Chapter 2
 
 > - Is FragGeneScan codon usage-aware? How are the gene models
 >   created/updated?
 
-<!-- TODO -->
+It is partially: the HMM has regions of 3 nodes. The models are created
+externally.
 
 > - P32, tryptic peptides: what do you mean by “it is a random
 >   fragmentation strategy”? This seems counterintuitive since peptides
@@ -763,7 +769,8 @@ not).
 > - P102. Would there be anything to gain by filtering out low
 >   complexity sequences in building the kmer to taxon table?
 
-<!-- TODO low complexity sequences? -->
+[question] Some space in the index, but small experiments showed it did
+not matter much.
 
 > - P109. "This sets the stage for the optional filtering of the taxa
 >   based on their location". I’m assuming you mean the location of
@@ -829,7 +836,6 @@ No changes requested.
 
 Remarks requested as notes in a PDF. I will list questions and answers
 below, but will fix small remarks directly in the text.
-
 
 > The role of assembly in metagenomics is not explained, but is is
 > required, necessary, possible at all, for downstream analysis?

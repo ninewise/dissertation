@@ -182,8 +182,6 @@ according to the size range fit per instrument. The result of sequencing
 is a data set of the DNA sequences of reads, along with some metadata
 such as the quality of a read.
 
-<!-- TODO Carolien 2 -->
-
 Since the DNA molecules were segmented into reads, the next step is
 assembling the reads again into the complete genome sequence. When the
 sequenced DNA sequence is of an organism closely related to an organism
@@ -211,8 +209,6 @@ these segments, called (tryptic) peptides, is then determined by for
 example comparing the measured mass spectrum to a set of predicted mass
 spectra. However, since tryptic peptides do not overlap, assembly is not
 possible.
-
-<!-- TODO Carolien 3 -->
 
 Finally, the set of an organism's RNA transcripts is called its
 transcriptome, and the corresponding study is called transcriptomics.
