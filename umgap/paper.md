@@ -2,17 +2,17 @@
 
 <!-- TODO Carolien 5 -->
 
-Biodiversity, in many environments, is formed by complex communities of
-archaea, bacteria, eukaryotes, and viruses. Most of these organisms are
-hard to isolate and culture in lab conditions, so getting insight into
-which species are present in these environments and estimating their
-abundances nowadays routinely relies on metagenomics [@hugenholtz]:
-a combination of high-throughput DNA sequencing and computational
-methods that bypass the cultivation step to enable genomic analysis. In
-particular, shotgun metagenomics, the non-targeted sequencing of all
-genomes in an environmental sample, is applied more often [@quince], as
-it allows the profiling of both taxonomic composition and functional
-potential of the sample.
+Biodiversity, in many environments, is formed by complex communities
+of archaea, bacteria, eukaryotes, and viruses. Most of these organisms
+are hard to isolate and culture in laboratory conditions, so getting
+insight into which species are present in these environments and
+estimating their abundances nowadays routinely relies on metagenomics
+[@hugenholtz]: a combination of high-throughput DNA sequencing and
+computational methods that bypass the cultivation step to enable
+genomic analysis. In particular, shotgun metagenomics, the non-targeted
+sequencing of all genomes in an environmental sample, is applied
+more often [@quince], as it allows the profiling of both taxonomic
+composition and functional potential of the sample.
 
 In general, computational approaches for taxonomic profiling of
 metagenomics data from high-complexity environments directly process
@@ -111,7 +111,7 @@ database [@watson]. Two approaches are supported: one based on gene
 prediction in short reads and one based on a full six-frame translation
 (Figure \ref{protein-translation}).
 
-![Sample DNA fragment extracted from the *Acinetobacter baumannii* 118362 genome (NCBI Assembly ASM58051v1, positions 37.700-39.530) containing three RefSeq annotated coding regions of a major Facilitator Superfamily protein (EXA88265), a tetR family protein (EXA88191) and a translocator family protein (EXA88255), marked with yellow lines (top). Blue lines indicate coding regions predicted by FGS. Green dots indicate starting positions of 9-mers with an LCA\* on the *A. baumannii* lineage (true positive identifications). Red dots indicate starting positions of 9-mers with an LCA\* outside the *A. baumannii* lineage (false positive identifications). Opacity of colored dots indicates depth in the taxonomic tree: opaque colors indicate highly specific LCA\* (species level) and translucent colors indicate nonspecific LCA\*. This example illustrates the following general observations: (1) the frameshift-correcting topology of the FGS hidden Markov model often incorrectly interprets coding regions of genes that are very close or overlapping as frameshifts and glues them together; (2) missing dots at the end of coding regions is merely an artifact of the visualization: the last 8 codons (24 bases) are never starting positions of $k$-mers; (3) FGS may identify false coding regions or (4) frame shifts, but the extracted peptides from those and (5) translations from non-coding regions in a six-frame translation are mostly filtered automatically as they have no exact match with any UniProt protein or can be filtered with additional heuristics.\label{protein-translation}](figures/6ft-figure/final.svg)
+![Sample DNA fragment extracted from the *Acinetobacter baumannii* 118362 genome (NCBI Assembly ASM58051v1, positions 37.700-39.530) containing three RefSeq annotated coding regions of a major Facilitator Superfamily protein (EXA88265), a tetR family protein (EXA88191) and a translocator family protein (EXA88255), marked with yellow lines (top). Blue lines indicate coding regions predicted by FragGeneScan (FGS). Green dots indicate starting positions of 9-mers with an LCA\* on the *A. baumannii* lineage (true positive identifications). Red dots indicate starting positions of 9-mers with an LCA\* outside the *A. baumannii* lineage (false positive identifications). Opacity of colored dots indicates depth in the taxonomic tree: opaque colors indicate highly specific LCA\* (species level) and translucent colors indicate nonspecific LCA\*. This example illustrates the following general observations: (1) the frameshift-correcting topology of the FGS hidden Markov model often incorrectly interprets coding regions of genes that are very close or overlapping as frameshifts and glues them together; (2) missing dots at the end of coding regions is merely an artifact of the visualization: the last 8 codons (24 bases) are never starting positions of $k$-mers; (3) FGS may identify false coding regions or (4) frame shifts, but the extracted peptides from those and (5) translations from non-coding regions in a six-frame translation are mostly filtered automatically as they have no exact match with any UniProt protein or can be filtered with additional heuristics.\label{protein-translation}](figures/6ft-figure/final.svg)
 
 #### Gene Prediction
 
@@ -155,7 +155,7 @@ While this approach might lead to increased sensitivity compared to gene
 prediction, it yields at least a sixfold increase in the data volume
 that needs to be processed in downstream analysis.
 
-### Protein Fragmentation
+### Protein Sequence Fragmentation
 
 All (partial) proteins that are putatively translated from the read are
 matched against the complete UniProt Knowledgebase [@kim;@magrane].
@@ -236,15 +236,15 @@ large number of peptides extracted from UniProt. The index should be
 loaded in process memory, but UMGAP can also operate with an on-disk
 index and very little memory at the cost of performance.
 
-The FST maps each peptide extracted from a UniProt protein to the
-NCBI Taxonomy Identifier (an integer) of the LCA\* associated with
-the peptide. It is a flow graph whose edges are labeled with amino
-acids and integers. Peptides are matched by following the path of
-their amino acid sequence. The sum of the integers along this path
-corresponds the identifier of the LCA\*. Where tries are ordered tree
-data structures that take advantage of common prefixes to reduce the
-memory footprint, FSTs are even more compressed by taking both common
-prefixes and suffixes into account (Figure \ref{fst}).
+The FST maps each peptide extracted from a UniProt protein to the NCBI
+Taxonomy Identifier (an integer) of the LCA\* associated with the
+peptide. It is a flow graph whose edges are labeled with amino acids
+and integers. Peptides are matched by following the path of their amino
+acid sequence. The sum of the integers along this path corresponds
+to the identifier of the LCA\*. Where tries are ordered tree data
+structures that take advantage of common prefixes to reduce the memory
+footprint, FSTs are even more compressed by taking both common prefixes
+and suffixes into account (Figure \ref{fst}).
 
 ![Finite state transducer mapping all weekdays to their index number (Monday $=1$, Tuesday $=2$, ...). Integer labels are not shown on edges with zero weight. Adding weights along the path spelled by the letters of the word Thursday, from the initial state on the left (indicated by a triangle) to the final state on the right (indicated by a double circle), yields $2+1+1 = 4$. So, Thursday is the fourth day in the week.\label{fst}](figures/day-index/figure.svg)
 
@@ -261,20 +261,20 @@ profiling.
 
 ### Peptide Filtering
 
-Protein fragmentation may yield false positives: peptides translated
-from non-coding regions in a read. Most false positives are
+Protein sequence fragmentation may yield false positives: peptides
+translated from non-coding regions in a read. Most false positives are
 automatically filtered as they have no exact match with any UniProt
-protein. As a result, they cannot be associated with a taxon during
-peptide profiling. This is the case for most peptides from translations
-of wrong gene predictions or outside coding regions in a six-frame
-translation (Figure \ref{protein-translation}). But peptide profiling
-itself may also yield false positive identifications: peptides
+protein sequence. As a result, they cannot be associated with a taxon
+during peptide profiling. This is the case for most peptides from
+translations of wrong gene predictions or outside coding regions in a
+six-frame translation (Figure \ref{protein-translation}). But peptide
+profiling itself may also yield false positive identifications: peptides
 associated with an inconsistent taxon, i.e., a taxon that is not the
 correct taxon or one of its ancestors in the NCBI Taxonomy tree. This
 could be the case for both true and false positive peptides from protein
-fragmentation. Peptide filtering aims at strongly reducing the number of
-false positive identifications, while keeping most true positives. UMGAP
-supports three kinds of filters.
+sequence fragmentation. Peptide filtering aims at strongly reducing
+the number of false positive identifications, while keeping most true
+positives. UMGAP supports three kinds of filters.
 
 #### Short Tryptic Peptides
 
@@ -324,7 +324,7 @@ from extended seeds (Figure \ref{seed-extend}).
 
 Previous steps of the pipeline result in a list of taxonomic
 identifications, derived from a (filtered) list of peptides extracted
-from the read. As the read comes from a single organism, it is natural
+from the read. As the read comes from a single genomes, it is natural
 to aggregate these individual identifications that rely on partial
 data into one global consensus identification. UMGAP supports three
 heuristics that infer a consensus taxon after mapping a frequency table
@@ -404,15 +404,15 @@ service hosting the visualizations also support shareable links (e.g.
 
 UMGAP implements multiple strategies for each step in the pipeline
 (Figure \ref{outline}), with some strategies also driven by
-user-specified parameters. Runtime, memory footprint and accuracy
-of UMGAP were benchmarked as a two-step process. Using some smaller
-data sets [@wood2014], we first measured and analyzed performance metrics for a
-large number of relevant combinations of strategies and parameter
+user-specified parameters. Runtime, memory footprint and accuracy of
+UMGAP were benchmarked as a two-step process. Using some smaller data
+sets [@wood2014], we first measured and analyzed performance metrics
+for a large number of relevant combinations of strategies and parameter
 settings. This broad exploration allowed us to investigate how different
 strategies/parameter settings led to different performance trade-offs.
 As a result, we defined six preconfigured pipelines with different
 performance trade-offs. Performance of these configurations has then
-been compared to a selection of state-of-the shotgun metagenomics
+been compared to a selection of state-of-the-art shotgun metagenomics
 taxonomic profiling tools in an established benchmark [@lindgreen] that
 uses larger data sets.
 

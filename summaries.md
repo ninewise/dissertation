@@ -9,21 +9,22 @@ the complete set of potentially expressed proteins is called the
 proteome. When studies are performed on the genomes, transcriptomes and
 proteomes of multiple organisms at once, they are called metagenomics,
 metatranscriptomics and metaproteomics. This dissertation describes the
-development and results of several bioinformatics tools to help with
-such studies.
+development and applications of several bioinformatics tools to help
+with such studies.
 
 <!-- TODO Carolien 1 -->
 
-In shotgun metagenomics, a great number of random DNA fragments, called
-reads, are sequenced from an environmental sample. By identifying which
-organism each read originates from, one can draw conclusions about
-the organisms in the environmental sample or compare the abundance
-between samples. Often the reads are too short to identify a single
-organism, because they occur in a number of organisms. They might also
-not match with any known organism, because of natural mutation in the
-DNA or sequencing errors in the read; or just because there are unknown
-organisms in the sample. Instead, each read is identified as coming from
-a group of evolutionary more-or-less related organisms, called a taxon.
+In shotgun metagenomics, a great number of randomly sheared DNA
+fragments, called reads, are sequenced from an environmental sample.
+By identifying which genomesj each read originates from, one can
+draw conclusions about the organisms in the environmental sample or
+compare the abundance between samples. Often the reads are too short to
+unamgiguously assign to a single genome, because they occur in a number
+of genomes. They might also not match with any known genome, because of
+natural mutation in the DNA or sequencing errors in the read; or just
+because there are unknown organisms in the sample. Instead, each read
+is identified as coming from the genomes of a group of evolutionary
+more-or-less related organisms, called a taxon.
 
 The Unipept Metagenomics Analysis Pipeline ([UMGAP][sum-umgap]),
 described in chapter \ref{chapter:umgap} is a set of tools for taxonomic
@@ -32,9 +33,9 @@ possibility of performing taxonomic identifications of DNA reads using
 the proteins this DNA encodes. Unlike most taxonomic identification
 tools, which map DNA reads directly to taxa, UMGAP will first predict
 which (partial) proteins (or peptide) are encoded in a DNA read and map
-these peptides on a taxon using a general purpose protein database. This
-detour adds robustness to the identification process, as proteins are
-more conserved than the underlying DNA.
+these peptides on a taxon using a general purpose protein database.
+This detour adds robustness to the identification process, as protein
+sequences are more conserved than the underlying DNA.
 
 [sum-umgap]: https://github.com/unipept/umgap
 
@@ -64,14 +65,14 @@ Both UMGAP and the original Unipept application (The Unipept
 Metaproteomics Analysis Pipeline, or UMPAP) are, at their core,
 a mapping of peptides onto taxa. This mapping is processed
 from the UniProtKB, a large database of annotated proteins. In
-chapter \ref{chapter:on-the-side}, we describe the [database
+chapter \ref{chapter:in-practice}, we describe the [database
 creation][sum-database] repository. This repository contains the code
 to parse the UniProtKB and compose the Unipept database tables. The
 peptide-taxon mapping is given an entry for each peptide occurring in
 the UniProtKB. For each of these peptides, it gathers all proteins it
 occurs in, and the taxa they are annotated with. It aggregates this list
 of taxa using a lowest common ancestor method, resulting in a single
-taxon per peptide. Chapter \ref{chapter:on-the-side} also describes
+taxon per peptide. Chapter \ref{chapter:related-work} also describes
 the contributions made to the [SPeDE][sum-spede] and [SMAP][sum-smap]
 projects.
 
@@ -90,7 +91,7 @@ Elk organisme draagt zijn volledige genetische code (het genoom) in
 zijn cellen, opgeslagen als DNA. DNA wordt overgeschreven naar RNA
 in een proces genaamd transcriptie, wat op zijn beurt vertaald wordt
 naar eiwitten in een proces genaamd translatie. Die eiwitten voeren
-vervolgende functies uit voor het organisme. De volledige verzameling
+vervolgens functies uit voor het organisme. De volledige verzameling
 aan potentieel overgeschreven RNA noemt met het transcriptoom van
 een organisme, de volledige verzameling aan potentieel vertaalde
 eiwitten het proteoom. Wanneer studies gemaakt worden van de genomen,
@@ -99,8 +100,8 @@ men dit metagenomics, metatranscriptomics en metaproteomics. Dit
 proefschrift beschrijft de ontwikkeling en de resultaten van enkele
 bioinformaticatools ontworpen om te helpen met zulke studies.
 
-Bij *shotgun metagenomics* worden een groot aantal willekeurige
-stukjes DNA uitgelezen uit een omgevingsstaal. Door voor elk van deze
+Bij *shotgun metagenomics* worden een groot aantal stukjes DNA
+willekeurig uitgelezen uit een omgevingsstaal. Door voor elk van deze
 stukjes, *reads* genaamd, te bepalen uit welk organisme ze afkomstig
 zijn, kan men conclusies trekken over de aanwezige organismen in het
 omgevingsstaal. Vaak zijn *reads* echter te kort om een enkel organisme
@@ -149,14 +150,14 @@ De UMGAP en de oorspronkelijke Unipept applicatie (de *Unipept
 Metaproteomics Analysis Pipeline*, of UMPAP) steunen beide op een
 afbeelding van eiwitfragmenten op taxa. Deze afbeelding wordt
 berekend uit de UniprotKB, een grote databank van geannoteerde
-eiwitten. In hoofdstuk \ref{chapter:on-the-side} omschrijven we
+eiwitten. In hoofdstuk \ref{chapter:in-practice} omschrijven we
 het [proces][sam-database] dat de UniProtKB inleest en de Unipept
 databanktabellen opstelt. Om de eiwitfragment-naar-taxonafbeelding
 op te stellen, verzamelt het alle taxa waarmee alle eiwitten waarin
 elk eiwitfragment voorkomt in de UniProtKB. Het aggregeert elke lijst
 van taxa tot een enkel taxon per eiwitfragment via een *lowest common
 ancestor*-method: het meest specifieke taxon dat alle taxa uit die lijst
-omvat. Hoofdstuk \ref{chapter:on-the-side} omschrijft verder ook nog
+omvat. Hoofdstuk \ref{chapter:related-work} omschrijft verder ook nog
 bijdragen aan de [SPeDE][sam-spede] en [SMAP][sam-smap] projecten.
 
 [sam-database]: https://github.com/unipept/make-database

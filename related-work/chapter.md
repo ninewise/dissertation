@@ -24,25 +24,25 @@ possibly provide aid in implementing them in the actual product.
 
 <!-- TODO Carolien 40 -->
 
-Below I describe two of the projects we've worked on. The first
-partner, in 2018, was the Department of Molecular Biology at the Ghent
-University. Charles Dumolin, Aurélien Carlier and Peter Vandamme
-introduced us to the SPeDE project. In 2019, we visited the Flanders
-Research Institute for agriculture, fisheries and food (ILVO) with
-the students on invitation of Tom Ruttink and Dries Schaumont. They
-introduced our students to the SMAP project. In 2020, we partnered
-with ourselves as the Unipept team, and had the students work on
-the FragGeneScan project, the results of which lead to Chapter
-\ref{chapter:fgsrs}. In 2021, we once more joined up with Tom and Dries
-on the SMAP project.
+Below I describe two of the projects we've worked on. The first partner,
+in 2018, was the Laboratory of Microbiology, Department of Biochemistry
+and Microbiology at the Ghent University. Charles Dumolin, Aurélien
+Carlier and Peter Vandamme introduced us to the SPeDE project. In 2019,
+we visited the Flanders Research Institute for agriculture, fisheries
+and food (ILVO) with the students on invitation of Tom Ruttink and Dries
+Schaumont. They introduced our students to the SMAP project. In 2020,
+we partnered with ourselves as the Unipept team, and had the students
+work on the FragGeneScan project, the results of which lead to Chapter
+\ref{chapter:fgsrs}. In 2021, we once more joined up with Tom Ruttink
+and Dries Schaumont on the SMAP project.
 
 ## SPeDE: Spectral Dereplication
 
 SPeDE is a program that is used to dereplicate large sets of MALDI-TOF
 MS spectra. The analysis consist of screening the dataset for spectra
-with unique spectral features and outputs the reduced set of selected
-reference spectra. Spectra not assigned as a reference are matched
-according to their matching reference spectra.
+with unique features and outputs the reduced set of selected reference
+spectra. Spectra not assigned as a reference are matched according to
+their matching reference spectra.
 
 The dereplication starts out by creating, for a list of $n$ spectra,
 a $n \times n$ uniqueness matrix of integers. The value at $(i, j)$ in
@@ -78,10 +78,10 @@ Applying these optimizations, some students managed to process the same
 sample data set in less than a minute and the realistic data sets (5000
 spectra) just under 2 hours.
 
-These results were passed to the Department of Molecular Microbiology,
-and they hired a short-term programmer to combine them and further
-polish the program. A graphical user interface was added, and the final
-result was published [@dumolin].
+These results were passed to the Department of Biochemistry and
+Microbiology, and they hired a short-term programmer to combine them and
+further polish the program. A graphical user interface was added, and
+the final result was published [@dumolin].
 
 ## SMAP
 

@@ -60,8 +60,8 @@ created with additional downloaded data, but it is not used in UMGAP.
 In **join equalized peptides and uniprot entries** and **join original
 peptides and uniprot entries**, the encountered tryptic peptide
 sequences (whether or not the leucine amino acids have been replaced
-with isoleucine, since they are indistinguishable to spectrometers)
-are recombined with the taxon ID annotated on their entry. All unique
+with isoleucine, since they are indistinguishable to mass spectrometers)
+are combined with the taxon ID annotated on their entry. All unique
 peptides, whether equalized or original, are given numeric IDs in
 **enumerate sequences**. These numeric IDs replace the actual sequences
 in the peptides table in **substitute equalized sequences** and

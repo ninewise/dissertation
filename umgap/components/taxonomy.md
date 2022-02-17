@@ -1,7 +1,7 @@
 ### Taxonomy Information Queries
 
 While watching results or intermediate output from the pipeline, taxon
-IDs aren't easy to interpret and remember. The `umgap taxonomy` command
+IDs are not easy to interpret and remember. The `umgap taxonomy` command
 takes one or more NCBI taxon IDs as input, searches for them in the
 taxonomy and outputs more information about them in a TSV format.
 

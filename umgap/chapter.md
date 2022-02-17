@@ -8,9 +8,9 @@ data. To meet this need we developed UMGAP, a highly versatile open
 source command line tool implemented in Rust for taxonomic profiling of
 shotgun metagenomes. It differs from state-of-the-art tools in its use
 of protein code regions identified in short reads for robust taxonomic
-identifications, a broad-spectrum index that can identify both archaea,
-bacteria, eukaryotes and viruses, a non-monolithic design, and support
-for interactive visualizations of complex biodiversities.[^foot:umgap]
+identifications, a broad-spectrum index that includes archaea, bacteria,
+eukaryotes and viruses, a non-monolithic design, and support for
+interactive visualizations of complex biodiversities.[^foot:umgap]
 
 [^foot:umgap]: This chapter is based on the article: Felix Van der
 Jeugt, Rien Maertens, Aranka Steyaert, Pieter Verschaffelt, Caroline

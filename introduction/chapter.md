@@ -13,7 +13,7 @@ In evolutionary biology, the term "Animal Kingdom", or rather "Kingdom
 Animalia", is a classification; a grouping of organisms. It is not the
 only kingdom, but perhaps it is, for us humans, the most important
 one, since we are part of it. Fortunately, despite calling it a
-kingdom, there's no king we all are fealty to. The other kingdoms are
+kingdom, there's no king we all swear fealty to. The other kingdoms are
 usually the plants (Plantae), Fungi, Chromista, Protozoa, Archaea and
 Bacteria. Why usually? Well, life being life, the borders between these
 classifications are a rather gray area and they have been reassigned
@@ -57,7 +57,7 @@ The first real taxonomy, by Carl Linnaeus [@linnaeus], introduced the
 ranked taxa and a naming system for animal and plant species. It was
 based on visible characteristics, such as appearance and behavior. After
 the evolutionary theory was published by Charles Darwin [@darwin],
-classifications would come to reflect common evolutionary descend. In
+classifications would come to reflect common evolutionary descent. In
 general, the closer two organisms are to their shared precursor, the
 closer they should be in a taxonomy.
 
@@ -159,9 +159,8 @@ site).
 
 This three-form-two-step process is called the central dogma of
 molecular biology. Most organisms follow these steps, but for instance
-some bacteria blend the transcription and translation into a single step,
-and some DNA segments don't translate to proteins but perform their
-function as RNA.
+some bacteria couple the transcription and translation, and some DNA
+segments don't translate to proteins but perform their function as RNA.
 
 ## Studying Biopolymers
 
@@ -240,7 +239,7 @@ Early sequencing methods for metagenomics methods were based on
 sequences occur in all prokaryote cells, and contain both highly
 conserved (rarely mutating) regions and variable (often mutating)
 regions. The conserved regions can be used as primers (markers) to
-sequence the 16S rRNA. The mutating regions in between the primers
+sequence the 16S rRNA. The variable regions in between the primers
 can than be used to differentiate between organisms [@primers16s].
 While this makes a powerful tool to identify prokaryote species in a
 sample and build phylogenetic trees of these organisms, it does not
@@ -344,7 +343,7 @@ achieved by preprocessing all proteins in the UniProtKB after it
 is released. More details on this process can be found in section
 \ref{section:makedatabase}.
 
-## Metagenomics via Metaproteomics
+## A protein space detour
 
 Given the success of Unipept for metaproteomics, could we reuse the
 fast and accurate peptide-to-taxa mapping also for the analysis of
@@ -359,18 +358,18 @@ by making a detour through a general purpose metaproteomics database.
 
 ## Existing tools
 
-Of course, UMGAP is not the first tool for analyzing metagenomics
-samples. In fact, we will evaluate UMGAP by comparing its use, speed and
-results to several state-of-the-art metagenomic tools. There are called
-Kraken [@wood2014], Kaiju [@menzel] and CLARK [@ounit].
+Of course, UMGAP is not the first tool for analyzing metagenomics data
+sets. In fact, we will evaluate UMGAP by comparing its use, speed
+and results to several state-of-the-art metagenomic tools: Kraken
+[@wood2014], Kaiju [@menzel] and CLARK [@ounit].
 
-Kraken utilizes a Jellyfish [@jellyfish] database of DNA *k*-mers,
-sequences of by default 31 bases, and the taxon this *k*-mer occurs in.
-This taxon is usually a single organism, but sometimes it is the lowest
-common ancestor of several. For every *k*-mer in a read, this database
-is queried and the taxa are structured into a classification tree.
-Finally, each read is classified as the taxon on the leaf in this tree
-with most *k*-mer hits on the path to the root.
+Kraken utilizes a Jellyfish [@jellyfish] database of DNA *k*-mers
+(sequences of *k* bases, with *k*=31 by default), and the taxon this
+*k*-mer occurs in. This taxon is usually a single organism, but
+sometimes it is the lowest common ancestor of several. For every *k*-mer
+in a read, this database is queried and the taxa are structured into a
+classification tree. Finally, each read is classified as the taxon on
+the leaf in this tree with most *k*-mer hits on the path to the root.
 
 Where Kraken 1 uses the concept of minimizers [@minimizers] to speed up
 queries into the database, Kraken 2 [@wood2019] further improves on this
@@ -386,10 +385,10 @@ flexibility of the tool.
 The authors of Kaiju also recognize the possibilities of protein-level
 sequence classification for metagenomic samples. They translate
 metagenomic sequencing reads into the six possible reading frames and
-search for the number of exact matches in a reference protein database.
-A read is classified as the taxon annotated on the protein with the
-maximum number of exact matches. A Burrows-Wheeler transform of the
-protein database is used for fast exact querying.
+search for the number of exact *k*-mer matches in a reference protein
+database. A read is classified as the taxon annotated on the protein
+with the maximum number of exact matches. A Burrows-Wheeler transform of
+the protein database is used for fast exact querying.
 
 Where Kaiju chose for a complete six-frame translation of the
 metagenomic reads, which is also an option in UMGAP, we will also be
@@ -400,9 +399,9 @@ and error-prone DNA reads.
 
 ## Structure of this dissertation
 
-Chapter \ref{chapter:umgap} describes the pipeline as a whole. It
-starts out by describing more context and the general structure
-of the pipeline (\ref{section:umgap:intro}). After this, section
+Chapter \ref{chapter:umgap} describes UMGAP as a whole. It starts
+out by describing more context and the general structure of
+the pipeline (\ref{section:umgap:intro}). After this, section
 \ref{section:umgap:methods} provides details on each step in the
 pipeline, with variants on each step grouped together. The results of
 the pipeline are evaluated in section \ref{section:umgap:results},
