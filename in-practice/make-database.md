@@ -80,34 +80,36 @@ the *sequences* table.
 
 ### Creating a UMGAP Index
 
-From this complete database, only three tables are of interest to
-the UMGAP tool. First, as UMGAP is a taxonomic identification tool,
-is the processed NCBI taxonomy *taxons*. Second is the *sequences*
-table, which contains the mapping of tryptic peptides onto their lowest
-common ancestor. Third is the *uniprot entries* table, which contains
-among other columns the protein sequence and the assigned taxon of the
-original UniProt entry. The latter is used for the construction of the
-*k*-mer-to-taxon mapping.
+This complete database is used by the Unipept web application to provide
+its services. For UMGAP, only three tables are of interest. First, as
+UMGAP is a taxonomic identification tool, is the processed NCBI taxonomy
+*taxons*. Second is the *sequences* table, which contains the mapping
+of tryptic peptides onto their lowest common ancestor. Third is the
+*uniprot entries* table, which contains among other columns the protein
+sequence and the assigned taxon of the original UniProt entry. The
+latter is used for the construction of the *k*-mer-to-taxon mapping.
 
 While querying a relational database is fast enough for a metaproteomics
-tool, it does not suffice for a metagenomics tool, which is expected
-to handle much larger amounts of data. This is especially true for the
-*k*-mer-to-taxon mapping, the construction of which is too slow for the
-Java code used for the tryptic peptide mapping.
+tool, it does not suffice for a metagenomics tool, which is expected to
+handle much larger amounts of data. The taxon table can easily be kept
+in memory by the UMGAP tools. The peptides table and especially the
+*k*-mer-to-taxon mapping, the construction of the latter is too slow
+for the Java code used for the tryptic peptide mapping, are kept in
+specialized index files.
 
-Three additional tools were developed to construct an index file for the
-`umgap pept2lca` tool, with an extra one for debugging. The first tool
-is the `umgap splitkmers` command, which takes tab-separated taxon IDs
-and protein sequences and outputs all *k*-mers in each protein sequence
-alongside the taxon ID. The second tool is the `umgap joinkmers` tool,
-which consumes an alphabetically sorted stream of peptides alongside
-taxon IDs, and outputs each peptide once, together with a taxon ID
-aggregated from all taxon IDs found together with this peptide. Between
-the second and first tools, the GNU sort command groups together the
-peptides. Finally, the `umgap buildindex` command builds a single
-compressed index file which is then used by the `umgap pept2lca` tool.
-The `umgap printindex` tool decompresses such an index file back to the
-input of `buildindex` for debugging purposes.
+Three additional tools were developed to construct an such index file
+for the `umgap pept2lca` tool, with an extra one for debugging. The
+first tool is the `umgap splitkmers` command, which takes tab-separated
+taxon IDs and protein sequences and outputs all *k*-mers in each
+protein sequence alongside the taxon ID. The second tool is the `umgap
+joinkmers` tool, which consumes an alphabetically sorted stream of
+peptides alongside taxon IDs, and outputs each peptide once, together
+with a taxon ID aggregated from all taxon IDs found together with this
+peptide. Between the second and first tools, the GNU sort command groups
+together the peptides. Finally, the `umgap buildindex` command builds a
+single compressed index file which is then used by the `umgap pept2lca`
+tool. The `umgap printindex` tool decompresses such an index file back
+to the input of `buildindex` for debugging purposes.
 
 #### The `splitkmers` Command
 

@@ -140,7 +140,7 @@ which should clarify what these databases are.
 >     an intermediate part on why you focus on bacteria/microorganisms
 >     would be nice here.
 
-<!-- TODO Carolien 4 because there are easier methods to study larger organisms? -->
+Added a short sentence on microorganisms.
 
 > 14. In this first chapter, I am really missing a part where you
 >     explain how metagenomics data is analyzed today/which tools are
@@ -164,7 +164,7 @@ Section on other tools was added.
 >     introduction of the first chapter I read, this is not completely
 >     clear.
 
-<!-- TODO Carolien 5 -->
+Clarified applications in first chapter.
 
 > 16. For UMGAP, you know focused on the taxonomical identification;
 >     However, as you translate your DNA into protein sequences and
@@ -195,8 +195,9 @@ include the results since FGS isn't meant for complete genomes.
 
 <!-- Carolien 18 -->
 
-This can be changed by the user, if not using one of the (later
-introduced) preconfigured pipelines. I would advise using 5 as cut-off.
+[question] This can be changed by the user, if not using one of the
+(later introduced) preconfigured pipelines. I would advise using 5 as
+cut-off.
 
 > 19. Overall question methodology: in the description of the pipeline,
 >     I can't find if you (1) check the quality of the reads upfront
@@ -380,11 +381,13 @@ translated and identified frames.'
 > 40. Page 115: it is a bit confusing that you first state that you will
 > illustrate two examples here, and a bit further you describe three
 > projects of which FGSr was one of them. I think it would be better if
-> you phrase thepart on FGS in the paragraph above, where you introduce
+> you phrase the part on FGS in the paragraph above, where you introduce
 > the usefulness of this project-driven work, as this was part of your
 > PhD. And then you can elaborate more on two external projects.
 
-<!-- TODO Carolien 40 -->
+<!-- Carolien 40 -->
+
+Rephrased in a separate paragraph.
 
 > 41. For SPeDe, you said that you were able (together with the student)
 > to reduce the analysing time to 2 hours for a realistic dataset.
@@ -396,7 +399,9 @@ I don't have exact numbers for this, but our estimate was several weeks.
 > you should include some definitions as well (for example, also explain
 > what a SNP is).
 
-<!-- TODO Carolien 42 -->
+<!-- Carolien 42 -->
+
+Added definitions.
 
 ### Conclusions and future work
 
@@ -412,7 +417,7 @@ I don't have exact numbers for this, but our estimate was several weeks.
 > other methods (e.g. MG-Rast). You can still comment on this if it is a
 > good strategy or not though.
 
-<!-- TODO -->
+I'd rather not introduce another tool in the conclusions.
 
 > 45. In this part, shouldn't you include as well the transition
 > from metagenomics to metatranscriptomics? You mention it
@@ -433,7 +438,7 @@ Fixed.
 >     proposed pipeline (with the exception of the experiment with
 >     shuffled genomes).
 
-<!-- TODO -->
+We tried not to stress this point, since it's so hard to prove.
 
 >  3. [Chapter 1] It would be good to add a figure that shows the
 >     hierarchy of the different taxonomic ranks often used in the
@@ -512,21 +517,21 @@ Added in chapter 2 for UMGAP; it's hard to estimate other users.
 
 Made consistent.
 
-<!-- TODO in chapter 3, todo: 2, 4, 5 -->
-
 > 14. [Chapter 3] When presenting averages, it would be good to present
 >     standard deviations as well, either visually (through error bars)
 >     or textually (by mentioning the standard deviation in the caption
 >     of a plot).
 
-<!-- TODO -->
+We will keep this in mind when revising the manuscript for publication.
 
 > 15. [Chapter 4] Fig. 4.1 currently gives an overwhelming
 >     impression. It may therefore be of interest to work with a
 >     coarse-to-fine-grained approach, first presenting a high-level
 >     visualization and then a more detailed visualization.
 
-<!-- TODO -->
+I think it's important to give a complete overview of the process first,
+to clearly show how complex the process is. Each part, however, is
+rather easy so we did not make figures for them.
 
 > 16. [Chapter 4] From the current discussion, the link between the
 >     newly introduced tools and the use of a relational database was
@@ -540,7 +545,7 @@ Made consistent.
 >     metaproteomics tool, it does not suffice for a metagenomics tool,
 >     which is expected to handle much larger amounts of data."
 
-<!-- TODO -->
+Database relation clarified.
 
 > 17. [Chapter 4] Similar to Chapter 2 and Chapter 3, it may be good
 >     to add a footnote to the beginning of Chapter 4 that efforts
@@ -597,18 +602,19 @@ Fixed.
 > - Introduce some taxonomic and phylogenetic concepts (tree crown and
 >   clade, etc…). Perhaps in the form of a box with some definitions.
 
-<!-- TODO under consideration: I don't use these terms -->
+A definition box could be a useful addition, but the mentioned concepts
+are not used in the dissertation.
 
 > - A (brief) discussion about introns/exons is missing. The tools
 >   described were clearly created with bacteria in mind, but they
 >   should also be applicable to archaea and eukaryotes.
 
-<!-- TODO -->
+Added.
 
 > - Maybe a sentence or two about post-translational modifications and
 >   how they are expected to impact proteomics data analysis.
 
-<!-- TODO splicing -->
+Added.
 
 > - expand definitions of GO, InterPro, EC
 
@@ -619,12 +625,14 @@ I added an example, which should clarify what these are.
 >   transcription and translation are coupled in prokaryotes, this is
 >   still a 2-step process.
 
-<!-- TODO -->
+Rephrased.
 
 > - P19: Add a little bit more explanation (one or two sentences) on
 >   how contigs are profiled to be grouped into bins
 
-<!-- TODO Aurelien 1 -->
+<!-- Aurelien 1 -->
+
+Added.
 
 > - Since much of this thesis relies on gene finding, or at least
 >   matching DNA to AA sequences databases. It would be good to have
@@ -707,7 +715,7 @@ References were added.
 >   divergence of Leptospira reads is very interesting. Do you know by
 >   how much the different simulated genomes diverged (%ANI)?
 
-<!-- TODO Aurilien 3 -->
+I do not, and the original data has been lost.
 
 > - P61. Are other input formats supported (e.g. BAM, SAM) ?
 
@@ -802,7 +810,8 @@ Rephrased.
 > - P123. Could you briefly explain what the HiPlex and GBS datasets
 >   are?
 
-<!-- TODO -->
+Instead, I've removed the terms, as these could just lead to further
+confusion.
 
 #### Chapter 5
 
@@ -845,14 +854,14 @@ below, but will fix small remarks directly in the text.
 > more) important to discuss assembly and annotation in that context,
 > too. (Last paragraph of 1.3)
 
-<!-- TODO -->
+[question]
 
 > explain 'profiled' in better detail? are only 18S (16S, or other)
 > sequences classified by comparison against a taxonomic reference
 > database? or all sequences? against what kind of database? (1.4 third
 > paragraph)
 
-<!-- TODO -->
+Added.
 
 > what is a typical data set size (compared to numbers mentioned in the
 > paragraph above?)
@@ -874,7 +883,8 @@ below, but will fix small remarks directly in the text.
 > G nucleotides to all nucleotides, (not just the AT fraction) (Last
 > paragraph of 1.4)
 
-<!-- TODO -->
+Most of these seem out-of-scope for discussion in the introduction. I
+look forward to questions on them.
 
 > because it is six-frame? and: how can the user define the translation
 > table? are there proposed translation tables, depending on the
@@ -903,7 +913,11 @@ https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=582744
 > it that FGS does not recognize all proteins, or picks up a false
 > positive? (Chapter FGSrs title)
 
-<!-- TODO -->
+First, these numbers are for complete genomes, which is not what FGS
+specializes in, so they might not compare to the fragmented gene
+predictions. I think the impact of FGS on the final result is best shown
+by comparing with the 6ft results - after all, 6ft is the ultimate gene
+predictor (since it has no false negatives).
 
 > some advice on changing that to different k-values for different
 > purposes? for instance, what is the optimal if targetted analsyis on
@@ -916,7 +930,12 @@ https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=582744
 > per organism (nr of proteins?) for effective taxonomic sensitivity /
 > specificity? (section The `splitkmers` Command, at the 9 as default)
 
-<!-- TODO -->
+We have done no experiments with other k-values for different purposes.
+Targetted databases could likely have shorter k-mers, because the k-mers
+are more likely to be unique anyway.
+
+The current pipeline can be applied to plant communities, but I'm not
+sure about the composition in UniprotKB.
 
 > Culture collections, botanical gardens and musea keep collections of
 > specimens. Often, these contain both unique and (partially) replicated
@@ -937,7 +956,8 @@ https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=582744
 > Botanical garden of Meise :). It could make for a nice future project
 > for BioComp. (4.3.1 SPeDE title)
 
-<!-- TODO -->
+[question] Rather interesting thought, to have 'representatives' of the
+genotypes.
 
 > about robustness in the pipeline for the accurate quantification
 > of taxonomy in a complex environmental sample: could you compare
@@ -952,7 +972,10 @@ https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=582744
 > organism. how does this work in your approach? (marked robustness in
 > the first paragraph of conclusions)
 
-<!-- TODO -->
+[question]
+
+The latter: we don't, and we should probably warn users that they should
+to this in postprocessing statistics.
 
 > virusses may also shuffle their protein content, so that many
 > "taxonomically distinct" virusses may share protein domains. (and
@@ -964,7 +987,7 @@ https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=582744
 > LCA-based classification of taxonomy? (viral genomes in targetted
 > index files, conclusions)
 
-<!-- TODO -->
+[question]
 
 > would it still be possible to perform "targetted functional
 > annotation" with a controlled aggregation, based on sequences
@@ -973,12 +996,13 @@ https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=582744
 > normalisation purposes?)). (functional annotations title in future
 > work)
 
-<!-- TODO -->
+[question]
 
 > who would be your envisioned "users" of the desktop application?
 > (desktop application title in conclusion)
 
-<!-- TODO -->
+I think this could get the tools to users less familiar with the command
+line.
 
 > This is a very important set of observations, as it show how gaps in
 > the data bases are important to be filled! can you estimate (somehow?)
@@ -992,4 +1016,4 @@ https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=582744
 > are included in the databases? (per kingdom?) (last bullet point in
 > appendix A)
 
-<!-- TODO -->
+[question]

@@ -22,7 +22,7 @@ the results of students (often things I hadn't thought of myself during
 the prior inspection). I present these results to the partner, and
 possibly provide aid in implementing them in the actual product.
 
-<!-- TODO Carolien 40 -->
+<!-- Carolien 40 -->
 
 Below I describe two of the projects we've worked on. The first partner,
 in 2018, was the Laboratory of Microbiology, Department of Biochemistry
@@ -30,11 +30,12 @@ and Microbiology at the Ghent University. Charles Dumolin, Aurélien
 Carlier and Peter Vandamme introduced us to the SPeDE project. In 2019,
 we visited the Flanders Research Institute for agriculture, fisheries
 and food (ILVO) with the students on invitation of Tom Ruttink and Dries
-Schaumont. They introduced our students to the SMAP project. In 2020,
-we partnered with ourselves as the Unipept team, and had the students
-work on the FragGeneScan project, the results of which lead to Chapter
-\ref{chapter:fgsrs}. In 2021, we once more joined up with Tom Ruttink
-and Dries Schaumont on the SMAP project.
+Schaumont. They introduced our students to the SMAP project. In 2021,
+we once more joined up with Tom Ruttink and Dries Schaumont on the SMAP
+project.
+
+In 2020, we had the students work on the FragGeneScan project. Their
+work has in part lead to the results in Chapter \ref{chapter:fgsrs}.
 
 ## SPeDE: Spectral Dereplication
 
@@ -87,8 +88,9 @@ the final result was published [@dumolin].
 
 <!-- TODO Carolien 42 -->
 
-SMAP is a software package that analyzes read mapping distributions
-and performs haplotype calling to create multi-allelic molecular
+SMAP is a software package that analyzes read mapping distributions and
+performs haplotype calling (finding regions of tightly linked genes,
+likely to be conserved together) to create multi-allelic molecular
 markers. SMAP delineate processes a series of aligned reads. It groups
 all reads from a single locus (region on the reference genome with
 mapped reads) with the same start and end positions in a stack, with
@@ -102,14 +104,15 @@ of a sample set are collapsed into a MergedCluster.
 ### SMAP Haplotype-sites
 
 SMAP haplotype-sites is the haplotype calling component of the software
-package. Given the SMAP and Single Nucleotide Polymorphism (SNP)
-positions, it calculates the haplotype for each read in all samples.
-It compares the nucleotide on each SMAP or SNP position with that same
-position in the reference genome. This position is either the same (0),
-different (1), a gap (-) or missing (.) in the read. The resulting
-string of zeroes, ones and points is the haplotype. Finally, it counts
-all reads per haplotype, per locus, per sample, and reports the relative
-haplotype frequency on every locus in each sample.
+package. Given the SMAP and Single Nucleotide Polymorphism (SNP, a
+change of a single basepair from the reference genome) positions, it
+calculates the haplotype for each read in all samples. It compares the
+nucleotide on each SMAP or SNP position with that same position in the
+reference genome. This position is either the same (0), different (1), a
+gap (-) or missing (.) in the read. The resulting string of zeroes, ones
+and points is the haplotype. Finally, it counts all reads per haplotype,
+per locus, per sample, and reports the relative haplotype frequency on
+every locus in each sample.
 
 <!--
 - pagina 38 & 76 (Marzougui & Renders) 
@@ -126,13 +129,13 @@ haplotype frequency on every locus in each sample.
 -->
 
 The software package was introduced to us and the students as a nearly
-complete product, with the execution speed as a blocking factor
-for publication. For a HiPlex dataset of about 230MB, the initial
-implementation took 10 minutes to process. For a GBS dataset of 19.3G,
-this was 83 minutes. The first problem in the initial implementation
-was the iteration of the loci. Per reference genome, all reads were
-considered for haplotyping; not just the ones in the current locus. By
-filtering on locus, most reads can be skipped in each iteration.
+complete product, with the execution speed as a blocking factor for
+publication. For a dataset of about 230MB, the initial implementation
+took 10 minutes to process. For a dataset of 19.3G, this was 83 minutes.
+The first problem in the initial implementation was the iteration of the
+loci. Per reference genome, all reads were considered for haplotyping;
+not just the ones in the current locus. By filtering on locus, most
+reads can be skipped in each iteration.
 
 Secondly, many of the reads are equal, so they will have the same
 haplotype as well. Instead of calculating the haplotype for a read we've

@@ -115,6 +115,11 @@ replaced by U.
 
 ![Free RNA nucleotides are complemented to a template DNA strand, forming a single RNA strand. The formed strand is identical to the coding strand, except thymine (T) is replaced by uracil (U) and the deoxyribose is a ribose. The RNA polymerase performing the splitting and matching is not included in the drawing.\label{fig:transcription}](./transcription.svg)
 
+In eukaryotes, RNA splicing can remove some parts of the RNA sequence
+(called introns) while keeping the coding regions (called exons). The
+spliced parts may not always be the same for the same RNA sequence in
+the same organism (called alternative splicing).
+
 After transcription, the resulting RNA can be translated into yet
 another polymer called a polypeptide, which then folds into a protein.
 This translation is performed by a ribosome. It scans triplets of
@@ -123,9 +128,10 @@ for a start codon (`AUG`). Then, including the start codon, for each
 codon up to but excluding a stop codon (`UAA`, `UAG` or `UGA`), it
 attaches the corresponding amino acid. The translation table, the
 mapping of the $4^3$ codons onto amino acids (or stop codons) as
-visualized in Figure \ref{fig:translation-table}, is not the same for
-every organism. The constructed protein performs certain functions
-before it degrades.
+visualized in Figure \ref{fig:translation-table}, is not the same
+for every organism. The constructed protein might still undergo some
+post-translational modifications before it performs its functions and
+degrades.
 
 ![The standard RNA codon table used for translation. Reading a triplet from inside to outside shows the corresponding amino acid, or indicates a stop codon (\*).\label{fig:translation-table}](./translation-table.svg)
 
@@ -230,7 +236,10 @@ comparative studies of environments over time or location [@metabias].
 Third, many organisms cannot currently be cultivated, and as such cannot
 be sequenced in genomics [@locey;@rappe;@hugenholtz1998;@hoferthemi].
 
-<!-- TODO Carolien 4 -->
+Metagenomics are especially useful when it comes to studying
+microorganisms, since those are so hard to discover and analyse by
+conventional means. Nevertheless can they still be used to track DNA of
+eukaryotes.
 
 ## Targeted and Shotgun Metagenomics
 
@@ -259,15 +268,16 @@ potential.
 The taxonomic profiling of shotgun metagenomics data
 is approached from two angles. First, the reads are
 assembled into larger contigs, which are then profiled
-[@peng2011;@namiki;@peng2012;@simpson;@boisvert;@pell]. To provide
-sufficiently complete coverage to allow assembly of all organisms in the
-sample, much larger data sets are required compared to genomics (3.3
-million genes from 567.7 Gbp sequence data for the human gut microbiome
-gene catalog). The amount of data and the repetitions of DNA within and
-between (allowing the incorrect assembly of chimeras) organisms make
-assembly a hard problem to solve.
+[@peng2011;@namiki;@peng2012;@simpson;@boisvert;@pell], often by
+aligning the contigs to reference genomes to find the closest match.
+To provide sufficiently complete coverage to allow assembly of all
+organisms in the sample, much larger data sets are required compared to
+genomics (3.3 million genes from 567.7 Gbp sequence data for the human
+gut microbiome gene catalog). The amount of data and the repetitions of
+DNA within and between (allowing the incorrect assembly of chimeras)
+organisms make assembly a hard problem to solve.
 
-<!-- TODO Aurelien 1 -->
+<!-- Aurelien 1 -->
 
 Alternatively, the reads are individually partitioned and assigned
 to an individual genome [@huson;@brady;@wood2014]. This process is

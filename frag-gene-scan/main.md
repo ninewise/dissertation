@@ -75,7 +75,7 @@ generates wrong output.
 
 The source code of FGS and FGS+ is no longer actively maintained, but
 as metagenomics datasets continue to grow in size, we still need faster
-gene predictors. In this manuscript we present FragGeneScanRs (FGSrs), a
+gene predictors. In this chapter we present FragGeneScanRs (FGSrs), a
 reliable, high-performance, and accurate Rust implementation of the FGS
 gene prediction model. We ran a benchmark to show that FGSrs produces
 the same results as FGS and is faster than both FGS and FGS+.
