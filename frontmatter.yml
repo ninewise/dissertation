@@ -1,6 +1,9 @@
-papersize: A5
+#papersize: A5
 geometry:
-- margin=0.8in
+- top=3.5cm
+- bottom=3.5cm
+- paperwidth=17cm
+- paperheight=24cm
 documentclass: book
 numbersections: true
 secnumdepth: 2
@@ -17,12 +20,13 @@ header-includes:
 - \hyphenation{e-men-ded}
 - \hyphenation{me-thyl-o-vo-rus}
 - \hyphenation{Uni-Prot-KB}
+- \hyphenation{Frag-Gene-Scan}
 - \hyphenation{Frag-Gene-Scan-Rs}
 - \hyphenation{Frag-Gene-Scan-Plus-Plus}
 - \hyphenation{UM-GAP}
 include-before: |
   #### [opening](opening.md){.include}
-colorlinks: true
+colorlinks: false
 lang: en-US
 link-citations: true
 links-as-notes: true

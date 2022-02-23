@@ -2,7 +2,10 @@
 bekijken in andere PhD's
 -->
 
-#### [summaries](summaries.md){.include}
+::: {lang=nl}
+\hyphenation{Frag-Gene-Scan-Rs}
+
+:::
 
 #### [introduction](introduction/chapter.md){.include}
 

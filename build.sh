@@ -7,8 +7,11 @@ else
 	pdfengine="pdflatex"
 fi
 
+       #--highlight-style=monochrome \
+
 pandoc -s -o "dissertation.tex" \
        --syntax-definition=syntax/shell-example.xml \
+       --highlight-style=syntax/pygments.theme \
        --metadata-file=frontmatter.yml \
        --lua-filter=filters/include.lua \
        --lua-filter=filters/smaller-codeblocks.lua \

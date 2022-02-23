@@ -25,12 +25,12 @@
      showgrid="false"
      showguides="true"
      inkscape:guide-bbox="true"
-     inkscape:zoom="0.50000003"
-     inkscape:cx="899.99995"
-     inkscape:cy="222.99999"
-     inkscape:window-width="1918"
-     inkscape:window-height="1078"
-     inkscape:window-x="1920"
+     inkscape:zoom="1.0000001"
+     inkscape:cx="604.49996"
+     inkscape:cy="548.49997"
+     inkscape:window-width="1920"
+     inkscape:window-height="1080"
+     inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1"
@@ -1080,13 +1080,13 @@
        transform="translate(-2.3963154,21.147604)"><tspan
          x="211.4326"
          y="108.67397"
-         id="tspan32757">The Unipept </tspan><tspan
+         id="tspan1378">The Unipept </tspan><tspan
          x="211.4326"
          y="117.49342"
-         id="tspan32759">Metagenomics </tspan><tspan
+         id="tspan1380">Metagenomics </tspan><tspan
          x="211.4326"
          y="126.31288"
-         id="tspan32761">Analysis Pipeline</tspan></text>
+         id="tspan1382">Analysis Pipeline</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:7.05556px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;stroke-width:0.264583"
@@ -1348,12 +1348,5 @@
        cy="151.7592"
        r="6.5324688"
        transform="rotate(-13.47624)" />
-    <rect
-       style="fill:none;fill-opacity:1;stroke:#ff2d00;stroke-width:0.865;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
-       id="rect31699"
-       width="10"
-       height="240"
-       x="171"
-       y="0" />
   </g>
 </svg>
