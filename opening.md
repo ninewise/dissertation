@@ -101,8 +101,8 @@
   remember whether Charlotte's rainbow should start or end with blue.
 
   ~ Herman, Charlotte, Dieter, Rien, Annick, Louise and I together
-  taught quite a lot of students for Kris, Christophe, Veerle and , and
-  discovered I really enjoy teaching and helping students.
+  taught quite a lot of students for Kris, Christophe, Veerle and Peter,
+  and discovered I really enjoy teaching and helping students.
 
 <!-- Boekje: Toon -->
 <!-- Boekje: Niels -->
